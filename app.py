@@ -8,6 +8,8 @@ from datetime import datetime
 import razorpay
 import firebase_admin
 from firebase_admin import credentials, messaging
+import json
+from firebase_admin import credentials
 
 # ==============================
 # APP SETUP
@@ -27,7 +29,9 @@ CORS(app)
 # FIREBASE SETUP
 # ==============================
 
-cred = credentials.Certificate("firebase-key.json")
+
+firebase_json = json.loads(os.environ.get("FIREBASE_KEY"))
+cred = credentials.Certificate(firebase_json)
 firebase_admin.initialize_app(cred)
 
 
@@ -1369,7 +1373,7 @@ def assign_task():
             f"Patient: {lead['name']} - {lead['location']}"
         )
 
-        
+
     conn.close()
 
     return jsonify({"message": "Task Assigned"})
