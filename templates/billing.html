@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Rapid Labs Billing</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:220px;
+height:100vh;
+background:#0f3f7a;
+position:fixed;
+left:0;
+top:0;
+color:white;
+}
+
+.sidebar h2{
+text-align:center;
+padding:20px 0;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.sidebar ul li{
+padding:15px 20px;
+cursor:pointer;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar ul li:hover{
+background:#0c2f5c;
+}
+
+/* DROPDOWN */
+
+.dropdown-content{
+display:none;
+background:#0c2f5c;
+}
+
+.dropdown-content li{
+padding-left:35px;
+font-size:14px;
+border:none;
+}
+
+/* MAIN CONTENT */
+
+.main{
+margin-left:220px;
+padding:30px;
+}
+
+.section{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>Rapid Labs</h2>
+
+<ul>
+
+<li onclick="goDashboard()">Dashboard</li>
+
+<li onclick="goLeads()">My Leads</li>
+
+<li onclick="goSample()">Sample Collection</li>
+
+<li onclick="goReports()">Reports</li>
+
+<li onclick="goBilling()">Billing</li>
+
+</ul>
+
+<li onclick="logout()">Logout</li>
+
+</ul>
+
+</div>
+
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<h1 id="pageTitle">Billing</h1>
+
+<div class="section" id="contentArea">
+
+<h3>Create Bill</h3>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+/* NAVIGATION */
+
+function goDashboard(){
+window.location.href="/staff-dashboard";
+}
+
+function goLeads(){
+window.location.href="/staff-leads";
+}
+
+function goSample(){
+window.location.href="/sample-collection";
+}
+
+function goReports(){
+window.location.href="/staff-reports";
+}
+
+function logout(){
+localStorage.removeItem("user");
+window.location.href="/";
+}
+
+function goReports(){
+window.location.href="/staff-reports";
+}
+
+
+function goBilling(){
+window.location.href="/create-bill";
+}
+</script>
+
+</body>
+</html>

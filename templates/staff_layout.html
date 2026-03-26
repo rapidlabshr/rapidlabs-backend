@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Rapid Labs Staff</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:220px;
+height:100vh;
+background:#0f3f7a;
+position:fixed;
+left:0;
+top:0;
+color:white;
+}
+
+.sidebar h2{
+text-align:center;
+padding:20px 0;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.sidebar ul li{
+padding:15px 20px;
+cursor:pointer;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar ul li:hover{
+background:#0c2f5c;
+}
+
+/* MAIN CONTENT */
+
+.main{
+margin-left:220px;
+padding:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Rapid Labs</h2>
+
+<ul>
+
+<li onclick="goDashboard()">Dashboard</li>
+<li onclick="goLeads()">My Leads</li>
+<li onclick="goSample()">Sample Collection</li>
+<li onclick="goReports()">Reports</li>
+<li onclick="goBilling()">Billing</li>
+<li onclick="logout()">Logout</li>
+
+</ul>
+
+</div>
+
+<div class="main">
+
+{% block content %}{% endblock %}
+
+</div>
+
+<script>
+
+function goDashboard(){
+window.location.href="/staff-dashboard";
+}
+
+function goLeads(){
+window.location.href="/staff-leads";
+}
+
+function goSample(){
+window.location.href="/sample-collection?role=staff";
+}
+
+
+function goReports(){
+window.location.href="/staff-reports";
+}
+
+function goBilling(){
+window.location.href="/staff-billing";
+}
+
+function logout(){
+localStorage.removeItem("user");
+window.location.href="/";
+}
+
+
+function goBilling(){
+window.location.href="/create-bill";
+}
+
+</script>
+
+</body>
+</html>

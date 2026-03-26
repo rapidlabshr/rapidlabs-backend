@@ -1,0 +1,5430 @@
+{
+  "CBC - Complete Blood Count": {
+    "price": 250,
+    "parameters": [
+      "Hemoglobin (Hb)",
+      "Red Blood Cell Count (RBC)",
+      "White Blood Cell Count (WBC)",
+      "Platelet Count",
+      "Hematocrit (HCT / PCV)",
+      "Mean Corpuscular Volume (MCV)",
+      "Mean Corpuscular Hemoglobin (MCH)",
+      "Mean Corpuscular Hemoglobin Concentration (MCHC)",
+      "Red Cell Distribution Width (RDW-CV)",
+      "Red Cell Distribution Width (RDW-SD)",
+      "Neutrophils (%)",
+      "Lymphocytes (%)",
+      "Monocytes (%)",
+      "Eosinophils (%)",
+      "Basophils (%)",
+      "Neutrophils (Absolute)",
+      "Lymphocytes (Absolute)",
+      "Monocytes (Absolute)",
+      "Eosinophils (Absolute)",
+      "Basophils (Absolute)",
+      "Platelet Distribution Width (PDW)",
+      "Mean Platelet Volume (MPV)",
+      "Platelet Large Cell Ratio (P-LCR)",
+      "Plateletcrit (PCT)",
+      "Immature Granulocytes (%)",
+      "Immature Granulocytes (Absolute)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "C REACTIVE PROTEIN (CRP)": {
+    "price": 280,
+    "parameters": [
+      "C Reactive Protein (CRP)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "HbA1c Test": {
+  "price": 500,
+  "parameters": [
+    "Glycated Hemoglobin (HbA1c)"
+  ],
+  "equipment": [
+    "Syringe (1)",
+    "EDTA Tube (1)",
+    "Alcohol Swab (1)",
+    "Needle (1)"
+  ]
+},
+  "Total Bilirubin": {
+    "price": 300,
+    "parameters": [
+      "Total Bilirubin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Total Bilirubin Direct Bilirubin & Indirect Bilirubin": {
+    "price": 300,
+    "parameters": [
+      "Total Bilirubin",
+      "Direct Bilirubin",
+      "Indirect Bilirubin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Fasting Glucose- FBS": {
+    "price": 180,
+    "parameters": [
+      "Fasting Blood Sugar (FBS)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "Fluoride Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "FBS with Corresponding Urine Sugar": {
+    "price": 280,
+    "parameters": [
+      "Fasting Blood Sugar (FBS)",
+      "Urine Sugar"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "Fluoride Tube (1)",
+      "Urine Container (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Glycosylated Haemoglobin (HbA1c)": {
+    "price": 350,
+    "parameters": [
+      "Glycosylated Haemoglobin (HbA1c)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Kidney Function Test (KFT)": {
+    "price": 430,
+    "parameters": [
+      "Urea",
+      "Creatinine",
+      "Uric Acid",
+      "Sodium",
+      "Potassium",
+      "Chloride",
+      "Blood Urea Nitrogen (BUN)",
+      "Calcium"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "LFT-LIVER FUNCTION TEST": {
+    "price": 399,
+    "parameters": [
+      "Total Bilirubin",
+      "Direct Bilirubin",
+      "Indirect Bilirubin",
+      "SGOT (AST)",
+      "SGPT (ALT)",
+      "Alkaline Phosphatase (ALP)",
+      "Total Protein",
+      "Albumin",
+      "Globulin",
+      "A/G Ratio"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "LIPID PROFILE": {
+    "price": 299,
+    "parameters": [
+      "Total Cholesterol",
+      "Triglycerides",
+      "HDL Cholesterol",
+      "LDL Cholesterol",
+      "VLDL Cholesterol",
+      "Cholesterol/HDL Ratio"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "TFT-THYROID FUNCTION TEST": {
+    "price": 349,
+    "parameters": [
+      "T3",
+      "T4",
+      "TSH"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "VITAMIN B12": {
+    "price": 650,
+    "parameters": [
+      "Vitamin B12"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "VITAMIN D (25 OH CHOLECALCIFEROL)": {
+    "price": 599,
+    "parameters": [
+      "Vitamin D (25-OH)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Urine Routine": {
+    "price": 129,
+    "parameters": [
+      "Color",
+      "Appearance",
+      "Specific Gravity",
+      "pH",
+      "Protein",
+      "Glucose",
+      "Ketones",
+      "Bilirubin",
+      "Urobilinogen",
+      "Nitrite",
+      "Leukocyte Esterase",
+      "RBC",
+      "WBC",
+      "Epithelial Cells",
+      "Casts",
+      "Crystals",
+      "Bacteria"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "SGOT/AST - Aspartate Amino Transferase": {
+    "price": 249,
+    "parameters": [
+      "SGOT (AST)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "SGPT/Alanine Aminotransferase test": {
+    "price": 249,
+    "parameters": [
+      "SGPT (ALT)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Albumin": {
+    "price": 199,
+    "parameters": [
+      "Albumin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Total Cholesterol/HDL Cholesterol Ratio": {
+    "price": 299,
+    "parameters": [
+      "Total Cholesterol/HDL Ratio"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Triglycerides (TGL)": {
+    "price": 249,
+    "parameters": [
+      "Triglycerides"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Urea": {
+    "price": 199,
+    "parameters": [
+      "Urea"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CREATININE": {
+    "price": 199,
+    "parameters": [
+      "Creatinine"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Uric Acid": {
+    "price": 199,
+    "parameters": [
+      "Uric Acid"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Calcium": {
+    "price": 199,
+    "parameters": [
+      "Calcium"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ELECTROLYTES (Na+ K+ CI) - SERUM": {
+    "price": 299,
+    "parameters": [
+      "Sodium (Na+)",
+      "Potassium (K+)",
+      "Chloride (Cl-)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Dengue Antibody IgG": {
+    "price": 299,
+    "parameters": [
+      "Dengue IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Antibodies to HIV 1/2 (Rapld method)": {
+    "price": 499,
+    "parameters": [
+      "HIV 1/2 Antibodies"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "TSH-Thyroid Stimulating Hormone": {
+    "price": 199,
+    "parameters": [
+      "TSH"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Free-T3": {
+    "price": 399,
+    "parameters": [
+      "Free T3"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Free-T4": {
+    "price": 399,
+    "parameters": [
+      "Free T4"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Iron Profile": {
+    "price": 799,
+    "parameters": [
+      "Serum Iron",
+      "TIBC",
+      "UIBC",
+      "Transferrin Saturation"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Double Marker Test": {
+    "price": 799,
+    "parameters": [
+      "Free Beta hCG",
+      "PAPP-A"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "TRIPLE MARKER - SECOND TRIMESTER": {
+    "price": 899,
+    "parameters": [
+      "AFP",
+      "hCG",
+      "Unconjugated Estriol (uE3)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "AMH - ANTI MULLERIAN HORMONE": {
+    "price": 799,
+    "parameters": [
+      "Anti Mullerian Hormone (AMH)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "BETA HCG Total": {
+    "price": 249,
+    "parameters": [
+      "Beta hCG Total"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "FSH-FOLLICLE STIMULATING HORMONE": {
+    "price": 199,
+    "parameters": [
+      "FSH"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "LH-Lutenizing Hormone": {
+    "price": 199,
+    "parameters": [
+      "LH"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "PROLACTIN": {
+    "price": 199,
+    "parameters": [
+      "Prolactin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "FERRITIN": {
+    "price": 399,
+    "parameters": [
+      "Ferritin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "D-dimer": {
+    "price": 399,
+    "parameters": [
+      "D-Dimer"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "Citrate Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CK-MB": {
+    "price": 399,
+    "parameters": [
+      "CK-MB"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Troponin I": {
+    "price": 499,
+    "parameters": [
+      "Troponin I"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "TROPONIN - T": {
+    "price": 599,
+    "parameters": [
+      "Troponin T"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Free Prostate Specific Antigen": {
+    "price": 349,
+    "parameters": [
+      "Free Prostate Specific Antigen"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "PSA-Prostate Specific Antigen (Total)": {
+    "price": 299,
+    "parameters": [
+      "Prostate Specific Antigen (Total)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "vitamin d3": {
+    "price": 1599,
+    "parameters": [
+      "Vitamin D3"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "INSULIN - FASTING": {
+    "price": 299,
+    "parameters": [
+      "Insulin (Fasting)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "Fluoride Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "estrogen-e2": {
+    "price": 249,
+    "parameters": [
+      "Estradiol (E2)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Hepatitis C Virus Antibody CMIA": {
+    "price": 299,
+    "parameters": [
+      "Hepatitis C Virus Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "BILIRUBIN(DIRECT)": {
+    "price": 399,
+    "parameters": [
+      "Direct Bilirubin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "vdrl": {
+    "price": 399,
+    "parameters": [
+      "VDRL"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ANA - ANTI NUCLEAR ANTIBODY": {
+    "price": 599,
+    "parameters": [
+      "Anti Nuclear Antibody (ANA)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "PROGESTERONE - SERUM": {
+    "price": 299,
+    "parameters": [
+      "Progesterone"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CCP ANTIBODY TO CYCLIC CITRULLINATED PEPTIDE": {
+    "price": 899,
+    "parameters": [
+      "Anti CCP Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Bleeding time": {
+    "price": 499,
+    "parameters": [
+      "Bleeding Time"
+    ],
+    "equipment": [
+      "Lancet (1)",
+      "Alcohol Swab (1)"
+    ]
+  },
+  "BLEEDING TIME & CLOTTING TIME": {
+    "price": 740,
+    "parameters": [
+      "Bleeding Time",
+      "Clotting Time"
+    ],
+    "equipment": [
+      "Lancet (1)",
+      "Alcohol Swab (1)"
+    ]
+  },
+  "BNP B Type Natriuretic Peptide Plasma": {
+    "price": 740,
+    "parameters": [
+      "B-Type Natriuretic Peptide (BNP)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Body Fluid Analysis": {
+    "price": 1480,
+    "parameters": [
+      "Color",
+      "Appearance",
+      "Cell Count",
+      "Protein",
+      "Glucose",
+      "Microscopy"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "Brucella IgM": {
+    "price": 1480,
+    "parameters": [
+      "Brucella IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CA 15-3": {
+    "price": 1640,
+    "parameters": [
+      "CA 15-3"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CA 19.9": {
+    "price": 1640,
+    "parameters": [
+      "CA 19.9"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CALCITONIN/THYROCALCITONIN": {
+    "price": 740,
+    "parameters": [
+      "Calcitonin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti Phospholipid Antibody IgA": {
+    "price": 840,
+    "parameters": [
+      "Anti Phospholipid Antibody IgA"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CALCIUM - 24HRS URINE": {
+    "price": 500,
+    "parameters": [
+      "Urine Calcium (24 Hour)"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "CALCIUM - RANDOM URINE": {
+    "price": 500,
+    "parameters": [
+      "Urine Calcium (Random)"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "CARDIOLIPIN ANTIBODIES IgM & IgG": {
+    "price": 1480,
+    "parameters": [
+      "Cardiolipin Antibody IgM",
+      "Cardiolipin Antibody IgG"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CEA - Carcino Embryonic Antigen": {
+    "price": 1640,
+    "parameters": [
+      "Carcinoembryonic Antigen (CEA)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CELL COUNT": {
+    "price": 740,
+    "parameters": [
+      "Cell Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Cell Type": {
+    "price": 740,
+    "parameters": [
+      "Cell Type"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CERULOPLASMIN": {
+    "price": 740,
+    "parameters": [
+      "Ceruloplasmin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CHIKUNGUNYA VIRUS ANTIBODY IGM": {
+    "price": 1480,
+    "parameters": [
+      "Chikungunya Virus IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Chloride - CSF": {
+    "price": 500,
+    "parameters": [
+      "Chloride (CSF)"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "CHLORIDE-serum": {
+    "price": 500,
+    "parameters": [
+      "Chloride (Serum)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CHLORIDE-Urine": {
+    "price": 500,
+    "parameters": [
+      "Chloride (Urine)"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "Cholesterol Total": {
+    "price": 500,
+    "parameters": [
+      "Total Cholesterol"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CHROMOGRANIN - A": {
+    "price": 740,
+    "parameters": [
+      "Chromogranin A"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti-Streptolysin -\"O\"(ASO) Titre (ASLO)": {
+    "price": 550,
+    "parameters": [
+      "ASO Titre"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CLOT RETRACTION TIME": {
+    "price": 740,
+    "parameters": [
+      "Clot Retraction Time"
+    ],
+    "equipment": [
+      "Lancet (1)",
+      "Alcohol Swab (1)"
+    ]
+  },
+  "Clotting Time": {
+    "price": 740,
+    "parameters": [
+      "Clotting Time"
+    ],
+    "equipment": [
+      "Lancet (1)",
+      "Alcohol Swab (1)"
+    ]
+  },
+  "COLD AGGLUTININS": {
+    "price": 740,
+    "parameters": [
+      "Cold Agglutinins"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Complement C4 Level": {
+    "price": 740,
+    "parameters": [
+      "Complement C4"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Complete Blood Count &ESR": {
+    "price": 500,
+    "parameters": [
+      "Hemoglobin",
+      "RBC",
+      "WBC",
+      "Platelet Count",
+      "Hematocrit",
+      "MCV",
+      "MCH",
+      "MCHC",
+      "RDW-CV",
+      "RDW-SD",
+      "Neutrophils %",
+      "Lymphocytes %",
+      "Monocytes %",
+      "Eosinophils %",
+      "Basophils %",
+      "ESR"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Complete Haemogram": {
+    "price": 740,
+    "parameters": [
+      "Hemoglobin",
+      "RBC",
+      "WBC",
+      "Platelet Count",
+      "Hematocrit",
+      "MCV",
+      "MCH",
+      "MCHC",
+      "RDW-CV",
+      "RDW-SD",
+      "Neutrophils %",
+      "Lymphocytes %",
+      "Monocytes %",
+      "Eosinophils %",
+      "Basophils %"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "COPPER SERUM": {
+    "price": 740,
+    "parameters": [
+      "Serum Copper"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Corrected calcium": {
+    "price": 500,
+    "parameters": [
+      "Corrected Calcium"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CORTISOL 4 PM": {
+    "price": 1230,
+    "parameters": [
+      "Cortisol (4 PM)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CORTISOL - 8 AM": {
+    "price": 1230,
+    "parameters": [
+      "Cortisol (8 AM)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Cortisol - Free (Random urine)": {
+    "price": 1230,
+    "parameters": [
+      "Urine Free Cortisol"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "Cortisol (Random)": {
+    "price": 1230,
+    "parameters": [
+      "Cortisol (Random)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "C-Peptide": {
+    "price": 740,
+    "parameters": [
+      "C-Peptide"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "Fluoride Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CPK-TOTAL": {
+    "price": 740,
+    "parameters": [
+      "CPK Total"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Beta-2 Glycoprotein IgM": {
+    "price": 1480,
+    "parameters": [
+      "Beta-2 Glycoprotein IgM"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CREATININE - 24HRS URINE": {
+    "price": 500,
+    "parameters": [
+      "Urine Creatinine (24 Hour)"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "CREATININE CLEARANCE - Random Urine": {
+    "price": 500,
+    "parameters": [
+      "Creatinine Clearance"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "CRYOGLOBULINS": {
+    "price": 740,
+    "parameters": [
+      "Cryoglobulins"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "Plain Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CSF Analysis": {
+    "price": 1480,
+    "parameters": [
+      "Color",
+      "Appearance",
+      "Cell Count",
+      "Protein",
+      "Glucose",
+      "Chloride",
+      "Microscopy"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "CULTURE AND SENSITIVITY (AEROBIC) BLOOD/CSF": {
+    "price": 2460,
+    "parameters": [
+      "Culture",
+      "Sensitivity"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "Cystatin C": {
+    "price": 740,
+    "parameters": [
+      "Cystatin C"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CYTOMEGALO VIRUS IgG ANTIBODIES": {
+    "price": 1480,
+    "parameters": [
+      "Cytomegalovirus IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "CYTOMEGALO VIRUS IgM ANTIBODIES": {
+    "price": 1480,
+    "parameters": [
+      "Cytomegalovirus IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "DCT - Direct coombs test": {
+    "price": 740,
+    "parameters": [
+      "Direct Coombs Test (DCT)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Beta 2 Microglobulin IgM and IgG": {
+    "price": 1480,
+    "parameters": [
+      "Beta-2 Microglobulin IgM",
+      "Beta-2 Microglobulin IgG"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti Phospholipid Antibody IgM": {
+    "price": 840,
+    "parameters": [
+      "Anti Phospholipid Antibody IgM"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Dengue Antibody IgM": {
+    "price": 1480,
+    "parameters": [
+      "Dengue IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "DENGUE NS1 Antigen": {
+    "price": 740,
+    "parameters": [
+      "Dengue NS1 Antigen"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "DENGUE PROFILE ELISA METHOD": {
+    "price": 740,
+    "parameters": [
+      "Dengue NS1 Antigen",
+      "Dengue IgG Antibody",
+      "Dengue IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Dengue-NS1 Antigen IgG & IgM antibodies (Rapid method)": {
+    "price": 1480,
+    "parameters": [
+      "Dengue NS1 Antigen",
+      "Dengue IgG Antibody",
+      "Dengue IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Differential Leucocyte Count (DC)": {
+    "price": 740,
+    "parameters": [
+      "Neutrophils %",
+      "Lymphocytes %",
+      "Monocytes %",
+      "Eosinophils %",
+      "Basophils %"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "DIHYDROXY TESTOSTERONE": {
+    "price": 740,
+    "parameters": [
+      "Dihydrotestosterone (DHT)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Direct Bilirubin": {
+    "price": 500,
+    "parameters": [
+      "Direct Bilirubin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "TPO (Thyroid Peroxidase) Antibody (AMA) Microsomal": {
+    "price": 799,
+    "parameters": [
+      "TPO Antibody (Thyroid Peroxidase Antibody)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Drug Of Abuse (12 drug panel)": {
+    "price": 740,
+    "parameters": [
+      "Amphetamine",
+      "Cocaine",
+      "Marijuana (THC)",
+      "Opiates",
+      "Benzodiazepines",
+      "Barbiturates",
+      "Methadone",
+      "Phencyclidine (PCP)",
+      "Tricyclic Antidepressants",
+      "Oxycodone",
+      "Propoxyphene",
+      "Methamphetamine"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "Drug Of Abuse (9 drug panel) - Urine": {
+    "price": 740,
+    "parameters": [
+      "Amphetamine",
+      "Cocaine",
+      "Marijuana (THC)",
+      "Opiates",
+      "Benzodiazepines",
+      "Barbiturates",
+      "Methadone",
+      "Phencyclidine (PCP)"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "ds DNA antibodies": {
+    "price": 1480,
+    "parameters": [
+      "dsDNA Antibodies"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "E3-Estriol-Serum": {
+    "price": 740,
+    "parameters": [
+      "Estriol (E3)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Echinococcus Igg": {
+    "price": 1480,
+    "parameters": [
+      "Echinococcus IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Absolute Basophil Count": {
+    "price": 740,
+    "parameters": [
+      "Absolute Basophil Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Absolute Lymphocyte Count": {
+    "price": 740,
+    "parameters": [
+      "Absolute Lymphocyte Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Absolute Monocyte Count": {
+    "price": 740,
+    "parameters": [
+      "Absolute Monocyte Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Absolute Neutrophil Count": {
+    "price": 740,
+    "parameters": [
+      "Absolute Neutrophil Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ACE (Angiotensin Converting Enzyme)": {
+    "price": 740,
+    "parameters": [
+      "Angiotensin Converting Enzyme (ACE)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Acid Fast Bacilli (AFB)/ ZN Stain": {
+    "price": 740,
+    "parameters": [
+      "Acid Fast Bacilli (AFB)"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "ACID PHOSPHATASE - TOTAL & FRACTION": {
+    "price": 740,
+    "parameters": [
+      "Acid Phosphatase Total",
+      "Acid Phosphatase Prostatic Fraction"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Acid Phosphatase Prostatic Fraction": {
+    "price": 740,
+    "parameters": [
+      "Acid Phosphatase Prostatic Fraction"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Acid Phosphatase Total": {
+    "price": 740,
+    "parameters": [
+      "Acid Phosphatase Total"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ACTH (Adrenocorticotropic Hormone)": {
+    "price": 740,
+    "parameters": [
+      "ACTH"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Ice Pack (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Activated Plasma Thromboplastin time": {
+    "price": 740,
+    "parameters": [
+      "Activated Partial Thromboplastin Time (APTT)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "Citrate Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ADA - Adenosine Deaminase": {
+    "price": 740,
+    "parameters": [
+      "Adenosine Deaminase (ADA)"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "AEC - Absolute Eosinophil Count": {
+    "price": 740,
+    "parameters": [
+      "Absolute Eosinophil Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Alanine AminoTransferase/ ALT (SGPT)": {
+    "price": 740,
+    "parameters": [
+      "Alanine Aminotransferase (ALT/SGPT)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti Phospholipid Antibody IgG": {
+    "price": 800,
+    "parameters": [
+      "Anti Phospholipid Antibody IgG"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Albumin Creatinine ratio": {
+    "price": 500,
+    "parameters": [
+      "Albumin/Creatinine Ratio"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "Albumin-body fluid": {
+    "price": 740,
+    "parameters": [
+      "Albumin (Body Fluid)"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "Aldolase-Serum": {
+    "price": 740,
+    "parameters": [
+      "Aldolase"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ALDOSTERONE": {
+    "price": 740,
+    "parameters": [
+      "Aldosterone"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Ice Pack (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Aldosterone Sitting": {
+    "price": 740,
+    "parameters": [
+      "Aldosterone (Sitting)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Ice Pack (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Alkaline Phosphatase": {
+    "price": 740,
+    "parameters": [
+      "Alkaline Phosphatase (ALP)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Alpha Feto-Protein (AFP)": {
+    "price": 1640,
+    "parameters": [
+      "Alpha Feto Protein (AFP)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ANTI-HERPES SIMPLEX VIRUS 2 IgG": {
+    "price": 649,
+    "parameters": [
+      "Herpes Simplex Virus Type 2 IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "AMMONIA": {
+    "price": 740,
+    "parameters": [
+      "Ammonia"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Ice Pack (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "AMYLASE": {
+    "price": 740,
+    "parameters": [
+      "Amylase"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "C3(COMPLEMENT C3)": {
+    "price": 740,
+    "parameters": [
+      "Complement C3"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ANA by Immunofluorescence": {
+    "price": 1480,
+    "parameters": [
+      "Anti Nuclear Antibody (ANA) by Immunofluorescence"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ANA PROFILE": {
+    "price": 1480,
+    "parameters": [
+      "Anti dsDNA",
+      "Anti Sm",
+      "Anti RNP",
+      "Anti SSA (Ro)",
+      "Anti SSB (La)",
+      "Anti Scl-70",
+      "Anti Jo-1",
+      "Anti Centromere"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ANCA (P+CANCA)": {
+    "price": 1640,
+    "parameters": [
+      "P-ANCA",
+      "C-ANCA"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti Thyroglobulin Antibodies": {
+    "price": 740,
+    "parameters": [
+      "Anti Thyroglobulin Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti Cardiolipin Antibodies - IgG": {
+    "price": 1480,
+    "parameters": [
+      "Cardiolipin Antibody IgG"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti Cardiolipin Antibodies - IgG and IgM": {
+    "price": 1480,
+    "parameters": [
+      "Cardiolipin Antibody IgG",
+      "Cardiolipin Antibody IgM"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti Cardiolipin Antibodies - IgM": {
+    "price": 1480,
+    "parameters": [
+      "Cardiolipin Antibody IgM"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti CCP Antibodies": {
+    "price": 1480,
+    "parameters": [
+      "Anti CCP Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti Nuclear Antibody/Factor (ANA/NF) IFA (HEP-2)": {
+    "price": 1480,
+    "parameters": [
+      "Anti Nuclear Antibody (ANA)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Mumps IgM (CSF)": {
+    "price": 1480,
+    "parameters": [
+      "Mumps IgM (CSF)"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "MYCOBACTERIUM TB GENE EXPERT": {
+    "price": 2460,
+    "parameters": [
+      "Mycobacterium Tuberculosis (GeneXpert)"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "Nasal Smear for Eosinophils": {
+    "price": 740,
+    "parameters": [
+      "Eosinophils (Nasal Smear)"
+    ],
+    "equipment": [
+      "Swab (1)"
+    ]
+  },
+  "NIPPLE DISCHARGE FOR CYTOLOGY(Right&left)": {
+    "price": 740,
+    "parameters": [
+      "Cytology (Right Breast)",
+      "Cytology (Left Breast)"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "NIPPLE DISCHARGE FROM ONE BREAST FOR CYTOLOGY": {
+    "price": 740,
+    "parameters": [
+      "Cytology (Breast Discharge)"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "Non veg Food Panel": {
+    "price": 740,
+    "parameters": [
+      "Milk",
+      "Egg",
+      "Chicken",
+      "Fish",
+      "Prawn",
+      "Meat"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Nor-metanephrine": {
+    "price": 740,
+    "parameters": [
+      "Normetanephrine"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Ice Pack (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "NT-proBNP (B-Type Natriuretic Peptide)": {
+    "price": 740,
+    "parameters": [
+      "NT-proBNP"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ORAL GLUCOSE CHALLENGE TEST (OGCT-75G)": {
+    "price": 500,
+    "parameters": [
+      "Glucose (75g Challenge)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "Fluoride Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "OSMOLALITY - 24 HRS URINE": {
+    "price": 740,
+    "parameters": [
+      "Urine Osmolality (24 Hour)"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "OSMOLALITY-SERUM": {
+    "price": 740,
+    "parameters": [
+      "Serum Osmolality"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "PAP SMEAR LBC method": {
+    "price": 740,
+    "parameters": [
+      "Pap Smear (LBC)"
+    ],
+    "equipment": [
+      "Speculum (1)",
+      "Slide (1)"
+    ]
+  },
+  "PAP SMEAR SLIDE METHOD": {
+    "price": 740,
+    "parameters": [
+      "Pap Smear (Conventional)"
+    ],
+    "equipment": [
+      "Speculum (1)",
+      "Slide (1)"
+    ]
+  },
+  "PERIPHERAL SMEAR": {
+    "price": 740,
+    "parameters": [
+      "Peripheral Smear"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "PHENOBARBITONE": {
+    "price": 740,
+    "parameters": [
+      "Phenobarbitone"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Phenytoin Level": {
+    "price": 740,
+    "parameters": [
+      "Phenytoin Level"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Phosphorous - Serum": {
+    "price": 740,
+    "parameters": [
+      "Serum Phosphorus"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "PHOSPHORUS - URINE": {
+    "price": 740,
+    "parameters": [
+      "Urine Phosphorus"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "BLOOD GROUP & Rh TYPE": {
+    "price": 740,
+    "parameters": [
+      "Blood Group",
+      "Rh Type"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "OSMOLALITY - SERUM": {
+    "price": 740,
+    "parameters": [
+      "Serum Osmolality"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Post Dinner Glucose": {
+    "price": 500,
+    "parameters": [
+      "Postprandial Blood Sugar (PPBS)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "Fluoride Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "POTASSIUM (K+)- Serum": {
+    "price": 500,
+    "parameters": [
+      "Potassium (Serum)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "POTASSIUM (K+)- urine": {
+    "price": 500,
+    "parameters": [
+      "Potassium (Urine)"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "Protein-Serum": {
+    "price": 740,
+    "parameters": [
+      "Total Protein (Serum)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "PROTEIN - CSF": {
+    "price": 740,
+    "parameters": [
+      "Protein (CSF)"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "Protein Å - Pleural fluid": {
+    "price": 740,
+    "parameters": [
+      "Protein (Pleural Fluid)"
+    ],
+    "equipment": [
+      "Container (1)"
+    ]
+  },
+  "QUADRUPLE MARKER": {
+    "price": 1640,
+    "parameters": [
+      "AFP",
+      "hCG",
+      "Unconjugated Estriol (uE3)",
+      "Inhibin A"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "QUANTIFERON TB GOLD/GAMMA INTERFERON FOR TB": {
+    "price": 2460,
+    "parameters": [
+      "Interferon Gamma Release Assay (IGRA)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "ELECTROLYTES URINE -SPOT SAMPLE": {
+    "price": 740,
+    "parameters": [
+      "Sodium (Urine)",
+      "Potassium (Urine)",
+      "Chloride (Urine)"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "Electrolytes (Na+ K+ CI) - urine": {
+    "price": 740,
+    "parameters": [
+      "Sodium (Na+)",
+      "Potassium (K+)",
+      "Chloride (Cl-)"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "ELECTROPHORESIS - URINE": {
+    "price": 740,
+    "parameters": [
+      "Urine Protein Electrophoresis"
+    ],
+    "equipment": [
+      "Urine Container (1)"
+    ]
+  },
+  "Epstein Barr Virus Anti Bodies Tetra Panel": {
+    "price": 740,
+    "parameters": [
+      "EBV VCA IgM",
+      "EBV VCA IgG",
+      "EBV EBNA IgG",
+      "EBV EA IgG"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Erythrocyte Sedimentation Rate": {
+    "price": 740,
+    "parameters": [
+      "Erythrocyte Sedimentation Rate (ESR)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "EDTA Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "ERYTHROPOIETIN LEVEL": {
+    "price": 740,
+    "parameters": [
+      "Erythropoietin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "F.N.A.C (SLIDE REVIEW)": {
+    "price": 740,
+    "parameters": [
+      "Cytology Review"
+    ],
+    "equipment": [
+      "Slide (1)"
+    ]
+  },
+  "FECAL CALPROTECTIN": {
+    "price": 740,
+    "parameters": [
+      "Fecal Calprotectin"
+    ],
+    "equipment": [
+      "Stool Container (1)"
+    ]
+  },
+  "BACTEC BLOOD CULTURE": {
+    "price": 2460,
+    "parameters": [
+      "Blood Culture"
+    ],
+    "equipment": [
+      "Blood Culture Bottle (1)",
+      "Syringe (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "FILARIA ANTIGEN": {
+    "price": 740,
+    "parameters": [
+      "Filaria Antigen"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "FNAC - MULTIPLE SITES": {
+    "price": 740,
+    "parameters": [
+      "FNAC (Multiple Sites)"
+    ],
+    "equipment": [
+      "Needle (1)",
+      "Syringe (1)",
+      "Slide (1)"
+    ]
+  },
+  "FNAC-SINGLE SITE": {
+    "price": 740,
+    "parameters": [
+      "FNAC (Single Site)"
+    ],
+    "equipment": [
+      "Needle (1)",
+      "Syringe (1)",
+      "Slide (1)"
+    ]
+  },
+  "Folic Acid": {
+    "price": 740,
+    "parameters": [
+      "Folic Acid"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti Platelet Antibody": {
+    "price": 1580,
+    "parameters": [
+      "Anti Platelet Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Anti Sperm Antibodies": {
+    "price": 1399,
+    "parameters": [
+      "Anti Sperm Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Free Androgen Index": {
+    "price": 740,
+    "parameters": [
+      "Free Androgen Index"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Free Beta HCG": {
+    "price": 1230,
+    "parameters": [
+      "Free Beta hCG"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "FREE TFT (FreeT3 FreeT4 TSH": {
+    "price": 1230,
+    "parameters": [
+      "Free T3",
+      "Free T4",
+      "TSH"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Apolipoprotein A1 (Apo-A1)": {
+    "price": 740,
+    "parameters": [
+      "Apolipoprotein A1"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "FSH LH and PROLACTIN": {
+    "price": 1230,
+    "parameters": [
+      "FSH",
+      "LH",
+      "Prolactin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      "SST Tube (1)",
+      "Alcohol Swab (1)",
+      "Needle (1)"
+    ]
+  },
+  "Fungal Culture": {
+    "price": 2460,
+    "parameters": [
+      "Fungal Culture"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Blood Culture Bottle (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "G6PD": {
+    "price": 740,
+    "parameters": [
+      "G6PD"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Gamma-Glutamyl Transferase (GGT)": {
+    "price": 740,
+    "parameters": [
+      "Gamma Glutamyl Transferase (GGT)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "GFR (GLOMERULAR FILTRATION RATE)": {
+    "price": 740,
+    "parameters": [
+      "Glomerular Filtration Rate (GFR)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Globulins- Serum": {
+    "price": 740,
+    "parameters": [
+      "Globulin (Serum)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Glucometer RBS": {
+    "price": 740,
+    "parameters": [
+      "Random Blood Sugar (RBS)"
+    ],
+    "equipment": [
+      "Glucose Test Strip (1)",
+      " Lancet (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "GLUCOSE - CSF": {
+    "price": 500,
+    "parameters": [
+      "Glucose (CSF)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " CSF Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Glucose - Fluid": {
+    "price": 500,
+    "parameters": [
+      "Glucose (Body Fluid)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Plain Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Glucose Challenge Test(50 g)": {
+    "price": 500,
+    "parameters": [
+      "Glucose (50g Challenge)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Solution (50 g)"
+    ]
+  },
+  "Glucose Challenge Test(75 g)": {
+    "price": 500,
+    "parameters": [
+      "Glucose (75g Challenge)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Solution (75 g)"
+    ]
+  },
+  "Glucose Tolerance Test (GTT) - 2 samples": {
+    "price": 500,
+    "parameters": [
+      "Fasting Glucose",
+      "2 Hour Glucose"
+    ],
+    "equipment": [
+      "Syringe (2)",
+      " SST Tubes (2)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Solution"
+    ]
+  },
+  "Glucose Tolerance Test (GTT) - 3 samples": {
+    "price": 500,
+    "parameters": [
+      "Fasting Glucose",
+      "1 Hour Glucose",
+      "2 Hour Glucose"
+    ],
+    "equipment": [
+      "Syringe (3)",
+      " SST Tubes (3)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Solution"
+    ]
+  },
+  "Glucose Tolerance Test (GTT) - 4 Samples": {
+    "price": 500,
+    "parameters": [
+      "Fasting Glucose",
+      "1 Hour Glucose",
+      "2 Hour Glucose",
+      "3 Hour Glucose"
+    ],
+    "equipment": [
+      "Syringe (4)",
+      " SST Tubes (4)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Solution"
+    ]
+  },
+  "Glucose Tolerance Test (GTT) - 5 Samples": {
+    "price": 500,
+    "parameters": [
+      "Fasting Glucose",
+      "1 Hour Glucose",
+      "2 Hour Glucose",
+      "3 Hour Glucose",
+      "4 Hour Glucose"
+    ],
+    "equipment": [
+      "Syringe (5)",
+      " SST Tubes (5)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Solution"
+    ]
+  },
+  "Glucose Tolerance Test 100g [GTT]": {
+    "price": 500,
+    "parameters": [
+      "Fasting Glucose",
+      "1 Hour Glucose",
+      "2 Hour Glucose",
+      "3 Hour Glucose"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Solution (100 g)"
+    ]
+  },
+  "Glucose Tolerance Test 50g [GTT]": {
+    "price": 500,
+    "parameters": [
+      "Fasting Glucose",
+      "1 Hour Glucose"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Solution (50 g)"
+    ]
+  },
+  "Glucose Tolerance Test 75g [GTT]": {
+    "price": 500,
+    "parameters": [
+      "Fasting Glucose",
+      "1 Hour Glucose",
+      "2 Hour Glucose"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Solution (75 g)"
+    ]
+  },
+  "GRAM'S STAIN": {
+    "price": 740,
+    "parameters": [
+      "Gram Stain"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Staining Reagents (1 set)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "HAV-IgM ANTIBODY-SERUM": {
+    "price": 1480,
+    "parameters": [
+      "Hepatitis A Virus IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Hb-Haemoglobin": {
+    "price": 500,
+    "parameters": [
+      "Hemoglobin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "TORCH profile": {
+    "price": 740,
+    "parameters": [
+      "Toxoplasma IgG",
+      "Toxoplasma IgM",
+      "Rubella IgG",
+      "Rubella IgM",
+      "CMV IgG",
+      "CMV IgM",
+      "HSV IgG",
+      "HSV IgM"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "High sensitive CRP": {
+    "price": 630,
+    "parameters": [
+      "High Sensitivity CRP"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "ZINC-PLASMA": {
+    "price": 990,
+    "parameters": [
+      "Zinc (Plasma)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Heparin Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Anti-TPO Antibody": {
+    "price": 599,
+    "parameters": [
+      "Anti TPO Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Toxoplasma IgG": {
+    "price": 1480,
+    "parameters": [
+      "Toxoplasma IgG"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Toxoplasma IgM": {
+    "price": 1480,
+    "parameters": [
+      "Toxoplasma IgM"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Treponema Hemagglutination Test (TPHA)": {
+    "price": 740,
+    "parameters": [
+      "Treponema Pallidum Hemagglutination Assay (TPHA)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Anti-Thyroglobulin (ATG)": {
+    "price": 599,
+    "parameters": [
+      "Anti Thyroglobulin Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "ANTI-HERPES SIMPLEX VIRUS 1 IgG": {
+    "price": 649,
+    "parameters": [
+      "Herpes Simplex Virus Type 1 IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Beta-2-Glycoprotein IgG AntibodySerum": {
+    "price": 1480,
+    "parameters": [
+      "Beta-2 Glycoprotein IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Heparin Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "BICARBONATE(HCO3)": {
+    "price": 740,
+    "parameters": [
+      "Bicarbonate (HCO3)"
+    ],
+    "equipment": [
+      "Capillary Tube (1)",
+      " Lancet (1)",
+      " Test Kit (1)"
+    ]
+  },
+  "Typhoid (Rapid)": {
+    "price": 740,
+    "parameters": [
+      "Salmonella Typhi IgM",
+      "Salmonella Typhi IgG"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Pregnancy Test Strip (1)"
+    ]
+  },
+  "UPT - URINE PREGNANCY TEST": {
+    "price": 740,
+    "parameters": [
+      "Urine Pregnancy Test"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Urea - Serum": {
+    "price": 500,
+    "parameters": [
+      "Urea"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "TSH Receptor Antibody (TRAb)": {
+    "price": 1480,
+    "parameters": [
+      "TSH Receptor Antibody (TRAb)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Heparin Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Urinary Sodium (24 Hrs)": {
+    "price": 500,
+    "parameters": [
+      "Urine Sodium (24 Hour)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Plain Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "URINE ALBUMIN (Quantitative)": {
+    "price": 740,
+    "parameters": [
+      "Urine Albumin (Quantitative)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Urine Bence Jones Proteins (Electrophoresis)": {
+    "price": 740,
+    "parameters": [
+      "Bence Jones Protein (Urine)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Urine bilirubin": {
+    "price": 500,
+    "parameters": [
+      "Urine Bilirubin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "URINE CALCIUM - SPOT SAMPLE": {
+    "price": 500,
+    "parameters": [
+      "Urine Calcium (Spot)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Plain Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Urine Complete Analysis": {
+    "price": 1480,
+    "parameters": [
+      "Color",
+      "Appearance",
+      "Specific Gravity",
+      "pH",
+      "Protein",
+      "Glucose",
+      "Ketones",
+      "Bilirubin",
+      "Urobilinogen",
+      "Nitrite",
+      "Leukocytes",
+      "RBC",
+      "WBC",
+      "Epithelial Cells",
+      "Casts",
+      "Crystals",
+      "Bacteria"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Urine Creatinine": {
+    "price": 500,
+    "parameters": [
+      "Urine Creatinine"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Urine creatinine - Spot Sample": {
+    "price": 500,
+    "parameters": [
+      "Urine Creatinine (Spot)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "URINE CYTOLOGY": {
+    "price": 740,
+    "parameters": [
+      "Urine Cytology"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Urine Dipstick": {
+    "price": 740,
+    "parameters": [
+      "Protein",
+      "Glucose",
+      "Ketones",
+      "Bilirubin",
+      "Urobilinogen",
+      "pH",
+      "Specific Gravity"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "URINE FOR ALBUMIN": {
+    "price": 740,
+    "parameters": [
+      "Urine Albumin"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "URINE FOR ALBUMIN & SUGAR": {
+    "price": 740,
+    "parameters": [
+      "Urine Albumin",
+      "Urine Sugar"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "URINE FOR BILE SALT / BILE PIGMENT": {
+    "price": 1480,
+    "parameters": [
+      "Bile Salts",
+      "Bile Pigments"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "URINE FOR MICROSCOPIC EXAMINATION": {
+    "price": 740,
+    "parameters": [
+      "RBC",
+      "WBC",
+      "Epithelial Cells",
+      "Casts",
+      "Crystals",
+      "Bacteria"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "URINE FOR MORPHINE": {
+    "price": 740,
+    "parameters": [
+      "Morphine (Urine)"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "URINE FOR PHASE CONTRAST": {
+    "price": 740,
+    "parameters": [
+      "Phase Contrast Microscopy"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Urine Ketones Bodies": {
+    "price": 740,
+    "parameters": [
+      "Urine Ketone Bodies"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "URINE MAGNESIUM - SPOT SAMPLE": {
+    "price": 740,
+    "parameters": [
+      "Urine Magnesium (Spot)"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Urine Osmolality": {
+    "price": 740,
+    "parameters": [
+      "Urine Osmolality"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Urine protein": {
+    "price": 740,
+    "parameters": [
+      "Urine Protein"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Urine sugar": {
+    "price": 740,
+    "parameters": [
+      "Urine Sugar"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Varicella Zoster Virus (Vzv) Antibody Igg (Chicken Pox /": {
+    "price": 1480,
+    "parameters": [
+      "Varicella Zoster Virus IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Varicella Zoster Virus (Vzv) Antibody Igm (Chicken Pox /": {
+    "price": 1480,
+    "parameters": [
+      "Varicella Zoster Virus IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "VITAMIN E TOCOPHEROL": {
+    "price": 740,
+    "parameters": [
+      "Vitamin E (Tocopherol)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Heparin Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "VLDL": {
+    "price": 740,
+    "parameters": [
+      "VLDL Cholesterol"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "VMA-URINE 24 HRS": {
+    "price": 740,
+    "parameters": [
+      "Vanillylmandelic Acid (24 Hour Urine)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Urine Container (24 Hrs) (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Rapid Plasma Reagin (RPR)": {
+    "price": 740,
+    "parameters": [
+      "Rapid Plasma Reagin (RPR)"
+    ],
+    "equipment": [
+      "Capillary Tube (1)",
+      " Lancet (1)",
+      " Test Kit (1)"
+    ]
+  },
+  "RBC Count": {
+    "price": 740,
+    "parameters": [
+      "RBC Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Red cell distribution width": {
+    "price": 740,
+    "parameters": [
+      "Red Cell Distribution Width (RDW)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Reticulocyte Count": {
+    "price": 740,
+    "parameters": [
+      "Reticulocyte Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Rh typing": {
+    "price": 740,
+    "parameters": [
+      "Rh Type"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Routine Culture and Sensitivity (Pus/Urin/Swab/Stool/any": {
+    "price": 2460,
+    "parameters": [
+      "Culture",
+      "Sensitivity"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Blood Grouping Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Rubella Antibodies IgG": {
+    "price": 1480,
+    "parameters": [
+      "Rubella IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Blood Culture Bottle (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Rubella Antibodies IgM": {
+    "price": 1480,
+    "parameters": [
+      "Rubella IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "RUBELLA-(IgG & IgM)": {
+    "price": 1480,
+    "parameters": [
+      "Rubella IgG Antibody",
+      "Rubella IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Semen Analysis": {
+    "price": 1480,
+    "parameters": [
+      "Volume",
+      "Color",
+      "Viscosity",
+      "pH",
+      "Sperm Count",
+      "Motility",
+      "Morphology"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "SEMEN PROCESSING": {
+    "price": 740,
+    "parameters": [
+      "Semen Processing"
+    ],
+    "equipment": [
+      "Semen Container (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "SERUM IRON": {
+    "price": 740,
+    "parameters": [
+      "Serum Iron"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Serum Transferrin": {
+    "price": 740,
+    "parameters": [
+      "Transferrin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "PT-Prothrombin Time": {
+    "price": 299,
+    "parameters": [
+      "Prothrombin Time (PT)",
+      "INR"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Citrate Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "SLIDE REVIEW (FOR SECOND OPINION)": {
+    "price": 740,
+    "parameters": [
+      "Slide Review"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Smear for cytology/Malignancy": {
+    "price": 740,
+    "parameters": [
+      "Cytology"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Smear for Malarial Parasite": {
+    "price": 740,
+    "parameters": [
+      "Malarial Parasite"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Smear for Microfilaria": {
+    "price": 740,
+    "parameters": [
+      "Microfilaria"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "SODIUM (NA+) - BODY FLUID": {
+    "price": 500,
+    "parameters": [
+      "Sodium (Body Fluid)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Plain Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "SODIUM (Na+) - CSF": {
+    "price": 500,
+    "parameters": [
+      "Sodium (CSF)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " CSF Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "SODIUM (Na+) - SERUM": {
+    "price": 500,
+    "parameters": [
+      "Sodium (Serum)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "SODIUM (Na+) - Urine": {
+    "price": 500,
+    "parameters": [
+      "Sodium (Urine)"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "SODIUM(Na+) & POTTASIUM(K+)-SERUM": {
+    "price": 500,
+    "parameters": [
+      "Sodium (Na+)",
+      "Potassium (K+)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Specific Gravity": {
+    "price": 740,
+    "parameters": [
+      "Specific Gravity"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Sputum AFB": {
+    "price": 740,
+    "parameters": [
+      "Acid Fast Bacilli (AFB)"
+    ],
+    "equipment": [
+      "Sputum Container (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "SPUTUM GRAM'S": {
+    "price": 740,
+    "parameters": [
+      "Gram Stain"
+    ],
+    "equipment": [
+      "Sputum Container (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Stool Complete Analysis": {
+    "price": 1480,
+    "parameters": [
+      "Color",
+      "Consistency",
+      "pH",
+      "Occult Blood",
+      "RBC",
+      "WBC",
+      "Parasites",
+      "Reducing Substances"
+    ],
+    "equipment": [
+      "Stool Container (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Stool Hanging drop": {
+    "price": 740,
+    "parameters": [
+      "Motility (Hanging Drop)"
+    ],
+    "equipment": [
+      "Stool Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Stool Occult Blood": {
+    "price": 740,
+    "parameters": [
+      "Occult Blood"
+    ],
+    "equipment": [
+      "Stool Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Stool Reducing Substance": {
+    "price": 740,
+    "parameters": [
+      "Reducing Substances"
+    ],
+    "equipment": [
+      "Stool Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "T3-TOTAL (SERUM)": {
+    "price": 1230,
+    "parameters": [
+      "T3 (Total)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "T4-TOTAL (SERUM)": {
+    "price": 1230,
+    "parameters": [
+      "T4 (Total)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "TESTOSTERONE-TOTAL (SERUM)": {
+    "price": 740,
+    "parameters": [
+      "Testosterone (Total)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Testosteronie Free": {
+    "price": 740,
+    "parameters": [
+      "Testosterone (Free)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "TESTOSTERONE PANEL (Testo Total Free & SHBG)": {
+    "price": 500,
+    "parameters": [
+      "Testosterone Total",
+      "Testosterone Free",
+      "SHBG"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Thyroglobulin (Tg)-Serum": {
+    "price": 740,
+    "parameters": [
+      "Thyroglobulin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "TIBC-TOTAL IRON BINDING CAPACITY": {
+    "price": 740,
+    "parameters": [
+      "Total Iron Binding Capacity (TIBC)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "TISSUE TRANSGLUTAMINASE (ITG) ANTIBODY  IgA": {
+    "price": 1480,
+    "parameters": [
+      "Tissue Transglutaminase IgA"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "TISSUE TRANSGLUTAMINASE IgG & IgA": {
+    "price": 1480,
+    "parameters": [
+      "Tissue Transglutaminase IgG",
+      "Tissue Transglutaminase IgA"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Tissue Transglutaminase TTG": {
+    "price": 740,
+    "parameters": [
+      "Tissue Transglutaminase (TTG)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "TORCH PANEL IgG SERUM": {
+    "price": 1480,
+    "parameters": [
+      "Toxoplasma IgG",
+      "Rubella IgG",
+      "CMV IgG",
+      "HSV IgG"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "TORCH PANEL IgM SERUM": {
+    "price": 1480,
+    "parameters": [
+      "Toxoplasma IgM",
+      "Rubella IgM",
+      "CMV IgM",
+      "HSV IgM"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "WEIL-FELIX TEST": {
+    "price": 740,
+    "parameters": [
+      "Weil Felix Test"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Widal/Weil-Felix Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "WET MOUNT PREPARATION": {
+    "price": 740,
+    "parameters": [
+      "Wet Mount Microscopy"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "WIDAL TEST (Tube method)": {
+    "price": 740,
+    "parameters": [
+      "Salmonella Typhi O",
+      "Salmonella Typhi H"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Widal Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "WIDAL TEST(Slide method)": {
+    "price": 740,
+    "parameters": [
+      "Salmonella Typhi O",
+      "Salmonella Typhi H"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Post Lunch Glucose": {
+    "price": 500,
+    "parameters": [
+      "Postprandial Blood Sugar (PPBS)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Solution"
+    ]
+  },
+  "PostPrandial Glucose - PPBS": {
+    "price": 500,
+    "parameters": [
+      "Postprandial Blood Sugar (PPBS)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "PPBS with Corresponding Urine Sugar": {
+    "price": 740,
+    "parameters": [
+      "Postprandial Blood Sugar (PPBS)",
+      "Urine Sugar"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Urine Cup (1)"
+    ]
+  },
+  "Pre Dinner Glucose": {
+    "price": 500,
+    "parameters": [
+      "Pre Dinner Glucose"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Pre Lunch Glucose": {
+    "price": 500,
+    "parameters": [
+      "Pre Lunch Glucose"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "CA 125": {
+    "price": 1640,
+    "parameters": [
+      "CA 125"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Automated culture and sensitivity by VITEK": {
+    "price": 2460,
+    "parameters": [
+      "Culture",
+      "Sensitivity"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "PROTEIN CSF": {
+    "price": 740,
+    "parameters": [
+      "Protein (CSF)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Protein - Serum": {
+    "price": 740,
+    "parameters": [
+      "Total Protein (Serum)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Blood Culture Bottle (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Protein A - Pleural fluid": {
+    "price": 740,
+    "parameters": [
+      "Protein (Pleural Fluid)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " CSF Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Protein C Antigen": {
+    "price": 740,
+    "parameters": [
+      "Protein C Antigen"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Protein Creatinine Ratio - Random Urine": {
+    "price": 500,
+    "parameters": [
+      "Protein/Creatinine Ratio (Urine)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Protein Electrophoresis": {
+    "price": 740,
+    "parameters": [
+      "Protein Electrophoresis"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "PROTEIN S ANTIGEN": {
+    "price": 740,
+    "parameters": [
+      "Protein S Antigen"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Urine Cup (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "PROTEIN/CREATININE RATIO - 24 HRS URINE": {
+    "price": 500,
+    "parameters": [
+      "Protein/Creatinine Ratio (24 Hour Urine)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Urine Cup (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "DHEA-S (Dehydroepiandrosterone Sulfate)": {
+    "price": 740,
+    "parameters": [
+      "DHEA-S"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "PTH PARATHYROID HORMONE": {
+    "price": 740,
+    "parameters": [
+      "Parathyroid Hormone (PTH)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "PUS AFB": {
+    "price": 740,
+    "parameters": [
+      "Acid Fast Bacilli (AFB)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "QUADRIPLE MARKER": {
+    "price": 1640,
+    "parameters": [
+      "AFP",
+      "hCG",
+      "Unconjugated Estriol (uE3)",
+      "Inhibin A"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "RA FACTOR": {
+    "price": 740,
+    "parameters": [
+      "Rheumatoid Factor (RA Factor)"
+    ],
+    "equipment": [
+      "Capillary Tube (1)",
+      " Lancet (1)",
+      " Test Kit (1)"
+    ]
+  },
+  "Random Glucose": {
+    "price": 500,
+    "parameters": [
+      "Random Blood Sugar (RBS)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "RFT": {
+    "price": 740,
+    "parameters": [
+      "Urea",
+      "Creatinine",
+      "Uric Acid",
+      "Sodium",
+      "Potassium",
+      "Chloride"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HB TC DC": {
+    "price": 500,
+    "parameters": [
+      "Hemoglobin",
+      "Total Count",
+      "Differential Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HB TC DC & ESR": {
+    "price": 500,
+    "parameters": [
+      "Hemoglobin",
+      "Total Count",
+      "Differential Count",
+      "ESR"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HB TC DC & PLATELET COUNT": {
+    "price": 500,
+    "parameters": [
+      "Hemoglobin",
+      "Total Count",
+      "Differential Count",
+      "Platelet Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HB TC DC ESR & PLATELET COUNT": {
+    "price": 500,
+    "parameters": [
+      "Hemoglobin",
+      "Total Count",
+      "Differential Count",
+      "ESR",
+      "Platelet Count"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HBV DNA - Qualitative": {
+    "price": 500,
+    "parameters": [
+      "HBV DNA (Qualitative)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HBV DNA - Quantitative": {
+    "price": 500,
+    "parameters": [
+      "HBV DNA (Quantitative)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HCV-Rapid": {
+    "price": 740,
+    "parameters": [
+      "Hepatitis C Virus Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HDL Cholesterol": {
+    "price": 500,
+    "parameters": [
+      "HDL Cholesterol"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "lelicobacter Pylori IgA Antibodies": {
+    "price": 740,
+    "parameters": [
+      "Helicobacter Pylori IgA Antibody"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Helicobacter Pylori IgG Antibodies": {
+    "price": 1480,
+    "parameters": [
+      "Helicobacter Pylori IgG Antibody"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Helicobacter Pylori IgM Antibodies": {
+    "price": 1480,
+    "parameters": [
+      "Helicobacter Pylori IgM Antibody"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Hematocrit (Packed cell volume)": {
+    "price": 740,
+    "parameters": [
+      "Hematocrit"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Hemoglobin (Hb) Electrophoresis": {
+    "price": 500,
+    "parameters": [
+      "Hemoglobin Electrophoresis"
+    ],
+    "equipment": [
+      "Capillary Tube (1)",
+      " Lancet (1)",
+      " Test Kit (1)"
+    ]
+  },
+  "Hepatitis A Virus (HAV) Antibody IgG": {
+    "price": 1480,
+    "parameters": [
+      "Hepatitis A Virus IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Hepatitis B Core Antibody Total (HBcAb Total)": {
+    "price": 500,
+    "parameters": [
+      "Hepatitis B Core Antibody Total"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Hepatitis B Profile": {
+    "price": 740,
+    "parameters": [
+      "HBsAg",
+      "HBeAg",
+      "Anti HBe",
+      "Anti HBs",
+      "HBcAb"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Hepatitis B Surface Antigen (Rapid)": {
+    "price": 740,
+    "parameters": [
+      "Hepatitis B Surface Antigen"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HEPATITIS B SURFACE ANTIGEN(CMIA)": {
+    "price": 740,
+    "parameters": [
+      "Hepatitis B Surface Antigen"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Hepatitis B Virus - HBV Anti HbeAg Envelope Antibody": {
+    "price": 500,
+    "parameters": [
+      "Hepatitis B e Antibody (Anti HBe)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Hepatitis B Virus - HBV HbeAg Envelope Antigen": {
+    "price": 500,
+    "parameters": [
+      "Hepatitis B e Antigen (HBeAg)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "BRUCELLA-IgG IgM": {
+    "price": 1480,
+    "parameters": [
+      "Brucella IgG Antibody",
+      "Brucella IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Hepatitis D Virus - IgM /HDV - IgM": {
+    "price": 1480,
+    "parameters": [
+      "Hepatitis D Virus IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Hepatitis E Virus (HEV) Antibody IgG": {
+    "price": 1480,
+    "parameters": [
+      "Hepatitis E Virus IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Hepatitis E Virus (HEV) Antibody IgM": {
+    "price": 1480,
+    "parameters": [
+      "Hepatitis E Virus IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HEPATITIS E VIRUS IgM / IgG": {
+    "price": 1480,
+    "parameters": [
+      "Hepatitis E Virus IgM Antibody",
+      "Hepatitis E Virus IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Herpes Simplex Virus (Hsv)1 + 2 Igm Serum": {
+    "price": 1480,
+    "parameters": [
+      "Herpes Simplex Virus 1 IgM",
+      "Herpes Simplex Virus 2 IgM"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Histopathology - Large": {
+    "price": 740,
+    "parameters": [
+      "Histopathology"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Histopathology (Extra large)**": {
+    "price": 740,
+    "parameters": [
+      "Histopathology"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Histopathology (Specimen- Medium)*": {
+    "price": 740,
+    "parameters": [
+      "Histopathology"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Histopathology (Specimen -small)*": {
+    "price": 740,
+    "parameters": [
+      "Histopathology"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "IIV-Rapid": {
+    "price": 740,
+    "parameters": [
+      "HIV Antibody"
+    ],
+    "equipment": [
+      "Capillary Tube (1)",
+      " Lancet (1)",
+      " Test Kit (1)"
+    ]
+  },
+  "HIV-WESTERN BLOT": {
+    "price": 740,
+    "parameters": [
+      "HIV Western Blot"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HIV CMIA": {
+    "price": 740,
+    "parameters": [
+      "HIV Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HIV-I & II (WESTERN BLOT)": {
+    "price": 740,
+    "parameters": [
+      "HIV Western Blot"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HLA B27": {
+    "price": 740,
+    "parameters": [
+      "HLA B27"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HOMOCYSTINE": {
+    "price": 740,
+    "parameters": [
+      "Homocysteine"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "HSVI ANTIBODY IGG": {
+    "price": 1480,
+    "parameters": [
+      "Herpes Simplex Virus IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Immunobglobulin A (IgA) (Total)": {
+    "price": 1480,
+    "parameters": [
+      "Immunoglobulin A (IgA)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "IMMUNOGLOBULIN (IgA IgG IgM)": {
+    "price": 1480,
+    "parameters": [
+      "Immunoglobulin A (IgA)",
+      "Immunoglobulin G (IgG)",
+      "Immunoglobulin M (IgM)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Immunoglobulin E (Total IgE)": {
+    "price": 1480,
+    "parameters": [
+      "Immunoglobulin E (IgE)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Indirect Bilirubin": {
+    "price": 500,
+    "parameters": [
+      "Indirect Bilirubin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Indirect Coombs test": {
+    "price": 740,
+    "parameters": [
+      "Indirect Coombs Test"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Infectious Mononucleosis (IM) - Monospet Test": {
+    "price": 740,
+    "parameters": [
+      "Monospot Test"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "INHALATION/RESPIRATORY ALLERGY TEST": {
+    "price": 740,
+    "parameters": [
+      "Dust",
+      "Mite",
+      "Pollen",
+      "Animal Dander"
+    ],
+    "equipment": [
+      "Allergy Test Kit (1)"
+    ]
+  },
+  "Blood Urea Nitrogen (BUN)": {
+    "price": 500,
+    "parameters": [
+      "Blood Urea Nitrogen (BUN)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "INSULIN - POSTPRANDIAL": {
+    "price": 1230,
+    "parameters": [
+      "Insulin (Postprandial)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "INSULIN - RANDOM": {
+    "price": 1230,
+    "parameters": [
+      "Insulin (Random)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Ionised Calcium": {
+    "price": 500,
+    "parameters": [
+      "Ionized Calcium"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Heparin Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "IRON + TIBC": {
+    "price": 740,
+    "parameters": [
+      "Serum Iron",
+      "Total Iron Binding Capacity (TIBC)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "IRON STUDY WITH FERRITIN": {
+    "price": 740,
+    "parameters": [
+      "Serum Iron",
+      "TIBC",
+      "Ferritin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "IRON STUDY WITHOUT FERRITIN": {
+    "price": 740,
+    "parameters": [
+      "Serum Iron",
+      "TIBC"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Ketone bodies D-3-hydroxybutyrate(D3BH)": {
+    "price": 740,
+    "parameters": [
+      "Ketone Bodies (D3HB)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "KI67 IHC": {
+    "price": 740,
+    "parameters": [
+      "Ki-67"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "KOH for Fungus": {
+    "price": 740,
+    "parameters": [
+      "KOH Preparation"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Citrate Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "LACTATE": {
+    "price": 740,
+    "parameters": [
+      "Lactate"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "LDH (Lactate Dehydrogenase)": {
+    "price": 740,
+    "parameters": [
+      "Lactate Dehydrogenase (LDH)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "LDL-CHOLESTEROL": {
+    "price": 500,
+    "parameters": [
+      "LDL Cholesterol"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "LDL.CHOL/HDL.CHOL RATIO": {
+    "price": 740,
+    "parameters": [
+      "LDL/HDL Ratio"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "LE Cell detection": {
+    "price": 740,
+    "parameters": [
+      "LE Cells"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Lead (Blood)": {
+    "price": 740,
+    "parameters": [
+      "Lead (Blood)"
+    ],
+    "equipment": [
+      "Slide (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Legionella Antigen-urine(ICT)": {
+    "price": 740,
+    "parameters": [
+      "Legionella Antigen"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Leptospira Agglutination Test (MAT)": {
+    "price": 740,
+    "parameters": [
+      "Leptospira Agglutination Test"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "LEPTOSPIRA IGM + IGG": {
+    "price": 1480,
+    "parameters": [
+      "Leptospira IgM Antibody",
+      "Leptospira IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Leptospiral Antibodies (IgG)": {
+    "price": 1480,
+    "parameters": [
+      "Leptospira IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Leptospiral Antibodies (IgM)": {
+    "price": 1480,
+    "parameters": [
+      "Leptospira IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "APTT - PARTIAL THROMBOPLASTIN TIME": {
+    "price": 740,
+    "parameters": [
+      "Activated Partial Thromboplastin Time (APTT)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "LIPASE - Serum": {
+    "price": 740,
+    "parameters": [
+      "Lipase"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Citrate Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Lipoprotein (a)": {
+    "price": 740,
+    "parameters": [
+      "Lipoprotein (a)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Lithium": {
+    "price": 740,
+    "parameters": [
+      "Lithium"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Liver Kidney Microsomes antibodies": {
+    "price": 740,
+    "parameters": [
+      "Liver Kidney Microsomal Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Magnesium (MG) Serum": {
+    "price": 740,
+    "parameters": [
+      "Magnesium (Serum)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "MALARIAL PARASITE (QBC)": {
+    "price": 740,
+    "parameters": [
+      "Malarial Parasite"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "MALARIAL PARASITE Rapid": {
+    "price": 740,
+    "parameters": [
+      "Malarial Parasite"
+    ],
+    "equipment": [
+      "Capillary Tube (1)",
+      " Lancet (1)",
+      " Test Kit (1)"
+    ]
+  },
+  "MANTOUX TEST": {
+    "price": 740,
+    "parameters": [
+      "Mantoux Test"
+    ],
+    "equipment": [
+      "Capillary Tube (1)",
+      " Lancet (1)",
+      " Test Kit (1)"
+    ]
+  },
+  "MARIJUANA (THC)": {
+    "price": 1480,
+    "parameters": [
+      "Marijuana (THC)"
+    ],
+    "equipment": [
+      "Tuberculin Syringe (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Mean corpuscular hemoglobin": {
+    "price": 740,
+    "parameters": [
+      "Mean Corpuscular Hemoglobin (MCH)"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Mean corpuscular hemoglobin concentration": {
+    "price": 740,
+    "parameters": [
+      "Mean Corpuscular Hemoglobin Concentration (MCHC)"
+    ],
+    "equipment": [
+      "EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Mean corpuscular volume": {
+    "price": 740,
+    "parameters": [
+      "Mean Corpuscular Volume (MCV)"
+    ],
+    "equipment": [
+      "EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Measles Antibodies (IgG)": {
+    "price": 1480,
+    "parameters": [
+      "Measles IgG Antibody"
+    ],
+    "equipment": [
+      "EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Measles Antibodies (IgM)": {
+    "price": 1480,
+    "parameters": [
+      "Measles IgM Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Metanephrine": {
+    "price": 740,
+    "parameters": [
+      "Metanephrine"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "METANEPHRINES 24 HRS URINE": {
+    "price": 740,
+    "parameters": [
+      "Metanephrine (24 Hour Urine)"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Methaemoglobin": {
+    "price": 500,
+    "parameters": [
+      "Methemoglobin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "MICRCALBUMIN - URINE": {
+    "price": 740,
+    "parameters": [
+      "Urine Microalbumin"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "MICROALBUMIN/CREATININE RATIO (24hrs Urine)": {
+    "price": 500,
+    "parameters": [
+      "Microalbumin/Creatinine Ratio (24 Hour Urine)"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "MICROALBUMIN/CREATININE RATIO (Random urine)": {
+    "price": 500,
+    "parameters": [
+      "Microalbumin/Creatinine Ratio (Random Urine)"
+    ],
+    "equipment": [
+      "Urine Cup (1)",
+      " Urine Tube (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Mumps IgG(Serum)": {
+    "price": 1480,
+    "parameters": [
+      "Mumps IgG Antibody"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Thyroid Profile": {
+    "price": 740,
+    "parameters": [
+      "T3",
+      "T4",
+      "TSH"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Blood Sugar": {
+    "price": 740,
+    "parameters": [
+      "Blood Glucose"
+    ],
+    "equipment": [
+      "Glucose Test Strip (1)",
+      " Lancet (1)",
+      " Alcohol Swab (1)"
+    ]
+  },
+  "Iron Studies": {
+    "price": 740,
+    "parameters": [
+      "Serum Iron",
+      "TIBC",
+      "Ferritin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Hormone Profile": {
+    "price": 740,
+    "parameters": [
+      "FSH",
+      "LH",
+      "Prolactin",
+      "Testosterone",
+      "TSH"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Electrolytes Panel / Serum Calcium Test": {
+    "price": 500,
+    "parameters": [
+      "Sodium",
+      "Potassium",
+      "Chloride",
+      "Calcium"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Coagulation Profile": {
+    "price": 740,
+    "parameters": [
+      "Prothrombin Time (PT)",
+      "Activated Partial Thromboplastin Time (APTT)",
+      "INR"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " Citrate Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Homocysteine Test": {
+    "price": 740,
+    "parameters": [
+      "Homocysteine"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)"
+    ]
+  },
+  "Basic Health Checkup": {
+    "price": 999,
+    "parameters": [
+      "Hemoglobin",
+      "RBC",
+      "WBC",
+      "Platelet Count",
+      "Blood Glucose",
+      "Urea",
+      "Creatinine",
+      "Total Cholesterol"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Test Strip (1)",
+      " Lancet (1)"
+    ]
+  },
+  "Advanced Health Checkup": {
+    "price": 1499,
+    "parameters": [
+      "Hemoglobin",
+      "RBC",
+      "WBC",
+      "Platelet Count",
+      "Blood Glucose",
+      "HbA1c",
+      "Urea",
+      "Creatinine",
+      "Uric Acid",
+      "Total Cholesterol",
+      "Triglycerides",
+      "HDL",
+      "LDL",
+      "SGOT",
+      "SGPT",
+      "ALP",
+      "Bilirubin",
+      "T3",
+      "T4",
+      "TSH"
+    ],
+    "equipment": [
+      "Syringe (2)",
+      " SST Tube (2)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Test Strip (1)",
+      " Lancet (1)",
+      " Urine Cup (1)"
+    ]
+  },
+  "Women Health Checkup": {
+    "price": 1999,
+    "parameters": [
+      "Hemoglobin",
+      "RBC",
+      "WBC",
+      "Platelet Count",
+      "Blood Glucose",
+      "HbA1c",
+      "TSH",
+      "FSH",
+      "LH",
+      "Prolactin",
+      "Estrogen (E2)",
+      "Vitamin D",
+      "Calcium",
+      "Iron Studies"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Urine Cup (1)",
+      " Glucose Test Strip (1)",
+      " Lancet (1)"
+    ]
+  },
+  "Men Health Checkup": {
+    "price": 1999,
+    "parameters": [
+      "Hemoglobin",
+      "RBC",
+      "WBC",
+      "Platelet Count",
+      "Blood Glucose",
+      "HbA1c",
+      "TSH",
+      "Testosterone",
+      "PSA",
+      "Vitamin D",
+      "Lipid Profile",
+      "Liver Function Test",
+      "Kidney Function Test"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Urine Cup (1)",
+      " Glucose Test Strip (1)",
+      " Lancet (1)"
+    ]
+  },
+  "Senior Citizen Health Checkup": {
+    "price": 2499,
+    "parameters": [
+      "Hemoglobin",
+      "RBC",
+      "WBC",
+      "Platelet Count",
+      "Blood Glucose",
+      "HbA1c",
+      "Urea",
+      "Creatinine",
+      "Uric Acid",
+      "Lipid Profile",
+      "Liver Function Test",
+      "Thyroid Profile",
+      "Calcium",
+      "Vitamin D",
+      "Vitamin B12"
+    ],
+    "equipment": [
+      "Syringe (2)",
+      " SST Tube (2)",
+      " EDTA Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Urine Cup (1)",
+      " Glucose Test Strip (1)",
+      " Lancet (1)"
+    ]
+  },
+  "Diabetes Health Checkup": {
+    "price": 399,
+    "parameters": [
+      "Fasting Blood Sugar",
+      "Postprandial Blood Sugar",
+      "HbA1c",
+      "Urine Sugar",
+      "Urine Microalbumin",
+      "Creatinine"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " Glucose Test Strip (1)",
+      " Lancet (1)",
+      " Urine Cup (1)"
+    ]
+  },
+  "Heart Health Checkup": {
+    "price": 999,
+    "parameters": [
+      "Fasting Blood Sugar",
+      "Postprandial Blood Sugar",
+      "HbA1c",
+      "Urine Sugar",
+      "Urine Microalbumin",
+      "Creatinine"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " EDTA Tube (1)",
+      " Urine Cup (1)"
+    ]
+  },
+  "Liver Health Checkup": {
+    "price": 499,
+    "parameters": [
+      "Total Bilirubin",
+      "Direct Bilirubin",
+      "Indirect Bilirubin",
+      "SGOT",
+      "SGPT",
+      "ALP",
+      "Total Protein",
+      "Albumin",
+      "Globulin"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " EDTA Tube (1)",
+      " Urine Cup (1)"
+    ]
+  },
+  "Kidney Health Checkup": {
+    "price": 499,
+    "parameters": [
+      "Urea",
+      "Creatinine",
+      "Uric Acid",
+      "Sodium",
+      "Potassium",
+      "Chloride",
+      "Urine Routine"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " EDTA Tube (1)",
+      " Urine Cup (1)"
+    ]
+  },
+  "Thyroid Health Checkup": {
+    "price": 299,
+    "parameters": [
+      "T3",
+      "T4",
+      "TSH"
+    ],
+    "equipment": [
+      "Syringe (1)",
+      " SST Tube (1)",
+      " Alcohol Swab (1)",
+      " Needle (1)",
+      " EDTA Tube (1)"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+Flask
+Flask-Cors
+psycopg2-binary
+bcrypt
+razorpay
+firebase-admin
+gunicorn

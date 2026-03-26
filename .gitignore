@@ -1,0 +1,23 @@
+venv/
+**pycache**/
+*.pyc
+
+# Databases
+
+*.db
+
+# Secrets
+
+firebase-key.json
+.env
+
+# Generated files
+
+static/reports/
+*.pdf
+
+# IDE / system files
+
+.vscode/
+.idea/
+.DS_Store

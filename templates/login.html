@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rapid Labs Admin Login</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<!-- Font Awesome for eye icon -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body class="login-body">
+
+<div class="login-container">
+
+<h2>Rapid Labs</h2>
+<p style="margin-bottom:15px;font-size:14px;">
+Diagnostics Management System
+</p>
+
+<form id="loginForm">
+
+<!-- EMAIL -->
+<input type="email" id="email" placeholder="Email" required>
+
+<!-- PASSWORD WITH EYE ICON -->
+<div class="password-field">
+
+<input type="password" id="password" placeholder="Password" required>
+
+<span id="togglePassword" class="toggle-password">
+<i class="fa-solid fa-eye"></i>
+</span>
+
+</div>
+
+<!-- FORGOT PASSWORD -->
+<div style="text-align:right;margin-top:5px;margin-bottom:10px;">
+
+<a href="#"
+style="
+color:#ddd;
+font-size:13px;
+text-decoration:none;
+">
+Forgot password?
+</a>
+
+</div>
+
+<button type="submit">Login</button>
+
+</form>
+
+<p id="message"></p>
+
+</div>
+
+
+<script>
+
+/* =========================
+LOGIN API
+========================= */
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+fetch("/api/login", {
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body: JSON.stringify({
+email: document.getElementById("email").value,
+password: document.getElementById("password").value
+})
+})
+.then(res=>res.json())
+.then(data=>{
+
+if(data.success){
+
+/* store user */
+localStorage.setItem("user", JSON.stringify(data.user));
+
+/* redirect based on role */
+
+if(data.user.role === "ADMIN"){
+window.location.href="/dashboard";
+}
+
+else if(data.user.role === "STAFF"){
+window.location.href="/staff-dashboard";
+}
+
+}else{
+document.getElementById("message").innerText=data.message
+}
+
+})
+
+})
+
+
+/* =========================
+PASSWORD SHOW / HIDE
+========================= */
+
+const togglePassword = document.getElementById("togglePassword");
+const password = document.getElementById("password");
+
+togglePassword.addEventListener("click", function(){
+
+const icon = this.querySelector("i");
+
+if(password.type === "password"){
+password.type = "text";
+icon.classList.remove("fa-eye");
+icon.classList.add("fa-eye-slash");
+}else{
+password.type = "password";
+icon.classList.remove("fa-eye-slash");
+icon.classList.add("fa-eye");
+}
+
+});
+
+</script>
+
+</body>
+</html>

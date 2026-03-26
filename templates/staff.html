@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Rapid Labs - Staff</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+margin:0;
+}
+
+.main{
+margin-left:220px;
+padding:30px;
+}
+
+h1{
+margin-bottom:25px;
+}
+
+.add-btn{
+background:#0f3f7a;
+color:white;
+border:none;
+padding:10px 16px;
+border-radius:6px;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+.add-btn:hover{
+background:#0c2f5c;
+}
+
+.table-container{
+background:white;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+overflow:hidden;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+text-align:left;
+border-bottom:1px solid #ddd;
+}
+
+th{
+background:#0f3f7a;
+color:rgb(0, 0, 0);
+}
+
+tr:hover{
+background:#f9fbff;
+}
+
+select{
+padding:5px;
+border-radius:4px;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+}
+
+.modal-content{
+background:white;
+width:400px;
+margin:100px auto;
+padding:20px;
+border-radius:8px;
+}
+
+input{
+width:100%;
+padding:8px;
+margin-bottom:10px;
+}
+
+.save-btn{
+background:#0f3f7a;
+color:white;
+border:none;
+padding:8px 12px;
+cursor:pointer;
+}
+
+/* ACTION BUTTON */
+
+.action-btn{
+background:none;
+border:none;
+font-size:20px;
+cursor:pointer;
+padding:5px 10px;
+border-radius:6px;
+}
+
+.action-btn:hover{
+background:#f2f4f8;
+}
+
+
+/* ACTION POPUP */
+
+.action-menu{
+
+display:none;
+
+position:absolute;
+
+background:white;
+
+border-radius:8px;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+
+padding:5px 0;
+
+width:160px;
+
+z-index:100;
+
+}
+
+.action-menu div{
+
+padding:10px 14px;
+
+cursor:pointer;
+
+font-size:14px;
+
+}
+
+.action-menu div:hover{
+
+background:#f4f6fb;
+
+}
+
+.action-menu .delete:hover{
+
+background:#ffe5e5;
+
+color:#c40000;
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Rapid Labs</h2>
+
+<ul>
+<li onclick="openDashboard()">Dashboard</li>
+<li onclick="openLeads()">Leads</li>
+<li>Sample Collection</li>
+<li onclick="openReports()">Reports</li>
+<li onclick="openPayments()">Payments</li>
+<li style="background:#0f3f7a;">Staff</li>
+</ul>
+
+</div>
+
+<div class="main">
+
+<h1>Staff Management</h1>
+
+<button class="add-btn" onclick="openModal()">+ Add Staff</button>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Mobile</th>
+<th>Email</th>
+<th>Role</th>
+<th>Salary</th>
+<th>Incentive</th>
+<th>Status</th>
+<th>Join Date</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody id="staffTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- ADD STAFF MODAL -->
+
+<div class="modal" id="staffModal">
+
+<div class="modal-content" style="width:500px;">
+
+<h3>Add Staff</h3>
+
+<input id="name" placeholder="Name">
+
+<input id="mobile" placeholder="Mobile">
+
+<input id="email" placeholder="Email">
+
+<input id="role" placeholder="Role">
+
+<input id="salary" placeholder="Salary">
+
+<div style="display:flex;gap:10px;">
+<input id="incentive" placeholder="Incentive">
+<button onclick="calculateIncentive()">Calculate</button>
+</div>
+
+<input id="joinDate" type="date">
+
+<hr>
+
+<h4>Login Credentials</h4>
+
+<input id="loginEmail" placeholder="Login Email">
+
+<input id="loginPassword" type="password" placeholder="Password">
+
+<button class="save-btn" onclick="addStaff()">Save</button>
+
+</div>
+</div>
+
+<!-- EDIT STAFF MODAL -->
+
+<div class="modal" id="editStaffModal">
+
+<div class="modal-content" style="width:500px;">
+
+<h3>Edit Staff</h3>
+
+<input type="hidden" id="edit_id">
+
+<input id="edit_name" placeholder="Name">
+
+<input id="edit_mobile" placeholder="Mobile">
+
+<input id="edit_email" placeholder="Email">
+
+<input id="edit_role" placeholder="Role">
+
+<input id="edit_salary" placeholder="Salary">
+
+<div style="display:flex;gap:10px;">
+<input id="edit_incentive" placeholder="Incentive">
+<button onclick="calculateEditIncentive()">Calculate</button>
+</div>
+
+<input id="edit_joinDate" type="date">
+
+<hr>
+
+<h4>Login Credentials</h4>
+
+<input id="edit_loginEmail" placeholder="Login Email">
+
+<input id="edit_loginPassword" type="password" placeholder="Password">
+
+<button class="save-btn" onclick="updateStaff()">Update</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* NAVIGATION */
+
+function openDashboard(){
+window.location.href="/dashboard"
+}
+
+function openLeads(){
+window.location.href="/leads"
+}
+
+function openReports(){
+window.location.href="/reports"
+}
+
+function openPayments(){
+window.location.href="/payments"
+}
+
+/* LOAD STAFF */
+
+async function loadStaff(){
+
+const res = await fetch("/api/staff")
+
+const data = await res.json()
+
+const table = document.getElementById("staffTable")
+
+table.innerHTML=""
+
+data.forEach(s=>{
+
+const row=document.createElement("tr")
+
+row.innerHTML=`
+
+<td>${s.id}</td>
+<td>${s.name}</td>
+<td>${s.mobile}</td>
+<td>${s.email}</td>
+<td>${s.role}</td>
+<td>₹ ${s.salary}</td>
+<td>₹ ${s.incentive}</td>
+
+<td>
+<select onchange="updateStatus(${s.id},this.value)">
+<option value="Active" ${s.status=="Active"?"selected":""}>Active</option>
+<option value="Inactive" ${s.status=="Inactive"?"selected":""}>Inactive</option>
+</select>
+</td>
+
+<td>${s.join_date}</td>
+
+<td>
+
+<button class="action-btn" onclick="toggleMenu(event, ${s.id})">⋮</button>
+
+<div id="menu-${s.id}" class="action-menu">
+
+<div onclick="editStaff(${s.id})">✏ Edit</div>
+
+<div onclick="viewCredentials(${s.id})">🔑 View Credentials</div>
+
+<div onclick="deleteStaff(${s.id})" class="delete">🗑 Delete</div>
+
+</div>
+
+</td>
+
+`
+
+table.appendChild(row)
+
+})
+
+}
+
+/* ADD STAFF */
+
+async function addStaff(){
+
+const name=document.getElementById("name").value
+const mobile=document.getElementById("mobile").value
+const email=document.getElementById("email").value
+const role=document.getElementById("role").value
+const salary=document.getElementById("salary").value
+const incentive=document.getElementById("incentive").value
+const joinDate=document.getElementById("joinDate").value
+
+const loginEmail=document.getElementById("loginEmail").value
+const loginPassword=document.getElementById("loginPassword").value
+
+await fetch("/api/add-staff",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+name:name,
+mobile:mobile,
+email:email,
+role:role,
+salary:salary,
+incentive:incentive,
+join_date:joinDate,
+login_email:loginEmail,
+login_password:loginPassword
+})
+
+})
+
+document.getElementById("staffModal").style.display="none"
+
+loadStaff()
+
+}
+
+
+/* UPDATE STATUS */
+
+async function updateStatus(id,status){
+
+await fetch("/api/update-staff-status",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+staff_id:id,
+status:status
+})
+
+})
+
+}
+
+
+/* MODAL */
+
+function openModal(){
+document.getElementById("staffModal").style.display="block"
+}
+
+loadStaff()
+
+
+function calculateIncentive(){
+
+const salary = document.getElementById("salary").value
+
+if(!salary){
+alert("Enter salary first")
+return
+}
+
+const incentive = salary * 0.10
+
+document.getElementById("incentive").value = incentive
+
+}
+
+async function editStaff(id){
+
+const res = await fetch("/api/staff/"+id)
+
+const staff = await res.json()
+
+document.getElementById("edit_id").value = staff.id
+document.getElementById("edit_name").value = staff.name
+document.getElementById("edit_mobile").value = staff.mobile
+document.getElementById("edit_email").value = staff.email
+document.getElementById("edit_role").value = staff.role
+document.getElementById("edit_salary").value = staff.salary
+document.getElementById("edit_incentive").value = staff.incentive
+document.getElementById("edit_joinDate").value = staff.join_date
+
+document.getElementById("edit_loginEmail").value = staff.login_email || ""
+document.getElementById("edit_loginPassword").value = staff.login_password || ""
+
+document.getElementById("editStaffModal").style.display="block"
+
+}
+
+async function updateStaff(){
+
+const id=document.getElementById("edit_id").value
+const name=document.getElementById("edit_name").value
+const mobile=document.getElementById("edit_mobile").value
+const email=document.getElementById("edit_email").value
+const role=document.getElementById("edit_role").value
+const salary=document.getElementById("edit_salary").value
+const incentive=document.getElementById("edit_incentive").value
+const joinDate=document.getElementById("edit_joinDate").value
+const loginEmail=document.getElementById("edit_loginEmail").value
+const loginPassword=document.getElementById("edit_loginPassword").value
+
+await fetch("/api/update-staff",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+id:id,
+name:name,
+mobile:mobile,
+email:email,
+role:role,
+salary:salary,
+incentive:incentive,
+join_date:joinDate,
+login_email:loginEmail,
+login_password:loginPassword
+})
+
+})
+
+document.getElementById("editStaffModal").style.display="none"
+
+loadStaff()
+
+}
+
+async function deleteStaff(id){
+
+if(!confirm("Delete this staff?")) return
+
+await fetch("/api/delete-staff",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+staff_id:id
+})
+})
+
+loadStaff()
+
+}
+
+async function viewCredentials(id){
+
+const res = await fetch("/api/staff-credentials/"+id)
+const data = await res.json()
+
+alert(
+"Login Email: " + data.email +
+"\nPassword: " + data.password
+)
+
+}
+
+/* TOGGLE ACTION MENU */
+
+function toggleMenu(event,id){
+
+event.stopPropagation()
+
+// close all menus first
+document.querySelectorAll(".action-menu").forEach(m=>{
+m.style.display="none"
+})
+
+const menu=document.getElementById("menu-"+id)
+
+menu.style.display="block"
+
+const rect=event.target.getBoundingClientRect()
+
+menu.style.top=(rect.bottom+window.scrollY)+"px"
+menu.style.left=(rect.left)+"px"
+
+}
+
+
+/* CLOSE MENU WHEN CLICK OUTSIDE */
+
+document.addEventListener("click",function(){
+
+document.querySelectorAll(".action-menu").forEach(m=>{
+m.style.display="none"
+})
+
+})
+</script>
+
+</body>
+</html>

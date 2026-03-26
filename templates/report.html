@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Rapid Labs -Report</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6fb;
+margin:0;
+padding:40px;
+}
+
+.report-box{
+max-width:900px;
+margin:auto;
+background:white;
+padding:35px;
+border-radius:6px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+
+.header-grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:10px;
+font-size:13px;
+margin-bottom:20px;
+}
+
+.header-grid input{
+border:none;
+border-bottom:1px solid #ccc;
+width:100%;
+padding:4px;
+}
+
+/* TITLE */
+
+.title{
+text-align:center;
+font-size:20px;
+font-weight:bold;
+border:1px solid #000;
+padding:6px;
+margin:15px 0 20px;
+}
+
+/* SEARCH */
+
+.search-box{
+margin-bottom:20px;
+}
+
+.search-box input{
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:4px;
+}
+
+/* SAMPLE INFO */
+
+.sample{
+font-size:13px;
+margin-bottom:15px;
+}
+
+/* TABLE */
+
+.test-table{
+width:100%;
+border-collapse:collapse;
+font-size:13px;
+}
+
+.test-table th,
+.test-table td{
+border:1px solid #ccc;
+padding:8px;
+}
+
+.test-table th{
+background:#f2f2f2;
+font-weight:bold;
+text-align:left;
+}
+
+.test-table input{
+width:100%;
+border:none;
+outline:none;
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:60px;
+display:flex;
+justify-content:space-between;
+font-size:13px;
+}
+
+.sign{
+text-align:center;
+}
+
+.print-btn{
+margin-top:30px;
+background:#0f3f7a;
+color:white;
+border:none;
+padding:12px 24px;
+cursor:pointer;
+border-radius:4px;
+}
+
+.dropdown{
+max-height:150px;
+overflow-y:auto;
+background:white;
+position:absolute;
+width:250px;
+}
+
+.dropdown div{
+padding:8px;
+cursor:pointer;
+}
+
+.dropdown div:hover{
+background:#f2f2f2;
+}
+
+  .test-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .test-table th, .test-table td { border: 1px solid #ccc; padding: 8px; }
+  input { width: 100px; }
+  button { margin-top: 10px; }
+
+  .add-test-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #4CAF50; /* green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .add-test-btn:hover {
+    background-color: #45a049;
+  }
+
+  .footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.sign {
+  text-align: center;
+  width: 45%;
+}
+
+.sign img {
+  max-width: 200px; /* adjust as needed */
+  height: auto;
+  display: block;
+  margin: 0 auto 5px auto;
+}
+
+/* GENERAL PRINT STYLING */
+@media print {
+  body {
+    background: white !important;
+    padding: 0 !important;
+    color: black;
+  }
+
+  /* Hide buttons and search inputs */
+  .print-btn, #addBtn, #sampleInput, .dropdown, .search-box {
+    display: none !important;
+  }
+
+  /* Make the report box clean */
+  .report-box {
+    box-shadow: none !important;
+    padding: 20px !important;
+  }
+
+  /* Remove input borders, show text values instead */
+  input {
+    border: none !important;
+    width: auto !important;
+    font-size: 13px;
+    color: black;
+    background: transparent !important;
+    pointer-events: none;
+  }
+
+  /* Table styling for print */
+  .test-table th, .test-table td {
+    border: 1px solid #000 !important;
+    padding: 6px;
+  }
+
+  .test-table th {
+    background-color: #f2f2f2 !important;
+  }
+}
+
+/* Optional: override input values to show as text for print */
+.test-table input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="report-box">
+
+<div class="search-box">
+<input id="searchName" placeholder="Search Patient Name..." onkeyup="searchPatient()">
+</div>
+
+<div class="header-grid">
+
+<div>
+Name: <input id="patient_name">
+</div>
+
+<div>
+Report No: <input id="report_no" readonly>
+</div>
+
+<div>
+Phone Number: <input id="mobile">
+</div>
+
+<div>
+Age / Sex: <input id="age_sex">
+</div>
+
+<div>
+Aadhaar No: <input id="aadhar">
+</div>
+
+<div>
+Sponsor / Guardian: <input id="guardian">
+</div>
+
+<div>
+Children: <input id="children">
+</div>
+
+<div>
+Address: <input id="address">
+</div>
+
+<div>
+Referred Doctor: <input id="refDoctor">
+</div>
+
+</div>
+
+<div class="title">
+Laboratory Report
+</div>
+
+<div class="sample">
+
+<b>Sample Type:</b>
+
+<input type="text" id="sampleInput" placeholder="Type test or scan">
+
+<button id="addBtn" onclick="addSample()" style="display:none;">
+Add
+</button>
+
+<div id="sampleList" class="dropdown"></div>
+
+</div>
+
+
+
+<table class="test-table" id="labTable">
+  <tr>
+    <th>TEST NAME</th>
+    <th>OBSERVED VALUE</th>
+    <th>UNIT</th>
+    <th>REFERENCE RANGE</th>
+  </tr>
+</table>
+
+<button class="add-test-btn" onclick="addRow()">Add Test</button>
+
+
+
+
+<button onclick="printReport()">Print Report</button>
+
+
+
+<div class="footer">
+
+  <div class="sign">
+    <img src="technologist-sign.png" alt="Technologist Signature">
+    TECHNOLOGIST
+  </div>
+
+  <div class="sign">
+    <img src="doctor-sign.png" alt="Doctor Signature">
+    DOCTOR SIGNATURE
+  </div>
+
+</div>
+
+<button onclick="sendWhatsAppReport()" 
+style="margin-left:10px;background:#25D366;color:white;border:none;padding:12px 20px;border-radius:5px;cursor:pointer">
+Send WhatsApp
+</button>
+
+
+
+<div id="printReport" style="display:none; font-family:Arial, sans-serif; width:900px; margin:auto; background:white; padding:25px; border:1px solid #ccc;">
+
+<!-- HEADER -->
+<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #0f3f7a; padding-bottom:10px;">
+
+    <!-- LEFT : LOGO -->
+    <div style="display:flex; align-items:center;">
+        <img src="rapid-labs-logo.png" style="height:70px; margin-right:10px;">
+        <div>
+            <div style="font-size:22px; font-weight:bold; color:#0f3f7a;">Rapid Labs</div>
+            <div style="font-size:12px;">Department of Laboratory Medicine</div>
+        </div>
+    </div>
+
+    <!-- RIGHT : ADDRESS -->
+    <div style="text-align:right; font-size:13px;">
+        123 Medical Street<br>
+        Bangalore, Karnataka<br>
+        Phone: +91 XXXXXXXX<br>
+        Email: info@rapidlabs.com<br>
+        www.rapidlabs.com
+    </div>
+
+</div>
+
+
+<!-- TITLE -->
+<div style="text-align:center; margin-top:10px; margin-bottom:15px;">
+    <h2 style="margin:0; color:#0f3f7a;">LABORATORY TEST REPORT</h2>
+</div>
+
+
+<!-- PATIENT DETAILS -->
+<table style="width:100%; font-size:13px; border-collapse:collapse; margin-bottom:20px;">
+<tr>
+<td><strong>Name :</strong> <span id="pNamePrint"></span></td>
+<td><strong>Report No :</strong> <span id="pReportNoPrint"></span></td>
+<td><strong>Age / Sex :</strong> <span id="pAgeSexPrint"></span></td>
+</tr>
+
+<tr>
+<td><strong>Phone :</strong> <span id="pMobilePrint"></span></td>
+<td><strong>Referred By :</strong> <span id="pDoctorPrint"></span></td>
+<td><strong>Collected On :</strong> <span id="pCollectedPrint"></span></td>
+</tr>
+</table>
+
+
+<!-- TEST RESULT TABLE -->
+<table style="width:100%; border-collapse:collapse; font-size:13px;">
+
+<thead style="background:#0f3f7a; color:white;">
+<tr>
+<th style="border:1px solid #000; padding:8px;">Test Name</th>
+<th style="border:1px solid #000; padding:8px;">Result</th>
+<th style="border:1px solid #000; padding:8px;">Unit</th>
+<th style="border:1px solid #000; padding:8px;">Reference Range</th>
+<th style="border:1px solid #000; padding:8px;">Method</th>
+</tr>
+</thead>
+
+<tbody id="printTestBody"></tbody>
+
+</table>
+
+
+<!-- SIGNATURES -->
+<div style="display:flex; justify-content:space-between; margin-top:50px; font-size:13px;">
+
+<div style="text-align:center;">
+<img src="technologist-sign.png" style="height:50px;"><br>
+<b>Lab Technologist</b>
+</div>
+
+<div style="text-align:center;">
+<img src="doctor-sign.png" style="height:50px;"><br>
+<b>Authorised Doctor</b>
+</div>
+
+</div>
+
+
+<!-- FOOTER NOTE -->
+<div style="margin-top:40px; font-size:11px; border-top:1px solid #ccc; padding-top:10px; color:#444;">
+This medical report is for clinical interpretation by the referring doctor only.
+Results should be correlated with patient history and other findings.
+</div>
+
+</div>
+
+
+<script>
+let samples = []
+
+async function loadSamples(){
+
+let res = await fetch("/api/samples")
+samples = await res.json()
+
+}
+
+loadSamples()
+
+const input = document.getElementById("sampleInput")
+const list = document.getElementById("sampleList")
+const addBtn = document.getElementById("addBtn")
+
+input.addEventListener("keyup", function(e){
+
+let value = input.value.toLowerCase()
+
+list.innerHTML=""
+
+let filtered = samples.filter(s =>
+s.toLowerCase().includes(value)
+)
+
+if(filtered.length === 0 && value.length > 0){
+
+addBtn.style.display="inline-block"
+
+}else{
+
+addBtn.style.display="none"
+
+}
+
+filtered.forEach(item=>{
+
+let div=document.createElement("div")
+div.innerText=item
+
+div.onclick=function(){
+
+input.value=item
+list.innerHTML=""
+
+}
+
+list.appendChild(div)
+
+})
+
+if(e.key==="Enter" && filtered.length>0){
+
+input.value=filtered[0]
+list.innerHTML=""
+
+}
+
+})
+
+async function addSample(){
+
+let value=input.value
+
+await fetch("/api/add-sample",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({name:value})
+})
+
+samples.push(value)
+
+addBtn.style.display="none"
+
+alert("added successfully")
+
+}
+
+// Load saved tests from localStorage
+let savedTests = JSON.parse(localStorage.getItem('labTests')) || {};
+
+// Add a new editable row
+function addRow() {
+  const table = document.getElementById('labTable');
+  const row = table.insertRow(-1);
+
+  const nameCell = row.insertCell(0);
+  const valueCell = row.insertCell(1);
+  const unitCell = row.insertCell(2);
+  const refCell = row.insertCell(3);
+
+  // Inputs
+  nameCell.innerHTML = '<input oninput="autoFill(this)" placeholder="Test Name">';
+  valueCell.innerHTML = '<input>';
+  unitCell.innerHTML = '<input>';
+  refCell.innerHTML = '<input>';
+
+  // Save on blur
+  [nameCell, unitCell, refCell].forEach((cell, i) => {
+    cell.children[0].addEventListener('blur', () => saveTest(row));
+  });
+}
+
+// Auto-fill unit and reference if test exists
+function autoFill(input) {
+  const name = input.value.trim();
+  if (savedTests[name]) {
+    const row = input.parentElement.parentElement;
+    row.cells[2].children[0].value = savedTests[name].unit;
+    row.cells[3].children[0].value = savedTests[name].ref;
+  }
+}
+
+// Save test info to localStorage
+function saveTest(row) {
+  const name = row.cells[0].children[0].value.trim();
+  const unit = row.cells[2].children[0].value.trim();
+  const ref = row.cells[3].children[0].value.trim();
+  if (name) {
+    savedTests[name] = { unit, ref };
+    localStorage.setItem('labTests', JSON.stringify(savedTests));
+  }
+}
+
+// Optional: Pre-fill table if data exists
+Object.keys(savedTests).forEach(name => {
+  const table = document.getElementById('labTable');
+  const row = table.insertRow(-1);
+  row.insertCell(0).innerHTML = `<input value="${name}" oninput="autoFill(this)">`;
+  row.insertCell(1).innerHTML = '<input>';
+  row.insertCell(2).innerHTML = `<input value="${savedTests[name].unit}">`;
+  row.insertCell(3).innerHTML = `<input value="${savedTests[name].ref}">`;
+});
+
+// Function to generate new report number
+function generateReportNo() {
+  // Get last report number from localStorage or start fresh
+  let lastReport = localStorage.getItem("lastReportNo") || "0";
+  let newNumber = parseInt(lastReport) + 1;
+
+  // Save new number for next report
+  localStorage.setItem("lastReportNo", newNumber);
+
+  // Return formatted report number
+  return "RPID" + newNumber.toString().padStart(5, "0"); // e.g., RPID00001
+}
+
+// Auto-fill report number when page loads or new report is added
+document.getElementById("report_no").value = generateReportNo();
+
+async function searchPatient() {
+  let name = document.getElementById("searchName").value;
+  if (name.length < 2) return;
+
+  try {
+    let res = await fetch("/api/report-patient?name=" + encodeURIComponent(name));
+    let data = await res.json();
+
+    if (data && data.name) {
+      // Map API data to input fields
+      document.getElementById("patient_name").value = data.name || "";
+      document.getElementById("report_no").value = data.report_no || "";
+      document.getElementById("mobile").value = data.mobile || "";
+      document.getElementById("age_sex").value = data.age_sex || ""; // use correct ID
+      document.getElementById("aadhar").value = data.aadhaar || "";
+      document.getElementById("guardian").value = data.guardian || "";
+      document.getElementById("children").value = data.children || "";
+      document.getElementById("address").value = data.address || "";
+      document.getElementById("refDoctor").value = data.refDoctor || "";
+
+      // Optional: if you want to pre-fill tests table
+      if (data.tests && Array.isArray(data.tests)) {
+        const table = document.getElementById("labTable");
+        // Remove existing rows except header
+        while (table.rows.length > 1) {
+          table.deleteRow(1);
+        }
+        // Add rows for each test
+        data.tests.forEach(test => {
+          const row = table.insertRow(-1);
+          row.insertCell(0).innerHTML = `<input value="${test.name}" oninput="autoFill(this)">`;
+          row.insertCell(1).innerHTML = `<input value="${test.observed || ''}">`;
+          row.insertCell(2).innerHTML = `<input value="${test.unit || ''}">`;
+          row.insertCell(3).innerHTML = `<input value="${test.ref || ''}">`;
+        });
+      }
+    }
+
+  } catch (err) {
+    console.log("Patient search error", err);
+  }
+}
+
+function printReport(){
+
+var content = document.getElementById("printReport").innerHTML;
+var win = window.open('', '', 'width=900,height=700');
+
+win.document.write('<html><head><title>Lab Report</title></head><body>');
+win.document.write(content);
+win.document.write('</body></html>');
+
+win.document.close();
+win.print();
+
+}
+
+async function sendWhatsAppReport(){
+
+let mobile = document.getElementById("mobile").value;
+
+if(!mobile){
+alert("Patient mobile number missing");
+return;
+}
+
+// show hidden print layout
+document.getElementById("printReport").style.display="block";
+
+let element = document.getElementById("printReport");
+
+// create PDF
+let opt = {
+margin: 5,
+filename: 'rapid-labs-report.pdf',
+image: { type: 'jpeg', quality: 0.98 },
+html2canvas: { scale: 2 },
+jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+};
+
+html2pdf().set(opt).from(element).outputPdf('blob').then(function(pdfBlob){
+
+// create temporary URL
+let pdfUrl = URL.createObjectURL(pdfBlob);
+
+// message
+let message = encodeURIComponent(
+"Hello, your Rapid Labs report is ready. Download here:\n" + pdfUrl
+);
+
+// open whatsapp
+window.open("https://wa.me/91"+mobile+"?text="+message,"_blank");
+
+});
+
+// hide again
+document.getElementById("printReport").style.display="none";
+
+}
+</script>
+
+</body>
+</html>

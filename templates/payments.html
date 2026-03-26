@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Rapid Labs - Payments</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+margin:0;
+}
+
+.main{
+margin-left:220px;
+padding:30px;
+}
+
+h1{
+margin-bottom:25px;
+}
+
+.table-container{
+background:white;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+overflow:hidden;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+text-align:left;
+border-bottom:1px solid #eee;
+}
+
+th{
+background:#0f3f7a;
+color:rgb(0, 0, 0);
+}
+
+tr:hover{
+background:#f9fbff;
+}
+
+.status-paid{
+color:green;
+font-weight:bold;
+}
+
+.status-pending{
+color:orange;
+font-weight:bold;
+}
+
+.status-failed{
+color:red;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>Rapid Labs</h2>
+
+<ul>
+<li onclick="openDashboard()">Dashboard</li>
+<li onclick="openLeads()">Leads</li>
+<li>Sample Collection</li>
+<li onclick="openReports()">Reports</li>
+<li style="background:#0f3f7a;">Payments</li>
+<li>Staff</li>
+</ul>
+
+</div>
+
+
+
+<div class="main">
+
+<h1>Payments</h1>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Patient</th>
+<th>Mobile</th>
+<th>Test</th>
+<th>Amount</th>
+<th>Payment ID</th>
+<th>Method</th>
+<th>Status</th>
+<th>Date</th>
+</tr>
+
+</thead>
+
+<tbody id="paymentsTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* NAVIGATION */
+
+function openDashboard(){
+window.location.href="/dashboard"
+}
+
+function openLeads(){
+window.location.href="/leads"
+}
+
+function openReports(){
+window.location.href="/reports"
+}
+
+
+
+/* LOAD PAYMENTS */
+
+async function loadPayments(){
+
+try{
+
+const res = await fetch("/api/payments")
+
+const data = await res.json()
+
+const table = document.getElementById("paymentsTable")
+
+table.innerHTML=""
+
+data.forEach(p=>{
+
+let statusClass="status-pending"
+
+if(p.status=="Paid"){
+statusClass="status-paid"
+}
+
+if(p.status=="Failed"){
+statusClass="status-failed"
+}
+
+const row = document.createElement("tr")
+
+row.innerHTML=`
+
+<td>${p.id}</td>
+<td>${p.name}</td>
+<td>${p.mobile}</td>
+<td>${p.test}</td>
+<td>₹ ${p.amount}</td>
+<td>${p.payment_id || "-"}</td>
+<td>${p.method || "-"}</td>
+<td class="${statusClass}">${p.status}</td>
+<td>${p.date}</td>
+
+`
+
+table.appendChild(row)
+
+})
+
+}catch(err){
+
+console.error("Payment load error",err)
+
+}
+
+}
+
+loadPayments()
+
+</script>
+
+</body>
+</html>

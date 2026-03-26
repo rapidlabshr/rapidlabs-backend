@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Rapid Labs - Reports</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+margin:0;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:220px;
+height:100vh;
+background:#0f3f7a;
+position:fixed;
+left:0;
+top:0;
+color:white;
+}
+
+.sidebar h2{
+text-align:center;
+padding:20px 0;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.sidebar ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.sidebar ul li{
+padding:14px 20px;
+cursor:pointer;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar ul li:hover{
+background:#0c2f5c;
+}
+
+/* MAIN */
+
+.main{
+margin-left:220px;
+padding:30px;
+}
+
+h1{
+margin-bottom:25px;
+}
+
+/* TABLE */
+
+.table-container{
+background:white;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+overflow:hidden;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+text-align:left;
+border-bottom:1px solid #ddd;
+}
+
+th{
+background:#0f3f7a;
+color:white;
+}
+
+tr:hover{
+background:#f9fbff;
+}
+
+select{
+padding:6px;
+border-radius:4px;
+border:1px solid #ccc;
+}
+
+.upload-btn{
+background:#0f3f7a;
+color:white;
+padding:6px 12px;
+border-radius:4px;
+cursor:pointer;
+font-size:13px;
+}
+
+.upload-btn:hover{
+background:#0c2f5c;
+}
+
+.download-btn{
+color:#0f3f7a;
+font-weight:bold;
+text-decoration:none;
+}
+
+.download-btn:hover{
+text-decoration:underline;
+}
+
+.generate-btn{
+background:#28a745;
+color:white;
+padding:6px 10px;
+border-radius:4px;
+text-decoration:none;
+font-size:13px;
+}
+
+.generate-btn:hover{
+background:#218838;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Rapid Labs</h2>
+
+<ul>
+
+<li onclick="openDashboard()">Dashboard</li>
+<li onclick="openLeads()">My Leads</li>
+<li onclick="openSample()">Sample Collection</li>
+<li style="background:#0f3f7a;">Reports</li>
+<li onclick="logout()">Logout</li>
+
+</ul>
+
+</div>
+
+
+<div class="main">
+
+<h1>Reports Management</h1>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Patient</th>
+<th>Mobile</th>
+<th>Test</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Generate</th>
+<th>Upload</th>
+<th>Download</th>
+<th>Share</th>
+</tr>
+</thead>
+
+<tbody id="reportsTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* NAVIGATION */
+
+function openDashboard(){
+window.location.href="/staff-dashboard"
+}
+
+function openLeads(){
+window.location.href="/staff-leads"
+}
+
+function openSample(){
+window.location.href="/sample-collection"
+}
+
+function logout(){
+localStorage.removeItem("user")
+window.location.href="/"
+}
+
+
+/* LOAD REPORTS */
+
+async function loadReports(){
+
+try{
+
+const res = await fetch("/api/reports")
+const data = await res.json()
+
+const table = document.getElementById("reportsTable")
+
+table.innerHTML=""
+
+data.forEach(r=>{
+
+const row=document.createElement("tr")
+
+row.innerHTML=`
+
+<td>${r.id}</td>
+<td>${r.name}</td>
+<td>${r.mobile}</td>
+<td>${r.test}</td>
+<td>₹ ${r.amount}</td>
+
+<td>
+<select onchange="updateStatus(${r.id},this.value)">
+<option value="Pending" ${r.report_status=="Pending"?"selected":""}>Pending</option>
+<option value="Processing" ${r.report_status=="Processing"?"selected":""}>Processing</option>
+<option value="Completed" ${r.report_status=="Completed"?"selected":""}>Completed</option>
+</select>
+</td>
+
+<td>
+<a class="generate-btn" href="/report/${r.id}" target="_blank">Generate</a>
+</td>
+
+<td>
+
+<label class="upload-btn">
+Upload
+<input 
+type="file"
+accept="application/pdf"
+style="display:none"
+onchange="uploadReport(${r.id},this)"
+>
+</label>
+
+<span style="margin-left:10px;font-size:13px;color:#444;">
+${r.report_file 
+? "📄 " + r.report_file.split(/[\\/]/).pop() 
+: "<span style='color:#aaa'>No report</span>"}
+</span>
+
+</td>
+
+<td>
+
+${r.report_file && r.report_file !== "" 
+? `<a class="download-btn" href="/${r.report_file}" download>📥 Download</a>` 
+: `<span style="color:#999;">No File</span>`}
+
+</td>
+
+<td>
+
+<button onclick="shareWhatsApp('${r.mobile}','${r.report_file}')" 
+style="background:#25D366;color:white;border:none;padding:5px 10px;border-radius:4px;cursor:pointer">
+WhatsApp
+</button>
+
+<button onclick="shareEmail('${r.id}')" 
+style="background:#007bff;color:white;border:none;padding:5px 10px;border-radius:4px;margin-left:5px;cursor:pointer">
+Email
+</button>
+
+</td>
+
+`
+
+table.appendChild(row)
+
+})
+
+}catch(err){
+
+console.error("Report load error",err)
+
+}
+
+}
+
+
+/* UPLOAD REPORT */
+
+async function uploadReport(id,input){
+
+const file=input.files[0]
+
+if(!file){
+alert("Please select a PDF file")
+return
+}
+
+if(file.type!=="application/pdf"){
+alert("Only PDF files allowed")
+input.value=""
+return
+}
+
+const form=new FormData()
+form.append("report",file)
+
+try{
+
+const res=await fetch("/api/upload-report/"+id,{
+method:"POST",
+body:form
+})
+
+const data=await res.json()
+
+if(data.success){
+alert("Report uploaded successfully")
+loadReports()
+}else{
+alert("Upload failed")
+}
+
+}catch(err){
+
+console.error(err)
+alert("Server error")
+
+}
+
+}
+
+
+/* UPDATE STATUS */
+
+async function updateStatus(id,status){
+
+await fetch("/api/update-report-status",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+lead_id:id,
+status:status
+})
+})
+
+}
+
+
+function shareWhatsApp(mobile,report){
+
+if(!report){
+alert("Report not uploaded yet")
+return
+}
+
+let link = window.location.origin + "/" + report
+
+let message = encodeURIComponent(
+"Hello, your Rapid Labs report is ready.\nDownload here:\n" + link
+)
+
+let url = "https://wa.me/91" + mobile + "?text=" + message
+
+window.open(url,"_blank")
+
+}
+
+async function shareEmail(id){
+
+try{
+
+const res = await fetch("/api/send-report-email/"+id,{
+method:"POST"
+})
+
+const data = await res.json()
+
+if(data.success){
+alert("Report sent to email successfully")
+}else{
+alert("Email sending failed")
+}
+
+}catch(err){
+
+console.error(err)
+alert("Server error")
+
+}
+
+}
+
+/* PAGE LOAD */
+
+loadReports()
+
+
+
+</script>
+
+</body>
+</html>

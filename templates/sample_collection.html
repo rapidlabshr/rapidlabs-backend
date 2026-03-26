@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sample Collection Admin</title>
+
+<style>
+body{
+margin:0;
+font-family: 'Inter', Arial, sans-serif;
+display:flex;
+height:100vh;
+background:#f1f5f9;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:240px;
+background:#0f172a;
+color:white;
+padding:20px;
+display:flex;
+flex-direction:column;
+}
+
+.sidebar h2{
+margin-bottom:20px;
+font-size:18px;
+font-weight:600;
+}
+
+.sidebar button{
+width:100%;
+padding:12px;
+margin-bottom:8px;
+border:none;
+background:transparent;
+color:#cbd5f5;
+cursor:pointer;
+text-align:left;
+border-radius:6px;
+transition:0.2s;
+}
+
+.sidebar button:hover{
+background:#1e293b;
+color:white;
+}
+
+/* MAIN */
+
+.main{
+flex:1;
+padding:30px;
+overflow-y:auto;
+}
+
+/* PAGE TITLE */
+
+h2{
+margin:0;
+font-size:22px;
+font-weight:600;
+color:#0f172a;
+}
+
+/* TABLE */
+
+table{
+width:100%;
+border-collapse:separate;
+border-spacing:0;
+margin-top:20px;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* HEADER */
+
+th{
+background:#f8fafc;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:0.5px;
+color:#64748b;
+padding:14px;
+text-align:left;
+border-bottom:1px solid #e2e8f0;
+}
+
+/* ROWS */
+
+td{
+padding:14px;
+font-size:14px;
+color:#334155;
+border-bottom:1px solid #f1f5f9;
+}
+
+/* ROW HOVER */
+
+tr:hover td{
+background:#f9fafb;
+}
+
+/* ACTION BUTTON */
+
+button{
+padding:6px 14px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:13px;
+font-weight:500;
+transition:0.2s;
+}
+
+/* ASSIGN BUTTON */
+
+button[onclick^="openAssignForm"]{
+background:#3b82f6;
+color:white;
+}
+
+button[onclick^="openAssignForm"]:hover{
+background:#2563eb;
+}
+
+/* STATUS COLORS */
+
+td:nth-child(6){
+font-weight:500;
+}
+
+td:nth-child(6):contains("new"){
+color:#f59e0b;
+}
+
+td:nth-child(6):contains("completed"){
+color:#10b981;
+}
+
+td:nth-child(6):contains("ongoing"){
+color:#3b82f6;
+}
+
+/* INPUT */
+
+input{
+padding:10px;
+width:250px;
+border:1px solid #e2e8f0;
+border-radius:6px;
+outline:none;
+}
+
+/* ADD BUTTON */
+
+.add-btn{
+background:#22c55e;
+color:white;
+padding:10px 16px;
+border-radius:6px;
+font-size:14px;
+}
+
+.add-btn:hover{
+background:#16a34a;
+}
+
+/* POPUP */
+
+.popup-form{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:25px;
+border-radius:10px;
+width:350px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+z-index:1000;
+animation:popupFade 0.2s ease;
+}
+
+.popup-form h3{
+margin-top:0;
+margin-bottom:15px;
+font-size:18px;
+color:#0f172a;
+}
+
+/* INPUTS */
+
+.popup-form input,
+.popup-form select{
+width:100%;
+padding:10px;
+border:1px solid #e2e8f0;
+border-radius:6px;
+font-size:14px;
+margin-bottom:12px;
+outline:none;
+}
+
+/* FOCUS */
+
+.popup-form input:focus,
+.popup-form select:focus{
+border-color:#3b82f6;
+box-shadow:0 0 0 2px rgba(59,130,246,0.2);
+}
+
+/* BUTTONS */
+
+.popup-form button{
+padding:8px 14px;
+border-radius:6px;
+font-size:13px;
+}
+
+/* SAVE */
+
+.popup-form button:first-of-type{
+background:#10b981;
+color:white;
+}
+
+.popup-form button:first-of-type:hover{
+background:#059669;
+}
+
+/* CANCEL */
+
+.popup-form button:last-of-type{
+background:#e2e8f0;
+}
+
+.popup-form button:last-of-type:hover{
+background:#cbd5f5;
+}
+
+/* ANIMATION */
+
+@keyframes popupFade{
+from{
+opacity:0;
+transform:translate(-50%,-60%);
+}
+to{
+opacity:1;
+transform:translate(-50%,-50%);
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- LEFT SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>Sample Collection</h2>
+
+<button id="btnDashboard" onclick="showSection('dashboard')">Dashboard</button>
+<button id="btnCollectors" onclick="showSection('collectors')">Collectors</button>
+<button id="btnAssign" onclick="showSection('assign')">Assign Task</button>
+<button id="btnTasks" onclick="showSection('tasks')">Collection Tasks</button>
+<button id="btnTracking" onclick="showSection('tracking')">Tracking</button>
+<button id="btnCompleted" onclick="showSection('completed')">Completed Tasks</button>
+
+</div>
+
+
+<!-- RIGHT CONTENT -->
+
+<div class="main">
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="section" style="display:none">
+
+<h1>Collection Dashboard</h1>
+<p>Overview of sample collection activity.</p>
+
+</div>
+
+
+<!-- COLLECTORS LIST -->
+
+<div id="collectors" class="section" style="display:none">
+
+<h1>Sample Collectors</h1>
+
+<button class="add-btn" onclick="openAddForm()">+ Add Employee</button>
+
+
+<table>
+
+<thead>
+
+<tr>
+<th>Worker ID</th>
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Password</th>
+<th>Salary</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="collectorTable"></tbody>
+
+</table>
+
+</div>
+
+<div id="addForm" class="popup-form" style="display:none">
+
+<h3>Add New Collector</h3>
+
+<input id="task_name" placeholder="Name"><br><br>
+<input id="phone" placeholder="Phone"><br><br>
+<input id="email" placeholder="Email"><br><br>
+<input id="password" placeholder="Password"><br><br>
+<input id="salary" placeholder="Salary"><br><br>
+
+<select id="status">
+<option value="active">Active</option>
+<option value="inactive">Inactive</option>
+</select>
+
+<br><br>
+
+<button onclick="addCollector()">Save</button>
+<button onclick="closeForm()">Cancel</button>
+
+</div>
+
+<!-- TASKS -->
+
+<div id="tasks" class="section" style="display:none">
+
+<h1>Collection Tasks</h1>
+
+<table>
+<thead>
+<tr>
+<th>Task ID</th>
+<th>Patient Name</th>
+<th>Mobile</th>
+<th>Test</th>
+<th>Amount</th>   <!-- ✅ ADD THIS -->
+<th>Collector</th>
+<th>Location</th>   <!-- ✅ ADD THIS -->
+<th>Date</th>
+<th>Time</th>
+<th>Status</th>
+<th>Collector Status</th>
+</tr>
+</thead>
+
+<tbody id="tasksTable"></tbody>
+
+</table>
+
+</div>
+
+
+<!-- ASSIGN -->
+
+<div id="assign" class="section" style="display:none">
+
+<div style="display:flex; justify-content:space-between; align-items:center;">
+    <h1>Assign Collection Task</h1>
+
+    <button onclick="openNewTaskForm()" 
+        style="background:#10b981; color:white; padding:10px 16px; border-radius:6px;">
+        + Add New Task
+    </button>
+
+    <input type="file" id="excelFile" accept=".xlsx,.xls" style="display:none" />
+        <button onclick="document.getElementById('excelFile').click()">
+        Upload Excel
+        </button>
+</div>
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Mobile</th>
+<th>Test</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Location</th>
+<th>Pincode</th>
+<th>Sample Date</th>
+<th>Sample Time</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="assignTable"></tbody>
+
+</table>
+
+</div>
+
+<!-- TRACKING -->
+
+<div id="tracking" class="section" style="display:none">
+
+<h1>Live Tracking</h1>
+
+<table>
+<thead>
+<tr>
+<th>Task ID</th>
+<th>Status</th>
+<th>Patient</th>
+<th>Mobile</th>
+<th>Location</th>
+<th>Tests</th>
+<th>Amount</th>
+<th>Time</th>
+<th>Rescheduled</th>
+<th>Cancel Reason</th>
+</tr>
+</thead>
+
+<tbody id="trackingTable"></tbody>
+
+</table>
+
+</div>
+
+
+<!-- COMPLETED -->
+
+<div id="completed" class="section" style="display:none">
+
+<h1>Completed Tasks</h1>
+
+<table>
+<thead>
+<tr>
+<th>Task ID</th>
+<th>Status</th>
+<th>Test Name</th>
+<th>Add-on Test</th>   <!-- ✅ ADD THIS -->
+<th>Worker ID</th>
+<th>Patient Name</th>
+<th>Incentive</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="completedTable"></tbody>
+
+</table>
+
+</div>
+
+
+</div>
+
+<div id="assignForm" class="popup-form" style="display:none">
+
+<h3>Assign Collector</h3>
+
+<input type="hidden" id="leadId">
+
+<label>Select Collector</label><br>
+<select id="collectorSelect"></select>
+
+<br><br>
+
+<label>Collection Date</label><br>
+<input type="date" id="collectionDate">
+
+<br><br>
+
+<label>Collection Time</label><br>
+<input type="time" id="collectionTime">
+
+<br><br>
+
+<button type="button" onclick="assignTask()">Assign</button>
+<button type="button" onclick="closeAssignForm()">Cancel</button>
+
+</div>
+
+
+<div id="newTaskForm" style="
+display:none;
+position:fixed;
+top:0; left:0;
+width:100%; height:100%;
+background:rgba(0,0,0,0.5);
+">
+
+<div style="
+background:white;
+width:420px;
+margin:60px auto;
+padding:20px;
+border-radius:10px;
+">
+
+<h3>Add New Collection Task</h3>
+
+<input id="name" placeholder="Name" style="width:100%; margin-bottom:10px;">
+<input id="mobile" placeholder="Mobile" style="width:100%; margin-bottom:10px;">
+<input id="test" placeholder="Test" style="width:100%; margin-bottom:10px;">
+<input id="amount" placeholder="Amount" style="width:100%; margin-bottom:10px;">
+<input id="location" placeholder="Location" style="width:100%; margin-bottom:10px;">
+<input id="pincode" placeholder="Pincode" style="width:100%; margin-bottom:10px;">
+
+<label>Sample Date</label>
+<input type="date" id="sample_date" style="width:100%; margin-bottom:10px;">
+
+<select id="sample_time" style="width:100%; margin-bottom:10px;">
+    <option value="">Select Time Slot</option>
+    <option>06:00 AM - 07:00 AM</option>
+    <option>07:00 AM - 08:00 AM</option>
+    <option>08:00 AM - 09:00 AM</option>
+    <option>09:00 AM - 10:00 AM</option>
+    <option>10:00 AM - 11:00 AM</option>
+</select>
+
+<div style="display:flex; justify-content:space-between;">
+<button onclick="saveNewTask()" 
+    style="background:#3b82f6; color:white; padding:8px 12px;">
+    Save
+</button>
+
+<button onclick="closeNewTaskForm()" 
+    style="background:#ef4444; color:white; padding:8px 12px;">
+    Cancel
+</button>
+</div>
+
+</div>
+</div>
+
+
+
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const userRole = params.get("role");
+
+if(userRole === "staff"){
+    document.addEventListener("DOMContentLoaded", function(){
+
+        document.getElementById("btnCollectors").style.display = "none";
+        document.getElementById("btnDashboard").style.display = "none";
+
+        document.getElementById("collectors").style.display = "none";
+        document.getElementById("dashboard").style.display = "none";
+
+        showSection("assign");
+    });
+}
+
+/* SWITCH SECTIONS */
+
+function showSection(id){
+
+document.querySelectorAll(".section").forEach(sec=>{
+sec.style.display="none"
+})
+
+document.getElementById(id).style.display="block"
+
+if(id==="collectors"){
+loadCollectors()
+}
+
+if(id==="assign"){
+loadLeadsForAssign()
+}
+
+if(id==="tasks"){
+loadTasks()
+}
+
+if(id==="tracking"){
+loadTracking()
+}
+
+if(id==="completed"){   // ✅ ADD THIS
+loadCompletedTasks()
+}
+
+}
+
+async function loadTracking(){
+
+const res = await fetch("/api/tracking")
+const data = await res.json()
+
+let html = ""
+
+data.forEach(t=>{
+
+html += `
+<tr>
+<td>${t.task_id}</td>
+<td>${t.status || ""}</td>
+<td>${t.patient_name || ""}</td>
+<td>${t.mobile || ""}</td>
+<td>${t.location || ""}</td>
+<td>${t.tests || ""}</td>
+<td>${t.amount || ""}</td>
+<td>${t.created_at || ""}</td>
+<td>${t.reschedule_datetime || "-"}</td>
+<td>${t.cancel_reason || "-"}</td>
+</tr>
+`
+})
+
+document.getElementById("trackingTable").innerHTML = html
+
+}
+
+
+function openAddForm(){
+document.getElementById("addForm").style.display="block"
+}
+
+function closeForm(){
+document.getElementById("addForm").style.display="none"
+}
+
+
+
+/* LOAD COLLECTORS */
+
+
+async function loadCollectors(){
+
+const res = await fetch("/api/sample-collectors")
+const data = await res.json()
+
+let html=""
+
+data.forEach(c=>{
+
+html+=`
+<tr>
+<td>RPID${String(c.id).padStart(3,'0')}</td>
+<td contenteditable="true">${c.name}</td>
+<td contenteditable="true">${c.phone}</td>
+<td contenteditable="true">${c.email}</td>
+<td contenteditable="true">${c.password}</td>
+<td contenteditable="true">${c.salary}</td>
+<td contenteditable="true">${c.status}</td>
+<td>
+<button onclick="editCollector(this)">Edit</button>
+<button onclick="updateCollector(${c.id},this)" style="display:none;">Update</button>
+<button onclick="deleteCollector(${c.id})">Delete</button>
+</td>
+</tr>
+`
+
+})
+
+document.getElementById("collectorTable").innerHTML=html
+
+}
+
+
+/* ADD COLLECTOR */
+
+
+async function addCollector(){
+
+const name=document.getElementById("name").value
+const phone=document.getElementById("phone").value
+const email=document.getElementById("email").value
+const password=document.getElementById("password").value
+const salary=document.getElementById("salary").value
+const status=document.getElementById("status").value
+
+await fetch("/api/add-collector",{
+method:"POST",
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({
+name:name,
+phone:phone,
+email:email,
+password:password,
+salary:salary,
+status:status
+})
+})
+
+alert("Saved Successfully")
+
+closeForm()
+
+loadCollectors()
+
+}
+/* UPDATE COLLECTOR */
+
+async function saveCollector(id,btn){
+
+const row = btn.parentElement.parentElement
+const cells = row.querySelectorAll("td")
+
+const data = {
+name: cells[1].innerText,
+phone: cells[2].innerText,
+email: cells[3].innerText,
+password: cells[4].innerText,
+salary: cells[5].innerText,
+status: cells[6].innerText
+}
+
+await fetch("/api/update-collector/"+id,{
+method:"POST",
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify(data)
+})
+
+alert("Updated")
+
+loadCollectors()
+
+}
+
+function editCollector(btn){
+
+const row = btn.parentElement.parentElement
+const cells = row.querySelectorAll("td")
+
+for(let i=1;i<=6;i++){
+cells[i].contentEditable = true
+}
+
+btn.style.display="none"
+row.querySelector("button:nth-child(2)").style.display="inline"
+
+}
+
+async function updateCollector(id,btn){
+
+if(!confirm("Update this collector details?")) return;
+
+const row = btn.parentElement.parentElement
+const cells = row.querySelectorAll("td")
+
+const data = {
+name: cells[1].innerText,
+phone: cells[2].innerText,
+email: cells[3].innerText,
+password: cells[4].innerText,
+salary: cells[5].innerText,
+status: cells[6].innerText
+}
+
+await fetch("/api/update-collector/"+id,{
+method:"POST",
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify(data)
+})
+
+
+loadCollectors()
+
+}
+
+
+
+
+async function deleteCollector(id){
+
+if(!confirm("Delete this collector?")) return
+
+await fetch("/api/delete-collector/"+id,{
+method:"POST"
+})
+
+alert("Collector Deleted")
+
+loadCollectors()
+
+}
+
+async function loadLeadsForAssign(){
+
+const res = await fetch("/api/leads-for-assign")
+const data = await res.json()
+
+let html=""
+
+data.forEach(l=>{
+html+=`
+<tr>
+<td>${l.id}</td>
+<td>${l.name}</td>
+<td>${l.mobile_number || ""}</td>
+<td>${l.test_name || ""}</td>
+<td>${l.amount || ""}</td>
+<td>${l.status || ""}</td>
+<td>${l.location || ""}</td>
+<td>${l.pincode || ""}</td>
+<td>${l.sample_date || ""}</td>
+<td>${l.sample_time || ""}</td>
+<td>
+<button onclick="openAssignForm(${l.id}, this, '${l.sample_date || ""}', '${l.sample_time || ""}')">Assign</button>
+</td>
+</tr>
+`
+})
+
+document.getElementById("assignTable").innerHTML=html
+
+}
+
+async function autoAssign(id){
+
+await fetch("/api/auto-assign/"+id,{
+method:"POST"
+})
+
+alert("Task Assigned")
+
+loadLeadsForAssign()
+
+}
+async function openAssignForm(id,btn){
+
+document.getElementById("leadId").value=id
+
+document.getElementById("assignForm").style.display="block"
+
+loadCollectorsDropdown()
+
+window.currentAssignBtn = btn
+
+// ✅ GET ROW DATA
+const row = btn.closest("tr")
+const cells = row.querySelectorAll("td")
+
+// sample date & time from table
+const sample_date = cells[8].innerText
+const sample_time = cells[9].innerText
+
+// ✅ AUTO FILL DATE
+document.getElementById("collectionDate").value = sample_date || ""
+
+// ✅ AUTO FILL TIME
+if(sample_time){
+let time = sample_time.split(" ")[0]
+document.getElementById("collectionTime").value = time
+}else{
+document.getElementById("collectionTime").value = ""
+}
+
+}
+
+
+function closeAssignForm(){
+
+document.getElementById("assignForm").style.display="none"
+
+}
+async function loadCollectorsDropdown(){
+
+const res = await fetch("/api/sample-collectors")
+const data = await res.json()
+
+let html=""
+
+data.forEach(c=>{
+
+html+=`<option value="${c.id}">${c.name} - ${c.phone}</option>`
+
+})
+
+document.getElementById("collectorSelect").innerHTML=html
+
+}
+
+async function assignTask(){
+
+const lead_id = document.getElementById("leadId").value
+const collector_id = document.getElementById("collectorSelect").value
+const date = document.getElementById("collectionDate").value
+const time = document.getElementById("collectionTime").value
+
+const res = await fetch("/api/assign-task",{
+method:"POST",
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({
+lead_id:lead_id,
+collector_id:collector_id,
+collection_date:date,
+collection_time:time
+})
+})
+
+if(res.ok){
+
+alert("Task Assigned")
+
+closeAssignForm()
+
+// remove row
+if(window.currentAssignBtn){
+const row = window.currentAssignBtn.closest("tr")
+row.remove()
+}
+
+// ✅ refresh tasks page data
+loadTasks()
+
+}else{
+alert("Error assigning task")
+}
+
+}
+
+async function loadTasks(){
+
+const res = await fetch("/api/collection-tasks")
+const data = await res.json()
+
+let html=""
+
+data.forEach(t=>{
+
+html+=`
+<tr>
+<td>${t.id}</td>
+<td>${t.patient_name}</td>
+<td>${t.mobile}</td>
+<td>${t.test}</td>
+<td>${t.amount || ""}</td>  
+<td>${t.collector}</td>
+<td>${t.location || ""}</td>  
+<td>${t.date || ""}</td>
+<td>${t.time || ""}</td>
+<td>${t.status}</td>
+<td>${t.collector_status}</td>
+</tr>
+`
+
+})
+
+document.getElementById("tasksTable").innerHTML=html
+
+}
+
+
+async function loadCompletedTasks(){
+
+const res = await fetch("/api/completed-tasks")
+const data = await res.json()
+console.log(data)
+
+let html = ""
+
+data.forEach(t=>{
+
+html += `
+<tr>
+<td>${t.task_id}</td>
+<td>${t.status}</td>
+<td>${t.tests ? t.tests.split(',').join('<br>') : ''}</td>            <!-- ✅ Assigned Test -->
+<td>${t.addon_test || "-"}</td>        <!-- ✅ Add-on Test -->
+<td>${t.worker_id}</td>
+<td>${t.patient_name}</td>
+<td>
+<input type="number" value="${t.incentive || 0}" id="inc_${t.task_id}" style="width:80px;">
+</td>
+<td>
+<button onclick="saveIncentive(${t.task_id}, ${t.worker_id})">Save</button>
+</td>
+</tr>
+`
+
+})
+
+document.getElementById("completedTable").innerHTML = html
+
+}
+
+async function saveIncentive(task_id, worker_id){
+
+const incentive = document.getElementById("inc_"+task_id).value
+
+await fetch("/api/save-incentive",{
+method:"POST",
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({
+task_id:task_id,
+worker_id:worker_id,
+incentive:incentive
+})
+})
+
+alert("Incentive Saved")
+
+}
+
+function openNewTaskForm(){
+    document.getElementById("newTaskForm").style.display = "block";
+}
+
+function closeNewTaskForm(){
+    document.getElementById("newTaskForm").style.display = "none";
+}
+
+
+
+async function saveNewTask(){
+
+    const data = {
+        name: document.getElementById("task_name").value,
+        mobile: document.getElementById("mobile").value,
+        test: document.getElementById("test").value,
+        amount: document.getElementById("amount").value,
+        location: document.getElementById("location").value,
+        pincode: document.getElementById("pincode").value,
+        sample_date: document.getElementById("sample_date").value,
+        sample_time: document.getElementById("sample_time").value
+    }
+
+    const res = await fetch("/api/manual-lead",{
+        method:"POST",
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(data)
+    })
+
+    if(res.ok){
+        alert("Task Added")
+        closeNewTaskForm()
+        loadLeadsForAssign()   // your existing refresh function
+    }else{
+        alert("Error adding task")
+    }
+}
+
+
+
+// excel bulk data
+
+
+
+
+document.getElementById('excelFile').addEventListener('change', handleFile);
+
+function handleFile(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(evt) {
+        const data = new Uint8Array(evt.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        const jsonData = XLSX.utils.sheet_to_json(sheet);
+
+        console.log("Excel Data:", jsonData);
+
+        previewData(jsonData);
+    };
+
+    reader.readAsArrayBuffer(file);
+}
+
+
+function previewData(data) {
+    let preview = "";
+
+    data.forEach(row => {
+        preview += `
+            Name: ${row["Full Name"] || ""}
+            Phone: ${row["Phone Number"] || ""}
+            Location: ${row["City"] || ""}
+            \n\n
+        `;
+    });
+
+    if (confirm("Preview:\n\n" + preview + "\nCreate tasks?")) {
+        sendToBackend(data);
+    }
+}
+
+function sendToBackend(data) {
+    const formatted = data.map(row => ({
+        name: row["Full Name"] || "",
+        phone: row["Phone Number"] || "",
+        address: row["City"] || "",
+        test: row["Test"] || "",
+        amount: row["Amount"] || 0
+    }));
+
+    fetch("/api/bulk-create-tasks", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formatted)
+    })
+    .then(res => res.json())
+    .then(res => {
+        alert("Tasks created successfully!");
+        location.reload();
+    });
+}
+
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</body>
+</html>

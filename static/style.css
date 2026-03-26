@@ -1,0 +1,345 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===============================
+BACKGROUND
+=============================== */
+
+.login-body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:url("/static/rapidlab_booking.webp") no-repeat center center/cover;
+position:relative;
+overflow:hidden;
+}
+
+/* dark overlay */
+
+.login-body::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(3px);
+}
+
+/* ===============================
+LOGIN CARD
+=============================== */
+
+.login-container{
+position:relative;
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+padding:45px;
+width:340px;
+border-radius:15px;
+text-align:center;
+color:white;
+animation:fadeIn 1s ease;
+}
+
+/* title */
+
+.login-container h2{
+margin-bottom:20px;
+font-weight:600;
+letter-spacing:1px;
+}
+
+/* inputs */
+
+.login-container input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+background:rgba(255,255,255,0.2);
+color:white;
+outline:none;
+}
+
+.login-container input::placeholder{
+color:#ddd;
+}
+
+/* login button */
+
+.login-container button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:8px;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.login-container button:hover{
+transform:scale(1.05);
+box-shadow:0 5px 20px rgba(0,114,255,0.6);
+}
+
+/* message */
+
+#message{
+margin-top:10px;
+color:#ffb3b3;
+font-size:14px;
+}
+
+/* ===============================
+ANIMATION
+=============================== */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+/* ===============================
+DASHBOARD LAYOUT
+=============================== */
+
+.dashboard{
+display:flex;
+background:#f5f7fb;
+min-height:100vh;
+}
+
+
+/* ===============================
+SIDEBAR
+=============================== */
+
+.sidebar{
+width:240px;
+background:#0b1d3a;
+color:white;
+position:fixed;
+height:100vh;
+padding:25px 20px;
+box-shadow:2px 0 10px rgba(0,0,0,0.08);
+}
+
+.sidebar h2{
+font-size:20px;
+margin-bottom:30px;
+letter-spacing:1px;
+}
+
+
+/* menu */
+
+.sidebar ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar li{
+display:flex;
+align-items:center;
+padding:12px 14px;
+border-radius:8px;
+cursor:pointer;
+margin-bottom:10px;
+font-size:14px;
+transition:all 0.25s ease;
+}
+
+.sidebar li:hover{
+background:#1e3a66;
+transform:translateX(3px);
+}
+
+
+/* ===============================
+TOP HEADER
+=============================== */
+
+.header{
+position:fixed;
+left:240px;
+right:0;
+height:65px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 30px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+z-index:5;
+}
+
+.header h3{
+font-size:18px;
+color:#333;
+}
+
+
+/* ===============================
+MAIN CONTENT
+=============================== */
+
+.main{
+margin-left:240px;
+padding:100px 30px 30px 30px;
+}
+
+
+/* ===============================
+DASHBOARD CARDS
+=============================== */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card h4{
+font-size:14px;
+color:#666;
+margin-bottom:8px;
+}
+
+.card p{
+font-size:22px;
+font-weight:600;
+color:#0b1d3a;
+}
+
+
+/* ===============================
+TABLE SECTION
+=============================== */
+
+.table-box{
+margin-top:30px;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th{
+text-align:left;
+padding:12px;
+background:#f0f3f8;
+font-size:13px;
+}
+
+table td{
+padding:12px;
+border-bottom:1px solid #eee;
+font-size:13px;
+}
+
+
+/* Password Field Container */
+
+.password-field{
+position:relative;
+width:100%;
+margin:12px 0;
+}
+
+
+/* Input Field */
+
+.password-field input{
+width:100%;
+padding:13px 45px 13px 14px;
+border-radius:8px;
+border:1px solid rgba(0,0,0,0.15);
+color:#000;
+outline:none;
+font-size:14px;
+transition:all 0.25s ease;
+box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+
+
+/* Input Hover */
+
+.password-field input:hover{
+box-shadow:0 3px 10px rgba(0,0,0,0.12);
+}
+
+
+/* Input Focus */
+
+.password-field input:focus{
+border-color:#007bff;
+box-shadow:0 0 0 2px rgba(0,123,255,0.15);
+}
+
+
+/* Eye Button */
+
+.toggle-password{
+position:absolute;
+right:10px;
+top:50%;
+transform:translateY(-50%);
+width:24px;
+height:24px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:5px;
+cursor:pointer;
+color:#333;
+transition:all 0.2s ease;
+}
+
+
+/* Hover Effect */
+
+.toggle-password:hover{
+background:rgba(0,0,0,0.06);
+color:#000;
+}
+
+
+/* Icon */
+
+.toggle-password i{
+font-size:15px;
+}
+

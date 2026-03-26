@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Rapid Labs - Leads</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+.main{
+margin-left:220px;
+padding:30px;
+}
+
+.table-container{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th, td{
+padding:12px;
+border-bottom:1px solid #ddd;
+text-align:left;
+font-size:14px;
+}
+
+th{
+background:#f5f7fb;
+}
+
+tr:hover{
+background:#f9fbff;
+}
+
+select{
+padding:6px;
+border-radius:4px;
+border:1px solid #ccc;
+font-size:13px;
+cursor:pointer;
+}
+
+.payment-paid{
+color:green;
+font-weight:bold;
+}
+
+.payment-unpaid{
+color:red;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>Rapid Labs</h2>
+
+<ul>
+<li onclick="goDashboard()">Dashboard</li>
+<li style="background:#0f3f7a;">Leads</li>
+<li>Sample Collection</li>
+<li>Reports</li>
+<li>Payments</li>
+<li>Staff</li>
+</ul>
+
+</div>
+
+
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<h1>Leads</h1>
+
+<div class="table-container">
+
+<table id="leadsTable">
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Mobile</th>
+<th>Test</th>
+<th>Location</th>
+<th>Pincode</th>
+<th>Cost</th>
+<th>Status</th>
+<th>Payment</th>
+<th>Date</th>
+<th>Sample Date</th>
+<th>Sample Time</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* ================= DASHBOARD NAVIGATION ================= */
+
+function goDashboard(){
+window.location.href="/dashboard";
+}
+
+
+
+/* ================= UPDATE STATUS ================= */
+
+async function updateStatus(id,newStatus){
+
+await fetch("/api/update-lead-status",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+id:id,
+status:newStatus
+})
+
+});
+
+}
+
+
+
+/* ================= UPDATE PAYMENT ================= */
+
+async function updatePayment(id,newPayment){
+
+await fetch("/api/update-payment-status",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+id:id,
+payment_status:newPayment
+})
+
+});
+
+}
+
+
+
+/* ================= LOAD LEADS ================= */
+
+async function loadLeads(){
+
+try{
+
+const res = await fetch("/api/leads");
+
+const leads = await res.json();
+
+const table = document.querySelector("#leadsTable tbody");
+
+table.innerHTML="";
+
+leads.forEach(lead=>{
+
+const row=document.createElement("tr");
+
+row.innerHTML = `
+
+<td>${lead.id}</td>
+
+<td>${lead.name}</td>
+
+<td>${lead.mobile_number}</td>
+
+<td>${lead.test_name}</td>
+
+<td>${lead.location}</td>
+
+<td>${lead.pincode || ""}</td>
+
+<td style="font-weight:bold;color:#0f3f7a;">
+₹ ${lead.amount || 0}
+</td>
+
+<td>
+<select onchange="updateStatus(${lead.id},this.value)">
+<option value="new" ${lead.status==="new"?"selected":""}>New</option>
+<option value="ongoing" ${lead.status==="ongoing"?"selected":""}>Ongoing</option>
+<option value="completed" ${lead.status==="completed"?"selected":""}>Completed</option>
+</select>
+</td>
+
+<td style="font-weight:bold; color:${lead.payment === "Paid" ? "green" : "red"};">
+${lead.payment || "Not Paid"}
+</td>
+
+<td>
+${lead.created_at ? new Date(lead.created_at).toLocaleString() : "-"}
+</td>
+
+<td>${lead.sample_date || "-"}</td>
+
+<td>${lead.sample_time || "-"}</td>
+
+`;
+
+table.appendChild(row);
+
+});
+
+}catch(err){
+
+console.error("Error loading leads",err);
+
+}
+
+}
+
+
+
+/* ================= LOAD ON PAGE OPEN ================= */
+
+loadLeads();
+
+/* AUTO REFRESH ADMIN LEADS EVERY 3 SECONDS */
+
+
+</script>
+
+
+</body>
+</html>

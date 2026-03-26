@@ -1,0 +1,56 @@
+{% extends "staff_layout.html" %}
+
+{% block content %}
+
+<h1>Staff Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+<h3>My Leads</h3>
+<p id="myLeads">0</p>
+</div>
+
+<div class="card">
+<h3>Today's Leads</h3>
+<p id="todayLeads">0</p>
+</div>
+
+<div class="card">
+<h3>Completed Reports</h3>
+<p id="completedReports">0</p>
+</div>
+
+</div>
+
+<script>
+
+async function loadDashboard(){
+
+try{
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+if(!user){
+window.location.href="/";
+return;
+}
+
+const res = await fetch("/api/staff-dashboard/" + user.id);
+const data = await res.json();
+
+document.getElementById("myLeads").innerText = data.my_leads || 0;
+document.getElementById("todayLeads").innerText = data.today_leads || 0;
+document.getElementById("completedReports").innerText = data.completed || 0;
+
+}catch(err){
+console.log("Dashboard error:",err);
+}
+
+}
+
+loadDashboard();
+
+</script>
+
+{% endblock %}

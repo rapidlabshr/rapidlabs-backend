@@ -1,0 +1,669 @@
+
+    <script>
+
+    let currentInvoice = "";
+    let patientName = "";
+    let patientPhone = "";
+    let totalAmount = 0;
+    let paymentMethod = "";
+    let selectedTests = [];
+
+    function showAppointmentForm(){
+    document.getElementById("appointmentForm").style.display = "block";
+    }
+
+    
+    let subtotal = 0;
+
+    function generateBillNumber(){
+
+    let num = Math.floor(1000 + Math.random()*9000);
+    document.getElementById("billNumber").value = "RPLB-" + num;
+
+    }
+
+
+    function setInvoiceDate(){
+
+    let now = new Date();
+    document.getElementById("invoiceDate").value =
+    now.toLocaleDateString()+" "+now.toLocaleTimeString();
+
+    }
+
+    window.onload = function(){
+
+    generateBillNumber();
+        setInvoiceDate();
+
+    }
+
+    async function searchPatient(){
+
+    const name = document.getElementById("patientName").value;
+
+    if(name.length < 2){
+    document.getElementById("patientSuggestions").innerHTML="";
+    return;
+    }
+
+    const res = await fetch("/search-patient?name="+name);
+    const data = await res.json();
+
+    let html="";
+
+    if(data.length === 0){
+
+    document.getElementById("patientStatus").innerText="New Patient";
+    return;
+
+    }
+
+    data.forEach(p=>{
+
+    html += `
+    <div style="padding:8px;cursor:pointer;border-bottom:1px solid #eee"
+    onclick="selectPatient('${p.name}','${p.phone}','${p.age}','${p.gender}')">
+
+    ${p.name} - ${p.phone}
+
+    </div>
+    `;
+
+    });
+
+    document.getElementById("patientSuggestions").innerHTML = html;
+
+    }
+
+
+    function addDoctor(){
+
+    let name = prompt("Enter Doctor Name");
+
+    if(name){
+
+    document.getElementById("doctor").value=name;
+
+    }
+
+    }
+
+
+    function addPatient(){
+
+        const bill = document.getElementById("billNumber").value;
+        const name = document.getElementById("patientName").value;
+        const phone = document.getElementById("phone").value;
+        const age = document.getElementById("age").value;
+        const gender = document.getElementById("gender").value;
+        const doctor = document.getElementById("doctor").value;
+
+        if(name === "" || phone === ""){
+        alert("Enter Patient Name and Phone");
+        return;
+        }
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+        <td>${bill}</td>
+        <td>${name}</td>
+        <td>${phone}</td>
+        <td>${age}</td>
+        <td>${gender}</td>
+        <td>${doctor}</td>
+        `;
+
+        document.getElementById("patientTable").appendChild(row);
+
+        savePageData();
+
+        /* CLOSE FORM */
+        document.getElementById("appointmentForm").style.display = "none";
+
+        /* OPTIONAL: CLEAR FORM */
+        clearPatientForm();
+
+
+        }
+
+
+
+    /* ADD TEST */
+
+
+        function addTest(){
+
+        const select = document.getElementById("testSelect");
+
+        const option = select.options[select.selectedIndex];
+
+        const testName = option.text.split(" - ")[0];
+
+        const price = option.dataset.price;
+
+        if(!testName) return;
+
+        /* call the correct function */
+        addTestRow(testName, price);
+
+        }
+
+
+    function saveTest(){
+
+    let testName = document.getElementById("testName").value;
+    let price = document.getElementById("price").value;
+
+    fetch("/save-test",{
+    method:"POST",
+    headers:{
+    "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+    test_name:testName,
+    price:price
+    })
+    })
+
+    .then(res=>res.json())
+    .then(data=>{
+
+    document.getElementById("testMessage").innerText="Test added successfully";
+
+    document.getElementById("testName").value="";
+    document.getElementById("price").value="";
+
+    loadTests();
+
+    })
+
+    .catch(err=>{
+    console.log(err);
+    });
+
+    }
+
+
+    function loadTests(){
+
+    fetch("/get-tests")
+
+    .then(res=>res.json())
+
+    .then(data=>{
+
+    let select=document.getElementById("testSelect");
+
+    select.innerHTML='<option value="">Select Test</option>';
+
+    data.forEach(test=>{
+
+    select.innerHTML+=`
+    <option value="${test.id}" data-price="${test.price}">
+    ${test.name} - ₹${test.price}
+    </option>
+    `;
+
+    });
+
+    })
+
+    .catch(err=>{
+    console.log(err);
+    });
+
+    }
+
+    window.onload=function(){
+
+    generateBillNumber();
+    setInvoiceDate();
+    loadTests();
+    loadPageData();
+
+    }
+
+    function addTestRow(name, price){
+
+    let table = document.getElementById("testTable");
+
+    let row = document.createElement("tr");
+
+    row.innerHTML = `
+    <td>${name}</td>
+    <td>${price}</td>
+    <td>
+    <button class="delete-btn" onclick="removeTest(this, ${price})">🗑</button>
+    </td>
+    `;
+
+    table.appendChild(row);
+
+    /* STORE TEST FOR PRINT */
+    selectedTests.push({
+    name:name,
+    price:price
+    });
+
+    /* ADD TO SUBTOTAL */
+    subtotal += Number(price);
+
+    updateSubtotal();
+
+    savePageData();
+
+    }
+
+    function removeTest(btn, price){
+
+    let row = btn.closest("tr");
+
+    let name = row.children[0].innerText;
+
+    /* remove from array */
+    selectedTests = selectedTests.filter(t => t.name !== name);
+
+    row.remove();
+
+    subtotal -= Number(price);
+
+    updateSubtotal();
+
+    savePageData();
+
+    }
+
+
+    function updateSubtotal(){
+
+    document.getElementById("subtotal").innerText = subtotal;
+
+    calculateTotal();
+
+    }
+
+
+    /* CALCULATE TOTAL */
+
+    function calculateTotal(){
+
+    let discountPercent = Number(document.getElementById("discount").value) || 0;
+
+    if(discountPercent > 10){
+    alert("Maximum discount allowed is 10%");
+    discountPercent = 10;
+    document.getElementById("discount").value = 10;
+    }
+
+    let discountAmount = (subtotal * discountPercent) / 100;
+
+    let total = subtotal - discountAmount;
+
+    if(total < 0){
+    total = 0;
+    }
+
+    document.getElementById("total").innerText = total.toFixed(2);
+
+    savePageData();
+
+    }
+
+
+    function showPaymentUI(){
+
+    let method = document.getElementById("paymentMethod").value;
+
+    /* LOAD BILL DATA INTO PREVIEW */
+    loadBillPreview();
+
+    document.getElementById("upiBox").style.display="none";
+    document.getElementById("cashBox").style.display="none";
+
+    if(method==="upi"){
+    document.getElementById("upiBox").style.display="block";
+    }
+
+    if(method==="cash"){
+    document.getElementById("cashBox").style.display="block";
+    }
+
+    }
+
+
+    function loadBillPreview(){
+
+    document.getElementById("previewPatient").innerText =
+    document.getElementById("patientName").value;
+
+    document.getElementById("previewPhone").innerText =
+    document.getElementById("phone").value;
+
+    document.getElementById("previewTotal").innerText =
+    document.getElementById("total").innerText;
+
+    }
+
+
+    function confirmPayment(){
+
+    alert("Payment Successful");
+
+    }
+
+    function cancelPayment(){
+
+    alert("Payment Cancelled");
+
+    }
+
+    /* GENERATE INVOICE */
+
+    async function generateInvoice(){
+
+    let patient = document.getElementById("patientName").value;
+    let phone = document.getElementById("phone").value;
+    let payment = document.getElementById("paymentMethod").value;
+    let total = document.getElementById("total").innerText;
+
+    let tests = [];
+
+    document.querySelectorAll("#testTable tr").forEach(row => {
+
+    let name = row.children[0].innerText;
+    let price = row.children[2].innerText;
+
+    tests.push({
+    name:name,
+    price:price
+    });
+
+    });
+
+    let response = await fetch("/generate-invoice",{
+
+    method:"POST",
+
+    headers:{
+    "Content-Type":"application/json"
+    },
+
+    body:JSON.stringify({
+    patient:patient,
+    phone:phone,
+    total:total,
+    payment_method:payment,
+    tests:tests
+    })
+
+    });
+
+    let data = await response.json();
+
+    alert("Invoice Generated : " + data.invoice_no);
+
+    localStorage.removeItem("billingPage");
+
+    }
+
+
+    /* PRINT BILL */
+async function printBill(){
+
+await generateInvoice();
+
+let currentInvoice = document.getElementById("billNumber").value;
+
+let patientRow = document.querySelector("#patientTable tr");
+
+let patientName = "NIL";
+let patientPhone = "NIL";
+let age = "NIL";
+let gender = "NIL";
+let doctor = "NIL";
+let email = "NIL";
+
+if(patientRow){
+
+let cols = patientRow.children;
+
+patientName = cols[1].innerText || "NIL";
+patientPhone = cols[2].innerText || "NIL";
+age = cols[3].innerText || "NIL";
+gender = cols[4].innerText || "NIL";
+doctor = cols[5].innerText || "NIL";
+
+}
+
+email = document.getElementById("doctorEmail").value || "NIL";
+
+let totalAmount = document.getElementById("total").innerText;
+let paymentMethod = document.getElementById("paymentMethod").value || "NIL";
+
+/* FILL PRINT TEMPLATE */
+
+document.getElementById("r_invoice").innerText = currentInvoice;
+
+document.getElementById("r_date").innerText =
+new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString();
+
+document.getElementById("r_patient").innerText = patientName;
+document.getElementById("r_phone").innerText = patientPhone;
+document.getElementById("r_age").innerText = age;
+document.getElementById("r_gender").innerText = gender;
+document.getElementById("r_doctor").innerText = doctor;
+document.getElementById("r_email").innerText = email;
+
+document.getElementById("r_total").innerText = totalAmount;
+document.getElementById("r_payment").innerText = paymentMethod;
+
+
+/* LOAD TESTS */
+
+let table = document.getElementById("r_tests");
+table.innerHTML="";
+
+selectedTests.forEach(t=>{
+
+table.innerHTML+=`
+<tr>
+<td>${t.name}</td>
+<td style="text-align:right">₹${t.price}</td>
+</tr>
+`;
+
+});
+
+
+/* PRINT */
+
+let printContents = document.getElementById("printReceipt").innerHTML;
+
+let win = window.open("","","width=900,height=700");
+
+win.document.write(`
+<html>
+<head>
+<title>Rapid Labs Invoice</title>
+</head>
+<body>
+${printContents}
+</body>
+</html>
+`);
+
+win.document.close();
+win.focus();
+win.print();
+win.close();
+
+}
+    /* NAVIGATION */
+
+    function goDashboard(){
+    window.location.href="/staff-dashboard";
+    }
+
+    function goLeads(){
+    window.location.href="/staff-leads";
+    }
+
+    function goSample(){
+    window.location.href="/sample-collection";
+    }
+
+    function goReports(){
+    window.location.href="/staff-reports";
+    }
+
+    function goBilling(){
+    window.location.href="/staff-billing";
+    }
+
+    function goTotalBills(){
+    window.location.href="/total-bills";
+    }
+
+    function logout(){
+    localStorage.removeItem("user");
+    window.location.href="/";
+    }
+
+
+    /* SEARCH PATIENT */
+function searchPatient(){
+
+let name = document.getElementById("patientName").value;
+
+if(name.length < 2) return;
+
+fetch("/search-patient?name="+name)
+.then(res=>res.json())
+.then(data=>{
+
+let box = document.getElementById("patientSuggestions");
+box.innerHTML="";
+
+if(data.length === 0){
+
+document.getElementById("patientStatus").innerText="New Patient";
+
+return;
+
+}
+
+data.forEach(p=>{
+
+let div = document.createElement("div");
+
+div.innerText = p.name + " - " + p.phone;
+
+div.onclick = function(){
+
+document.getElementById("patientName").value=p.name;
+document.getElementById("phone").value=p.phone;
+document.getElementById("age").value=p.age;
+document.getElementById("gender").value=p.gender;
+
+box.innerHTML="";
+document.getElementById("patientStatus").innerText="Existing Patient";
+
+}
+
+box.appendChild(div);
+
+})
+
+})
+
+}
+
+
+
+/* SELECT PATIENT */
+
+function selectPatient(name,phone,age,gender){
+
+document.getElementById("patientName").value = name;
+document.getElementById("phone").value = phone;
+document.getElementById("age").value = age;
+document.getElementById("gender").value = gender;
+
+document.getElementById("patientSuggestions").innerHTML="";
+
+document.getElementById("patientStatus").innerText="Existing Patient";
+
+}
+
+function savePageData(){
+
+let pageData = {
+
+billNumber: document.getElementById("billNumber").value,
+invoiceDate: document.getElementById("invoiceDate").value,
+
+patientName: document.getElementById("patientName").value,
+phone: document.getElementById("phone").value,
+age: document.getElementById("age").value,
+gender: document.getElementById("gender").value,
+doctor: document.getElementById("doctor").value,
+
+discount: document.getElementById("discount").value,
+paymentMethod: document.getElementById("paymentMethod").value,
+
+tests: selectedTests,
+subtotal: subtotal
+
+};
+
+localStorage.setItem("billingPage", JSON.stringify(pageData));
+
+}
+
+function loadPageData(){
+
+let saved = localStorage.getItem("billingPage");
+
+if(!saved) return;
+
+let data = JSON.parse(saved);
+
+document.getElementById("billNumber").value = data.billNumber;
+document.getElementById("invoiceDate").value = data.invoiceDate;
+
+document.getElementById("patientName").value = data.patientName;
+document.getElementById("phone").value = data.phone;
+document.getElementById("age").value = data.age;
+document.getElementById("gender").value = data.gender;
+document.getElementById("doctor").value = data.doctor;
+
+document.getElementById("discount").value = data.discount;
+document.getElementById("paymentMethod").value = data.paymentMethod;
+
+selectedTests = data.tests || [];
+subtotal = data.subtotal || 0;
+
+selectedTests.forEach(t=>{
+addTestRow(t.name, t.price);
+});
+
+updateSubtotal();
+
+}
+
+function clearPatientForm(){
+
+document.getElementById("patientName").value="";
+document.getElementById("phone").value="";
+document.getElementById("age").value="";
+document.getElementById("doctor").value="";
+document.getElementById("doctorEmail").value="";
+document.getElementById("patientStatus").innerText="";
+document.getElementById("patientSuggestions").innerHTML="";
+
+}
+
+
+    </script>
