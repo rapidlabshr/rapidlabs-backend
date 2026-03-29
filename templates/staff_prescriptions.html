@@ -1,0 +1,115 @@
+{% extends "staff_layout.html" %}
+
+{% block content %}
+
+<h2>Prescription Requests</h2>
+
+<style>
+/* Table styling */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Prevent file column from stretching */
+.file-preview iframe,
+.file-preview img {
+  display: block;
+  margin: auto;
+  max-width: 80px;
+  max-height: 60px;
+}
+
+/* Download button */
+.download-btn {
+  font-size: 12px;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+</style>
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Mobile</th>
+<th>File</th>
+<th>Notes</th>
+<th>Date</th>
+<th>Download</th>
+</tr>
+</thead>
+
+<tbody id="data"></tbody>
+</table>
+</div>
+
+<script>
+
+// FETCH DATA
+fetch("/api/prescriptions")
+.then(res => res.json())
+.then(data => {
+
+let html = "";
+
+data.forEach(item => {
+html += `
+<tr>
+<td>${item.name}</td>
+<td>${item.mobile}</td>
+<td class="file-preview">${renderFile(item.file)}</td>
+<td>${item.notes || ""}</td>
+<td>${item.date}</td>
+<td>${downloadFile(item.file)}</td>
+</tr>
+`;
+});
+
+document.getElementById("data").innerHTML = html;
+
+});
+
+
+// FILE RENDER
+function renderFile(filePath) {
+
+  const ext = filePath.split('.').pop().toLowerCase();
+
+  if (ext === "pdf") {
+    return `<iframe src="${filePath}"></iframe>`;
+  } 
+
+  else if (["jpg", "jpeg", "png"].includes(ext)) {
+    return `<img src="${filePath}" onclick="window.open('${filePath}', '_blank')" />`;
+  } 
+
+  else {
+    return `<a href="${filePath}" target="_blank">View</a>`;
+  }
+}
+
+
+// DOWNLOAD BUTTON
+function downloadFile(filePath) {
+  return `<a href="${filePath}" download>⬇ Download</a>`;
+}
+
+</script>
+
+{% endblock %}

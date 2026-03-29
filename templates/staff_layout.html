@@ -72,6 +72,7 @@ padding:30px;
 <li onclick="goSample()">Sample Collection</li>
 <li onclick="goReports()">Reports</li>
 <li onclick="goBilling()">Billing</li>
+<li onclick="goPrescriptions()">Prescriptions</li>
 <li onclick="logout()">Logout</li>
 
 </ul>
@@ -115,6 +116,10 @@ window.location.href="/";
 
 function goBilling(){
 window.location.href="/create-bill";
+}
+
+function goPrescriptions(){
+    window.location.href="/staff-prescriptions";
 }
 
 </script>

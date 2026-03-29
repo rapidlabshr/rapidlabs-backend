@@ -21,9 +21,23 @@
 <p id="completedReports">0</p>
 </div>
 
+<div class="card">
+<h3>Prescription Requests</h3>
+<p id="prescriptions">0</p>
+<a href="/staff-prescriptions">View</a>
 </div>
 
+
+
+</div>
+
+
+
 <script>
+
+    function goPrescriptions(){
+    window.location.href="/staff-prescriptions";
+}
 
 async function loadDashboard(){
 
@@ -50,6 +64,7 @@ console.log("Dashboard error:",err);
 }
 
 loadDashboard();
+
 
 </script>
 

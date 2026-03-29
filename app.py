@@ -9,7 +9,8 @@ import razorpay
 import firebase_admin
 from firebase_admin import credentials, messaging
 import json
-from firebase_admin import credentials
+from flask_mail import Mail, Message
+from flask import send_file
 
 # ==============================
 # APP SETUP
@@ -25,17 +26,56 @@ print("DATABASE PATH:", DB_PATH)
 app = Flask(__name__)
 CORS(app)
 
+
+# email
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get("EMAIL_USER")
+app.config['MAIL_PASSWORD'] = os.environ.get("EMAIL_PASS")
+
+
+mail = Mail(app)
+
+
+# report 
+
+def get_report(task_id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT report_file 
+        FROM reports 
+        WHERE task_id = ?
+    """, (task_id,))
+
+    row = cursor.fetchone()
+    conn.close()
+
+    return row["report_file"] if row else None
+
+
 # ==============================
 # FIREBASE SETUP
 # ==============================
 
 
-firebase_json = json.loads(os.environ.get("FIREBASE_KEY"))
-cred = credentials.Certificate(firebase_json)
-firebase_admin.initialize_app(cred)
+firebase_key = os.environ.get("FIREBASE_KEY")
+
+if firebase_key:
+    try:
+        firebase_json = json.loads(firebase_key)
+        cred = credentials.Certificate(firebase_json)
+        firebase_admin.initialize_app(cred)
+        print("✅ Firebase initialized")
+    except Exception as e:
+        print("❌ Firebase init error:", e)
+else:
+    print("❌ FIREBASE_KEY not found in environment variables")
 
 
-CORS(app)
 
 LAB_LAT = 12.957641767686127
 LAB_LNG = 77.52771451534338
@@ -436,6 +476,8 @@ def upload_report(lead_id):
             return jsonify({"success": False, "message": "Empty file"})
 
         filename = f"report_{lead_id}.pdf"
+
+        os.makedirs("static/reports", exist_ok=True)
 
         save_path = os.path.join("static", "reports", filename)
 
@@ -844,13 +886,25 @@ def staff_dashboard_data(staff_id):
     cursor.execute("SELECT COUNT(*) FROM leads WHERE status='completed'")
     completed = cursor.fetchone()[0]
 
+    # ✅ ADD THIS
+    cursor.execute("SELECT COUNT(*) FROM prescriptions")
+    prescriptions = cursor.fetchone()[0]
+
     conn.close()
 
     return jsonify({
         "my_leads": my_leads,
         "today_leads": today_leads,
-        "completed": completed
-    })  
+        "completed": completed,
+        "prescriptions": prescriptions   # ✅ NEW
+    })
+
+
+@app.route("/staff-prescriptions")
+def staff_prescriptions():
+    return render_template("staff_prescriptions.html")
+
+
 
 
 # leads
@@ -878,7 +932,7 @@ def search_patient():
 
     name = request.args.get("name")
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = get_db_connection()
     c = conn.cursor()
 
     c.execute(
@@ -952,7 +1006,7 @@ def update_price():
     name = data["name"]
     price = data["price"]
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = get_db_connection()
     c = conn.cursor()
 
     c.execute("UPDATE tests SET price=? WHERE name=?", (price, name))
@@ -965,7 +1019,7 @@ def update_price():
 @app.route("/debug-db")
 def debug_db():
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = get_db_connection()
     c = conn.cursor()
 
     # show tables
@@ -995,7 +1049,7 @@ def generate_invoice():
     payment = data["payment_method"]
     tests = data["tests"]
 
-    conn = sqlite3.connect("rapidlabs.db")
+    conn = get_db_connection()
     cur = conn.cursor()
 
     year = datetime.now().year
@@ -1028,8 +1082,7 @@ def generate_invoice():
 @app.route("/get-bills")
 def get_bills():
 
-    conn = sqlite3.connect("rapidlabs.db")
-    conn.row_factory = sqlite3.Row
+    conn = get_db_connection()
     cur = conn.cursor()
 
     cur.execute("SELECT * FROM bills ORDER BY id DESC")
@@ -1108,8 +1161,7 @@ def report_patient():
 
     name = request.args.get("name")
 
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
+    conn = get_db_connection()
     c = conn.cursor()
 
     c.execute("""
@@ -1135,7 +1187,7 @@ def report_patient():
 @app.route("/api/samples")
 def get_samples():
 
-    conn = sqlite3.connect("rapidlabs.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute("SELECT name FROM sample_types")
@@ -1154,7 +1206,7 @@ def add_sample():
     data = request.json
     name = data["name"]
 
-    conn = sqlite3.connect("rapidlabs.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute(
@@ -1484,7 +1536,7 @@ def collector_login():
 
         numeric_id = int(worker_id.replace("RPID", ""))
 
-        conn = sqlite3.connect("rapidlabs.db")
+        conn = get_db_connection()
         cursor = conn.cursor()
 
         cursor.execute(
@@ -1662,8 +1714,7 @@ def get_tracking(task_id):
 @app.route('/api/tracking')
 def get_all_tracking():
 
-    conn = sqlite3.connect('rapidlabs.db')
-    conn.row_factory = sqlite3.Row
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -1776,7 +1827,7 @@ def save_incentive():
 @app.route('/api/get-next-task/<int:collector_id>')
 def get_next_task(collector_id):
 
-    conn = sqlite3.connect("rapidlabs.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -1859,20 +1910,21 @@ def manual_lead():
 def bulk_create_tasks():
     data = request.json
 
-    conn = sqlite3.connect('your_db.db')
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     for item in data:
         cursor.execute("""
-            INSERT INTO leads (name, phone, address, test, amount, status)
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO leads 
+            (name, mobile_number, test_name, location, amount, status, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, datetime('now'))
         """, (
             item.get('name'),
             item.get('phone'),
-            item.get('address'),
             item.get('test'),
+            item.get('address'),
             item.get('amount'),
-            'ASSIGNED'
+            'assigned'
         ))
 
     conn.commit()
@@ -1945,9 +1997,133 @@ def save_fcm_token():
     return jsonify({"success": True})
 
 
+
+
+
+
+# ---------------- GET PRESCRIPTIONS ----------------
+@app.route("/api/prescriptions")
+def get_prescriptions():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT name, mobile, file, notes, created_at
+        FROM prescriptions
+        ORDER BY id DESC
+    """)
+
+    rows = cursor.fetchall()
+    conn.close()
+
+    data = []
+    for r in rows:
+        data.append({
+            "name": r["name"],
+            "mobile": r["mobile"],
+            "file": r["file"],      # this is browser path like /static/prescriptions/xxx.png
+            "notes": r["notes"],
+            "date": r["created_at"]
+        })
+
+    return jsonify(data)
+
+# ---------------- UPLOAD PRESCRIPTION ----------------
+@app.route("/api/upload-prescription", methods=["POST"])
+def upload_prescription():
+    try:
+        file = request.files.get("file")
+        name = request.form.get("name")
+        mobile = request.form.get("mobile")
+        notes = request.form.get("notes")
+
+        if not file or file.filename == "":
+            return jsonify({"success": False, "message": "No file uploaded"})
+
+        # create folder if not exist
+        os.makedirs("static/prescriptions", exist_ok=True)
+
+        # unique filename
+        filename = f"{mobile}_{int(datetime.now().timestamp())}_{file.filename}"
+
+        # save file in folder
+        save_path = os.path.join("static/prescriptions", filename)
+        file.save(save_path)
+
+        # path to store in DB and use in browser
+        filepath = f"/static/prescriptions/{filename}"
+
+        # insert into DB
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("""
+            INSERT INTO prescriptions (name, mobile, file, notes, created_at)
+            VALUES (?, ?, ?, ?, datetime('now'))
+        """, (name, mobile, filepath, notes))
+        conn.commit()
+        conn.close()
+
+        return jsonify({"success": True, "file": filepath})
+
+    except Exception as e:
+        print("UPLOAD ERROR:", e)
+        return jsonify({"success": False, "message": str(e)})
+
+
+
+@app.route("/api/get-report", methods=["POST"])
+def get_report_api():
+
+    try:
+        data = request.get_json(force=True)
+
+        lead_id = data.get("id")
+        mobile = data.get("mobile")
+
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        cursor.execute("""
+            SELECT r.report_file
+            FROM reports r
+            JOIN leads l ON r.lead_id = l.id
+            WHERE l.id=? AND l.mobile_number=?
+        """, (lead_id, mobile))
+
+        row = cursor.fetchone()
+        conn.close()
+
+        # ✅ MATCH FOUND
+        if row and row["report_file"]:
+            return jsonify({
+                "success": True,
+                "status": "completed",
+                "report_url": f"http://127.0.0.1:5000/{file_path}"
+            })
+        
+        return jsonify({
+            "success": True,
+            "status": "pending",
+            "report_url": None
+        })
+
+        # ❌ NO MATCH
+        return jsonify({
+            "success": False,
+            "message": "Invalid ID or Mobile number"
+        })
+
+    except Exception as e:
+        print("ERROR:", e)
+        return jsonify({
+            "success": False,
+            "message": "Server error"
+        }), 500
+    
+
 # ==============================
 # RUN SERVER
 # ==============================
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
