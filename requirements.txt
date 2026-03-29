@@ -1,7 +1,9 @@
 Flask
 Flask-Cors
+Flask-Mail
 psycopg2-binary
 bcrypt
 razorpay
 firebase-admin
 gunicorn
+requests
