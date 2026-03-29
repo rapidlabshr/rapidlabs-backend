@@ -26,6 +26,48 @@ print("DATABASE PATH:", DB_PATH)
 app = Flask(__name__)
 CORS(app)
 
+def init_db():
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    # USERS
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        email TEXT,
+        password_hash TEXT,
+        role TEXT
+    )
+    """)
+
+    # LEADS
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS leads (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        mobile_number TEXT,
+        test_name TEXT,
+        location TEXT,
+        pincode TEXT,
+        created_at TEXT,
+        status TEXT,
+        payment_status TEXT,
+        amount REAL,
+        sample_date TEXT,
+        sample_time TEXT
+    )
+    """)
+
+    conn.commit()
+    conn.close()
+
+
+# CALL THIS
+init_db()
+
+
+
 
 # email
 
