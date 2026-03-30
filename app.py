@@ -59,6 +59,186 @@ def init_db():
     )
     """)
 
+    # SAMPLE COLLECTORS
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS sample_collectors (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        phone TEXT,
+        email TEXT,
+        password TEXT,
+        salary REAL,
+        status TEXT,
+        fcm_token TEXT
+    )
+    """)
+
+    #Assign Collection Task
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS collection_tasks (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        lead_id INTEGER,
+        patient_name TEXT,
+        mobile TEXT,
+        test TEXT,
+        location TEXT,
+        pincode TEXT,
+        collector_id INTEGER,
+        collector_name TEXT,
+        collection_date TEXT,
+        collection_time TEXT,
+        status TEXT,
+        collector_status TEXT,
+        created_at TEXT
+    )
+    """)
+
+
+    # TRACKING
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS tracking (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        task_id INTEGER,
+        status TEXT,
+        patient_name TEXT,
+        mobile TEXT,
+        location TEXT,
+        tests TEXT,
+        addon_tests TEXT,
+        amount REAL,
+        reschedule_datetime TEXT,
+        cancel_reason TEXT,
+        created_at TEXT
+    )
+    """)
+
+# INCENTIVES
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS incentives (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        task_id INTEGER,
+        worker_id INTEGER,
+        incentive REAL,
+        created_at TEXT
+    )
+    """)
+
+
+    # REPORTS
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS reports (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        lead_id INTEGER,
+        report_file TEXT,
+        report_status TEXT
+    )
+    """)
+
+    # PAYMENTS
+
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS payments (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        lead_id INTEGER,
+        payment_id TEXT,
+        method TEXT,
+        status TEXT,
+        created_at TEXT
+    )
+    """)
+
+    # STAFF
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS staff (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        mobile TEXT,
+        email TEXT,
+        role TEXT,
+        salary REAL,
+        incentive REAL,
+        join_date TEXT,
+        status TEXT
+    )
+    """)
+
+    # TESTS
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS tests (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        price REAL
+    )
+    """)
+
+    # BILLS
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS bills (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        invoice_no TEXT,
+        patient_name TEXT,
+        phone TEXT,
+        total REAL,
+        payment_method TEXT,
+        created_at TEXT
+    )
+    """)
+
+
+    # BILL ITEMS
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS bill_items (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        invoice_no TEXT,
+        test_name TEXT,
+        price REAL
+    )
+    """)
+
+    # SAMPLE TYPES
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS sample_types (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT UNIQUE
+    )
+    """)
+
+    # PRESCRIPTIONS
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS prescriptions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        mobile TEXT,
+        file TEXT,
+        notes TEXT,
+        created_at TEXT
+    )
+    """)
+
+    # BILLING
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS billing (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        patient_name TEXT,
+        test_name TEXT,
+        amount REAL,
+        date TEXT
+    )
+    """)
+
+
+
     conn.commit()
     conn.close()
 
@@ -1380,7 +1560,7 @@ def auto_assign(lead_id):
         return {"status": "error", "message": "Lead not found"}
 
     # Get active collectors
-    cursor.execute("SELECT * FROM sample_collectors WHERE status='active'")
+    cursor.execute("SELECT * FROM sample_collectors WHERE LOWER(status)='active'")
     collectors = cursor.fetchall()
 
     if not collectors:
