@@ -5,222 +5,314 @@
 <title>Rapid Labs -Report</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <style>
-
 body{
-font-family:Arial, Helvetica, sans-serif;
-background:#f4f6fb;
-margin:0;
-padding:40px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:#eef2f7;
+  margin:0;
+  padding:40px;
+  color:#2c3e50;
 }
 
+/* MAIN CARD */
 .report-box{
-max-width:900px;
-margin:auto;
-background:white;
-padding:35px;
-border-radius:6px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  max-width:900px;
+  margin:auto;
+  background:white;
+  padding:35px;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* HEADER */
-
+/* HEADER GRID */
 .header-grid{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:10px;
-font-size:13px;
-margin-bottom:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:15px;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.header-grid div{
+  display:flex;
+  flex-direction:column;
 }
 
 .header-grid input{
-border:none;
-border-bottom:1px solid #ccc;
-width:100%;
-padding:4px;
+  border:none;
+  border-bottom:1px solid #dcdcdc;
+  padding:6px 4px;
+  font-size:13px;
+  background:transparent;
 }
 
 /* TITLE */
-
 .title{
-text-align:center;
-font-size:20px;
-font-weight:bold;
-border:1px solid #000;
-padding:6px;
-margin:15px 0 20px;
+  text-align:center;
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:1px;
+  color:#0f3f7a;
+  margin:20px 0;
 }
 
 /* SEARCH */
-
 .search-box{
-margin-bottom:20px;
+  margin-bottom:20px;
 }
 
 .search-box input{
-width:100%;
-padding:10px;
-border:1px solid #ccc;
-border-radius:4px;
+  width:100%;
+  padding:10px;
+  border:1px solid #ddd;
+  border-radius:6px;
 }
 
-/* SAMPLE INFO */
-
+/* SAMPLE */
 .sample{
-font-size:13px;
-margin-bottom:15px;
+  font-size:13px;
+  margin-bottom:15px;
 }
 
-/* TABLE */
+/* ================= TABLE ================= */
 
 .test-table{
-width:100%;
-border-collapse:collapse;
-font-size:13px;
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+  margin-top:10px;
+  table-layout:fixed;
 }
 
-.test-table th,
-.test-table td{
-border:1px solid #ccc;
-padding:8px;
-}
-
+/* HEADER */
 .test-table th{
-background:#f2f2f2;
-font-weight:bold;
-text-align:left;
+  background:#0f3f7a;
+  color:white;
+  font-weight:600;
+  text-align:center;
+  padding:10px;
+  border:1px solid #dcdcdc;
 }
 
+/* BODY */
+.test-table td{
+  border:1px solid #e0e0e0;
+  padding:10px;
+  text-align:center;
+}
+
+/* FIRST COLUMN LEFT */
+.test-table td:first-child,
+.test-table th:first-child{
+  text-align:left;
+  padding-left:12px;
+}
+
+/* INPUT CLEAN LOOK */
 .test-table input{
-width:100%;
-border:none;
-outline:none;
+  width:100%;
+  border:none;
+  outline:none;
+  background:transparent;
+  text-align:center;
+  font-size:13px;
 }
 
-/* FOOTER */
+/* TEST NAME INPUT LEFT */
+.test-table td:first-child input{
+  text-align:left;
+}
 
+/* ROW HOVER */
+.test-table tr:hover{
+  background:#f9fbff;
+}
+
+/* BUTTON */
+.add-test-btn{
+  margin-top:12px;
+  padding:8px 14px;
+  background:#0f3f7a;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.add-test-btn:hover{
+  background:#0c3160;
+}
+
+/* FOOTER SIGN */
 .footer{
-margin-top:60px;
-display:flex;
-justify-content:space-between;
-font-size:13px;
+  margin-top:50px;
+  display:flex;
+  justify-content:space-between;
 }
 
 .sign{
-text-align:center;
+  text-align:center;
+  width:45%;
 }
 
-.print-btn{
-margin-top:30px;
-background:#0f3f7a;
-color:white;
-border:none;
-padding:12px 24px;
-cursor:pointer;
-border-radius:4px;
+.sign img{
+  max-width:160px;
+  margin-bottom:5px;
 }
 
+/* DROPDOWN */
 .dropdown{
-max-height:150px;
-overflow-y:auto;
-background:white;
-position:absolute;
-width:250px;
+  max-height:150px;
+  overflow-y:auto;
+  background:white;
+  position:absolute;
+  width:250px;
+  border:1px solid #ddd;
+  border-radius:4px;
 }
 
 .dropdown div{
-padding:8px;
-cursor:pointer;
+  padding:8px;
+  cursor:pointer;
 }
 
 .dropdown div:hover{
-background:#f2f2f2;
+  background:#f2f6fb;
 }
 
-  .test-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-  .test-table th, .test-table td { border: 1px solid #ccc; padding: 8px; }
-  input { width: 100px; }
-  button { margin-top: 10px; }
+/* ================= PRINT ================= */
 
-  .add-test-btn {
-    margin-top: 10px;
-    padding: 6px 12px;
-    background-color: #4CAF50; /* green */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  .add-test-btn:hover {
-    background-color: #45a049;
-  }
-
-  .footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-}
-
-.sign {
-  text-align: center;
-  width: 45%;
-}
-
-.sign img {
-  max-width: 200px; /* adjust as needed */
-  height: auto;
-  display: block;
-  margin: 0 auto 5px auto;
-}
-
-/* GENERAL PRINT STYLING */
 @media print {
+
+  body{
+    background:white !important;
+    padding:0 !important;
+  }
+
+  .report-box{
+    box-shadow:none;
+    padding:10px;
+  }
+
+  .search-box,
+  .add-test-btn,
+  button,
+  .dropdown{
+    display:none !important;
+  }
+
+  input{
+    border:none !important;
+    background:transparent !important;
+    pointer-events:none;
+  }
+
+  .test-table th{
+    background:#0f3f7a !important;
+    color:rgb(34, 34, 34) !important;
+  }
+
+  .test-table td,
+  .test-table th{
+    border:1px solid #000 !important;
+    padding:8px;
+    text-align:center;
+  }
+
+  .test-table td:first-child{
+    text-align:left;
+  }
+}
+
+/* ================= PRINT REPORT (IMPORTANT FIX) ================= */
+
+/* HEADER */
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid #0f3f7a;
+  padding-bottom:10px;
+  margin-bottom:15px;
+}
+
+/* TITLE */
+h2 {
+  text-align:center;
+  color:#0f3f7a;
+  margin:10px 0 20px;
+  letter-spacing:1px;
+}
+
+/* PATIENT TABLE */
+.info-table {
+  width:100%;
+  margin-bottom:20px;
+  font-size:13px;
+}
+
+.info-table td {
+  padding:6px 10px;
+}
+
+/* MAIN REPORT TABLE */
+.print-table {
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  font-size:13px;
+}
+
+/* HEADER */
+.print-table th {
+  background:#0f3f7a;
+  color:white;
+  padding:10px;
+  border:1px solid #000;
+  text-align:center;
+  font-weight:600;
+}
+
+/* BODY */
+.print-table td {
+  padding:10px;
+  border:1px solid #000;
+  text-align:center;
+}
+
+/* FIRST COLUMN */
+.print-table td:first-child {
+  text-align:left;
+  padding-left:12px;
+}
+
+/* FOOTER SIGN */
+.footer {
+  margin-top:60px;
+  display:flex;
+  justify-content:space-between;
+  text-align:center;
+  font-size:13px;
+}
+
+/* NOTE */
+.note {
+  margin-top:30px;
+  font-size:11px;
+  border-top:1px solid #ccc;
+  padding-top:10px;
+  color:#555;
+}
+
+@media print {
+  @page {
+    margin: 0;
+  }
+
   body {
-    background: white !important;
-    padding: 0 !important;
-    color: black;
-  }
-
-  /* Hide buttons and search inputs */
-  .print-btn, #addBtn, #sampleInput, .dropdown, .search-box {
-    display: none !important;
-  }
-
-  /* Make the report box clean */
-  .report-box {
-    box-shadow: none !important;
-    padding: 20px !important;
-  }
-
-  /* Remove input borders, show text values instead */
-  input {
-    border: none !important;
-    width: auto !important;
-    font-size: 13px;
-    color: black;
-    background: transparent !important;
-    pointer-events: none;
-  }
-
-  /* Table styling for print */
-  .test-table th, .test-table td {
-    border: 1px solid #000 !important;
-    padding: 6px;
-  }
-
-  .test-table th {
-    background-color: #f2f2f2 !important;
+    margin: 0;
   }
 }
-
-/* Optional: override input values to show as text for print */
-.test-table input {
-  border: none;
-  outline: none;
-  background: transparent;
-  width: 100%;
-}
-
 </style>
 
 </head>
@@ -312,15 +404,15 @@ Add
 
 <div class="footer">
 
-  <div class="sign">
-    <img src="technologist-sign.png" alt="Technologist Signature">
-    TECHNOLOGIST
-  </div>
 
-  <div class="sign">
-    <img src="doctor-sign.png" alt="Doctor Signature">
+<div style="width:100%; display:flex; justify-content:flex-end; margin-top:40px;">
+  
+  <div style="text-align:center;">
+    <img src="../static/doctor_sign.webp" alt="Doctor Signature" style="max-width:160px;"><br>
     DOCTOR SIGNATURE
   </div>
+
+</div>
 
 </div>
 
@@ -331,29 +423,36 @@ Send WhatsApp
 
 
 
-<div id="printReport" style="display:none; font-family:Arial, sans-serif; width:900px; margin:auto; background:white; padding:25px; border:1px solid #ccc;">
+<div id="printReport" style="display:none; font-family:Arial, sans-serif; width:100%; margin:auto; background:white; padding:25px;">
 
 <!-- HEADER -->
 <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #0f3f7a; padding-bottom:10px;">
 
     <!-- LEFT : LOGO -->
     <div style="display:flex; align-items:center;">
-        <img src="rapid-labs-logo.png" style="height:70px; margin-right:10px;">
-        <div>
+        <img src="../static/rl_report_logo.webp" style="height:70px; margin-right:10px;">
+          <div>
             <div style="font-size:22px; font-weight:bold; color:#0f3f7a;">Rapid Labs</div>
-            <div style="font-size:12px;">Department of Laboratory Medicine</div>
-        </div>
+            <div style="font-size:12px;">Smart Diagnostics for Better Health</div>
+          </div>
     </div>
 
     <!-- RIGHT : ADDRESS -->
-    <div style="text-align:right; font-size:13px;">
-        123 Medical Street<br>
-        Bangalore, Karnataka<br>
-        Phone: +91 XXXXXXXX<br>
-        Email: info@rapidlabs.com<br>
-        www.rapidlabs.com
-    </div>
+      <div style="text-align:right; font-size:13px; line-height:1.6;">
+          Vijayanagar, 1222, 80 Feet Rd, near Ganesha Temple<br>
+          BDA Layout, Chandra Layout<br>
+          Bengaluru, Karnataka 560040<br>
+          Phone: +91 7975357102<br>
+          Email: rapidlabs.hr@gmail.com
+      </div>
 
+</div>
+
+<div style="margin-top:40px; font-size:12px; line-height:1.6; border-top:2px solid #000; padding-top:12px; color:#000; text-align:center; font-weight:bold;">
+RapidLabs adheres to the highest quality standards, following 
+<span style="font-weight:800; text-transform:uppercase;">NABH Certified</span> protocols and actively participating in the 
+<span style="font-weight:800; text-transform:uppercase;">CMC Vellore External Quality Assurance Scheme (EQAS)</span> 
+for laboratory investigations.
 </div>
 
 
@@ -364,7 +463,7 @@ Send WhatsApp
 
 
 <!-- PATIENT DETAILS -->
-<table style="width:100%; font-size:13px; border-collapse:collapse; margin-bottom:20px;">
+<table class="info-table">
 <tr>
 <td><strong>Name :</strong> <span id="pNamePrint"></span></td>
 <td><strong>Report No :</strong> <span id="pReportNoPrint"></span></td>
@@ -380,15 +479,14 @@ Send WhatsApp
 
 
 <!-- TEST RESULT TABLE -->
-<table style="width:100%; border-collapse:collapse; font-size:13px;">
+<table>
 
 <thead style="background:#0f3f7a; color:white;">
 <tr>
-<th style="border:1px solid #000; padding:8px;">Test Name</th>
-<th style="border:1px solid #000; padding:8px;">Result</th>
-<th style="border:1px solid #000; padding:8px;">Unit</th>
-<th style="border:1px solid #000; padding:8px;">Reference Range</th>
-<th style="border:1px solid #000; padding:8px;">Method</th>
+<th>Test Name</th>
+<th>Result</th>
+<th>Unit</th>
+<th>Reference Range</th>
 </tr>
 </thead>
 
@@ -400,14 +498,13 @@ Send WhatsApp
 <!-- SIGNATURES -->
 <div style="display:flex; justify-content:space-between; margin-top:50px; font-size:13px;">
 
-<div style="text-align:center;">
-<img src="technologist-sign.png" style="height:50px;"><br>
-<b>Lab Technologist</b>
-</div>
 
-<div style="text-align:center;">
-<img src="doctor-sign.png" style="height:50px;"><br>
-<b>Authorised Doctor</b>
+<div style="width:100%; display:flex; justify-content:flex-end;">
+  
+  <div style="text-align:center;">
+    <img src="../static/doctor_sign.webp" style="height:50px;"><br>
+  </div>
+
 </div>
 
 </div>
@@ -415,8 +512,7 @@ Send WhatsApp
 
 <!-- FOOTER NOTE -->
 <div style="margin-top:40px; font-size:11px; border-top:1px solid #ccc; padding-top:10px; color:#444;">
-This medical report is for clinical interpretation by the referring doctor only.
-Results should be correlated with patient history and other findings.
+Test results should be reviewed by your doctor along with your medical history.
 </div>
 
 </div>
@@ -620,16 +716,168 @@ async function searchPatient() {
 
 function printReport(){
 
-var content = document.getElementById("printReport").innerHTML;
-var win = window.open('', '', 'width=900,height=700');
+// Fill data
+document.getElementById("pNamePrint").innerText =
+document.getElementById("patient_name").value;
 
-win.document.write('<html><head><title>Lab Report</title></head><body>');
+document.getElementById("pReportNoPrint").innerText =
+document.getElementById("report_no").value;
+
+document.getElementById("pAgeSexPrint").innerText =
+document.getElementById("age_sex").value;
+
+document.getElementById("pMobilePrint").innerText =
+document.getElementById("mobile").value;
+
+document.getElementById("pDoctorPrint").innerText =
+document.getElementById("refDoctor").value;
+
+document.getElementById("pCollectedPrint").innerText =
+new Date().toLocaleDateString();
+
+
+// Copy table data
+let table = document.getElementById("labTable");
+let printBody = document.getElementById("printTestBody");
+
+printBody.innerHTML = "";
+
+for (let i = 1; i < table.rows.length; i++) {
+
+    let row = table.rows[i];
+
+    let test = row.cells[0].children[0].value;
+    let value = row.cells[1].children[0].value;
+    let unit = row.cells[2].children[0].value;
+    let ref = row.cells[3].children[0].value;
+
+    printBody.innerHTML += `
+    <tr>
+        <td>${test}</td>
+        <td>${value}</td>
+        <td>${unit}</td>
+        <td>${ref}</td>
+    </tr>`;
+}
+
+
+// SHOW
+document.getElementById("printReport").style.display = "block";
+
+
+// ✅ FULL HTML WITH CSS
+let content = `
+<html>
+<head>
+<title>Lab Report</title>
+
+
+<style>
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding:25px;
+  color:#2c3e50;
+}
+
+/* HEADER */
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid #0f3f7a;
+  padding-bottom:10px;
+  margin-bottom:15px;
+}
+
+/* TITLE */
+h2 {
+  text-align:center;
+  color:#0f3f7a;
+  margin:10px 0 20px;
+  font-weight:600;
+}
+
+/* INFO TABLE */
+.info-table {
+  width:100%;
+  margin-bottom:20px;
+  font-size:13px;
+}
+
+.info-table td {
+  padding:6px 10px;
+}
+
+/* MAIN TABLE */
+table {
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  font-size:13px;
+}
+
+th {
+  background:#0f3f7a;
+  color:white;
+  padding:10px;
+  border:1px solid #000;
+  text-align:center;
+}
+
+td {
+  padding:10px;
+  border:1px solid #000;
+  text-align:center;
+}
+
+td:first-child {
+  text-align:left;
+}
+
+/* FOOTER */
+.footer {
+  margin-top:50px;
+  display:flex;
+  justify-content:space-between;
+  text-align:center;
+}
+
+/* NOTE */
+.note {
+  margin-top:30px;
+  font-size:11px;
+  border-top:1px solid #ccc;
+  padding-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+${document.getElementById("printReport").innerHTML}
+
+</body>
+</html>
+`;
+
+
+// OPEN WINDOW
+let win = window.open('', '', 'width=900,height=700');
+
 win.document.write(content);
-win.document.write('</body></html>');
-
 win.document.close();
+win.focus();
+win.onafterprint = function() {
+  win.close();
+};
+
 win.print();
 
+
+document.getElementById("printReport").style.display = "none";
 }
 
 async function sendWhatsAppReport(){
