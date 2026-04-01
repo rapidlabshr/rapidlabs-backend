@@ -11,6 +11,17 @@ from firebase_admin import credentials, messaging
 import json
 from flask_mail import Mail, Message
 from flask import send_file
+import requests
+
+TELEGRAM_BOT_TOKEN = "8674468800:AAG-Th-PKddYC9TeIuSkBLrP5g2Vxo3y14A"
+TELEGRAM_CHAT_ID = 8771789372  # replace with your chat id
+
+def send_telegram_message(message):
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    payload = {"chat_id": TELEGRAM_CHAT_ID, "text": message}
+    requests.post(url, data=payload)
+
+
 
 # ==============================
 # APP SETUP
@@ -268,15 +279,16 @@ def get_report(task_id):
     cursor = conn.cursor()
 
     cursor.execute("""
-        SELECT report_file 
-        FROM reports 
-        WHERE task_id = ?
+        SELECT r.report_file, l.email
+        FROM reports r
+        JOIN leads l ON r.lead_id = l.id
+        WHERE r.lead_id = ?
     """, (task_id,))
 
     row = cursor.fetchone()
     conn.close()
 
-    return row["report_file"] if row else None
+    return row
 
 
 # ==============================
@@ -620,6 +632,10 @@ def create_lead():
 
     conn.commit()
     conn.close()
+
+        # ✅ Send Telegram notification
+    send_telegram_message(f"📢 New Lead Created!\nName: {name}\nMobile: {mobile}\nTest: {test_name}\nLocation: {location}\nAmount: {amount}")
+
 
     return jsonify({
         "success": True,
@@ -1364,6 +1380,11 @@ def reports():
 
     return render_template("reports.html", bills=bills)
 
+
+
+
+
+
 @app.route('/report/<invoice>')
 def generate_report(invoice):
 
@@ -1374,9 +1395,14 @@ def generate_report(invoice):
         (invoice,)
     ).fetchone()
 
+    items = conn.execute(
+        "SELECT test_name, price FROM bill_items WHERE invoice_no=?",
+        (invoice,)
+    ).fetchall()
+
     conn.close()
 
-    return render_template("report.html", bill=bill)
+    return render_template("report.html", bill=bill, items=items)
 
 @app.route("/api/report-patient")
 def report_patient():
@@ -2366,4 +2392,5 @@ def create_admin():
 # ==============================
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    # app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000, debug=True)
