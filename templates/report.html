@@ -222,6 +222,13 @@ body{
   .test-table td:first-child{
     text-align:left;
   }
+
+  .test-table th:last-child,
+.test-table td:last-child {
+  display: none !important;
+}
+
+
 }
 
 /* ================= PRINT REPORT (IMPORTANT FIX) ================= */
@@ -402,6 +409,8 @@ Add
     <th>OBSERVED VALUE</th>
     <th>UNIT</th>
     <th>REFERENCE RANGE</th>
+    <th></th>
+
   </tr>
 </table>
 
@@ -623,12 +632,15 @@ function addRow() {
   const valueCell = row.insertCell(1);
   const unitCell = row.insertCell(2);
   const refCell = row.insertCell(3);
+  const actionCell = row.insertCell(4);
 
   // Inputs
   nameCell.innerHTML = '<input oninput="autoFill(this)" placeholder="Test Name">';
   valueCell.innerHTML = '<input>';
   unitCell.innerHTML = '<input>';
   refCell.innerHTML = '<textarea rows="2" style="width:100%;border:none;outline:none;resize:none;"></textarea>';
+
+actionCell.innerHTML = '<button onclick="deleteRow(this)" style="background:none;border:none;color:red;font-size:16px;cursor:pointer;">✖</button>';
 
   // Save on blur
   [nameCell, unitCell, refCell].forEach((cell, i) => {
@@ -665,6 +677,7 @@ Object.keys(savedTests).forEach(name => {
   row.insertCell(1).innerHTML = '<input>';
   row.insertCell(2).innerHTML = `<input value="${savedTests[name].unit}">`;
   row.insertCell(3).innerHTML = `<textarea style="width:100%;border:none;outline:none;resize:none;">${savedTests[name].ref}</textarea>`;
+row.insertCell(4).innerHTML = `<button onclick="deleteRow(this)" style="background:none;border:none;color:red;font-size:16px;cursor:pointer;">✖</button>`;
 });
 
 // Function to generate new report number
@@ -717,6 +730,7 @@ async function searchPatient() {
           row.insertCell(1).innerHTML = `<input value="${test.observed || ''}">`;
           row.insertCell(2).innerHTML = `<input value="${test.unit || ''}">`;
           row.insertCell(3).innerHTML = `<textarea style="width:100%;border:none;outline:none;resize:none;">${test.ref || ''}</textarea>`;
+row.insertCell(4).innerHTML = `<button onclick="deleteRow(this)" style="background:none;border:none;color:red;font-size:16px;cursor:pointer;">✖</button>`;
         });
       }
     }
@@ -934,6 +948,12 @@ window.open("https://wa.me/91"+mobile+"?text="+message,"_blank");
 document.getElementById("printReport").style.display="none";
 
 }
+
+function deleteRow(btn){
+  btn.parentElement.parentElement.remove();
+}
+
+
 </script>
 
 </body>
