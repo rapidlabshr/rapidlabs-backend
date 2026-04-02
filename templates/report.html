@@ -255,6 +255,18 @@ h2 {
   padding:6px 10px;
 }
 
+
+.test-table textarea{
+  width:100%;
+  border:none;
+  outline:none;
+  resize:none;
+  font-size:13px;
+  text-align:left;
+}
+
+
+
 /* MAIN REPORT TABLE */
 .print-table {
   width:100%;
@@ -616,7 +628,7 @@ function addRow() {
   nameCell.innerHTML = '<input oninput="autoFill(this)" placeholder="Test Name">';
   valueCell.innerHTML = '<input>';
   unitCell.innerHTML = '<input>';
-  refCell.innerHTML = '<input>';
+  refCell.innerHTML = '<textarea rows="2" style="width:100%;border:none;outline:none;resize:none;"></textarea>';
 
   // Save on blur
   [nameCell, unitCell, refCell].forEach((cell, i) => {
@@ -652,7 +664,7 @@ Object.keys(savedTests).forEach(name => {
   row.insertCell(0).innerHTML = `<input value="${name}" oninput="autoFill(this)">`;
   row.insertCell(1).innerHTML = '<input>';
   row.insertCell(2).innerHTML = `<input value="${savedTests[name].unit}">`;
-  row.insertCell(3).innerHTML = `<input value="${savedTests[name].ref}">`;
+  row.insertCell(3).innerHTML = `<textarea style="width:100%;border:none;outline:none;resize:none;">${savedTests[name].ref}</textarea>`;
 });
 
 // Function to generate new report number
@@ -704,7 +716,7 @@ async function searchPatient() {
           row.insertCell(0).innerHTML = `<input value="${test.name}" oninput="autoFill(this)">`;
           row.insertCell(1).innerHTML = `<input value="${test.observed || ''}">`;
           row.insertCell(2).innerHTML = `<input value="${test.unit || ''}">`;
-          row.insertCell(3).innerHTML = `<input value="${test.ref || ''}">`;
+          row.insertCell(3).innerHTML = `<textarea style="width:100%;border:none;outline:none;resize:none;">${test.ref || ''}</textarea>`;
         });
       }
     }
@@ -749,7 +761,7 @@ for (let i = 1; i < table.rows.length; i++) {
     let test = row.cells[0].children[0].value;
     let value = row.cells[1].children[0].value;
     let unit = row.cells[2].children[0].value;
-    let ref = row.cells[3].children[0].value;
+    let ref = row.cells[3].children[0].value.replace(/\n/g, "<br>");
 
     printBody.innerHTML += `
     <tr>
