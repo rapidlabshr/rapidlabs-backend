@@ -365,6 +365,7 @@ transform:translate(-50%,-50%);
 <th>Time</th>
 <th>Status</th>
 <th>Collector Status</th>
+<th>Action</th>
 </tr>
 </thead>
 
@@ -945,7 +946,7 @@ let html=""
 data.forEach(t=>{
 
 html+=`
-<tr>
+<tr id="task-${t.id}">
 <td>${t.id}</td>
 <td>${t.patient_name}</td>
 <td>${t.mobile}</td>
@@ -957,6 +958,11 @@ html+=`
 <td>${t.time || ""}</td>
 <td>${t.status}</td>
 <td>${t.collector_status}</td>
+<td>
+    <button onclick="deleteTask(${t.id})" style="background:#ef4444;color:white;">
+        Delete
+    </button>
+</td>
 </tr>
 `
 
@@ -1125,6 +1131,29 @@ function sendToBackend(data) {
     });
 }
 
+
+async function deleteTask(taskId){
+
+    if(!confirm("Are you sure you want to delete this task?")) return;
+
+    const res = await fetch("/api/delete-collection-task/" + taskId, {
+        method: "DELETE"
+    });
+
+    const data = await res.json();
+
+    if(data.success){
+
+        alert("Task Deleted");
+
+        // ✅ remove row instantly
+        const row = document.getElementById("task-" + taskId);
+        if(row) row.remove();
+
+    }else{
+        alert("Delete failed");
+    }
+}
 
 
 </script>

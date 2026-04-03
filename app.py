@@ -1766,6 +1766,32 @@ def get_collection_tasks():
 
 
 
+@app.route("/api/delete-collection-task/<int:task_id>", methods=["DELETE"])
+def delete_collection_task(task_id):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # ✅ DELETE from YOUR actual table
+        cursor.execute("DELETE FROM collection_tasks WHERE id = ?", (task_id,))
+
+        conn.commit()
+        conn.close()
+
+        return jsonify({
+            "success": True,
+            "message": "Task deleted successfully"
+        })
+
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "message": str(e)
+        }), 500
+    
+
+    
+
 # collector app
 
 @app.route("/api/collector-login", methods=["POST"])
@@ -2392,5 +2418,5 @@ def create_admin():
 # ==============================
 
 if __name__ == "__main__":
-    # app.run(host="0.0.0.0", port=5000)
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000)
+  
