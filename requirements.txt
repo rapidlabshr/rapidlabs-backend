@@ -7,3 +7,4 @@ razorpay
 firebase-admin
 gunicorn
 requests
+psycopg2-binary
