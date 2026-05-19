@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Client Process Billing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+    --primary:#06376d;
+    --primary-dark:#032a55;
+    --primary-light:#eaf3ff;
+
+    --blue:#0877d8;
+    --blue-soft:#e8f4ff;
+
+    --green:#2f8f12;
+    --green-soft:#eef9e9;
+
+    --bg:#f4f7fb;
+    --card:#ffffff;
+
+    --text:#102033;
+    --muted:#64748b;
+
+    --border:#dbe4ee;
+    --border-light:#edf2f7;
+
+    --danger:#b91c1c;
+    --danger-soft:#fee2e2;
+
+    --radius:10px;
+    --shadow:0 4px 14px rgba(6,55,109,.08);
+}
+
+/* GLOBAL */
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    font-size:14px;
+}
+
+/* HEADER */
+.header{
+    background:linear-gradient(135deg,var(--primary),var(--blue));
+    color:white;
+    padding:14px 24px;
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:.2px;
+    box-shadow:0 4px 14px rgba(6,55,109,.18);
+}
+
+/* PAGE */
+.wrapper{
+    padding:18px;
+    max-width:1600px;
+    margin:auto;
+}
+
+/* CARD */
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:16px;
+    margin-bottom:16px;
+    box-shadow:var(--shadow);
+}
+
+.card h3{
+    margin:0 0 14px;
+    color:var(--primary);
+    font-size:16px;
+    font-weight:800;
+}
+
+/* FORM GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    position:relative;
+}
+
+label{
+    font-size:13px;
+    margin-bottom:5px;
+    font-weight:700;
+    color:#334155;
+}
+
+/* INPUTS */
+input,
+select{
+    height:39px;
+    padding:8px 10px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:14px;
+    background:white;
+    color:var(--text);
+    transition:.15s ease;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(8,119,216,.10);
+}
+
+input[readonly]{
+    background:#f8fafc;
+    color:#64748b;
+    cursor:not-allowed;
+}
+
+/* DROPDOWNS */
+.client-dropdown,
+.test-dropdown{
+    position:absolute;
+    left:0;
+    right:0;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    box-shadow:0 12px 28px rgba(6,55,109,.16);
+    max-height:260px;
+    overflow-y:auto;
+    z-index:100;
+    display:none;
+}
+
+.client-dropdown{
+    top:64px;
+}
+
+.test-dropdown{
+    top:66px;
+}
+
+.client-option,
+.test-option{
+    padding:10px 12px;
+    cursor:pointer;
+    border-bottom:1px solid var(--border-light);
+}
+
+.client-option:hover,
+.test-option:hover{
+    background:var(--primary-light);
+}
+
+.client-option b,
+.test-option b{
+    display:block;
+    color:var(--primary);
+    font-size:14px;
+    font-weight:800;
+}
+
+.client-option span,
+.test-option span{
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    margin-top:3px;
+}
+
+/* HELPERS */
+.helper{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:4px;
+}
+
+.helper.good{
+    color:var(--green);
+    font-weight:700;
+}
+
+.helper.bad{
+    color:var(--danger);
+    font-weight:700;
+}
+
+/* ACTIONS */
+.actions{
+    margin-top:18px;
+    display:flex;
+    gap:10px;
+}
+
+button{
+    padding:9px 16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:700;
+    transition:.15s ease;
+}
+
+button:hover{
+    transform:translateY(-1px);
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--primary-dark);
+}
+
+.btn-secondary{
+    background:#e5e7eb;
+    color:#1f2937;
+}
+
+.btn-danger{
+    background:var(--danger-soft);
+    color:var(--danger);
+}
+
+.btn-danger:hover{
+    background:var(--danger);
+    color:white;
+}
+
+/* SUMMARY */
+.summary{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.summary-box{
+    background:linear-gradient(180deg,#ffffff,#f8fbff);
+    border:1px solid var(--border);
+    padding:13px;
+    border-radius:10px;
+}
+
+.summary-box small{
+    color:var(--muted);
+    display:block;
+    margin-bottom:6px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.summary-box b{
+    font-size:18px;
+    color:var(--primary);
+}
+
+/* TEST SECTION */
+.test-section{
+    grid-column:1/-1;
+    margin-top:8px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px;
+    background:#fafcff;
+}
+
+.test-search-row{
+    display:grid;
+    grid-template-columns:2fr 120px 120px 90px;
+    gap:10px;
+    align-items:start;
+}
+
+/* TABLE */
+.table-wrap{
+    width:100%;
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+}
+
+th{
+    background:#f3f7fb;
+    color:#000;
+    padding:10px;
+    text-align:left;
+    font-size:12px;
+    font-weight:900;
+    text-transform:uppercase;
+    border-bottom:1px solid var(--border);
+}
+
+td{
+    padding:9px 10px;
+    border-bottom:1px solid var(--border-light);
+    color:#1f2937;
+    font-weight:600;
+}
+
+tbody tr:hover td{
+    background:#f8fbff;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .grid,
+    .summary{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .test-search-row{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+    .grid,
+    .summary,
+    .test-search-row{
+        grid-template-columns:1fr;
+    }
+
+    .wrapper{
+        padding:12px;
+    }
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+    table-layout:fixed;
+}
+
+th,td{
+    padding:8px 6px;
+    border-bottom:1px solid #e5e7eb;
+    white-space:normal;
+    word-break:break-word;
+}
+
+th{
+    background:#0f3f7a;
+    color:white;
+    text-align:left;
+}
+
+td input{
+    width:80px;
+    padding:6px;
+}
+.status{padding:4px 8px;border-radius:12px;font-size:12px;background:#fff3cd;color:#856404}
+.total-line{margin-top:10px;font-size:14px;font-weight:bold;color:#0f3f7a}
+
+.no-scroll-table{
+    overflow-x:visible;
+}
+
+.no-scroll-table table{
+    min-width:0;
+}
+
+.notification-float{
+    position:fixed;
+    top:18px;
+    right:18px;
+    width:360px;
+    background:white;
+    border:1px solid #dbe2ea;
+    border-radius:12px;
+    box-shadow:0 18px 45px rgba(15,23,42,.18);
+    z-index:9999;
+    display:none;
+    overflow:hidden;
+}
+
+.notification-head{
+    padding:12px 14px;
+    background:#0f3f7a;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:700;
+}
+
+.notification-head button{
+    background:white;
+    color:#0f3f7a;
+    padding:5px 10px;
+    font-size:12px;
+}
+
+.notification-body{
+    max-height:300px;
+    overflow-y:auto;
+}
+
+.notification-item{
+    padding:12px 14px;
+    border-bottom:1px solid #edf2f7;
+    cursor:pointer;
+}
+
+.notification-item:hover{
+    background:#f8fafc;
+}
+
+.notification-item b{
+    display:block;
+    font-size:14px;
+    color:#111827;
+    margin-bottom:4px;
+}
+
+.notification-item span{
+    font-size:12px;
+    color:#64748b;
+}
+
+.screen-alert{
+    position:fixed;
+    top:24px;
+    left:50%;
+    transform:translateX(-50%);
+    background:white;
+    border-left:5px solid #0f3f7a;
+    box-shadow:0 18px 45px rgba(15,23,42,.2);
+    border-radius:12px;
+    padding:14px 18px;
+    z-index:10000;
+    min-width:340px;
+    display:none;
+}
+
+.screen-alert b{
+    display:block;
+    margin-bottom:4px;
+}
+
+.highlight-row td{
+    background:#fff7ed !important;
+}
+@media(max-width:900px){.grid,.summary{grid-template-columns:1fr 1fr}.test-search-row{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid,.summary,.test-search-row{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+<div class="header">Staff Billing - Client Process</div>
+
+
+<div id="screenAlert" class="screen-alert"></div>
+
+<div id="notificationBox" class="notification-float">
+    <div class="notification-head">
+        <span>Notifications</span>
+        <button onclick="clearNotifications()">Clear All</button>
+    </div>
+
+    <div id="notificationBody" class="notification-body"></div>
+</div>
+
+
+<div class="wrapper">
+<div class="card">
+<h3>Create Client Bill</h3>
+
+<div class="grid">
+<input type="hidden" id="clientId">
+
+<div class="form-group">
+<label>Search Client</label>
+<input type="text" id="clientSearch" placeholder="Type 2 letters to search client" autocomplete="off" oninput="searchClients()">
+<div id="clientDropdown" class="client-dropdown"></div>
+<div class="helper">Select client from existing client list</div>
+</div>
+
+<div class="form-group">
+<label>Client Name</label>
+<input type="text" id="clientName" placeholder="Auto-filled" readonly>
+</div>
+
+<div class="form-group">
+<label>Client Mobile</label>
+<input type="text" id="clientMobile" placeholder="Auto-filled" readonly>
+</div>
+
+<div class="form-group">
+<label>Patient Name</label>
+<input type="text" id="patientName" placeholder="Enter patient name">
+</div>
+
+<div class="form-group">
+<label>Patient Mobile</label>
+<input type="text" id="patientMobile" placeholder="Enter patient mobile">
+</div>
+<div class="form-group">
+<label>Gender</label>
+<select id="gender">
+    <option value="">Select Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Sample Collected By</label>
+<input type="text" id="collectedBy" placeholder="Staff/person name">
+</div>
+
+<div class="form-group">
+<label>Payment Status</label>
+<select id="paymentStatus">
+<option value="Pending">Pending</option>
+<option value="Paid">Paid</option>
+</select>
+</div>
+
+<div class="test-section">
+<h3 style="margin-bottom:12px;">Tests</h3>
+
+<div class="test-search-row">
+<div class="form-group">
+<label>Search Test</label>
+<input type="text" id="testSearch" placeholder="Type 2 letters to search Excel tests" autocomplete="off" oninput="searchTests()">
+<div id="testDropdown" class="test-dropdown"></div>
+<div id="testLoadStatus" class="helper">Loading test master...</div>
+</div>
+
+<div class="form-group">
+<label>MRP</label>
+<input type="number" id="manualMrp" placeholder="MRP">
+</div>
+
+<div class="form-group">
+<label>B2B</label>
+<input type="number" id="manualB2b" placeholder="B2B">
+</div>
+
+<div class="form-group">
+<label>&nbsp;</label>
+<button class="btn-primary" onclick="addTest()">Add</button>
+</div>
+</div>
+
+<div class="table-wrap" style="margin-top:12px;">
+<table>
+<thead>
+<tr>
+<th>Test Name</th>
+<th>Service Code</th>
+<th>Sample</th>
+<th>TAT</th>
+<th>MRP</th>
+<th>B2B</th>
+<th>Remove</th>
+</tr>
+</thead>
+<tbody id="selectedTests">
+<tr><td colspan="7" style="text-align:center;color:#777;">No tests added</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="total-line">
+Current Bill Total: MRP ₹<span id="currentMrpTotal">0</span> | B2B ₹<span id="currentB2bTotal">0</span>
+</div>
+</div>
+</div>
+
+<div class="actions">
+<button class="btn-primary" onclick="createBill()">Create Bill</button>
+<button class="btn-secondary" onclick="clearForm()">Clear</button>
+</div>
+</div>
+
+<div class="card">
+<h3>Billing Summary</h3>
+<div class="summary">
+<div class="summary-box"><small>Total Bills</small><b id="totalBills">0</b></div>
+<div class="summary-box"><small>Total MRP</small><b id="totalMrp">₹0</b></div>
+<div class="summary-box"><small>Total B2B</small><b id="totalB2b">₹0</b></div>
+<div class="summary-box"><small>Pending Process</small><b id="pendingBills">0</b></div>
+</div>
+</div>
+
+<div class="card">
+<h3>Created Bills</h3>
+<div class="table-wrap no-scroll-table">
+<table>
+<thead>
+<tr>
+<th>Bill ID</th>
+<th>Client ID</th>
+<th>Client</th>
+<th>Patient</th>
+<th>Patient Mobile</th>
+<th>Tests</th>
+<th>Total MRP</th>
+<th>Total B2B</th>
+<th>Status</th>
+<th>Next</th>
+</tr>
+</thead>
+<tbody id="billTable">
+<tr><td colspan="10" style="text-align:center;color:#777;">No bills created yet</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
+<script>
+let bills = [];
+let clients = [];
+let tests = [];
+let selectedTests = [];
+let currentTest = null;
+
+function cleanText(value){
+    return String(value ?? "").trim();
+}
+
+function getTestName(t){
+    return cleanText(t.test_name || t.TEST_NAME || t["TEST NAME"] || t.name || t.Name);
+}
+
+function getServiceCode(t){
+    return cleanText(t.service_code || t.SERVICE_CODE || t["SERVICE CODE"] || t.code || "");
+}
+
+function getDepartment(t){
+    return cleanText(t.department || t.DEPARTMENT || "");
+}
+
+function getSampleType(t){
+    return cleanText(t.sample_type || t.SAMPLE_TYPE || t["SAMPLE TYPE"] || "");
+}
+
+function getTat(t){
+    return cleanText(t.tat || t.TAT || "");
+}
+
+function getMrp(t){
+    return Number(t.mrp ?? t.MRP ?? t["MRP"] ?? 0) || 0;
+}
+
+function getB2b(t){
+    return Number(t.b2b ?? t.B2B ?? t["B2B"] ?? 0) || 0;
+}
+
+async function loadClients(){
+    try{
+        const res = await fetch("/api/clients");
+        const data = await res.json();
+        clients = Array.isArray(data) ? data : [];
+    }catch(err){
+        console.error("Client load error:", err);
+        clients = [];
+    }
+}
+
+async function loadTests(){
+    const status = document.getElementById("testLoadStatus");
+
+    try{
+        const res = await fetch("/api/tests");
+        const data = await res.json();
+
+        tests = Array.isArray(data)
+            ? data.filter(t => getTestName(t) !== "")
+            : [];
+
+        console.log("Loaded tests:", tests);
+
+        if(tests.length > 0){
+            status.innerText = "Test master loaded: " + tests.length + " tests";
+            status.className = "helper good";
+        }else{
+            status.innerText = "No valid tests loaded. Check Excel import /api/tests.";
+            status.className = "helper bad";
+        }
+
+    }catch(err){
+        console.error("Test load error:", err);
+        tests = [];
+        status.innerText = "Unable to load tests from /api/tests";
+        status.className = "helper bad";
+    }
+}
+
+function searchClients(){
+    const value = document.getElementById("clientSearch").value.toLowerCase().trim();
+    const dropdown = document.getElementById("clientDropdown");
+    dropdown.innerHTML = "";
+
+    if(value.length < 2){
+        dropdown.style.display = "none";
+        return;
+    }
+
+    const matched = clients.filter(c =>
+        String(c.name || "").toLowerCase().includes(value) ||
+        String(c.mobile || "").toLowerCase().includes(value) ||
+        String(c.username || "").toLowerCase().includes(value) ||
+        String(c.id || "").toLowerCase().includes(value)
+    );
+
+    if(matched.length === 0){
+        dropdown.innerHTML = `<div class="client-option"><b>No client found</b><span>Create client in admin first</span></div>`;
+        dropdown.style.display = "block";
+        return;
+    }
+
+    matched.slice(0,50).forEach(c => {
+        dropdown.innerHTML += `
+            <div class="client-option" onclick="selectClient('${escapeAttr(c.id)}','${escapeAttr(c.name)}','${escapeAttr(c.mobile || "")}','${escapeAttr(c.username || "")}')">
+                <b>${escapeHtml(c.name || "-")}</b>
+                <span>ID: ${escapeHtml(c.id || "-")} | Mobile: ${escapeHtml(c.mobile || "-")} | Username: ${escapeHtml(c.username || "-")}</span>
+            </div>
+        `;
+    });
+
+    dropdown.style.display = "block";
+}
+
+function selectClient(id, name, mobile, username){
+    document.getElementById("clientId").value = id;
+    document.getElementById("clientSearch").value = name + " - " + mobile;
+    document.getElementById("clientName").value = name;
+    document.getElementById("clientMobile").value = mobile;
+    document.getElementById("clientDropdown").style.display = "none";
+}
+
+function searchTests(){
+    const input = document.getElementById("testSearch");
+    const value = input.value.toLowerCase().trim();
+    const dropdown = document.getElementById("testDropdown");
+    currentTest = null;
+    dropdown.innerHTML = "";
+
+    if(value.length < 2){
+        dropdown.style.display = "none";
+        return;
+    }
+
+    const matched = tests.filter(t => {
+        const name = getTestName(t).toLowerCase();
+        const code = getServiceCode(t).toLowerCase();
+        const dept = getDepartment(t).toLowerCase();
+        const sample = getSampleType(t).toLowerCase();
+
+        return (
+            name.includes(value) ||
+            code.includes(value) ||
+            dept.includes(value) ||
+            sample.includes(value)
+        );
+    });
+
+    if(matched.length === 0){
+        dropdown.innerHTML = `
+            <div class="test-option" onclick="useManualTest()">
+                <b>Add manual test: ${escapeHtml(input.value)}</b>
+                <span>No Excel match found. Enter MRP and B2B, then click Add.</span>
+            </div>
+        `;
+        dropdown.style.display = "block";
+        return;
+    }
+
+    matched.slice(0,50).forEach((t, index) => {
+        const name = getTestName(t);
+        const code = getServiceCode(t);
+        const mrp = getMrp(t);
+        const b2b = getB2b(t);
+        const sample = getSampleType(t);
+        const tat = getTat(t);
+
+        dropdown.innerHTML += `
+            <div class="test-option" onclick="selectTestByIndex(${tests.indexOf(t)})">
+                <b>${escapeHtml(name || "-")}</b>
+                <span>Code: ${escapeHtml(code || "-")} | MRP ₹${mrp} | B2B ₹${b2b} | Sample: ${escapeHtml(sample || "-")} | TAT: ${escapeHtml(tat || "-")}</span>
+            </div>
+        `;
+    });
+
+    dropdown.style.display = "block";
+}
+
+function selectTestByIndex(index){
+    const t = tests[index];
+
+    if(!t){
+        alert("Unable to select test. Please search again.");
+        return;
+    }
+
+    currentTest = {
+        name: getTestName(t),
+        serviceCode: getServiceCode(t),
+        sampleType: getSampleType(t),
+        tat: getTat(t),
+        mrp: getMrp(t),
+        b2b: getB2b(t),
+        source: "master"
+    };
+
+    document.getElementById("testSearch").value = currentTest.name;
+    document.getElementById("manualMrp").value = currentTest.mrp;
+    document.getElementById("manualB2b").value = currentTest.b2b;
+    document.getElementById("testDropdown").style.display = "none";
+}
+
+function useManualTest(){
+    currentTest = null;
+    document.getElementById("testDropdown").style.display = "none";
+}
+
+function addTest(){
+    const typedName = document.getElementById("testSearch").value.trim();
+    const mrp = Number(document.getElementById("manualMrp").value || 0);
+    const b2b = Number(document.getElementById("manualB2b").value || 0);
+
+    if(!typedName){
+        alert("Enter or select a test name");
+        return;
+    }
+
+    if(!mrp || !b2b){
+        alert("Enter MRP and B2B");
+        return;
+    }
+
+    const testToAdd = currentTest ? {
+        ...currentTest,
+        mrp: mrp,
+        b2b: b2b
+    } : {
+        name: typedName,
+        serviceCode: "",
+        sampleType: "",
+        tat: "",
+        mrp: mrp,
+        b2b: b2b,
+        source: "manual"
+    };
+
+    selectedTests.push(testToAdd);
+
+    document.getElementById("testSearch").value = "";
+    document.getElementById("manualMrp").value = "";
+    document.getElementById("manualB2b").value = "";
+    currentTest = null;
+
+    renderSelectedTests();
+}
+
+function renderSelectedTests(){
+    const table = document.getElementById("selectedTests");
+
+    if(selectedTests.length === 0){
+        table.innerHTML = `<tr><td colspan="7" style="text-align:center;color:#777;">No tests added</td></tr>`;
+        updateCurrentTotals();
+        return;
+    }
+
+    table.innerHTML = "";
+
+    selectedTests.forEach((t,index) => {
+        table.innerHTML += `
+            <tr>
+                <td>${escapeHtml(t.name)}</td>
+                <td>${escapeHtml(t.serviceCode || "-")}</td>
+                <td>${escapeHtml(t.sampleType || "-")}</td>
+                <td>${escapeHtml(t.tat || "-")}</td>
+                <td><input type="number" value="${t.mrp}" oninput="updateMRP(${index}, this.value)"></td>
+                <td><input type="number" value="${t.b2b}" oninput="updateB2B(${index}, this.value)"></td>
+                <td><button class="btn-danger" onclick="removeTest(${index})">Remove</button></td>
+            </tr>
+        `;
+    });
+
+    updateCurrentTotals();
+}
+
+function updateMRP(i,val){
+    selectedTests[i].mrp = Number(val || 0);
+    updateCurrentTotals();
+}
+
+function updateB2B(i,val){
+    selectedTests[i].b2b = Number(val || 0);
+    updateCurrentTotals();
+}
+
+function removeTest(i){
+    selectedTests.splice(i,1);
+    renderSelectedTests();
+}
+
+function createBill(){
+    const bill = {
+        id:"BILL-" + Date.now(),
+        clientId:document.getElementById("clientId").value.trim(),
+        clientName:document.getElementById("clientName").value.trim(),
+        clientMobile:document.getElementById("clientMobile").value.trim(),
+        patientName:document.getElementById("patientName").value.trim(),
+        patientMobile:document.getElementById("patientMobile").value.trim(),
+        gender:document.getElementById("gender").value,
+        collectedBy:document.getElementById("collectedBy").value.trim(),
+        tests:selectedTests.map(t => ({...t})),
+        paymentStatus:document.getElementById("paymentStatus").value,
+        processStatus:"Billing Done"
+    };
+
+    if(!bill.clientId || !bill.clientName){
+        alert("Please select client from dropdown");
+        return;
+    }
+
+    if(!bill.patientName){
+        alert("Please enter patient name");
+        return;
+    }
+
+    if(selectedTests.length === 0){
+        alert("Please add at least one test");
+        return;
+    }
+
+    fetch("/api/create-bill", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(bill)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.success){
+            bill.id = data.invoice_no;
+            alert("Bill saved: " + data.invoice_no);
+
+            loadBills();   // reload from DB
+            clearForm();
+        }else{
+            alert(data.message || "Bill not saved");
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Server error while saving bill");
+    });
+}
+
+function renderBills(){
+    const table = document.getElementById("billTable");
+
+    if(bills.length === 0){
+        table.innerHTML = `<tr><td colspan="10" style="text-align:center;color:#777;">No bills created yet</td></tr>`;
+        return;
+    }
+
+    table.innerHTML = "";
+
+    bills.forEach(bill => {
+        const testNames = bill.tests.map(t => t.name).join(", ");
+        const totalMrp = bill.tests.reduce((sum,t) => sum + Number(t.mrp || 0), 0);
+        const totalB2b = bill.tests.reduce((sum,t) => sum + Number(t.b2b || 0), 0);
+
+        table.innerHTML += `
+            <tr id="bill-${escapeAttr(bill.id)}">
+                <td>${bill.id}</td>
+                <td>${bill.clientId}</td>
+                <td>${escapeHtml(bill.clientName)}</td>
+                <td>${escapeHtml(bill.patientName)}</td>
+                <td>${escapeHtml(bill.patientMobile || "-")}</td>
+                <td>${escapeHtml(testNames)}</td>
+                <td>₹${totalMrp}</td>
+                <td>₹${totalB2b}</td>
+    <td>
+        <span class="status">
+            ${bill.uploaded_report ? "Report Ready" : bill.processStatus}
+        </span>
+    </td>
+
+    <td style="display:flex;gap:6px;">
+
+        ${
+            bill.uploaded_report
+            ? `
+                <a 
+                    href="/uploads/${bill.uploaded_report}" 
+                    target="_blank"
+                    class="btn-secondary"
+                    style="text-decoration:none;padding:8px 10px;border-radius:5px;"
+                    title="Download Report"
+                >
+                    ⬇
+                </a>
+            `
+            : ""
+        }
+
+        <button class="btn-primary" onclick="moveNext('${bill.id}')">
+            Barcode
+        </button>
+
+    </td>
+            </tr>
+        `;
+    });
+}
+
+
+async function loadBills(){
+    try{
+        const res = await fetch("/api/bills");
+        const data = await res.json();
+
+        bills = Array.isArray(data) ? data : [];
+
+        renderBills();
+        updateSummary();
+        checkReportNotifications();
+    }catch(err){
+        console.error("Bill load error:", err);
+    }
+}
+
+
+
+function updateCurrentTotals(){
+    const totalMrp = selectedTests.reduce((sum,t) => sum + Number(t.mrp || 0), 0);
+    const totalB2b = selectedTests.reduce((sum,t) => sum + Number(t.b2b || 0), 0);
+
+    document.getElementById("currentMrpTotal").innerText = totalMrp;
+    document.getElementById("currentB2bTotal").innerText = totalB2b;
+}
+
+function updateSummary(){
+    document.getElementById("totalBills").innerText = bills.length;
+
+    const totalMrp = bills.reduce((sum,bill) => sum + bill.tests.reduce((s,t) => s + Number(t.mrp || 0), 0), 0);
+    const totalB2b = bills.reduce((sum,bill) => sum + bill.tests.reduce((s,t) => s + Number(t.b2b || 0), 0), 0);
+
+    document.getElementById("totalMrp").innerText = "₹" + totalMrp;
+    document.getElementById("totalB2b").innerText = "₹" + totalB2b;
+    document.getElementById("pendingBills").innerText = bills.length;
+}
+
+function clearForm(){
+    document.getElementById("clientId").value = "";
+    document.getElementById("clientSearch").value = "";
+    document.getElementById("clientName").value = "";
+    document.getElementById("clientMobile").value = "";
+    document.getElementById("patientName").value = "";
+    document.getElementById("patientMobile").value = "";
+    document.getElementById("gender").value = "";
+    document.getElementById("collectedBy").value = "";
+    document.getElementById("paymentStatus").value = "Pending";
+
+    document.getElementById("testSearch").value = "";
+    document.getElementById("manualMrp").value = "";
+    document.getElementById("manualB2b").value = "";
+    document.getElementById("testDropdown").style.display = "none";
+    document.getElementById("clientDropdown").style.display = "none";
+
+    selectedTests = [];
+    currentTest = null;
+    renderSelectedTests();
+}
+
+function moveNext(billId){
+    alert("Next process: Barcode creation for " + billId);
+}
+
+document.addEventListener("click", function(e){
+    const clientDropdown = document.getElementById("clientDropdown");
+    const clientSearch = document.getElementById("clientSearch");
+    const testDropdown = document.getElementById("testDropdown");
+    const testSearch = document.getElementById("testSearch");
+
+    if(clientDropdown && !clientDropdown.contains(e.target) && e.target !== clientSearch){
+        clientDropdown.style.display = "none";
+    }
+
+    if(testDropdown && !testDropdown.contains(e.target) && e.target !== testSearch){
+        testDropdown.style.display = "none";
+    }
+});
+
+function escapeHtml(value){
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+function escapeAttr(value){
+    return String(value ?? "")
+        .replace(/\\/g,"\\\\")
+        .replace(/'/g,"\\'")
+        .replace(/"/g,"&quot;")
+        .replace(/\n/g," ");
+}
+
+
+function moveNext(billId){
+    window.location.href = "/barcode?invoice_no=" + billId;
+}
+
+let knownReportNotifications = new Set();
+let notifications = [];
+let firstBillLoad = true;
+
+function checkReportNotifications(){
+    bills.forEach(bill => {
+        if(bill.uploaded_report && bill.id){
+            if(!knownReportNotifications.has(bill.id)){
+                knownReportNotifications.add(bill.id);
+
+                if(!firstBillLoad){
+                    addNotification({
+                        billId: bill.id,
+                        title: "Report Ready",
+                        message: `${bill.patientName || "Patient"} report is ready`
+                    });
+                }
+            }
+        }
+    });
+
+    firstBillLoad = false;
+}
+
+function addNotification(item){
+    notifications.unshift(item);
+    renderNotifications();
+    showScreenAlert(item.title, item.message);
+}
+
+function renderNotifications(){
+    const box = document.getElementById("notificationBox");
+    const body = document.getElementById("notificationBody");
+
+    if(!box || !body) return;
+
+    if(notifications.length === 0){
+        box.style.display = "none";
+        body.innerHTML = "";
+        return;
+    }
+
+    box.style.display = "block";
+
+    body.innerHTML = notifications.map(n => `
+        <div class="notification-item" onclick="openNotificationBill('${escapeAttr(n.billId)}')">
+            <b>${escapeHtml(n.title)}</b>
+            <span>${escapeHtml(n.message)}<br>Bill: ${escapeHtml(n.billId)}</span>
+        </div>
+    `).join("");
+}
+
+function showScreenAlert(title, message){
+    const alertBox = document.getElementById("screenAlert");
+
+    if(!alertBox) return;
+
+    alertBox.innerHTML = `
+        <b>${escapeHtml(title)}</b>
+        <span>${escapeHtml(message)}</span>
+    `;
+
+    alertBox.style.display = "block";
+
+    setTimeout(() => {
+        alertBox.style.display = "none";
+    }, 5000);
+}
+
+function clearNotifications(){
+    notifications = [];
+    renderNotifications();
+}
+
+function openNotificationBill(billId){
+    const row = document.getElementById("bill-" + billId);
+
+    if(row){
+        row.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+        row.classList.add("highlight-row");
+
+        setTimeout(() => {
+            row.classList.remove("highlight-row");
+        }, 2500);
+    }
+}
+
+
+loadClients();
+loadTests();
+loadBills();   // 🔥 IMPORTANT
+renderSelectedTests();
+</script>
+
+</body>
+</html>

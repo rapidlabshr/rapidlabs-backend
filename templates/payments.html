@@ -81,10 +81,11 @@ font-weight:bold;
 <ul>
 <li onclick="openDashboard()">Dashboard</li>
 <li onclick="openLeads()">Leads</li>
-<li>Sample Collection</li>
+<li onclick="openCollection()">Sample Collection</li>
 <li onclick="openReports()">Reports</li>
 <li style="background:#0f3f7a;">Payments</li>
-<li>Staff</li>
+<li onclick="openAccounts()">Accounts</li>
+<li onclick="openStaff()">Staff</li>
 </ul>
 
 </div>
@@ -143,7 +144,17 @@ function openReports(){
 window.location.href="/reports"
 }
 
+function openCollection(){
+window.location.href="/sample-collection?role=admin";
+}
 
+function openAccounts(){
+window.location.href="/accounts";
+}
+
+function openStaff(){
+window.location.href="/staff";
+}
 
 /* LOAD PAYMENTS */
 

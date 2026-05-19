@@ -5,255 +5,222 @@
 
 <style>
 body{
-margin:0;
-font-family: 'Inter', Arial, sans-serif;
-display:flex;
-height:100vh;
-background:#f1f5f9;
+    margin:0;
+    background:#f4f6f8;
+    font-family:Arial,sans-serif;
+    color:#1f2937;
+    display:flex;
+    min-height:100vh;
 }
 
 /* SIDEBAR */
 
 .sidebar{
-width:240px;
-background:#0f172a;
-color:white;
-padding:20px;
-display:flex;
-flex-direction:column;
+    width:220px;
+    background:#111827;
+    color:white;
+    padding:18px 14px;
+    flex-shrink:0;
 }
 
 .sidebar h2{
-margin-bottom:20px;
-font-size:18px;
-font-weight:600;
+    margin:0 0 18px;
+    font-size:18px;
+    font-weight:700;
 }
 
 .sidebar button{
-width:100%;
-padding:12px;
-margin-bottom:8px;
-border:none;
-background:transparent;
-color:#cbd5f5;
-cursor:pointer;
-text-align:left;
-border-radius:6px;
-transition:0.2s;
+    width:100%;
+    padding:10px 12px;
+    margin-bottom:6px;
+    border:none;
+    background:transparent;
+    color:#d1d5db;
+    cursor:pointer;
+    text-align:left;
+    border-radius:6px;
+    font-size:14px;
 }
 
 .sidebar button:hover{
-background:#1e293b;
-color:white;
+    background:#1f2937;
+    color:white;
 }
 
 /* MAIN */
 
 .main{
-flex:1;
-padding:30px;
-overflow-y:auto;
+    flex:1;
+    padding:24px;
+    overflow:auto;
 }
 
-/* PAGE TITLE */
+h1{
+    margin:0 0 18px;
+    font-size:24px;
+    font-weight:700;
+    color:#111827;
+}
 
-h2{
-margin:0;
-font-size:22px;
-font-weight:600;
-color:#0f172a;
+p{
+    color:#6b7280;
+}
+
+/* BUTTONS */
+
+button{
+    padding:8px 13px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+    background:#e5e7eb;
+    color:#111827;
+}
+
+button:hover{
+    background:#d1d5db;
+}
+
+button[onclick^="openAssignForm"],
+button[onclick="assignTask()"],
+button[onclick="addCollector()"],
+button[onclick="updateStaff()"],
+button[onclick="saveNewTask()"],
+.add-btn{
+    background:#0f3f7a;
+    color:white;
+}
+
+button[onclick^="openAssignForm"]:hover,
+button[onclick="assignTask()"]:hover,
+button[onclick="addCollector()"]:hover,
+button[onclick="updateStaff()"]:hover,
+button[onclick="saveNewTask()"]:hover,
+.add-btn:hover{
+    background:#0c2f5c;
+}
+
+button[onclick^="delete"],
+button[onclick="closeNewTaskForm()"]{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+button[onclick^="delete"]:hover,
+button[onclick="closeNewTaskForm()"]:hover{
+    background:#fecaca;
 }
 
 /* TABLE */
 
 table{
-width:100%;
-border-collapse:separate;
-border-spacing:0;
-margin-top:20px;
-background:white;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,0.06);
+    margin-top:16px;
 }
 
-/* HEADER */
+th,td{
+    padding:11px 10px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+    font-size:13px;
+    vertical-align:middle;
+}
 
 th{
-background:#f8fafc;
-font-size:13px;
-text-transform:uppercase;
-letter-spacing:0.5px;
-color:#64748b;
-padding:14px;
-text-align:left;
-border-bottom:1px solid #e2e8f0;
+    background:#f9fafb;
+    color:#374151;
+    font-weight:700;
 }
-
-/* ROWS */
-
-td{
-padding:14px;
-font-size:14px;
-color:#334155;
-border-bottom:1px solid #f1f5f9;
-}
-
-/* ROW HOVER */
 
 tr:hover td{
-background:#f9fafb;
-}
-
-/* ACTION BUTTON */
-
-button{
-padding:6px 14px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-font-size:13px;
-font-weight:500;
-transition:0.2s;
-}
-
-/* ASSIGN BUTTON */
-
-button[onclick^="openAssignForm"]{
-background:#3b82f6;
-color:white;
-}
-
-button[onclick^="openAssignForm"]:hover{
-background:#2563eb;
-}
-
-/* STATUS COLORS */
-
-td:nth-child(6){
-font-weight:500;
-}
-
-td:nth-child(6):contains("new"){
-color:#f59e0b;
-}
-
-td:nth-child(6):contains("completed"){
-color:#10b981;
-}
-
-td:nth-child(6):contains("ongoing"){
-color:#3b82f6;
-}
-
-/* INPUT */
-
-input{
-padding:10px;
-width:250px;
-border:1px solid #e2e8f0;
-border-radius:6px;
-outline:none;
-}
-
-/* ADD BUTTON */
-
-.add-btn{
-background:#22c55e;
-color:white;
-padding:10px 16px;
-border-radius:6px;
-font-size:14px;
-}
-
-.add-btn:hover{
-background:#16a34a;
-}
-
-/* POPUP */
-
-.popup-form{
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:white;
-padding:25px;
-border-radius:10px;
-width:350px;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
-z-index:1000;
-animation:popupFade 0.2s ease;
-}
-
-.popup-form h3{
-margin-top:0;
-margin-bottom:15px;
-font-size:18px;
-color:#0f172a;
+    background:#f9fbff;
 }
 
 /* INPUTS */
 
+input,
+select{
+    padding:9px;
+    border:1px solid #d1d5db;
+    border-radius:5px;
+    outline:none;
+    font-size:13px;
+}
+
+input:focus,
+select:focus{
+    border-color:#0f3f7a;
+}
+
+/* MODAL / POPUP */
+
+.popup-form{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:#fff;
+    padding:22px;
+    border-radius:8px;
+    width:360px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.18);
+    z-index:1000;
+}
+
+.popup-form h3{
+    margin:0 0 14px;
+    font-size:18px;
+    color:#111827;
+}
+
 .popup-form input,
 .popup-form select{
-width:100%;
-padding:10px;
-border:1px solid #e2e8f0;
-border-radius:6px;
-font-size:14px;
-margin-bottom:12px;
-outline:none;
+    width:100%;
+    margin-bottom:10px;
 }
 
-/* FOCUS */
+/* NEW TASK FORM INNER BOX */
 
-.popup-form input:focus,
-.popup-form select:focus{
-border-color:#3b82f6;
-box-shadow:0 0 0 2px rgba(59,130,246,0.2);
+#newTaskForm > div{
+    box-shadow:0 12px 30px rgba(0,0,0,0.18);
 }
 
-/* BUTTONS */
-
-.popup-form button{
-padding:8px 14px;
-border-radius:6px;
-font-size:13px;
+#newTaskForm input,
+#newTaskForm select{
+    border:1px solid #d1d5db;
+    border-radius:5px;
+    padding:9px;
 }
 
-/* SAVE */
+/* RESPONSIVE */
 
-.popup-form button:first-of-type{
-background:#10b981;
-color:white;
-}
+@media(max-width:900px){
+    body{
+        display:block;
+    }
 
-.popup-form button:first-of-type:hover{
-background:#059669;
-}
+    .sidebar{
+        width:100%;
+        display:block;
+    }
 
-/* CANCEL */
+    .main{
+        padding:16px;
+    }
 
-.popup-form button:last-of-type{
-background:#e2e8f0;
-}
-
-.popup-form button:last-of-type:hover{
-background:#cbd5f5;
-}
-
-/* ANIMATION */
-
-@keyframes popupFade{
-from{
-opacity:0;
-transform:translate(-50%,-60%);
-}
-to{
-opacity:1;
-transform:translate(-50%,-50%);
-}
+    table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
 }
 </style>
 

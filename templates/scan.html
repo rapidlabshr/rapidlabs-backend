@@ -1,0 +1,76 @@
+<h2>Scan Barcode</h2>
+
+<input id="barcode" placeholder="Enter / Scan Barcode">
+<button onclick="scanSample()">Scan</button>
+
+<hr>
+
+<div id="result"></div>
+
+<script>
+function scanSample() {
+  const barcode = document.getElementById("barcode").value;
+
+  fetch("/scan-sample/" + barcode)
+    .then(res => res.json())
+    .then(data => {
+      let html = `
+        <h3>Patient: ${data.patient_name}</h3>
+        <p>Mobile: ${data.mobile}</p>
+        <p>Gender: ${data.gender}</p>
+        <h4>Tests</h4>
+      `;
+
+      data.tests.forEach(t => {
+        html += `
+          <div style="border:1px solid #ccc; padding:10px; margin:10px 0;">
+            <b>${t.test_name}</b><br>
+            Status: ${t.status}<br><br>
+
+            <input id="duration_${t.sample_test_id}" placeholder="Time in seconds e.g. 120">
+
+            <button onclick="startTest(${t.sample_test_id})">Start</button>
+            <button onclick="completeTest(${t.sample_test_id})">Complete</button>
+
+            <br><br>
+            <input type="file" id="file_${t.sample_test_id}">
+            <button onclick="uploadReport(${t.sample_test_id})">Upload Report</button>
+          </div>
+        `;
+      });
+
+      document.getElementById("result").innerHTML = html;
+    });
+}
+
+function startTest(id) {
+  const duration = document.getElementById("duration_" + id).value;
+
+  fetch("/start-test/" + id, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ duration_seconds: Number(duration) })
+  })
+  .then(res => res.json())
+  .then(() => scanSample());
+}
+
+function completeTest(id) {
+  fetch("/complete-test/" + id, { method: "POST" })
+    .then(res => res.json())
+    .then(() => scanSample());
+}
+
+function uploadReport(id) {
+  const fileInput = document.getElementById("file_" + id);
+  const formData = new FormData();
+  formData.append("file", fileInput.files[0]);
+
+  fetch("/upload-report/" + id, {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => alert(data.message));
+}
+</script>

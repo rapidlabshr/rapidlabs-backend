@@ -1,0 +1,7462 @@
+
+ [
+{
+  "test_name": "Absolute Band Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "700",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Absolute Basophil Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "200",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Absolute Eosinophil Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "500",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Absolute Lymphocyte Count",
+  "unit": "/UL",
+  "ref_low": "1000",
+  "ref_high": "4000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Absolute Monocyte Count",
+  "unit": "/UL",
+  "ref_low": "200",
+  "ref_high": "1000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Absolute Neutrophil Count",
+  "unit": "/UL",
+  "ref_low": "1500",
+  "ref_high": "8000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Absolute Reticulocyte Count",
+  "unit": "/UL",
+  "ref_low": "25000",
+  "ref_high": "100000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Absolute Atypical Lymphocyte Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "500",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Ascitic Fluid Cell Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "500",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Ascitic Fluid Differential Count",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Bleeding Time",
+  "unit": "min",
+  "ref_low": "2",
+  "ref_high": "7",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Template Method"
+ },
+ {
+  "test_name": "Blood Group ABO & Rh Typing",
+  "ref_low": "0",
+  "ref_high": "0",
+  "category": "Immunohematology",
+  "department": "DEPARTMENT OF IMMUNOHEMATOLOGY",
+  "method": "Tube Method"
+ },
+ {
+  "test_name": "Bone Marrow Aspiration",
+  "ref_high": "Hematology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Bone Marrow Aspiration & Smear Examination",
+  "ref_high": "Hematology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Bone Marrow Biopsy",
+  "ref_high": "Hematology",
+  "category": "Histopathology",
+  "department": "DEPARTMENT OF HISTOPATHOLOGY"
+ },
+ {
+  "test_name": "Bronchoscopy Fluid Cell Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "500",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Bronchoscopy Fluid Differential Count",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Hemoglobin",
+  "unit": "g/dL",
+  "ref_low": "13",
+  "ref_high": "17",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Cyanmethemoglobin"
+ },
+ {
+  "test_name": "WBC Count",
+  "unit": "/UL",
+  "ref_low": "4000",
+  "ref_high": "11000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Platelet Count",
+  "unit": "/UL",
+  "ref_low": "150000",
+  "ref_high": "450000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Impedance"
+ },
+ {
+  "test_name": "ESR",
+  "unit": "mm/hr",
+  "ref_low": "0",
+  "ref_high": "20",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Westergren"
+ },
+ {
+  "test_name": "Clot Retraction Time",
+  "unit": "min",
+  "ref_low": "30",
+  "ref_high": "60",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Manual"
+ },
+ {
+  "test_name": "Clotting Time",
+  "unit": "min",
+  "ref_low": "5",
+  "ref_high": "15",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Lee-White"
+ },
+ {
+  "test_name": "CSF Cell Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "CSF Differential Count",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Differential Leucocyte Count",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Direct Coombs Test",
+  "ref_high": "Immunohematology",
+  "category": "Tube Method",
+  "department": "DEPARTMENT OF IMMUNOHEMATOLOGY"
+ },
+ {
+  "test_name": "ESR",
+  "unit": "mm/hr",
+  "ref_low": "0",
+  "ref_high": "20",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Westergren"
+ },
+ {
+  "test_name": "Fluid Cell Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "500",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Fluid Differential Count",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Fetal Hemoglobin (HbF)",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "1",
+  "category": "Hemoglobin Studies",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Hemoglobin A2 (HbA2)",
+  "unit": "%",
+  "ref_low": "1.5",
+  "ref_high": "3.5",
+  "category": "Hemoglobin Studies",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Hemoglobin",
+  "unit": "g/dL",
+  "ref_low": "13",
+  "ref_high": "17",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Cyanmethemoglobin"
+ },
+ {
+  "test_name": "Total Leukocyte Count (TLC)",
+  "unit": "/UL",
+  "ref_low": "4000",
+  "ref_high": "11000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Differential Leukocyte Count (DLC)",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Hemoglobin",
+  "unit": "g/dL",
+  "ref_low": "13",
+  "ref_high": "17",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Cyanmethemoglobin"
+ },
+ {
+  "test_name": "Total Leukocyte Count (TLC)",
+  "unit": "/UL",
+  "ref_low": "4000",
+  "ref_high": "11000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Differential Leukocyte Count (DLC)",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "ESR",
+  "unit": "mm/hr",
+  "ref_low": "0",
+  "ref_high": "20",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Westergren"
+ },
+ {
+  "test_name": "Hemoglobin",
+  "unit": "g/dL",
+  "ref_low": "13",
+  "ref_high": "17",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Cyanmethemoglobin"
+ },
+ {
+  "test_name": "Total Leukocyte Count (TLC)",
+  "unit": "/UL",
+  "ref_low": "4000",
+  "ref_high": "11000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Differential Leukocyte Count (DLC)",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Platelet Count",
+  "unit": "/UL",
+  "ref_low": "150000",
+  "ref_high": "450000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Impedance"
+ },
+ {
+  "test_name": "ESR",
+  "unit": "mm/hr",
+  "ref_low": "0",
+  "ref_high": "20",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Westergren"
+ },
+ {
+  "test_name": "Peripheral Smear Examination",
+  "ref_high": "CBC",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Immature Platelet Fraction (IPF)",
+  "unit": "%",
+  "ref_low": "1",
+  "ref_high": "7",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Indirect Coombs Test",
+  "ref_high": "Immunohematology",
+  "category": "Tube Method",
+  "department": "DEPARTMENT OF IMMUNOHEMATOLOGY"
+ },
+ {
+  "test_name": "Leucocyte Alkaline Phosphatase (LAP) Score",
+  "unit": "score",
+  "ref_low": "20",
+  "ref_high": "100",
+  "category": "Hematology",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Cytochemical Stain"
+ },
+ {
+  "test_name": "LE Cell",
+  "ref_high": "Hematology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Malaria Parasite (Peripheral Smear)",
+  "ref_high": "Microbiology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Malaria Antigen (Vivax & Falciparum)",
+  "ref_high": "Microbiology",
+  "category": "Rapid Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "MCH",
+  "unit": "pg",
+  "ref_low": "27",
+  "ref_high": "33",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "MCHC",
+  "unit": "g/dL",
+  "ref_low": "32",
+  "ref_high": "36",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "MCV",
+  "unit": "fL",
+  "ref_low": "80",
+  "ref_high": "100",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "MPV (Mean Platelet Volume)",
+  "unit": "fL",
+  "ref_low": "7",
+  "ref_high": "11",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Osmotic Fragility Test",
+  "unit": "%",
+  "ref_low": "0.4",
+  "ref_high": "0.6",
+  "category": "Hematology",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Spectrophotometry"
+ },
+ {
+  "test_name": "Hematocrit (PCV)",
+  "unit": "%",
+  "ref_low": "40",
+  "ref_high": "50",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Peripheral Smear Examination",
+  "ref_high": "CBC",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Peritoneal Fluid Cell Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "500",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Peritoneal Fluid Differential Count",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Platelet Count",
+  "unit": "/UL",
+  "ref_low": "150000",
+  "ref_high": "450000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Impedance"
+ },
+ {
+  "test_name": "Pleural Fluid Cell Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "1000",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Pleural Fluid Differential Count",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "RBC Count",
+  "unit": "10^6/UL",
+  "ref_low": "4.5",
+  "ref_high": "5.5",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "RDW",
+  "unit": "%",
+  "ref_low": "11.5",
+  "ref_high": "14.5",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Reticulocyte Count",
+  "unit": "%",
+  "ref_low": "0.5",
+  "ref_high": "2.5",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Reticulocyte Production Index (RPI)",
+  "ref_low": "1",
+  "ref_high": "2.5",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Rh Antibody Titre",
+  "unit": "titre",
+  "ref_low": "0",
+  "ref_high": "0",
+  "category": "Immunohematology",
+  "department": "DEPARTMENT OF IMMUNOHEMATOLOGY",
+  "method": "Tube Method"
+ },
+ {
+  "test_name": "Sickling Test",
+  "ref_high": "Hematology",
+  "category": "Solubility Test",
+  "department": "DEPARTMENT OF HAEMATOLOGY"
+ },
+ {
+  "test_name": "Malaria Parasite (Peripheral Smear)",
+  "ref_high": "Microbiology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Microfilaria (Peripheral Smear)",
+  "ref_high": "Microbiology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Total Leukocyte Count (TLC)",
+  "unit": "/UL",
+  "ref_low": "4000",
+  "ref_high": "11000",
+  "category": "CBC",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Automated"
+ },
+ {
+  "test_name": "Ham's Test (PNH Screening)",
+  "ref_high": "Hematology",
+  "category": "Hemolysis Test",
+  "department": "DEPARTMENT OF HAEMATOLOGY"
+ },
+ {
+  "test_name": "Heterophile Antibody",
+  "ref_high": "Serology",
+  "category": "Agglutination",
+  "department": "DEPARTMENT OF SEROLOGY"
+ },
+ {
+  "test_name": "Anti-A Titre",
+  "unit": "titre",
+  "ref_low": "0",
+  "ref_high": "0",
+  "category": "Immunohematology",
+  "department": "DEPARTMENT OF IMMUNOHEMATOLOGY",
+  "method": "Tube Method"
+ },
+ {
+  "test_name": "Anti-B Titre",
+  "unit": "titre",
+  "ref_low": "0",
+  "ref_high": "0",
+  "category": "Immunohematology",
+  "department": "DEPARTMENT OF IMMUNOHEMATOLOGY",
+  "method": "Tube Method"
+ },
+ {
+  "test_name": "Bence Jones Protein (Urine)",
+  "ref_high": "Urine",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Bile Pigment",
+  "ref_high": "Urine",
+  "category": "Dipstick",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Bile Salts",
+  "ref_high": "Urine",
+  "category": "Dipstick",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Color",
+  "ref_high": "Urine",
+  "category": "Physical Exam",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Appearance",
+  "ref_high": "Urine",
+  "category": "Physical Exam",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Specific Gravity",
+  "ref_low": "1.005",
+  "ref_high": "1.03",
+  "category": "Urine",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Refractometry"
+ },
+ {
+  "test_name": "Urine pH",
+  "ref_low": "4.5",
+  "ref_high": "8",
+  "category": "Urine",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Dipstick"
+ },
+ {
+  "test_name": "Urine Protein",
+  "ref_high": "Urine",
+  "category": "Dipstick",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Glucose",
+  "ref_high": "Urine",
+  "category": "Dipstick",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Ketone Bodies",
+  "ref_high": "Urine",
+  "category": "Dipstick",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Microscopy (RBC)",
+  "unit": "/HPF",
+  "ref_low": "0",
+  "ref_high": "2",
+  "category": "Urine",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Microscopy"
+ },
+ {
+  "test_name": "Urine Microscopy (WBC)",
+  "unit": "/HPF",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Urine",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Microscopy"
+ },
+ {
+  "test_name": "Chyle (Fluid)",
+  "ref_high": "Body Fluid",
+  "category": "Visual Exam",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Glucose",
+  "ref_high": "Urine",
+  "category": "Dipstick",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Ketone Bodies",
+  "ref_high": "Urine",
+  "category": "Dipstick",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Myoglobin",
+  "ref_high": "Urine",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Occult Blood (Stool)",
+  "ref_high": "Stool",
+  "category": "Guaiac Test",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Fluid pH",
+  "ref_low": "7",
+  "ref_high": "7.8",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "pH Meter"
+ },
+ {
+  "test_name": "Reducing Substances (Stool)",
+  "ref_high": "Stool",
+  "category": "Benedict Test",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Reducing Substances (Urine)",
+  "ref_high": "Urine",
+  "category": "Benedict Test",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Semen Volume",
+  "unit": "mL",
+  "ref_low": "1.5",
+  "ref_high": "5",
+  "category": "Semen",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual"
+ },
+ {
+  "test_name": "Semen pH",
+  "ref_low": "7.2",
+  "ref_high": "8",
+  "category": "Semen",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "pH Strip"
+ },
+ {
+  "test_name": "Sperm Count",
+  "unit": "million/mL",
+  "ref_low": "15",
+  "ref_high": "200",
+  "category": "Semen",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Microscopy"
+ },
+ {
+  "test_name": "Sperm Motility",
+  "unit": "%",
+  "ref_low": "40",
+  "ref_high": "100",
+  "category": "Semen",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Microscopy"
+ },
+ {
+  "test_name": "Semen Fructose",
+  "unit": "mg/dL",
+  "ref_low": "150",
+  "ref_high": "450",
+  "category": "Semen",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Stool pH",
+  "ref_low": "6",
+  "ref_high": "7.5",
+  "category": "Stool",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "pH Strip"
+ },
+ {
+  "test_name": "Stool Examination",
+  "ref_high": "Stool",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Stool Concentration Method",
+  "ref_high": "Stool",
+  "category": "Concentration Technique",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Stool Fat Globules",
+  "ref_high": "Stool",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Stool Microscopy",
+  "ref_high": "Stool",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Sudan IV Stain",
+  "ref_high": "Stool",
+  "category": "Staining",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Urinary Hemoglobin",
+  "ref_high": "Urine",
+  "category": "Dipstick",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Albumin",
+  "ref_high": "Urine",
+  "category": "Dipstick",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Chyle",
+  "ref_high": "Urine",
+  "category": "Visual Exam",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Eosinophils",
+  "ref_high": "Urine",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Fat Globules",
+  "ref_high": "Urine",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Hemosiderin",
+  "ref_high": "Urine",
+  "category": "Staining",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Urine pH",
+  "ref_low": "4.5",
+  "ref_high": "8",
+  "category": "Urine",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Dipstick"
+ },
+ {
+  "test_name": "Urobilinogen (Urine)",
+  "unit": "mg/dL",
+  "ref_low": "0.2",
+  "ref_high": "1",
+  "category": "Urine",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Dipstick"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - ET Secretion",
+  "ref_high": "Microbiology",
+  "category": "ZN Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Sputum (3 Samples)",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Sputum (Single Sample)",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - BAL",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - CSF",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Guided Aspirate",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Pericardial Fluid",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Pleural Fluid",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Pus",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Sputum",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Sputum (Concentration Method)",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Synovial Fluid",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Tissue",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Urine",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Ascitic Fluid",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Stain (ZN) - Miscellaneous",
+  "ref_high": "Microbiology",
+  "category": "Ziehl-Neelsen Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB MTB Antibiogram Panel (1st & 2nd Line - 10 Drugs)",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB MTB Antibiogram Panel (1st Line - 4 Drugs SIRE)",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Culture (LJ) - Urine",
+  "ref_high": "Microbiology",
+  "category": "LUwenstein-Jensen Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Culture (MGIT) - Tissue",
+  "ref_high": "Microbiology",
+  "category": "MGIT Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Culture (MGIT) - BAL",
+  "ref_high": "Microbiology",
+  "category": "MGIT Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Culture (MGIT) - Body Fluid",
+  "ref_high": "Microbiology",
+  "category": "MGIT Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Culture (MGIT) - CSF",
+  "ref_high": "Microbiology",
+  "category": "MGIT Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Culture (MGIT) - ET Secretion",
+  "ref_high": "Microbiology",
+  "category": "MGIT Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Culture (MGIT) - Miscellaneous",
+  "ref_high": "Microbiology",
+  "category": "MGIT Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Culture (MGIT) - Pleural Fluid",
+  "ref_high": "Microbiology",
+  "category": "MGIT Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Culture (MGIT) - Pus",
+  "ref_high": "Microbiology",
+  "category": "MGIT Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB Culture (MGIT) - Sputum",
+  "ref_high": "Microbiology",
+  "category": "MGIT Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "AFB XDR Screen (Line Probe Assay)",
+  "ref_high": "Microbiology",
+  "category": "Molecular (LPA)",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Albert Stain",
+  "ref_high": "Microbiology",
+  "category": "Albert Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Anaerobic Culture & Identification - Blood",
+  "ref_high": "Microbiology",
+  "category": "Anaerobic Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Anaerobic Culture & Identification - Body Fluid",
+  "ref_high": "Microbiology",
+  "category": "Anaerobic Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Bacteriological Examination of Water",
+  "ref_high": "Microbiology",
+  "category": "Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Biological Indicator",
+  "ref_high": "Microbiology",
+  "category": "Sterility Testing",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Candida Species Identification",
+  "ref_high": "Microbiology",
+  "category": "Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Candida Species Susceptibility Testing",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Cryptosporidium/Isospora Identification (Stool)",
+  "ref_high": "Microbiology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Cryptosporidium Antigen (Stool)",
+  "ref_high": "Microbiology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Ascitic Fluid",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Central Line Tip",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Pericardial Fluid",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Tracheal Secretion",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Pus",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Synovial Fluid",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Body Fluid",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Eye Swab",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Guided Aspirate",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Vaginal Swab",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Blood (Manual)",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Blood (Automated)",
+  "ref_high": "Microbiology",
+  "category": "Automated Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - CSF",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Ear Swab",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Miscellaneous",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Nasal Swab",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Pleural Fluid",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Pus (Automated)",
+  "ref_high": "Microbiology",
+  "category": "Automated Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Semen",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Sputum",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Stool",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Synovial Fluid",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Throat Swab",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Tissue",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Urethral Swab",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Urine (Automated)",
+  "ref_high": "Microbiology",
+  "category": "Automated Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Urine",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Sputum (Automated)",
+  "ref_high": "Microbiology",
+  "category": "Automated Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Urine (22 Drugs Manual)",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Culture & Sensitivity - Miscellaneous (Manual)",
+  "ref_high": "Microbiology",
+  "category": "Culture & Sensitivity",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Dialysis Water Culture",
+  "ref_high": "Microbiology",
+  "category": "Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Environmental Surveillance - Surface Swabs",
+  "ref_high": "Microbiology",
+  "category": "Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Urine",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Blood",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Body Fluid",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Nail",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Skin",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Sputum",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Hair",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Miscellaneous",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Pus",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Tissue",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Swab",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Fungal Culture & Identification - Bronchial Wash",
+  "ref_high": "Microbiology",
+  "category": "Fungal Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "GeneXpert MTB with Rifampicin - Sputum",
+  "ref_high": "Microbiology",
+  "category": "PCR (CBNAAT)",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "GeneXpert MTB with Rifampicin - BAL",
+  "ref_high": "Microbiology",
+  "category": "PCR (CBNAAT)",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "GeneXpert MTB with Rifampicin - Body Fluid",
+  "ref_high": "Microbiology",
+  "category": "PCR (CBNAAT)",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "GeneXpert MTB with Rifampicin - Pus",
+  "ref_high": "Microbiology",
+  "category": "PCR (CBNAAT)",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "GeneXpert MTB with Rifampicin - Tissue",
+  "ref_high": "Microbiology",
+  "category": "PCR (CBNAAT)",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "GeneXpert MTB with Rifampicin - Urine",
+  "ref_high": "Microbiology",
+  "category": "PCR (CBNAAT)",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "GeneXpert MTB/XDR",
+  "ref_high": "Microbiology",
+  "category": "Molecular (PCR)",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Ascitic Fluid",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - BAL",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - CSF",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - ET Secretion",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Guided Aspirate",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Miscellaneous",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Pericardial Fluid",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Peritoneal Fluid",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Pleural Fluid",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Pus",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Semen",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Sputum",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Stool",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Synovial Fluid",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Throat Swab",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Tissue",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Vaginal Swab",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Gram Stain - Wound Swab",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Hanging Drop (Stool Examination)",
+  "ref_high": "Microbiology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "India Ink Preparation (Cryptococcus)",
+  "ref_high": "Microbiology",
+  "category": "India Ink Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - BAL",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - Body Fluid",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - CSF",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - Hair",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - Miscellaneous",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - Nail",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - Pus",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - Skin Scrapings",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - Urine",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - Sputum",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - Tissue",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "KOH Examination - ET Secretion",
+  "ref_high": "Microbiology",
+  "category": "KOH Mount",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Modified AFB Stain (Isospora/Cryptosporidium)",
+  "ref_high": "Microbiology",
+  "category": "ZN Modified Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "OT Swab - Aerobic Culture",
+  "ref_high": "Microbiology",
+  "category": "Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "OT Swab - Anaerobic Culture",
+  "ref_high": "Microbiology",
+  "category": "Anaerobic Culture",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "PCP Stain",
+  "ref_high": "Microbiology",
+  "category": "Special Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Slit Skin Smear Examination",
+  "ref_high": "Microbiology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Smear for Gonococci (Slide)",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Smear for Gonococci (Urethral Swab)",
+  "ref_high": "Microbiology",
+  "category": "Gram Stain",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Stool for Microsporidium",
+  "ref_high": "Microbiology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Stool for Rotavirus",
+  "ref_high": "Microbiology",
+  "category": "Rapid Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Adenovirus IgG Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Adenovirus IgM Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Allergy Asthma Panel",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Allergy Comprehensive Panel (Adults)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Allergy Comprehensive Panel (Pediatric)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Allergy Drug Panel (12 Drugs)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Allergy Drug Panel (7 Drugs)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Allergy Food Panel",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Allergy Inhalation Panel",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Allergy Non-Veg Panel",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Allergy Vegetarian Panel",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Allergy Dust Panel",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Amoebic Serology (IgG/IgM)",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ANA (Anti-Nuclear Antibodies)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ANA (IFA)",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ANA (EIA)",
+  "ref_high": "Immunology",
+  "category": "EIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ANA Profile",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ANCA (C)",
+  "ref_high": "Immunology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ANCA (P)",
+  "ref_high": "Immunology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ANCA (P) - IFA",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ANCA (C) - IFA",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti PLA2 Receptor Antibody",
+  "ref_high": "Immunology",
+  "category": "EIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti CCP Antibody",
+  "ref_high": "Immunology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti dsDNA Antibody (IFA)",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti dsDNA Antibody (EIA)",
+  "ref_high": "Immunology",
+  "category": "EIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti Mitochondrial Antibody (AMA)",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti MOG Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti MuSK Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti NMO (Aquaporin-4 Antibody)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti Saccharomyces cerevisiae IgA",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti Striated Muscle Antibody (ASKA)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-Gliadin IgA",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-Gliadin IgG",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti Saccharomyces cerevisiae IgG",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti Ovarian Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ASMA (Anti Smooth Muscle Antibody)",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ASO Titre",
+  "unit": "IU/mL",
+  "ref_low": "0",
+  "ref_high": "200",
+  "category": "Serology",
+  "department": "DEPARTMENT OF SEROLOGY",
+  "method": "Latex Agglutination"
+ },
+ {
+  "test_name": "ASO Latex Agglutination",
+  "unit": "IU/mL",
+  "ref_low": "0",
+  "ref_high": "200",
+  "category": "Serology",
+  "department": "DEPARTMENT OF SEROLOGY",
+  "method": "Latex Agglutination"
+ },
+ {
+  "test_name": "Aspergillus IgG Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Aspergillus IgM Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Aspergillus fumigatus Specific IgE",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Aspergillus fumigatus Specific IgG",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Autoimmune Encephalitis Panel",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Bacterial Meningitis Screen",
+  "ref_high": "Microbiology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Basal Ganglion Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Bordetella pertussis IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Brucella IgG Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Brucella IgM Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "C-Reactive Protein (CRP)",
+  "unit": "mg/L",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Calprotectin (Stool)",
+  "unit": "Ug/g",
+  "ref_low": "0",
+  "ref_high": "50",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Centromere Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Chikungunya IgG Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Chikungunya IgG Antibody (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Chikungunya IgM Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Chikungunya IgM Antibody (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Chlamydia pneumoniae IgA",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Chlamydia pneumoniae IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Chlamydia pneumoniae IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Chlamydia trachomatis IgA",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Chlamydia trachomatis IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Chlamydia trachomatis IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Clostridium difficile GDH + Toxin A/B",
+  "ref_high": "Microbiology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Clostridium difficile Toxin A/B (Stool)",
+  "ref_high": "Microbiology",
+  "category": "PCR",
+  "department": "DEPARTMENT OF MOLECULAR BIOLOGY"
+ },
+ {
+  "test_name": "CMV IgG Avidity",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "CMV IgG (Urine)",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "CMV IgG (CSF)",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "CMV IgM (CSF)",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "CMV IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "CMV IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Cold Agglutinin",
+  "ref_high": "Hematology",
+  "category": "Agglutination",
+  "department": "DEPARTMENT OF SEROLOGY"
+ },
+ {
+  "test_name": "COVID-19 Neutralizing Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Coxsackie IgG Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Coxsackie IgM Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Cryptococcus Antigen (CSF)",
+  "ref_high": "Microbiology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Cryptococcus Antigen (Serum)",
+  "ref_high": "Microbiology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HSV 1 & 2 IgG (CSF)",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HSV 1 & 2 IgM (CSF)",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Cysticercus (Taenia solium) IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Cysticercus (Taenia solium) IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Dengue IgG & IgM (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Dengue IgG & IgM (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Dengue IgG (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Dengue IgM (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Dengue NS1 Antigen (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Dengue NS1 Antigen (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Dengue NS1/IgG/IgM (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Desmoglein 3 Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Desmoglein 1 Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Diphtheria IgG Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "EBV Early Antigen (EA-D) IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "EBV Nuclear Antigen (EBNA) IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "EBV Nuclear Antigen (EBNA) IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Echinococcus IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Endomysial Antibody IgA",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Endomysial Antibody IgG",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Entamoeba histolytica IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "EBV VCA IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "EBV VCA IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Fecal Elastase",
+  "unit": "Ug/g",
+  "ref_low": "200",
+  "ref_high": "500",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ELISA"
+ },
+ {
+  "test_name": "Filaria Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Filaria Antigen",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "FTA-ABS",
+  "ref_high": "Serology",
+  "category": "Immunofluorescence",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Food Intolerance Test",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Food Intolerance Test (IgG Based)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Galactomannan Aspergillus Antigen",
+  "ref_high": "Microbiology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Ganglioside Antibody IgG",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Ganglioside Antibody IgM",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Giardia Antigen (Stool)",
+  "ref_high": "Microbiology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "GBM Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "H. pylori Antigen (Rapid)",
+  "ref_high": "Microbiology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Hantavirus IgM Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HBsAg (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HCV Antigen (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HCV IgG (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HCV IgM (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HCV Antibodies (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "H. pylori IgA Antibody",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "H. pylori IgG Antibody",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "H. pylori IgM Antibody",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HAV IgM (CLIA)",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HAV IgM (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HAV Total Antibody",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HAV IgG Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-HBe Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HBsAg (CLIA)",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HBsAg (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HBc IgG Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HBc IgM Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HBc IgM (CLIA)",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HBc Total Antibody",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HBeAg (CLIA)",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HBeAg (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-HBs Antibody (CLIA)",
+  "unit": "mIU/mL",
+  "ref_low": "10",
+  "ref_high": "1000",
+  "category": "Serology",
+  "department": "DEPARTMENT OF SEROLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Anti-HBs Antibody (ELISA)",
+  "unit": "mIU/mL",
+  "ref_low": "10",
+  "ref_high": "1000",
+  "category": "Serology",
+  "department": "DEPARTMENT OF SEROLOGY",
+  "method": "ELISA"
+ },
+ {
+  "test_name": "HCV Antibodies (CLIA)",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HDV Total Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HDV IgM Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HEV IgG (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HEV IgM (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Histone Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HIV Western Blot",
+  "ref_high": "Serology",
+  "category": "Western Blot",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HIV 1 & 2 Antibodies (CLIA)",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HIV 1 & 2 Antibodies (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HIV 1 & 2 Antibody (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HIV P24 Antigen",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HSV 1 & 2 IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HSV 1 IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HSV 1 IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HSV 1 & 2 IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HSV 1 & 2 IgG/IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HSV 2 IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HSV 2 IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "HTLV 1 & 2 Antibody",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "tTG/DGP Screen",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Infliximab Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Influenza A & B IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Intrinsic Factor Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "LC-1 Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Legionella pneumophila IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Legionella pneumophila IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Legionella Antigen (Urine)",
+  "ref_high": "Microbiology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Leishmania Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Leptospira IgG (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Leptospira IgG (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Leptospira IgM (ELISA)",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Leptospira IgM (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "LKM-1 Antibody",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Lyme Borrelia IgM Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Lyme Borrelia IgG Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Mantoux Test",
+  "unit": "mm",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Microbiology",
+  "department": "DEPARTMENT OF MICROBIOLOGY",
+  "method": "Skin Test"
+ },
+ {
+  "test_name": "Measles IgG (CSF)",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Measles IgM Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Measles IgG Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Monospot Test",
+  "ref_high": "Serology",
+  "category": "Agglutination",
+  "department": "DEPARTMENT OF SEROLOGY"
+ },
+ {
+  "test_name": "Mumps IgG Antibody",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Mumps IgM Antibody",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Mycoplasma pneumoniae IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Mycoplasma pneumoniae IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Myositis Profile",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Paraneoplastic Autoantibody Profile I",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Paraneoplastic Autoantibody Profile III",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "NMDA Receptor Antibody (Serum)",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "NMDA Receptor Antibody (CSF)",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "NMO with MOG Antibodies (CSF)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "NMO with MOG Antibodies (Serum)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Neuron Specific Enolase (NSE)",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "16",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Parietal Cell Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Parvovirus B19 IgG",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Parvovirus B19 IgM",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Procalcitonin",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "0.5",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Rabies Virus Total Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Rheumatoid Factor (RF)",
+  "unit": "IU/mL",
+  "ref_low": "0",
+  "ref_high": "20",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Rheumatoid Factor IgA",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "RNP IgG Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Rubella IgG & IgM",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Rubella IgG",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Rubella IgM",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Rubella IgG Avidity",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "SARS-CoV-2 Spike Protein Antibody",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Scl-70 IgG Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Scrub Typhus IgG",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Scrub Typhus IgM",
+  "ref_high": "Serology",
+  "category": "ELISA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Scrub Typhus (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "SLA (Soluble Liver Antigen) Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Smith (Sm) Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "SS-A (Ro) IgG Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "SS-B (La) IgG Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Syphilis Antibodies (Treponemal Total)",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "TB Gold Quantiferon",
+  "ref_high": "Microbiology",
+  "category": "IGRA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Tetanus IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "TNF Alpha",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "8",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ELISA"
+ },
+ {
+  "test_name": "TORCH Panel (IgG/IgM)",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "TORCH with Avidity",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "TORCH 10 Panel",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "TORCH 5 IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "TORCH 5 IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "TORCH Profile IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "TORCH Profile IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Toxoplasma Avidity",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Toxoplasma IgG & IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Toxoplasma IgG",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Toxoplasma IgM",
+  "ref_high": "Serology",
+  "category": "CLIA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "TPHA",
+  "ref_high": "Serology",
+  "category": "Hemagglutination",
+  "department": "DEPARTMENT OF IMMUNOHEMATOLOGY"
+ },
+ {
+  "test_name": "TPHA Titre",
+  "unit": "titre",
+  "ref_low": "0",
+  "ref_high": "0",
+  "category": "Serology",
+  "department": "DEPARTMENT OF SEROLOGY",
+  "method": "Hemagglutination"
+ },
+ {
+  "test_name": "tTG IgA",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Typhi IgG & IgM (Rapid)",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Typhidot IgM",
+  "ref_high": "Serology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "U1-snRNP Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Varicella Zoster IgG",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Varicella Zoster IgM",
+  "ref_high": "Serology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "VDRL/RPR Titre",
+  "unit": "titre",
+  "ref_low": "0",
+  "ref_high": "0",
+  "category": "Serology",
+  "department": "DEPARTMENT OF SEROLOGY",
+  "method": "Flocculation"
+ },
+ {
+  "test_name": "VGKC Antibody (Serum)",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "VGKC Antibody (CSF)",
+  "ref_high": "Immunology",
+  "category": "IFA",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Weil-Felix Test",
+  "ref_high": "Serology",
+  "category": "Agglutination",
+  "department": "DEPARTMENT OF SEROLOGY"
+ },
+ {
+  "test_name": "Widal Test (Slide)",
+  "ref_high": "Serology",
+  "category": "Agglutination",
+  "department": "DEPARTMENT OF SEROLOGY"
+ },
+ {
+  "test_name": "Widal Test (Tube)",
+  "ref_high": "Serology",
+  "category": "Agglutination",
+  "department": "DEPARTMENT OF SEROLOGY"
+ },
+ {
+  "test_name": "Antithrombin III Antigen",
+  "unit": "%",
+  "ref_low": "80",
+  "ref_high": "120",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Antithrombin III Activity",
+  "unit": "%",
+  "ref_low": "80",
+  "ref_high": "120",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Functional Assay"
+ },
+ {
+  "test_name": "APCR Test",
+  "ref_high": "Coagulation",
+  "category": "Functional Assay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "APTT",
+  "unit": "sec",
+  "ref_low": "25",
+  "ref_high": "35",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Clotting Method"
+ },
+ {
+  "parent_test": "Coagulation Profile",
+  "test_name": "Prothrombin Time (PT)",
+  "unit": "sec",
+  "ref_low": "11",
+  "ref_high": "13.5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Coagulation Profile",
+  "test_name": "INR",
+  "ref_low": "0.8",
+  "ref_high": "1.2",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Coagulation Profile",
+  "test_name": "Activated Partial Thromboplastin Time (APTT)",
+  "unit": "sec",
+  "ref_low": "25",
+  "ref_high": "35",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Coagulation Profile",
+  "test_name": "Bleeding Time (BT)",
+  "unit": "min",
+  "ref_low": "2",
+  "ref_high": "7",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Coagulation Profile",
+  "test_name": "Clotting Time (CT)",
+  "unit": "min",
+  "ref_low": "5",
+  "ref_high": "11",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "D-Dimer",
+  "unit": "Ug/mL",
+  "ref_low": "0",
+  "ref_high": "0.5",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Factor IX Activity",
+  "unit": "%",
+  "ref_low": "50",
+  "ref_high": "150",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Clotting Assay"
+ },
+ {
+  "test_name": "Factor VIII Activity",
+  "unit": "%",
+  "ref_low": "50",
+  "ref_high": "150",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Clotting Assay"
+ },
+ {
+  "test_name": "Factor XII Activity",
+  "unit": "%",
+  "ref_low": "50",
+  "ref_high": "150",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Clotting Assay"
+ },
+ {
+  "test_name": "Factor XIII (Clot Solubility Test)",
+  "ref_high": "Coagulation",
+  "category": "Functional Test",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Factor V Level",
+  "unit": "%",
+  "ref_low": "50",
+  "ref_high": "150",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Clotting Assay"
+ },
+ {
+  "test_name": "Factor V Leiden Mutation",
+  "ref_high": "Genetics",
+  "category": "PCR",
+  "department": "DEPARTMENT OF MOLECULAR BIOLOGY"
+ },
+ {
+  "test_name": "Factor VII Activity",
+  "unit": "%",
+  "ref_low": "50",
+  "ref_high": "150",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Clotting Assay"
+ },
+ {
+  "test_name": "Factor XI Activity",
+  "unit": "%",
+  "ref_low": "50",
+  "ref_high": "150",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Clotting Assay"
+ },
+ {
+  "test_name": "FDP (Fibrin Degradation Products)",
+  "unit": "Ug/mL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Fibrinogen",
+  "unit": "mg/dL",
+  "ref_low": "200",
+  "ref_high": "400",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Clauss Method"
+ },
+ {
+  "test_name": "Free Protein S",
+  "unit": "%",
+  "ref_low": "60",
+  "ref_high": "130",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Functional Assay"
+ },
+ {
+  "test_name": "HPLC Hemoglobinopathy",
+  "ref_high": "Hematology",
+  "category": "HPLC",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Lupus Anticoagulant (dRVVT)",
+  "ref_high": "Coagulation",
+  "category": "Clotting Assay",
+  "department": "DEPARTMENT OF HAEMATOLOGY"
+ },
+ {
+  "test_name": "Mixing Study (APTT)",
+  "ref_high": "Coagulation",
+  "category": "Clotting Assay",
+  "department": "DEPARTMENT OF HAEMATOLOGY"
+ },
+ {
+  "test_name": "Protein C Activity",
+  "unit": "%",
+  "ref_low": "70",
+  "ref_high": "140",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Functional Assay"
+ },
+ {
+  "test_name": "Protein S Activity",
+  "unit": "%",
+  "ref_low": "60",
+  "ref_high": "130",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Functional Assay"
+ },
+ {
+  "test_name": "Protein C Antigen",
+  "unit": "%",
+  "ref_low": "70",
+  "ref_high": "140",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Prothrombin Time (PT)",
+  "unit": "sec",
+  "ref_low": "11",
+  "ref_high": "15",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Clotting Method"
+ },
+ {
+  "test_name": "Thrombin Time",
+  "unit": "sec",
+  "ref_low": "14",
+  "ref_high": "19",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Clotting Method"
+ },
+ {
+  "test_name": "vWF Antigen",
+  "unit": "%",
+  "ref_low": "50",
+  "ref_high": "150",
+  "category": "Coagulation",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Fluid Cytology",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Fluid TLC",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "500",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual"
+ },
+ {
+  "test_name": "Fluid Differential Count",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual"
+ },
+ {
+  "test_name": "FNAC (Sample Collection)",
+  "ref_high": "Cytology",
+  "category": "Aspiration",
+  "department": "DEPARTMENT OF CYTOPATHOLOGY"
+ },
+ {
+  "test_name": "FNAC Reporting",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "LBC Pap with HPV Reflex",
+  "ref_high": "Cytology",
+  "category": "LBC",
+  "department": "DEPARTMENT OF CYTOPATHOLOGY"
+ },
+ {
+  "test_name": "Liquid Based Cytology (Pap Smear)",
+  "ref_high": "Cytology",
+  "category": "LBC",
+  "department": "DEPARTMENT OF CYTOPATHOLOGY"
+ },
+ {
+  "test_name": "LBC Reporting",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Miscellaneous Fluid Examination",
+  "ref_high": "Body Fluid",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Nasal Smear",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Pap Smear",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Prostatic Fluid Examination",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Pus Cytology",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Scrapings Cytology",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Skin Smear for Herpes",
+  "ref_high": "Microbiology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Slide Reporting",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Smear for Malignant Cells",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Special Stain (Cytology)",
+  "ref_high": "Cytology",
+  "category": "Staining",
+  "department": "DEPARTMENT OF MICROBIOLOGY"
+ },
+ {
+  "test_name": "Sputum Cytology",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Synovial Fluid Cell Count",
+  "unit": "/UL",
+  "ref_low": "0",
+  "ref_high": "200",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Synovial Fluid Differential Count",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Body Fluid",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY",
+  "method": "Manual Microscopy"
+ },
+ {
+  "test_name": "Urethral Smear Examination",
+  "ref_high": "Microbiology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "Urine Cytology",
+  "ref_high": "Cytology",
+  "category": "Microscopy",
+  "department": "DEPARTMENT OF CLINICAL PATHOLOGY"
+ },
+ {
+  "test_name": "1,25 Dihydroxy Vitamin D",
+  "unit": "pg/mL",
+  "ref_low": "20",
+  "ref_high": "60",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "17 Hydroxy Progesterone",
+  "unit": "ng/mL",
+  "ref_low": "0.2",
+  "ref_high": "2",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "24 hr Urine Protein",
+  "unit": "mg/day",
+  "ref_low": "0",
+  "ref_high": "150",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Turbidimetry"
+ },
+ {
+  "test_name": "Urine Protein/Creatinine Ratio",
+  "ref_low": "0",
+  "ref_high": "0.2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "24 hr Urine Copper",
+  "unit": "Ug/day",
+  "ref_low": "15",
+  "ref_high": "60",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Spectrophotometry"
+ },
+ {
+  "test_name": "24 hr Urine VMA",
+  "unit": "mg/day",
+  "ref_low": "2",
+  "ref_high": "7",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "25 Hydroxy Vitamin D",
+  "unit": "ng/mL",
+  "ref_low": "30",
+  "ref_high": "100",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "5-HIAA",
+  "unit": "mg/day",
+  "ref_low": "2",
+  "ref_high": "8",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "ACE",
+  "unit": "U/L",
+  "ref_low": "8",
+  "ref_high": "52",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Spectrophotometry"
+ },
+ {
+  "test_name": "Paracetamol Level",
+  "unit": "Ug/mL",
+  "ref_low": "10",
+  "ref_high": "30",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Acetylcholine Receptor Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Acid Phosphatase (Prostatic)",
+  "unit": "U/L",
+  "ref_low": "0",
+  "ref_high": "3.5",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Acid Phosphatase (Total)",
+  "unit": "U/L",
+  "ref_low": "0",
+  "ref_high": "5.5",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Anti-Cardiolipin IgA",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-Cardiolipin IgG",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-Cardiolipin IgM",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "ACTH",
+  "unit": "pg/mL",
+  "ref_low": "10",
+  "ref_high": "60",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "ACTH Stimulation Test (17-OH Progesterone)",
+  "ref_high": "Endocrinology",
+  "category": "Functional Test",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Adenosine Deaminase (ADA)",
+  "unit": "U/L",
+  "ref_low": "0",
+  "ref_high": "40",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "ADH (Vasopressin)",
+  "unit": "pg/mL",
+  "ref_low": "1",
+  "ref_high": "13",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Adiponectin",
+  "unit": "Ug/mL",
+  "ref_low": "2",
+  "ref_high": "20",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Adrenaline (24 hr Urine)",
+  "unit": "Ug/day",
+  "ref_low": "0",
+  "ref_high": "20",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Adrenaline (Plasma)",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "140",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "AFP (Serum)",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "AFP (CSF)",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Albumin (Body Fluid)",
+  "unit": "g/dL",
+  "ref_low": "0",
+  "ref_high": "3",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Albumin (Serum)",
+  "unit": "g/dL",
+  "ref_low": "3.5",
+  "ref_high": "5",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "BCG Method"
+ },
+ {
+  "test_name": "Ethanol (Serum)",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Ethanol (Urine)",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Ethyl Glucuronide & Ethyl Sulfate",
+  "ref_high": "Toxicology",
+  "category": "LC-MS/MS",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Aldolase",
+  "unit": "U/L",
+  "ref_low": "1",
+  "ref_high": "7",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Aldosterone/Renin Ratio",
+  "ref_low": "1",
+  "ref_high": "30",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "ALP Isoenzymes",
+  "ref_high": "Biochemistry",
+  "category": "Electrophoresis",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Alkaline Phosphatase (ALP)",
+  "unit": "U/L",
+  "ref_low": "44",
+  "ref_high": "147",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Alpha-2 Macroglobulin",
+  "unit": "g/L",
+  "ref_low": "1.3",
+  "ref_high": "3",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Alpha-1 Antitrypsin",
+  "unit": "mg/dL",
+  "ref_low": "90",
+  "ref_high": "200",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Aluminium (Blood)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Aluminium (Urine)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "20",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "AMH (Anti-Mullerian Hormone)",
+  "unit": "ng/mL",
+  "ref_low": "1",
+  "ref_high": "4",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "ALA (Urine)",
+  "unit": "mg/g creatinine",
+  "ref_low": "0",
+  "ref_high": "7",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Ammonia",
+  "unit": "Umol/L",
+  "ref_low": "15",
+  "ref_high": "45",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Amphetamines",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Amylase (Urine)",
+  "unit": "U/L",
+  "ref_low": "0",
+  "ref_high": "400",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Amylase (Serum)",
+  "unit": "U/L",
+  "ref_low": "30",
+  "ref_high": "110",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Amylase (Fluid)",
+  "unit": "U/L",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Androstenedione",
+  "unit": "ng/dL",
+  "ref_low": "30",
+  "ref_high": "200",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Anti-Cardiolipin Panel",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-IA2 Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "parent_test": "Anti-Pancreatic Antibody Panel",
+  "test_name": "Islet Cell Antibody (ICA)",
+  "ref_high": "Negative",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Anti-Pancreatic Antibody Panel",
+  "test_name": "Insulin Autoantibody (IAA)",
+  "ref_high": "Negative",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Anti-Pancreatic Antibody Panel",
+  "test_name": "GAD Antibody (GADA)",
+  "unit": "IU/mL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Anti-Pancreatic Antibody Panel",
+  "test_name": "IA-2 Antibody",
+  "unit": "IU/mL",
+  "ref_low": "0",
+  "ref_high": "7.5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Anti-Phospholipid Antibody Panel",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-Phospholipid IgA",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-Phospholipid IgG",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-Phospholipid IgM",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-Thyroid Antibodies (TPO & Tg)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Anti-TPO Antibody",
+  "unit": "IU/mL",
+  "ref_low": "0",
+  "ref_high": "35",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Apolipoprotein A1",
+  "unit": "mg/dL",
+  "ref_low": "110",
+  "ref_high": "180",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Apolipoprotein B",
+  "unit": "mg/dL",
+  "ref_low": "60",
+  "ref_high": "120",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Arsenic (Blood)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Anti-Sperm Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Ascitic Fluid Amylase",
+  "unit": "U/L",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Anti-Thyroglobulin Antibody",
+  "unit": "IU/mL",
+  "ref_low": "0",
+  "ref_high": "40",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Barbiturates (Urine)",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Benzodiazepines (Urine)",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Beta-2 Glycoprotein Antibody (IgG/IgM)",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Beta-2 Glycoprotein IgA",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Beta-2 Glycoprotein IgG",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Beta-2 Glycoprotein IgM",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Beta-2 Microglobulin (Serum)",
+  "unit": "mg/L",
+  "ref_low": "0.7",
+  "ref_high": "1.8",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Beta-2 Microglobulin (Urine)",
+  "unit": "mg/L",
+  "ref_low": "0",
+  "ref_high": "0.3",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Beta hCG",
+  "unit": "mIU/mL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Hormone",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Beta hCG (CSF)",
+  "unit": "mIU/mL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Hormone",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Free Beta hCG",
+  "unit": "mIU/mL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Hormone",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Beta-D-Glucan",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "60",
+  "category": "Microbiology",
+  "department": "DEPARTMENT OF MICROBIOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Bicarbonate (Serum)",
+  "unit": "mmol/L",
+  "ref_low": "22",
+  "ref_high": "28",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Bile Acids (Total)",
+  "unit": "Umol/L",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Bilirubin (Direct)",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "0.3",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Diazo Method"
+ },
+ {
+  "test_name": "Bilirubin (Fluid)",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "1",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Diazo Method"
+ },
+ {
+  "test_name": "Bilirubin (Total)",
+  "unit": "mg/dL",
+  "ref_low": "0.2",
+  "ref_high": "1.2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Diazo Method"
+ },
+ {
+  "test_name": "Biochemical Analysis - Ascitic Fluid",
+  "ref_high": "Biochemistry",
+  "category": "Autoanalyzer",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Biochemical Analysis - BAL Fluid",
+  "ref_high": "Biochemistry",
+  "category": "Autoanalyzer",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Biochemical Analysis - Body Fluid",
+  "ref_high": "Biochemistry",
+  "category": "Autoanalyzer",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Biochemical Analysis - Bronchoscopy Fluid",
+  "ref_high": "Biochemistry",
+  "category": "Autoanalyzer",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Biochemical Analysis - CSF",
+  "ref_high": "Biochemistry",
+  "category": "Autoanalyzer",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Biochemical Analysis - Pericardial Fluid",
+  "ref_high": "Biochemistry",
+  "category": "Autoanalyzer",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Biochemical Analysis - Peritoneal Fluid",
+  "ref_high": "Biochemistry",
+  "category": "Autoanalyzer",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Biochemical Analysis - Pleural Fluid",
+  "ref_high": "Biochemistry",
+  "category": "Autoanalyzer",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Blood Urea Nitrogen (BUN)",
+  "unit": "mg/dL",
+  "ref_low": "7",
+  "ref_high": "20",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "BUN/Creatinine Ratio",
+  "ref_low": "10",
+  "ref_high": "20",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "C-Peptide (Fasting)",
+  "unit": "ng/mL",
+  "ref_low": "0.5",
+  "ref_high": "2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "C-Peptide (Postprandial)",
+  "unit": "ng/mL",
+  "ref_low": "1",
+  "ref_high": "4",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "C-Peptide (Random)",
+  "unit": "ng/mL",
+  "ref_low": "0.5",
+  "ref_high": "3",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "C1 Esterase Inhibitor",
+  "unit": "mg/dL",
+  "ref_low": "21",
+  "ref_high": "39",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "C1q Complement",
+  "unit": "mg/dL",
+  "ref_low": "10",
+  "ref_high": "25",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "CA-125",
+  "unit": "U/mL",
+  "ref_low": "0",
+  "ref_high": "35",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "CA 72-4",
+  "unit": "U/mL",
+  "ref_low": "0",
+  "ref_high": "6",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "CA 15-3",
+  "unit": "U/mL",
+  "ref_low": "0",
+  "ref_high": "30",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "CA 19-9",
+  "unit": "U/mL",
+  "ref_low": "0",
+  "ref_high": "37",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Calcitonin",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Calcium (Total)",
+  "unit": "mg/dL",
+  "ref_low": "8.5",
+  "ref_high": "10.5",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Calcium (24 hr Urine)",
+  "unit": "mg/day",
+  "ref_low": "100",
+  "ref_high": "300",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Calcium/Creatinine Ratio",
+  "ref_low": "0.1",
+  "ref_high": "0.2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Cannabis (THC)",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Carbamazepine Level",
+  "unit": "Ug/mL",
+  "ref_low": "4",
+  "ref_high": "12",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Catecholamines (24 hr Urine)",
+  "unit": "Ug/day",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Catecholamines (Plasma)",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "500",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "CEA (Carcinoembryonic Antigen)",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Ceruloplasmin",
+  "unit": "mg/dL",
+  "ref_low": "20",
+  "ref_high": "40",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Chloride (Fluid)",
+  "unit": "mmol/L",
+  "ref_low": "95",
+  "ref_high": "110",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Chloride (Serum)",
+  "unit": "mmol/L",
+  "ref_low": "98",
+  "ref_high": "106",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Chloride (Urine Spot)",
+  "unit": "mmol/L",
+  "ref_low": "40",
+  "ref_high": "220",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Cholesterol (Total)",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "200",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "HDL Cholesterol",
+  "unit": "mg/dL",
+  "ref_low": "40",
+  "ref_high": "60",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Cholinesterase",
+  "unit": "U/L",
+  "ref_low": "5000",
+  "ref_high": "12000",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Chromium (Blood)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "1",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Chromium (Serum)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "1",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Chromium (Urine 24 hr)",
+  "unit": "Ug/day",
+  "ref_low": "0",
+  "ref_high": "2",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Chromium (Urine Spot)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "1",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Chromogranin A",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Citrate (24 hr Urine)",
+  "unit": "mg/day",
+  "ref_low": "320",
+  "ref_high": "1240",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Cocaine Metabolites",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Complement C3",
+  "unit": "mg/dL",
+  "ref_low": "90",
+  "ref_high": "180",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Complement C4",
+  "unit": "mg/dL",
+  "ref_low": "10",
+  "ref_high": "40",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Complement Total (CH50)",
+  "unit": "U/mL",
+  "ref_low": "30",
+  "ref_high": "75",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Hemolytic Assay"
+ },
+ {
+  "test_name": "Copper (Serum)",
+  "unit": "Ug/dL",
+  "ref_low": "70",
+  "ref_high": "140",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Atomic Absorption"
+ },
+ {
+  "test_name": "Copper (Urine Spot)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "50",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Atomic Absorption"
+ },
+ {
+  "test_name": "Copper (Blood)",
+  "unit": "Ug/dL",
+  "ref_low": "70",
+  "ref_high": "140",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Atomic Absorption"
+ },
+ {
+  "test_name": "Copper (24 hr Urine)",
+  "unit": "Ug/day",
+  "ref_low": "15",
+  "ref_high": "60",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Atomic Absorption"
+ },
+ {
+  "test_name": "Cortisol (Evening)",
+  "unit": "Ug/dL",
+  "ref_low": "2",
+  "ref_high": "10",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Cortisol (Morning)",
+  "unit": "Ug/dL",
+  "ref_low": "6",
+  "ref_high": "23",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Cortisol (Free Urine)",
+  "unit": "Ug/day",
+  "ref_low": "10",
+  "ref_high": "100",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Cortisol (Random)",
+  "unit": "Ug/dL",
+  "ref_low": "5",
+  "ref_high": "25",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "CPK-MB",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Cardiac Marker",
+  "department": "DEPARTMENT OF CARDIOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "CPK Total",
+  "unit": "U/L",
+  "ref_low": "30",
+  "ref_high": "200",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Creatinine (24 hr Urine)",
+  "unit": "mg/day",
+  "ref_low": "800",
+  "ref_high": "2000",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Creatinine (Fluid)",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "1.2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Creatinine (Urine Spot)",
+  "unit": "mg/dL",
+  "ref_low": "20",
+  "ref_high": "300",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Creatinine Clearance (24 hr)",
+  "unit": "mL/min",
+  "ref_low": "90",
+  "ref_high": "140",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Cryoglobulins",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "CSF Oligoclonal Bands",
+  "ref_high": "Immunology",
+  "category": "Electrophoresis",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Cyclosporine Level",
+  "unit": "ng/mL",
+  "ref_low": "100",
+  "ref_high": "400",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "CYFRA 21-1",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "3.3",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Cystatin C",
+  "unit": "mg/L",
+  "ref_low": "0.6",
+  "ref_high": "1.2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "DHEA",
+  "unit": "ng/mL",
+  "ref_low": "1",
+  "ref_high": "10",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "DHEA-S",
+  "unit": "Ug/dL",
+  "ref_low": "35",
+  "ref_high": "430",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "DHT (Dihydrotestosterone)",
+  "unit": "ng/dL",
+  "ref_low": "30",
+  "ref_high": "85",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Digoxin",
+  "unit": "ng/mL",
+  "ref_low": "0.5",
+  "ref_high": "2",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Dopamine (Plasma)",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "30",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Drug Abuse Test (Urine - 5 Drugs)",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Drug Abuse Test (Urine - 10 Drugs)",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Drug Abuse Panel (12 Drugs)",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "eGFR (MDRD)",
+  "unit": "mL/min/1.73mU",
+  "ref_low": "90",
+  "ref_high": "120",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Electrolytes (24 hr Urine)",
+  "unit": "mmol/day",
+  "ref_low": "100",
+  "ref_high": "300",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Electrolytes (Serum)",
+  "unit": "mmol/L",
+  "ref_low": "135",
+  "ref_high": "145",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Electrolytes (Urine Spot)",
+  "unit": "mmol/L",
+  "ref_low": "40",
+  "ref_high": "220",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Erythropoietin",
+  "unit": "mIU/mL",
+  "ref_low": "4",
+  "ref_high": "27",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Estrone (E1)",
+  "unit": "pg/mL",
+  "ref_low": "10",
+  "ref_high": "60",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Estradiol (E2)",
+  "unit": "pg/mL",
+  "ref_low": "10",
+  "ref_high": "50",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Estriol (Unconjugated E3)",
+  "unit": "ng/mL",
+  "ref_low": "0.1",
+  "ref_high": "3",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Everolimus",
+  "unit": "ng/mL",
+  "ref_low": "3",
+  "ref_high": "8",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Fasting Blood Sugar",
+  "unit": "mg/dL",
+  "ref_low": "70",
+  "ref_high": "100",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Hexokinase"
+ },
+ {
+  "test_name": "Ferritin",
+  "unit": "ng/mL",
+  "ref_low": "30",
+  "ref_high": "400",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Fluid Amylase",
+  "unit": "U/L",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Fluid Cholesterol",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "200",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Fluid Biochemical Analysis",
+  "ref_high": "Biochemistry",
+  "category": "Autoanalyzer",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Fluid Lipase",
+  "unit": "U/L",
+  "ref_low": "0",
+  "ref_high": "60",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Fluid Triglycerides",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "150",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Folate",
+  "unit": "ng/mL",
+  "ref_low": "3",
+  "ref_high": "20",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Free Androgen Index",
+  "ref_low": "20",
+  "ref_high": "80",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Free Metanephrine (Plasma)",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "90",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Free Testosterone",
+  "unit": "pg/mL",
+  "ref_low": "5",
+  "ref_high": "25",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Fructosamine",
+  "unit": "Umol/L",
+  "ref_low": "200",
+  "ref_high": "285",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "FSH",
+  "unit": "mIU/mL",
+  "ref_low": "1.5",
+  "ref_high": "12.4",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Free T3",
+  "unit": "pg/mL",
+  "ref_low": "2",
+  "ref_high": "4.4",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Free T4",
+  "unit": "ng/dL",
+  "ref_low": "0.8",
+  "ref_high": "1.8",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "G6PD Quantitative",
+  "unit": "U/g Hb",
+  "ref_low": "7",
+  "ref_high": "20",
+  "category": "Hematology",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "GAD-65 Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "GAD-65 Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Gastrin",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "GGT",
+  "unit": "U/L",
+  "ref_low": "10",
+  "ref_high": "60",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Glucose Challenge Test",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "140",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Hexokinase"
+ },
+ {
+  "test_name": "Glucose Tolerance Test",
+  "unit": "mg/dL",
+  "ref_low": "70",
+  "ref_high": "140",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Hexokinase"
+ },
+ {
+  "test_name": "GTT (Gestational)",
+  "unit": "mg/dL",
+  "ref_low": "70",
+  "ref_high": "140",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Hexokinase"
+ },
+ {
+  "test_name": "Growth Hormone",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Growth Hormone Stimulation Test",
+  "ref_high": "Endocrinology",
+  "category": "Functional Test",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Haptoglobin",
+  "unit": "mg/dL",
+  "ref_low": "30",
+  "ref_high": "200",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Haptoglobin Genotype",
+  "ref_high": "Genetics",
+  "category": "PCR",
+  "department": "DEPARTMENT OF MOLECULAR BIOLOGY"
+ },
+ {
+  "test_name": "Hb Electrophoresis",
+  "ref_high": "Hematology",
+  "category": "Electrophoresis",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "HbA1c",
+  "unit": "%",
+  "ref_low": "4",
+  "ref_high": "5.6",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "HE4",
+  "ref_low": "pmol/L",
+  "ref_high": "0",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Hepcidin",
+  "unit": "ng/mL",
+  "ref_low": "10",
+  "ref_high": "200",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ELISA"
+ },
+ {
+  "test_name": "HOMA-IR",
+  "ref_low": "0.5",
+  "ref_high": "2.5",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Homocysteine",
+  "unit": "Umol/L",
+  "ref_low": "5",
+  "ref_high": "15",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "hs-CRP",
+  "unit": "mg/L",
+  "ref_low": "0",
+  "ref_high": "3",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "IGF BP3",
+  "unit": "Ug/mL",
+  "ref_low": "2",
+  "ref_high": "4",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "IGF-1",
+  "unit": "ng/mL",
+  "ref_low": "100",
+  "ref_high": "300",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "IgG1 Subclass",
+  "unit": "mg/dL",
+  "ref_low": "300",
+  "ref_high": "900",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "IgG2 Subclass",
+  "unit": "mg/dL",
+  "ref_low": "200",
+  "ref_high": "700",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "IgG3 Subclass",
+  "unit": "mg/dL",
+  "ref_low": "20",
+  "ref_high": "150",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "IgG4 Subclass",
+  "unit": "mg/dL",
+  "ref_low": "8",
+  "ref_high": "140",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "IL-6",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "7",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Immunofixation (Urine)",
+  "ref_high": "Immunology",
+  "category": "Electrophoresis",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Immunofixation (Serum)",
+  "ref_high": "Immunology",
+  "category": "Electrophoresis",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Immunoglobulin IgA",
+  "unit": "mg/dL",
+  "ref_low": "70",
+  "ref_high": "400",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Immunoglobulin IgD",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Immunoglobulin IgG",
+  "unit": "mg/dL",
+  "ref_low": "700",
+  "ref_high": "1600",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Immunoglobulin IgM",
+  "unit": "mg/dL",
+  "ref_low": "40",
+  "ref_high": "230",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Immunoglobulin IgM (Blood)",
+  "unit": "mg/dL",
+  "ref_low": "40",
+  "ref_high": "230",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Immunoglobulin IgM (CSF)",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "1",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Inhibin A",
+  "unit": "pg/mL",
+  "ref_low": "10",
+  "ref_high": "200",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Inhibin B",
+  "unit": "pg/mL",
+  "ref_low": "20",
+  "ref_high": "200",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Insulin",
+  "unit": "UIU/mL",
+  "ref_low": "2",
+  "ref_high": "25",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Insulin (Fasting)",
+  "unit": "UIU/mL",
+  "ref_low": "2",
+  "ref_high": "10",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Insulin (Postprandial)",
+  "unit": "UIU/mL",
+  "ref_low": "5",
+  "ref_high": "40",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Insulin Autoantibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Free Insulin",
+  "unit": "UIU/mL",
+  "ref_low": "2",
+  "ref_high": "25",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Ionized Calcium",
+  "unit": "mmol/L",
+  "ref_low": "1.1",
+  "ref_high": "1.3",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "iPTH",
+  "unit": "pg/mL",
+  "ref_low": "15",
+  "ref_high": "65",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Iron/TIBC Ratio",
+  "unit": "%",
+  "ref_low": "20",
+  "ref_high": "50",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Serum Iron",
+  "unit": "Ug/dL",
+  "ref_low": "60",
+  "ref_high": "170",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "parent_test": "Iron Profile",
+  "test_name": "Serum Iron",
+  "unit": "Ug/dL",
+  "ref_low": "60",
+  "ref_high": "170",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Iron Profile",
+  "test_name": "Total Iron Binding Capacity (TIBC)",
+  "unit": "Ug/dL",
+  "ref_low": "240",
+  "ref_high": "450",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Iron Profile",
+  "test_name": "Unsaturated Iron Binding Capacity (UIBC)",
+  "unit": "Ug/dL",
+  "ref_low": "150",
+  "ref_high": "375",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Iron Profile",
+  "test_name": "Transferrin Saturation",
+  "unit": "%",
+  "ref_low": "20",
+  "ref_high": "50",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Iron Profile",
+  "test_name": "Ferritin",
+  "unit": "ng/mL",
+  "ref_low": "30",
+  "ref_high": "400",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Islet Cell Antibody",
+  "ref_high": "Immunology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Kappa/Lambda Free Light Chains (Serum)",
+  "unit": "mg/L",
+  "ref_low": "0.26",
+  "ref_high": "1.65",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Kappa/Lambda Free Light Chains (Urine)",
+  "unit": "mg/L",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Kappa Free Light Chains",
+  "unit": "mg/L",
+  "ref_low": "3.3",
+  "ref_high": "19.4",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Beta-Hydroxybutyrate",
+  "unit": "mmol/L",
+  "ref_low": "0",
+  "ref_high": "0.6",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Lactate",
+  "unit": "mmol/L",
+  "ref_low": "0.5",
+  "ref_high": "2.2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Lactate (CSF)",
+  "unit": "mmol/L",
+  "ref_low": "1.1",
+  "ref_high": "2.4",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Lamotrigine Level",
+  "unit": "Ug/mL",
+  "ref_low": "3",
+  "ref_high": "14",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "LDH (Fluid)",
+  "unit": "U/L",
+  "ref_low": "0",
+  "ref_high": "200",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "LDH Isoenzymes",
+  "ref_high": "Biochemistry",
+  "category": "Electrophoresis",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "LDH (Serum)",
+  "unit": "U/L",
+  "ref_low": "140",
+  "ref_high": "280",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "LDL Cholesterol",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Lead (Blood)",
+  "unit": "Ug/dL",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Lead (Urine Spot)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Lead (Urine 24 hr)",
+  "unit": "Ug/day",
+  "ref_low": "0",
+  "ref_high": "20",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Leptin",
+  "unit": "ng/mL",
+  "ref_low": "1",
+  "ref_high": "15",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Levetiracetam",
+  "unit": "Ug/mL",
+  "ref_low": "12",
+  "ref_high": "46",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "LH",
+  "unit": "mIU/mL",
+  "ref_low": "1.5",
+  "ref_high": "9.3",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Lipase",
+  "unit": "U/L",
+  "ref_low": "13",
+  "ref_high": "60",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Total Cholesterol",
+  "unit": "mg/dL",
+  "ref_low": "125",
+  "ref_high": "200",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "HDL Cholesterol",
+  "unit": "mg/dL",
+  "ref_low": "40",
+  "ref_high": "60",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "LDL Cholesterol",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Triglycerides",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "150",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "VLDL Cholesterol",
+  "unit": "mg/dL",
+  "ref_low": "5",
+  "ref_high": "40",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Lipid Profile",
+  "test_name": "Non-HDL Cholesterol",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "130",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Lipid Profile",
+  "test_name": "Total Cholesterol/HDL Ratio",
+  "ref_low": "3",
+  "ref_high": "5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Lipid Profile",
+  "test_name": "LDL/HDL Ratio",
+  "ref_low": "1",
+  "ref_high": "3",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Lipoprotein (a)",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "30",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoassay"
+ },
+ {
+  "test_name": "Lipoprotein Electrophoresis",
+  "ref_high": "Biochemistry",
+  "category": "Electrophoresis",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "Bilirubin Total",
+  "unit": "mg/dL",
+  "ref_low": "0.3",
+  "ref_high": "1.2",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "Bilirubin Direct",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "0.3",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "Bilirubin Indirect",
+  "unit": "mg/dL",
+  "ref_low": "0.2",
+  "ref_high": "0.9",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "SGOT (AST)",
+  "unit": "U/L",
+  "ref_low": "5",
+  "ref_high": "40",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "SGPT (ALT)",
+  "unit": "U/L",
+  "ref_low": "7",
+  "ref_high": "56",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "Alkaline Phosphatase (ALP)",
+  "unit": "U/L",
+  "ref_low": "44",
+  "ref_high": "147",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "Gamma GT (GGT)",
+  "unit": "U/L",
+  "ref_low": "9",
+  "ref_high": "48",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "Total Protein",
+  "unit": "g/dL",
+  "ref_low": "6",
+  "ref_high": "8.3",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "Albumin",
+  "unit": "g/dL",
+  "ref_low": "3.5",
+  "ref_high": "5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "Globulin",
+  "unit": "g/dL",
+  "ref_low": "2",
+  "ref_high": "3.5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Liver Function Test",
+  "test_name": "A/G Ratio",
+  "ref_low": "1",
+  "ref_high": "2.2",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Magnesium",
+  "unit": "mg/dL",
+  "ref_low": "1.7",
+  "ref_high": "2.2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Manganese (Serum)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Manganese (EDTA Blood)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "15",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Manganese (Urine)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "8",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Mercury (Urine 24 hr)",
+  "unit": "Ug/day",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Mercury (Blood)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Mercury (Serum)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Mercury (Urine Spot)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Metanephrines (Blood)",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "90",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Metanephrines (Urine 24 hr)",
+  "unit": "Ug/day",
+  "ref_low": "0",
+  "ref_high": "350",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Methadone (Urine)",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Methemoglobin",
+  "unit": "%",
+  "ref_low": "0",
+  "ref_high": "2",
+  "category": "Hematology",
+  "department": "DEPARTMENT OF HAEMATOLOGY",
+  "method": "Co-oximetry"
+ },
+ {
+  "test_name": "Methaqualone",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Methotrexate",
+  "unit": "Umol/L",
+  "ref_low": "0",
+  "ref_high": "1",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Methylmalonic Acid (Qualitative)",
+  "ref_high": "Biochemistry",
+  "category": "Colorimetry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Methylmalonic Acid (Quantitative)",
+  "unit": "Umol/L",
+  "ref_low": "0",
+  "ref_high": "0.4",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "GC-MS"
+ },
+ {
+  "test_name": "Microalbumin (Urine)",
+  "unit": "mg/L",
+  "ref_low": "0",
+  "ref_high": "30",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Microalbumin/Creatinine Ratio",
+  "unit": "mg/g",
+  "ref_low": "0",
+  "ref_high": "30",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Microalbumin (24 hr Urine)",
+  "unit": "mg/day",
+  "ref_low": "0",
+  "ref_high": "30",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Morphine/Opiates",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Myoglobin (Serum)",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "85",
+  "category": "Cardiac Marker",
+  "department": "DEPARTMENT OF CARDIOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Myoglobin (Urine)",
+  "ref_high": "Biochemistry",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Nickel (Blood)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Nickel (Urine)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "5",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Nicotine/Cotinine (Serum)",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "LC-MS/MS"
+ },
+ {
+  "test_name": "Nicotine/Cotinine (Urine)",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "LC-MS/MS"
+ },
+ {
+  "test_name": "Noradrenaline (Plasma)",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "600",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Noradrenaline (Urine 24 hr)",
+  "unit": "Ug/day",
+  "ref_low": "15",
+  "ref_high": "80",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Normetanephrine (Urine 24 hr)",
+  "unit": "Ug/day",
+  "ref_low": "0",
+  "ref_high": "600",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Normetanephrine (Plasma)",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "180",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "NT-proBNP",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "125",
+  "category": "Cardiac Marker",
+  "department": "DEPARTMENT OF CARDIOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Estrogen Total",
+  "unit": "pg/mL",
+  "ref_low": "50",
+  "ref_high": "350",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Serum Osmolality",
+  "unit": "mOsm/kg",
+  "ref_low": "275",
+  "ref_high": "295",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Osmometry"
+ },
+ {
+  "test_name": "Urine Osmolality",
+  "unit": "mOsm/kg",
+  "ref_low": "300",
+  "ref_high": "900",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Osmometry"
+ },
+ {
+  "test_name": "Oxalate (24 hr Urine)",
+  "unit": "mg/day",
+  "ref_low": "10",
+  "ref_high": "40",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "P1NP",
+  "unit": "ng/mL",
+  "ref_low": "20",
+  "ref_high": "70",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "PAPP-A",
+  "unit": "mIU/L",
+  "ref_low": "0",
+  "ref_high": "4",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Phencyclidine (PCP)",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Phenobarbital",
+  "unit": "Ug/mL",
+  "ref_low": "15",
+  "ref_high": "40",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Phenytoin",
+  "unit": "Ug/mL",
+  "ref_low": "10",
+  "ref_high": "20",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Phosphorus (24 hr Urine)",
+  "unit": "mg/day",
+  "ref_low": "400",
+  "ref_high": "1300",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Phosphorus (Serum)",
+  "unit": "mg/dL",
+  "ref_low": "2.5",
+  "ref_high": "4.5",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "PIVKA-II",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "40",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Plasma Renin Activity",
+  "unit": "ng/mL/hr",
+  "ref_low": "0.6",
+  "ref_high": "4.3",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Porphobilinogen (Urine Spot)",
+  "unit": "mg/L",
+  "ref_low": "0",
+  "ref_high": "2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Porphobilinogen (Urine 24 hr)",
+  "unit": "mg/day",
+  "ref_low": "0",
+  "ref_high": "2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Porphyrins (Urine Spot)",
+  "ref_high": "Biochemistry",
+  "category": "Fluorometry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Porphyrins (Urine 24 hr)",
+  "ref_high": "Biochemistry",
+  "category": "Fluorometry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Potassium (Fluid)",
+  "unit": "mmol/L",
+  "ref_low": "3.5",
+  "ref_high": "5",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Potassium (Serum)",
+  "unit": "mmol/L",
+  "ref_low": "3.5",
+  "ref_high": "5.1",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Potassium (Urine)",
+  "unit": "mmol/L",
+  "ref_low": "25",
+  "ref_high": "125",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "PPBS",
+  "unit": "mg/dL",
+  "ref_low": "70",
+  "ref_high": "140",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Hexokinase"
+ },
+ {
+  "test_name": "Prealbumin",
+  "unit": "mg/dL",
+  "ref_low": "15",
+  "ref_high": "35",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Progesterone",
+  "unit": "ng/mL",
+  "ref_low": "0.2",
+  "ref_high": "25",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Prolactin (Pooled)",
+  "unit": "ng/mL",
+  "ref_low": "4",
+  "ref_high": "23",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Propoxyphene",
+  "ref_high": "Toxicology",
+  "category": "Immunoassay",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Protein Electrophoresis (Urine)",
+  "ref_high": "Biochemistry",
+  "category": "Electrophoresis",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Protein (Fluid)",
+  "unit": "g/dL",
+  "ref_low": "0",
+  "ref_high": "3",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Biuret"
+ },
+ {
+  "test_name": "Total Protein",
+  "unit": "g/dL",
+  "ref_low": "6",
+  "ref_high": "8.3",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Biuret"
+ },
+ {
+  "test_name": "PSA Free",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "0.5",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "PSA Total",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "4",
+  "category": "Tumor Marker",
+  "department": "DEPARTMENT OF ONCOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Pyruvate",
+  "unit": "mmol/L",
+  "ref_low": "0.03",
+  "ref_high": "0.1",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Pyruvate (CSF)",
+  "unit": "mmol/L",
+  "ref_low": "0.03",
+  "ref_high": "0.1",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Random Blood Sugar",
+  "unit": "mg/dL",
+  "ref_low": "70",
+  "ref_high": "140",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Hexokinase"
+ },
+ {
+  "test_name": "RBC Folate",
+  "unit": "ng/mL",
+  "ref_low": "150",
+  "ref_high": "600",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "parent_test": "Renal Function Test",
+  "test_name": "Urea",
+  "unit": "mg/dL",
+  "ref_low": "10",
+  "ref_high": "50",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Function Test",
+  "test_name": "Blood Urea Nitrogen (BUN)",
+  "unit": "mg/dL",
+  "ref_low": "7",
+  "ref_high": "20",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Function Test",
+  "test_name": "Creatinine",
+  "unit": "mg/dL",
+  "ref_low": "0.6",
+  "ref_high": "1.3",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Function Test",
+  "test_name": "Uric Acid",
+  "unit": "mg/dL",
+  "ref_low": "3.5",
+  "ref_high": "7.2",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Function Test",
+  "test_name": "Sodium",
+  "unit": "mEq/L",
+  "ref_low": "135",
+  "ref_high": "145",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Function Test",
+  "test_name": "Potassium",
+  "unit": "mEq/L",
+  "ref_low": "3.5",
+  "ref_high": "5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Function Test",
+  "test_name": "Chloride",
+  "unit": "mEq/L",
+  "ref_low": "98",
+  "ref_high": "107",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Function Test",
+  "test_name": "Bicarbonate (HCO3)",
+  "unit": "mEq/L",
+  "ref_low": "22",
+  "ref_high": "29",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Function Test",
+  "test_name": "Calcium",
+  "unit": "mg/dL",
+  "ref_low": "8.5",
+  "ref_high": "10.5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Function Test",
+  "test_name": "Phosphorus",
+  "unit": "mg/dL",
+  "ref_low": "2.5",
+  "ref_high": "4.5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Profile II",
+  "test_name": "Sodium",
+  "unit": "mEq/L",
+  "ref_low": "135",
+  "ref_high": "145",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Profile II",
+  "test_name": "Potassium",
+  "unit": "mEq/L",
+  "ref_low": "3.5",
+  "ref_high": "5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Profile II",
+  "test_name": "Chloride",
+  "unit": "mEq/L",
+  "ref_low": "98",
+  "ref_high": "107",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Profile II",
+  "test_name": "Bicarbonate (HCO3)",
+  "unit": "mEq/L",
+  "ref_low": "22",
+  "ref_high": "29",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Profile II",
+  "test_name": "Magnesium",
+  "unit": "mg/dL",
+  "ref_low": "1.7",
+  "ref_high": "2.2",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Profile II",
+  "test_name": "Calcium",
+  "unit": "mg/dL",
+  "ref_low": "8.5",
+  "ref_high": "10.5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Renal Profile II",
+  "test_name": "Phosphorus",
+  "unit": "mg/dL",
+  "ref_low": "2.5",
+  "ref_high": "4.5",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Selenium (Urine Spot)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "20",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Selenium (Blood EDTA)",
+  "unit": "Ug/L",
+  "ref_low": "70",
+  "ref_high": "150",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Selenium (Urine 24 hr)",
+  "unit": "Ug/day",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Serotonin (Serum)",
+  "unit": "ng/mL",
+  "ref_low": "50",
+  "ref_high": "200",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Serotonin (Urine)",
+  "unit": "mg/day",
+  "ref_low": "2",
+  "ref_high": "8",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Aldosterone (Serum)",
+  "unit": "ng/dL",
+  "ref_low": "4",
+  "ref_high": "31",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Serum Amylase",
+  "unit": "U/L",
+  "ref_low": "30",
+  "ref_high": "110",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "SAAG (Serum Ascites Albumin Gradient)",
+  "unit": "g/dL",
+  "ref_low": "1.1",
+  "ref_high": "2.5",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Serum Creatinine",
+  "unit": "mg/dL",
+  "ref_low": "0.7",
+  "ref_high": "1.3",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Serum Lithium",
+  "unit": "mmol/L",
+  "ref_low": "0.6",
+  "ref_high": "1.2",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Serum Prolactin",
+  "unit": "ng/mL",
+  "ref_low": "4",
+  "ref_high": "23",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Serum Protein Electrophoresis",
+  "ref_high": "Biochemistry",
+  "category": "Electrophoresis",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Serum TIBC",
+  "unit": "Ug/dL",
+  "ref_low": "250",
+  "ref_high": "450",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Serum Urea",
+  "unit": "mg/dL",
+  "ref_low": "15",
+  "ref_high": "40",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Urease"
+ },
+ {
+  "test_name": "AST (SGOT)",
+  "unit": "U/L",
+  "ref_low": "10",
+  "ref_high": "40",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "ALT (SGPT)",
+  "unit": "U/L",
+  "ref_low": "7",
+  "ref_high": "56",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "SHBG",
+  "unit": "nmol/L",
+  "ref_low": "10",
+  "ref_high": "57",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Sirolimus",
+  "unit": "ng/mL",
+  "ref_low": "5",
+  "ref_high": "15",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Sodium (24 hr Urine)",
+  "unit": "mmol/day",
+  "ref_low": "40",
+  "ref_high": "220",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Sodium (Fluid)",
+  "unit": "mmol/L",
+  "ref_low": "135",
+  "ref_high": "145",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Sodium (Serum)",
+  "unit": "mmol/L",
+  "ref_low": "136",
+  "ref_high": "145",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Spot Urine Calcium",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "20",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Spot Urine Protein",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "15",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Biuret"
+ },
+ {
+  "test_name": "Spot Urine Urea",
+  "unit": "mg/dL",
+  "ref_low": "800",
+  "ref_high": "2000",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Urease"
+ },
+ {
+  "test_name": "Spot Urine Phosphorus",
+  "unit": "mg/dL",
+  "ref_low": "20",
+  "ref_high": "60",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Spot Urine Sodium",
+  "unit": "mmol/L",
+  "ref_low": "40",
+  "ref_high": "220",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "ISE"
+ },
+ {
+  "test_name": "Spot Urine VMA",
+  "unit": "mg/L",
+  "ref_low": "0",
+  "ref_high": "7",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "HPLC"
+ },
+ {
+  "test_name": "Stone Analysis",
+  "ref_high": "Biochemistry",
+  "category": "Spectroscopy",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Synovial Fluid Biochemical Analysis",
+  "ref_high": "Biochemistry",
+  "category": "Autoanalyzer",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "T3 Total",
+  "unit": "ng/dL",
+  "ref_low": "80",
+  "ref_high": "200",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "T4 Total",
+  "unit": "Ug/dL",
+  "ref_low": "5",
+  "ref_high": "12",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Tacrolimus",
+  "unit": "ng/mL",
+  "ref_low": "5",
+  "ref_high": "20",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "TBG",
+  "unit": "Ug/mL",
+  "ref_low": "12",
+  "ref_high": "30",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Testosterone Total",
+  "unit": "ng/dL",
+  "ref_low": "300",
+  "ref_high": "1000",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Thallium (Blood)",
+  "unit": "Ug/L",
+  "ref_low": "0",
+  "ref_high": "2",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Thyroglobulin",
+  "unit": "ng/mL",
+  "ref_low": "3",
+  "ref_high": "40",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "parent_test": "Thyroid Profile (T3,T4,TSH)",
+  "test_name": "T3 (Triiodothyronine)",
+  "unit": "ng/dL",
+  "ref_low": "80",
+  "ref_high": "200",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Thyroid Profile (T3,T4,TSH)",
+  "test_name": "T4 (Thyroxine)",
+  "unit": "Ug/dL",
+  "ref_low": "5",
+  "ref_high": "12",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Thyroid Profile (T3,T4,TSH)",
+  "test_name": "TSH (Thyroid Stimulating Hormone)",
+  "unit": "UIU/mL",
+  "ref_low": "0.4",
+  "ref_high": "4",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Thyroid Profile (T3,T4,TSH)",
+  "test_name": "Free T3",
+  "unit": "pg/mL",
+  "ref_low": "2",
+  "ref_high": "4.4",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "parent_test": "Thyroid Profile (T3,T4,TSH)",
+  "test_name": "Free T4",
+  "unit": "ng/dL",
+  "ref_low": "0.8",
+  "ref_high": "1.8",
+  "category": "Panel",
+  "department": "DEPARTMENT OF BIOCHEMISTRY"
+ },
+ {
+  "test_name": "Total IgE",
+  "unit": "IU/mL",
+  "ref_low": "0",
+  "ref_high": "100",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Transferrin",
+  "unit": "mg/dL",
+  "ref_low": "200",
+  "ref_high": "360",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Immunoturbidimetry"
+ },
+ {
+  "test_name": "Transferrin Saturation",
+  "unit": "%",
+  "ref_low": "20",
+  "ref_high": "50",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "TTKG",
+  "ref_low": "6",
+  "ref_high": "10",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Triglycerides",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "150",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Troponin I",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "0.04",
+  "category": "Cardiac Marker",
+  "department": "DEPARTMENT OF CARDIOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Troponin T",
+  "unit": "ng/mL",
+  "ref_low": "0",
+  "ref_high": "0.01",
+  "category": "Cardiac Marker",
+  "department": "DEPARTMENT OF CARDIOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Troponin I (High Sensitivity)",
+  "unit": "ng/L",
+  "ref_low": "0",
+  "ref_high": "14",
+  "category": "Cardiac Marker",
+  "department": "DEPARTMENT OF CARDIOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "TSH",
+  "unit": "UIU/mL",
+  "ref_low": "0.4",
+  "ref_high": "4",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "TSH Receptor Antibody",
+  "unit": "IU/L",
+  "ref_low": "0",
+  "ref_high": "1.75",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Ultra Sensitive TSH",
+  "unit": "UIU/mL",
+  "ref_low": "0.3",
+  "ref_high": "4",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "UIBC",
+  "unit": "Ug/dL",
+  "ref_low": "150",
+  "ref_high": "375",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Urea (Fluid)",
+  "unit": "mg/dL",
+  "ref_low": "10",
+  "ref_high": "40",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Urease"
+ },
+ {
+  "test_name": "Urea (24 hr Urine)",
+  "unit": "g/day",
+  "ref_low": "12",
+  "ref_high": "20",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Urease"
+ },
+ {
+  "test_name": "Uric Acid (24 hr Urine)",
+  "unit": "mg/day",
+  "ref_low": "250",
+  "ref_high": "750",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Uric Acid (Fluid)",
+  "unit": "mg/dL",
+  "ref_low": "2",
+  "ref_high": "7",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Uric Acid (Urine)",
+  "unit": "mg/dL",
+  "ref_low": "20",
+  "ref_high": "70",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Uric Acid (Serum)",
+  "unit": "mg/dL",
+  "ref_low": "3.5",
+  "ref_high": "7.2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Urine Calcium/Creatinine Ratio",
+  "ref_low": "0.1",
+  "ref_high": "0.2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Urine Pregnancy Test",
+  "ref_high": "Immunology",
+  "category": "Rapid Test",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Urine Triglycerides",
+  "unit": "mg/dL",
+  "ref_low": "0",
+  "ref_high": "10",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Enzymatic"
+ },
+ {
+  "test_name": "Urine Magnesium",
+  "unit": "mg/dL",
+  "ref_low": "2",
+  "ref_high": "10",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Colorimetry"
+ },
+ {
+  "test_name": "Urine Protein/Creatinine Ratio",
+  "ref_low": "0",
+  "ref_high": "0.2",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "Calculated"
+ },
+ {
+  "test_name": "Valproic Acid",
+  "unit": "Ug/mL",
+  "ref_low": "50",
+  "ref_high": "100",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Vancomycin",
+  "unit": "Ug/mL",
+  "ref_low": "10",
+  "ref_high": "20",
+  "category": "Therapeutic Drug",
+  "department": "DEPARTMENT OF CLINICAL PHARMACOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "VIP (Vasoactive Intestinal Peptide)",
+  "unit": "pg/mL",
+  "ref_low": "0",
+  "ref_high": "75",
+  "category": "Endocrinology",
+  "department": "DEPARTMENT OF ENDOCRINOLOGY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Vitamin B12",
+  "unit": "pg/mL",
+  "ref_low": "200",
+  "ref_high": "900",
+  "category": "Biochemistry",
+  "department": "DEPARTMENT OF BIOCHEMISTRY",
+  "method": "CLIA"
+ },
+ {
+  "test_name": "Zinc (24 hr Urine)",
+  "unit": "Ug/day",
+  "ref_low": "150",
+  "ref_high": "1200",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "Zinc (Serum)",
+  "unit": "Ug/dL",
+  "ref_low": "70",
+  "ref_high": "120",
+  "category": "Toxicology",
+  "department": "DEPARTMENT OF TOXICOLOGY",
+  "method": "ICP-MS"
+ },
+ {
+  "test_name": "ALPS Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "CD4 Count",
+  "unit": "cells/UL",
+  "ref_low": "500",
+  "ref_high": "1500",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Flow Cytometry"
+ },
+ {
+  "test_name": "CD19 Count",
+  "unit": "cells/UL",
+  "ref_low": "100",
+  "ref_high": "500",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Flow Cytometry"
+ },
+ {
+  "test_name": "CD3/CD4/CD8 Count",
+  "unit": "cells/UL",
+  "ref_low": "500",
+  "ref_high": "2000",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Flow Cytometry"
+ },
+ {
+  "test_name": "CD4/CD8 Count Ratio",
+  "ref_low": "1",
+  "ref_high": "3",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Flow Cytometry"
+ },
+ {
+  "test_name": "Flow Cytometry - Acute Leukemia Profile",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry - CLL MRD Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry - ALCP & MRD Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry - DNA Ploidy & S-Phase",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry BRAF V600E",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD13",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD15",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD20",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD38",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD4",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD7",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD8",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD34",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry Kappa Light Chain",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry Lambda Light Chain",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry FMC-7",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry Glycophorin A",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry Hairy Cell Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry Leukemia/Lymphoma Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Comprehensive Diagnostic Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry Lymphoma Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry MDS Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry PNH Workup",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry PNH RBC Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry PNH Polymorph Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry PNH with FLAER",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry TdT",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry ZAP-70",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry AML Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD10",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD103",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD117",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD138",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD14",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD16",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD19",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD2",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD22",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD23",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD25",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD3",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD34 (Stem Cells)",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD45",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD5",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD56",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD61",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry CD64",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry Cytoplasmic CD3",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry Myeloma MRD Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry Multiple Myeloma Panel",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry NK Cell",
+  "ref_high": "Immunology",
+  "category": "Flow Cytometry",
+  "department": "DEPARTMENT OF IMMUNOLOGY"
+ },
+ {
+  "test_name": "Flow Cytometry Lymphocyte Subset Enumeration",
+  "unit": "cells/UL",
+  "ref_low": "1000",
+  "ref_high": "4000",
+  "category": "Immunology",
+  "department": "DEPARTMENT OF IMMUNOLOGY",
+  "method": "Flow Cytometry"
+ }
+ ]

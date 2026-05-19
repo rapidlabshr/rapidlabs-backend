@@ -1,0 +1,2550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Client Sample Progress</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#eef2f6;
+    color:#374151;
+    font-size:13px;
+}
+.top-icons{
+    height:31px;
+    background:#fff;
+    border-bottom:4px solid #0aa6a6;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 10px;
+}
+.icon-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.round{
+    width:23px;
+    height:23px;
+    border-radius:50%;
+    background:#0aa6a6;
+    color:white;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:700;
+}
+.small-icon{
+    color:#0aa6a6;
+    font-size:14px;
+}
+.user-area{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#555;
+    font-size:12px;
+}
+.user-img{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    object-fit:cover;
+    cursor:pointer;
+    border:1px solid #d1d5db;
+}
+
+.profile-wrap{
+    position:relative;
+}
+
+.profile-menu{
+    display:none;
+    position:absolute;
+    top:36px;
+    right:0;
+    width:170px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    box-shadow:0 12px 30px rgba(0,0,0,.16);
+    z-index:1001;
+    padding:6px;
+}
+
+.profile-menu.show{
+    display:block;
+}
+
+.profile-menu button{
+    width:100%;
+    border:none;
+    background:transparent;
+    padding:9px 10px;
+    text-align:left;
+    cursor:pointer;
+    border-radius:8px;
+    font-size:12px;
+    color:#374151;
+}
+
+.profile-menu button:hover{
+    background:#f0fdfa;
+    color:#310566;
+}
+
+body.dark-mode .profile-menu{
+    background:#1f2937;
+    border-color:#58606e;
+}
+
+body.dark-mode .profile-menu button{
+    color:#e5e7eb;
+}
+
+
+.page-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 9px;
+}
+.page-title h2{
+    margin:0;
+    font-size:20px;
+    font-weight:600;
+    color:#4b5563;
+}
+.action-buttons{
+    display:flex;
+    gap:5px;
+}
+.btn{
+    border:none;
+    border-radius:4px;
+    padding:8px 13px;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:600;
+}
+.btn-teal{background:#09a6a6;color:#fff}
+.btn-gray{background:#6b7280;color:#fff}
+.btn-orange{background:#6a0483;color:#fff}
+.filter-box{
+    margin:0 8px 8px;
+    background:#fff;
+    border:1px solid #ddd;
+    box-shadow:0 1px 4px rgba(0,0,0,.12);
+    padding:8px;
+}
+.filter-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1.1fr 1.1fr 1.3fr 1.1fr 1.1fr;
+    gap:8px;
+}
+.filter-grid input,
+.filter-grid select{
+    height:24px;
+    border:1px solid #cfd5dd;
+    border-radius:3px;
+    padding:3px 7px;
+    font-size:12px;
+    color:#555;
+}
+.search-row{
+    margin-top:10px;
+
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+
+    gap:8px;
+
+    padding:0 4px;
+}
+
+.search-row input,
+.search-row select{
+    height:38px;
+
+    padding:0 12px;
+
+    border:1px solid #cfe0f2;
+
+    border-radius:8px;
+
+    background:#ffffff;
+
+    color:#06376d;
+
+    font-size:13px;
+    font-weight:600;
+
+    transition:.15s ease;
+}
+
+.search-row input:focus,
+.search-row select:focus{
+    outline:none;
+
+    border-color:#0877d8;
+
+    box-shadow:0 0 0 3px rgba(8,119,216,.10);
+}
+
+.search-row button{
+    height:38px;
+
+    padding:0 16px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:linear-gradient(135deg,#06376d,#0877d8);
+
+    color:white;
+
+    font-size:13px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.15s ease;
+}
+
+.search-row button:hover{
+    background:linear-gradient(135deg,#032a55,#0666bc);
+}
+
+.table-wrap{
+    margin:0 6px;
+
+    background:#ffffff;
+
+    border:1px solid #dbe4ee;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 4px 14px rgba(6,55,109,.06);
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:12px;
+}
+td,th{
+    padding:6px 6px;
+    border-bottom:1px solid #e5e7eb;
+    vertical-align:middle;
+}
+th{
+    text-align:left;
+    color:#6b7280;
+    font-weight:600;
+    background:#f9fafb;
+}
+tr:hover{
+    background:#f8ffff;
+}
+.check{
+    width:18px;
+}
+.date{
+    width:135px;
+    color:#555;
+    font-size:10px;
+    white-space:nowrap;
+}
+
+.invoice-pill{
+    background:#6b7280;
+    color:#fff;
+    border-radius:14px;
+    padding:4px 11px;
+    font-weight:700;
+    display:inline-block;
+    font-size:11px;
+}
+
+.gender{
+    color:#d94697;
+    font-size:15px;
+    font-weight:700;
+    margin-right:5px;
+}
+
+.icons{
+    white-space:nowrap;
+    color:#8a8f98;
+    font-size:14px;
+}
+
+.icon-btn{
+    margin-left:6px;
+    cursor:pointer;
+}
+
+.icon-btn:hover{
+    color:#0aa6a6;
+}
+.patient{
+    font-weight:600;
+    color:#555;
+}
+.gender{
+    color:#d94697;
+    margin-right:4px;
+}
+.client{
+    color:#4b5563;
+    font-weight:600;
+}
+.amount{
+    color:#ef4444;
+    font-weight:700;
+    text-align:right;
+}
+.status{
+    display:inline-block;
+    padding:3px 9px;
+    border-radius:12px;
+    font-size:11px;
+    font-weight:700;
+}
+.st-bill{background:#fff7ed;color:#c2410c}
+.st-barcode{background:#e0f2fe;color:#0369a1}
+.st-ready{background:#ecfdf5;color:#047857}
+.st-report{background:#dcfce7;color:#166534}
+.icons{
+    white-space:nowrap;
+    color:#8a8f98;
+    font-size:13px;
+}
+.icon-btn{
+    margin-left:5px;
+    cursor:pointer;
+}
+.expand-row{
+    display:none;
+    background:#fbfdff;
+}
+.detail-card{
+    margin:8px 28px;
+    border:1px solid #dbe4ee;
+    border-radius:4px;
+    background:#fff;
+    padding:10px;
+}
+.detail-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:8px;
+    margin-bottom:10px;
+}
+.detail-box{
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
+    padding:8px;
+    border-radius:4px;
+}
+.detail-box small{
+    display:block;
+    color:#6b7280;
+    margin-bottom:4px;
+}
+.detail-box b{
+    color:#374151;
+}
+.inner-table{
+    border:1px solid #e5e7eb;
+}
+.inner-table th{
+    background:#0aa6a6;
+    color:#fff;
+}
+.report-link{
+    color:#0a8f8f;
+    font-weight:700;
+    text-decoration:none;
+}
+.bottom-bar{
+    margin:8px 7px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.page-num{
+    background:#0aa6a6;
+    color:#fff;
+    padding:8px 11px;
+    border-radius:5px;
+    font-weight:700;
+}
+.bottom-actions{
+    display:flex;
+    gap:4px;
+}
+.footer-total{
+    background:#e5e7eb;
+    padding:7px 12px;
+    border-radius:4px;
+    color:#555;
+}
+
+.payment-summary{
+    margin:8px 7px;
+    background:#e5e7eb;
+    padding:8px 10px;
+    border-radius:5px;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+}
+
+.summary-item{
+    background:#f3f4f6;
+    padding:7px 12px;
+    border-radius:4px;
+    min-width:110px;
+    text-align:center;
+}
+
+.summary-item span{
+    display:block;
+    color:#6b7280;
+    font-size:11px;
+}
+
+.summary-item b{
+    color:#374151;
+    font-size:13px;
+}
+
+.summary-item.due b{
+    color:#dc2626;
+}
+
+.pay-now-btn{
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:9px 16px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.pay-now-btn:hover{
+    background:#15803d;
+}
+
+
+.empty{
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+
+.settings-wrap{
+    position:relative;
+}
+
+.settings-btn{
+    width:20px;
+    height:20px;
+    border:none;
+    background:#ffffff;
+    color:#333;
+    cursor:pointer;
+}
+
+.settings-menu{
+    display:none;
+    position:absolute;
+    top:34px;
+    left:0;
+    width:190px;
+    background:#fff;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    box-shadow:0 8px 22px rgba(0,0,0,.15);
+    z-index:999;
+    padding:8px;
+}
+
+.settings-title{
+    font-weight:700;
+    color:#374151;
+    padding:7px 8px;
+    border-bottom:1px solid #e5e7eb;
+    margin-bottom:5px;
+}
+
+.settings-menu button{
+    width:100%;
+    background:transparent;
+    border:none;
+    padding:9px 8px;
+    text-align:left;
+    cursor:pointer;
+    border-radius:5px;
+    font-size:13px;
+    color:#374151;
+}
+
+.settings-menu button:hover{
+    background:#f0fdfa;
+    color:#0aa6a6;
+}
+
+.settings-divider{
+    height:1px;
+    background:#e5e7eb;
+    margin:5px 0;
+}
+
+body.dark-mode{
+    background:#111827;
+    color:#e5e7eb;
+}
+
+body.dark-mode .filter-box,
+body.dark-mode .table-wrap,
+body.dark-mode .top-icons,
+body.dark-mode .settings-menu,
+body.dark-mode .detail-card{
+    background:#1f2937;
+    color:#e5e7eb;
+    border-color:#374151;
+}
+
+body.dark-mode th{
+    background:#374151;
+    color:#e5e7eb;
+}
+
+body.dark-mode td{
+    border-color:#374151;
+}
+
+body.dark-mode input,
+body.dark-mode select{
+    background:#111827;
+    color:#e5e7eb;
+    border-color:#4b5563;
+}
+
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.modal-box{
+    background:#fff;
+    padding:20px;
+    width:300px;
+    border-radius:6px;
+    text-align:left;
+}
+
+.modal-box h3{
+    margin-top:0;
+}
+
+.modal-box button{
+    margin-top:10px;
+    padding:6px 12px;
+    border:none;
+    background:#0aa6a6;
+    color:#fff;
+    cursor:pointer;
+}
+
+
+/* notification  */
+
+.notify-wrap{
+    position:relative;
+}
+
+.notify-icon{
+    width:18px;
+    height:17px;
+    border-radius:50%;
+    background:#f0fdfa;
+    color:#0aa6a6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:15px;
+    border:1px solid #ccfbf1;
+    transition:all .2s ease;
+}
+
+.notify-icon:hover{
+    background:#0aa6a6;
+    color:#fff;
+    transform:translateY(-1px);
+}
+
+.notify-count{
+    position:absolute;
+    top:-5px;
+    right:-5px;
+    min-width:16px;
+    height:16px;
+    background:#ef4444;
+    color:#fff;
+    font-size:9px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:999px;
+    border:2px solid #fff;
+}
+
+.notify-menu{
+    display:none;
+    position:absolute;
+    top:38px;
+    right:0;
+    width:300px;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    box-shadow:0 14px 35px rgba(0,0,0,.16);
+    font-size:12px;
+    z-index:1000;
+    overflow:hidden;
+}
+
+.notify-menu.show{
+    display:block;
+    animation:notifyDrop .18s ease;
+}
+
+@keyframes notifyDrop{
+    from{
+        opacity:0;
+        transform:translateY(-8px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.notify-header{
+    padding:11px 13px;
+    border-bottom:1px solid #eef2f7;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:700;
+    color:#374151;
+    background:linear-gradient(135deg,#f0fdfa,#ffffff);
+}
+
+.notify-header button{
+    border:none;
+    background:#fee2e2;
+    color:#dc2626;
+    font-size:11px;
+    font-weight:700;
+    cursor:pointer;
+    padding:4px 8px;
+    border-radius:999px;
+}
+
+.notify-header button:hover{
+    background:#dc2626;
+    color:#fff;
+}
+
+#notifyList{
+    max-height:230px;
+    overflow:auto;
+    padding:6px;
+}
+
+.notify-item{
+    padding:9px 10px;
+    border-radius:10px;
+    margin-bottom:5px;
+    background:#f9fafb;
+    border:1px solid #eef2f7;
+    color:#374151;
+    line-height:1.4;
+}
+
+.notify-item:hover{
+    background:#ecfeff;
+    border-color:#99f6e4;
+}
+
+.notify-item small{
+    display:block;
+    margin-top:4px;
+    color:#6b7280;
+    font-size:10px;
+}
+
+body.dark-mode .notify-menu{
+    background:#1f2937;
+    border-color:#374151;
+}
+
+body.dark-mode .notify-header{
+    background:#111827;
+    color:#e5e7eb;
+    border-color:#374151;
+}
+
+body.dark-mode .notify-item{
+    background:#111827;
+    color:#e5e7eb;
+    border-color:#374151;
+}
+
+body.dark-mode .notify-item small{
+    color:#9ca3af;
+}
+
+
+.gender-avatar{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:6px;
+    vertical-align:middle;
+}
+
+.gender-avatar .material-icons{
+    font-size:18px;
+    line-height:1;
+}
+
+/* male */
+.gender-avatar.male .material-icons{
+    color:#1976d2;
+}
+
+/* female */
+.gender-avatar.female .material-icons{
+    color:#d81b60;
+}
+
+/* other */
+.gender-avatar.other .material-icons{
+    color:#7b1fa2;
+}
+
+/* unknown */
+.gender-avatar.unknown .material-icons{
+    color:#757575;
+}
+
+.welcome-box{
+    display:flex;
+    align-items:center;
+    background:linear-gradient(135deg,#9bab04,#0c1293);
+    color:#fff;
+    padding:8px 14px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+
+.welcome-text small{
+    display:block;
+    font-size:10px;
+    opacity:.85;
+    letter-spacing:.5px;
+}
+
+.welcome-text div{
+    font-size:14px;
+    font-weight:600;
+    margin-top:2px;
+}
+
+
+.action-icon{
+    font-size:18px;
+    margin-left:7px;
+    cursor:pointer;
+    color:#6b7280;
+    vertical-align:middle;
+    transition:all .2s ease;
+}
+
+.action-icon:hover{
+    color:#0aa6a6;
+    transform:translateY(-1px) scale(1.08);
+}
+
+.payment-modal-box{
+    background:#fff;
+    width:360px;
+    border-radius:12px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.payment-modal-box h3{
+    margin:0 0 15px;
+    color:#0aa6a6;
+    font-size:22px;
+}
+
+.pay-amount{
+    background:#f0fdfa;
+    border:1px solid #99f6e4;
+    border-radius:10px;
+    padding:12px;
+    color:#0f766e;
+    margin-bottom:15px;
+    font-size:13px;
+}
+
+.pay-amount b{
+    font-size:26px;
+    color:#111827;
+}
+
+.qr-box{
+    width:180px;
+    height:180px;
+    margin:0 auto 15px;
+    border:1px dashed #94a3b8;
+    border-radius:10px;
+    padding:10px;
+    background:#fff;
+}
+
+.qr-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.pay-note{
+    font-size:12px;
+    color:#6b7280;
+    line-height:1.5;
+}
+
+.paid-btn{
+    width:100%;
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:7px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:8px;
+}
+
+.close-pay-btn{
+    width:100%;
+    background:#e5e7eb;
+    color:#374151;
+    border:none;
+    padding:9px;
+    border-radius:7px;
+    cursor:pointer;
+    margin-top:8px;
+}
+
+.payment-success{
+    display:none;
+    margin-top:14px;
+    background:#ecfdf5;
+    color:#047857;
+    padding:10px;
+    border-radius:8px;
+    font-weight:700;
+    line-height:1.5;
+}
+
+
+@media(max-width:900px){
+    .filter-grid{grid-template-columns:1fr 1fr}
+    .detail-grid{grid-template-columns:1fr 1fr}
+    table{font-size:11px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-icons">
+<div class="icon-left">
+    <div class="settings-wrap">
+        <button class="settings-btn" title="Settings" onclick="toggleSettings(event)">⚙️</button>
+
+        <div id="settingsMenu" class="settings-menu">
+            <div class="settings-title">Settings</div>
+
+            <button onclick="setTheme('light')">☀️ Light Mode</button>
+            <button onclick="setTheme('dark')">🌙 Dark Mode</button>
+
+            <div class="settings-divider"></div>
+
+            <div class="settings-divider"></div>
+
+            <button onclick="customerCare()">📞 Customer Care</button>
+
+                <div class="settings-divider"></div>
+
+                <button onclick="logout()">🚪 Logout</button>
+        </div>
+    </div>
+</div>
+
+        <div class="user-area">
+
+            <div class="notify-wrap">
+                <span onclick="toggleNotify(event)" class="notify-icon">🔔</span>
+                <span id="notifyCount" class="notify-count">0</span>
+
+                <div id="notifyMenu" class="notify-menu">
+                    <div class="notify-header">
+                        Notifications
+                        <button onclick="clearNotifications()">Clear</button>
+                    </div>
+                    <div id="notifyList"></div>
+                </div>
+            </div>
+
+            <div class="profile-wrap">
+                <img id="profileImg" class="user-img" src="" alt="Profile">
+
+                <div id="profileMenu" class="profile-menu">
+                    <button onclick="changeProfileImage()">📷 Change Image</button>
+                    <button onclick="removeProfileImage()">🗑 Remove Image</button>
+                    <button onclick="closeProfileMenu()">✖ Close</button>
+                </div>
+            </div>
+
+            <input type="file" id="profileUpload" accept="image/*" style="display:none">
+            <b id="loginClientName">Client</b>
+        </div>
+</div>
+
+<div class="page-title">
+    <h2>My Sample Progress</h2>
+    <div class="welcome-box">
+    <div class="welcome-text">
+        <small>Client Portal</small>
+        <div>
+            👋 Hello, 
+            <span id="loginClientName"></span>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="filter-box">
+    <div class="filter-grid smart-filter">
+        
+        <!-- Search -->
+        <input id="globalSearch" placeholder="🔍 Search invoice, patient or mobile">
+
+        <!-- Status -->
+        <select id="statusFilter">
+            <option value="">All Status</option>
+            <option value="Billing Done">Billing Done</option>
+            <option value="Testing Done">Testing Done</option>
+            <option value="Report Ready">Report Ready</option>
+        </select>
+        <!-- From Date -->
+        <input 
+            type="text"
+            id="fromDate"
+            placeholder="DD-MM-YYYY"
+            onfocus="this.type='date'"
+            onblur="if(!this.value)this.type='text'"
+        >
+
+        <!-- To Date -->
+        <input 
+            type="text"
+            id="toDate"
+            placeholder="DD-MM-YYYY"
+            onfocus="this.type='date'"
+            onblur="if(!this.value)this.type='text'"
+        >
+
+    </div>
+
+    <div class="search-row">
+        <button class="btn btn-teal" onclick="applyFilter()">🔍 Search</button>
+        <button class="btn btn-orange" onclick="clearFilter()">✖ Clear</button>
+    </div>
+</div>
+
+<div class="table-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th class="check"></th>
+                <th class="date">Date</th>
+                <th>Test id</th>
+                <th>Patient</th>
+                <th>Client</th>
+                <th>Test Details</th>
+                <th>Status</th>
+                <th class="amount">MRP</th>
+                <th class="amount">B2B</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="progressBody">
+            <tr><td colspan="10" class="empty">Loading progress...</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="bottom-bar">
+
+    <div class="bottom-actions">
+        <button class="btn btn-teal" onclick="bulkReport()">Report</button>
+        <button class="btn btn-teal" onclick="exportExcel()">Export</button>
+        <button class="btn btn-teal" onclick="sendEmailForSelected()">SMS/Email</button>
+        <button class="btn btn-teal" onclick="selectAllRows()">
+            ✔ Select All
+        </button>
+
+        <button class="btn btn-teal" onclick="deSelectAllRows()">
+            ✖ De-Select All
+        </button>
+    </div>
+</div>
+
+
+<div class="payment-summary">
+    <div class="summary-item">
+        <span>Total MRP</span>
+        <b>₹<span id="summaryMrp">0.00</span></b>
+    </div>
+
+    <div class="summary-item">
+        <span>Total B2B Payable</span>
+        <b>₹<span id="summaryB2b">0.00</span></b>
+    </div>
+
+    <div class="summary-item">
+        <span>Paid Amount</span>
+        <b>₹<span id="summaryPaid">0.00</span></b>
+    </div>
+
+    <div class="summary-item due">
+        <span>Pending Amount</span>
+        <b>₹<span id="summaryDue">0.00</span></b>
+    </div>
+
+    <button class="pay-now-btn" onclick="payNow()">Pay Now</button>
+</div>
+
+<div id="paymentModal" class="modal">
+    <div class="payment-modal-box">
+        <h3>RapidLabs Payment</h3>
+
+        <div class="pay-amount">
+            Pending Amount<br>
+            <b>₹<span id="payPendingAmount">0.00</span></b>
+        </div>
+
+        <div class="qr-box">
+            <img src="/static/payment-qr.png" alt="Payment QR">
+        </div>
+
+        <p><b>UPI ID:</b> rapidlabs@upi</p>
+        <p><b>Mobile:</b> 7829044698</p>
+
+        <p class="pay-note">
+            Please complete payment using UPI/QR code.
+            After payment, click below.
+        </p>
+
+        <button class="paid-btn" onclick="markPaymentSubmitted()">
+            I Have Paid
+        </button>
+
+        <button class="close-pay-btn" onclick="closePaymentModal()">
+            Close
+        </button>
+
+        <div id="paymentSuccessMsg" class="payment-success">
+                Payment acknowledgement received.<br>
+                RapidLabs team will verify and update the payment status shortly.
+        </div>
+    </div>
+</div>
+
+
+<div id="careModal" class="modal">
+    <div class="modal-box">
+        <h3>Customer Care</h3>
+
+        <p>
+            <b>📞 Phone:</b> 
+            <a href="tel:+917975357102">+91 7829044698</a>
+        </p>
+
+        <p>
+            <b>✉️ Email:</b> 
+            <a href="mailto:rapidlabs.hr@gmail.com?subject=Support Request">
+                rapidlabs.hr@gmail.com
+            </a>
+        </p>
+
+        <p>
+            <b>💬 WhatsApp:</b> 
+            <a href="https://wa.me/7829044698" target="_blank">
+                Chat on WhatsApp
+            </a>
+        </p>
+
+        <p><b>🕒 Timing:</b> 9 AM – 7 PM</p>
+
+        <button onclick="closeCare()">Close</button>
+    </div>
+</div>
+
+<div id="testingModal" class="modal">
+    <div class="modal-box">
+
+        <h3>🔬 Testing Status</h3>
+
+        <div id="testingContent"></div>
+
+        <button onclick="closeTestingModal()">
+            Close
+        </button>
+
+    </div>
+</div>
+
+
+
+<script>
+let clientId = localStorage.getItem("client_id") || localStorage.getItem("clientId") || "";
+let clientName = localStorage.getItem("client_name") || localStorage.getItem("clientName") || "Client";
+let progressData = [];
+let currentRows = [];
+let notifications = [];
+
+
+
+function toggleNotify(event){
+
+    event.stopPropagation();
+
+    document.getElementById("notifyMenu")
+        .classList.toggle("show");
+}
+
+function addNotification(text){
+    notifications.unshift({
+        text,
+        time: new Date().toLocaleTimeString()
+    });
+
+    renderNotifications();
+}
+
+function renderNotifications(){
+    const list = document.getElementById("notifyList");
+    const count = document.getElementById("notifyCount");
+
+    count.innerText = notifications.length;
+
+    if(notifications.length === 0){
+        list.innerHTML = "<div class='notify-item'>No notifications</div>";
+        return;
+    }
+
+    list.innerHTML = notifications.map(n => `
+        <div class="notify-item">
+            ${n.text}<br>
+            <small>${n.time}</small>
+        </div>
+    `).join("");
+}
+
+function clearNotifications(){
+    notifications = [];
+    renderNotifications();
+}
+
+
+document.getElementById("loginClientName").innerText = clientName;
+
+function statusClass(status){
+
+    if(
+        status === "Billing Done" ||
+        status === "Barcode Created"
+    ){
+        return "st-bill";
+    }
+
+    if(
+        status === "Ready For Testing" ||
+        status === "Testing On Process" ||
+        status === "Testing Paused" ||
+        status === "Testing Done"
+    ){
+        return "st-ready";
+    }
+
+    if(
+        status === "Report Ongoing" ||
+        status === "Report Ready"
+    ){
+        return "st-report";
+    }
+
+    return "st-bill";
+}
+
+function formatDate(value){
+    if(!value) return "-";
+    const d = new Date(value);
+    if(isNaN(d.getTime())) return String(value).slice(0,10);
+    return d.toLocaleDateString("en-GB", {
+        day:"2-digit",
+        month:"short"
+    });
+}
+
+async function loadProgress(){
+    if(!clientId){
+        document.getElementById("progressBody").innerHTML =
+            `<tr><td colspan="10" class="empty">Client login missing. Please login again.</td></tr>`;
+        return;
+    }
+
+    try{
+        const res = await fetch("/api/client-progress/" + encodeURIComponent(clientId));
+        const data = await res.json();
+
+        if(!data.success){
+            document.getElementById("progressBody").innerHTML =
+                `<tr><td colspan="10" class="empty">Unable to load progress.</td></tr>`;
+            return;
+        }
+
+        progressData = data.data || [];
+        renderProgress(progressData);
+
+    }catch(err){
+        console.error(err);
+        document.getElementById("progressBody").innerHTML =
+            `<tr><td colspan="10" class="empty">Server error while loading progress.</td></tr>`;
+    }
+}
+
+function genderSymbol(gender){
+    const g = String(gender || "").toLowerCase();
+
+    if(g === "male"){
+        return `
+            <span class="gender-avatar male">
+                <span class="material-icons">man</span>
+            </span>
+        `;
+    }
+
+    if(g === "female"){
+        return `
+            <span class="gender-avatar female">
+                <span class="material-icons">woman</span>
+            </span>
+        `;
+    }
+
+    if(g === "other"){
+        return `
+            <span class="gender-avatar other">
+                <span class="material-icons">transgender</span>
+            </span>
+        `;
+    }
+
+    return `
+        <span class="gender-avatar unknown">
+            <span class="material-icons">person</span>
+        </span>
+    `;
+}
+
+function renderProgress(rows){
+    currentRows = rows;
+
+    const body = document.getElementById("progressBody");
+
+    if(rows.length === 0){
+        body.innerHTML = `<tr><td colspan="10" class="empty">No samples found.</td></tr>`;
+        updateTotals(rows);
+        return;
+    }
+
+    body.innerHTML = "";
+
+    rows.forEach((r, index) => {
+        const firstSample = r.samples && r.samples[0] ? r.samples[0] : null;
+        const firstTest = firstSample && firstSample.tests && firstSample.tests[0] ? firstSample.tests[0] : null;
+
+        /* notifications */
+        if(r.progress_status === "Billing Done"){
+            addNotificationOnce(
+                r.invoice_no + "_billing",
+                "Bill created for " + (r.patient_name || "-")
+            );
+        }
+
+
+        if(r.progress_status === "Testing Done"){
+            addNotificationOnce(
+                r.invoice_no + "_completed",
+                "Testing completed for " + (r.patient_name || "-")
+            );
+        }
+
+        if(r.progress_status === "Report Ready"){
+
+            const reportFile =
+                r.uploaded_report ||
+                r.uploaded_report_file;
+
+            addNotificationOnce(
+                r.invoice_no + "_report",
+                reportFile
+                    ? "📄 Report uploaded for " + (r.patient_name || "-") + ". Download now."
+                    : "📄 Report ready for " + (r.patient_name || "-")
+            );
+        }
+
+        body.innerHTML += `
+            <tr>
+                <td>
+                    <input 
+                        type="checkbox" 
+                        class="row-check" 
+                        data-index="${index}"
+                    >
+                </td>
+
+                <td class="date">${formatDateTime(r.created_at || getDateFromInvoice(r.invoice_no))}</td>
+
+                <td>
+                    <span class="invoice-pill">
+                        ${escapeHtml(firstSample ? firstSample.barcode : r.invoice_no)}
+                    </span>
+                </td>
+
+                <td>
+                    <div style="display:flex;align-items:flex-start;">
+                        <div style="margin-top:2px;">
+                            ${genderSymbol(r.gender)}
+                        </div>
+
+                        <div>
+                            <span class="patient">${escapeHtml(r.patient_name || "-")}</span><br>
+                            <small>${escapeHtml(r.patient_mobile || "-")}</small>
+                        </div>
+                    </div>
+                </td>
+
+                <td class="client">${escapeHtml(r.client_name || "-")}</td>
+
+                <td>
+                    <b>${firstTest ? escapeHtml(firstTest.test_name) : "-"}</b><br>
+                    <small>
+                        TAT: ${firstTest ? escapeHtml(firstTest.tat) : "-"}
+                        | Time: ${escapeHtml(r.running_time || "0 sec")}
+                    </small>
+                </td>
+
+                <td>
+                    <span class="status ${statusClass(r.progress_status)}">
+                        ${escapeHtml(r.progress_status)}
+                    </span>
+                </td>
+
+                <td class="amount">${Number(r.total_mrp || r.total_amount || 0).toFixed(0)}</td>
+                <td class="amount">${Number(r.total_b2b || 0).toFixed(0)}</td>
+
+                <td class="icons">
+
+                    <span class="material-icons action-icon" title="View Details" onclick="toggleDetails(${index})">
+                        visibility
+                    </span>
+
+                    <span class="material-icons action-icon" title="Testing Status" onclick="showTestingStatus(${index})">
+                        science
+                    </span>
+
+                    <span class="material-icons action-icon" title="Download Report" onclick="downloadReport(${index})">
+                        file_download
+                    </span>
+
+                    <span class="material-icons action-icon" title="Send Email" onclick="sendSingleEmail(${index})">
+                        email
+                    </span>
+
+                    <span class="material-icons action-icon" title="Receipt" onclick="showReceipt(${index})">
+                        receipt_long
+                    </span>
+
+                </td>
+            </tr>
+
+            <tr id="details_${index}" class="expand-row">
+                <td colspan="10">
+                    <div class="detail-card">
+                        <div class="detail-grid">
+                            <div class="detail-box"><small>Invoice No</small><b>${escapeHtml(r.invoice_no)}</b></div>
+                            <div class="detail-box"><small>Patient</small><b>${escapeHtml(r.patient_name)}</b></div>
+                            <div class="detail-box"><small>Client</small><b>${escapeHtml(r.client_name)}</b></div>
+                            <div class="detail-box"><small>Total Tests</small><b>${r.total_tests}</b></div>
+                            <div class="detail-box"><small>Total Samples</small><b>${r.total_samples}</b></div>
+                            <div class="detail-box"><small>Bill Status</small><b>${escapeHtml(r.bill_status)}</b></div>
+                            <div class="detail-box"><small>Sample Status</small><b>${escapeHtml(r.sample_status)}</b></div>
+                            <div class="detail-box"><small>Report</small><b>${r.uploaded_report ? "Uploaded" : "Pending"}</b></div>
+                            <div class="detail-box">
+                                <small>Report File</small>
+                                <b>
+                                    ${r.uploaded_report 
+                                        ? `<a class="report-link" target="_blank" href="/uploads/${encodeURIComponent(r.uploaded_report)}">View</a>` 
+                                        : "-"
+                                    }
+                                </b>
+                            </div>
+                        </div>
+
+                        ${renderSamples(r.samples || [])}
+                    </div>
+                </td>
+            </tr>
+        `;
+    });
+
+    updateTotals(rows);
+
+
+
+}
+
+function addNotificationOnce(key, text){
+    const exists = notifications.some(n => n.key === key);
+
+    if(exists){
+        return;
+    }
+
+    notifications.unshift({
+        key:key,
+        text:text,
+        time:new Date().toLocaleTimeString()
+    });
+
+    renderNotifications();
+}
+
+function renderSamples(samples){
+    return samples.map(sample => `
+        <div style="margin-top:10px;">
+            <b>${escapeHtml(sample.sample_type)} SAMPLE</b>
+            <span class="status st-barcode">${escapeHtml(sample.status)}</span>
+            <div style="margin:5px 0;color:#555;">
+                Barcode: <b>${escapeHtml(sample.barcode)}</b>
+            </div>
+
+            <table class="inner-table">
+                <thead>
+                    <tr>
+                        <th>Test Name</th>
+                        <th>Service Code</th>
+                        <th>TAT</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${(sample.tests || []).map(t => `
+                        <tr>
+                            <td>${escapeHtml(t.test_name)}</td>
+                            <td>${escapeHtml(t.service_code)}</td>
+                            <td>${escapeHtml(t.tat)}</td>
+                            <td><span class="status st-ready">${escapeHtml(t.status || "Ready")}</span></td>
+                        </tr>
+                    `).join("")}
+                </tbody>
+            </table>
+        </div>
+    `).join("");
+}
+
+function toggleDetails(index){
+    const row = document.getElementById("details_" + index);
+    row.style.display = row.style.display === "table-row" ? "none" : "table-row";
+}
+
+function applyFilter(){
+
+    const search = document.getElementById("globalSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const status = document.getElementById("statusFilter").value;
+
+    const fromDate = document.getElementById("fromDate").value;
+    const toDate = document.getElementById("toDate").value;
+
+    const filtered = progressData.filter(r => {
+
+        /* global intelligent search */
+        let matchSearch = true;
+
+        if(search){
+
+            const patientName = String(r.patient_name || "").toLowerCase();
+            const mobile = String(r.patient_mobile || "").toLowerCase();
+            const invoice = String(r.invoice_no || "").toLowerCase();
+            const client = String(r.client_name || "").toLowerCase();
+            const statusText = String(r.progress_status || "").toLowerCase();
+
+            /* test names */
+            let tests = "";
+
+            (r.samples || []).forEach(sample => {
+                (sample.tests || []).forEach(t => {
+                    tests += " " + String(t.test_name || "").toLowerCase();
+                    tests += " " + String(t.service_code || "").toLowerCase();
+                });
+            });
+
+            const combined =
+                patientName + " " +
+                mobile + " " +
+                invoice + " " +
+                client + " " +
+                statusText + " " +
+                tests;
+
+            matchSearch = combined.includes(search);
+        }
+
+        /* status filter */
+        let matchStatus = true;
+
+        if(status){
+            matchStatus =
+                r.progress_status === status ||
+                r.bill_status === status ||
+                r.sample_status === status;
+        }
+
+        /* date filter */
+        let matchDate = true;
+
+        if(fromDate || toDate){
+
+            const created = new Date(r.created_at);
+
+            if(fromDate){
+                const from = new Date(fromDate);
+                from.setHours(0,0,0,0);
+
+                if(created < from){
+                    matchDate = false;
+                }
+            }
+
+            if(toDate){
+                const to = new Date(toDate);
+                to.setHours(23,59,59,999);
+
+                if(created > to){
+                    matchDate = false;
+                }
+            }
+        }
+
+        return matchSearch && matchStatus && matchDate;
+    });
+
+    renderProgress(filtered);
+}
+
+function clearFilter(){
+
+    document.getElementById("globalSearch").value = "";
+
+    document.getElementById("statusFilter").value = "";
+
+    document.getElementById("fromDate").value = "";
+
+    document.getElementById("toDate").value = "";
+
+    renderProgress(progressData);
+}
+
+/* live intelligent search */
+
+document.getElementById("globalSearch")
+    .addEventListener("input", applyFilter);
+
+document.getElementById("statusFilter")
+    .addEventListener("change", applyFilter);
+
+document.getElementById("fromDate")
+    .addEventListener("change", applyFilter);
+
+document.getElementById("toDate")
+    .addEventListener("change", applyFilter);
+
+
+
+function getSelectedRows(){
+    const checkedBoxes = document.querySelectorAll(".row-check:checked");
+
+    return Array.from(checkedBoxes).map(cb => {
+        const index = Number(cb.dataset.index);
+        return progressData[index];
+    }).filter(Boolean);
+}
+
+function bulkReport(){
+    const selectedRows = getSelectedRows();
+
+    if(selectedRows.length === 0){
+        alert("Please select at least one sample.");
+        return;
+    }
+
+    const notReady = selectedRows.filter(r => !r.uploaded_report);
+    const ready = selectedRows.filter(r => r.uploaded_report);
+
+    if(ready.length === 0){
+        alert("Report is not ready yet. Please wait until report is uploaded.");
+        return;
+    }
+
+    if(notReady.length > 0){
+        alert(
+            notReady.length + 
+            " selected report(s) are not ready yet. Only ready reports will open."
+        );
+    }
+
+    ready.forEach(r => {
+        window.open(
+            "/uploads/" + encodeURIComponent(r.uploaded_report),
+            "_blank"
+        );
+    });
+}
+
+
+
+function exportExcel(){
+    const checkedBoxes = document.querySelectorAll(".row-check:checked");
+
+    let rowsToExport = [];
+
+    if(checkedBoxes.length > 0){
+        rowsToExport = Array.from(checkedBoxes).map(cb => {
+            const index = Number(cb.dataset.index);
+            return currentRows[index];
+        }).filter(Boolean);
+    }else{
+        rowsToExport = currentRows;
+    }
+
+    if(rowsToExport.length === 0){
+        alert("No records available to export.");
+        return;
+    }
+
+    const exportData = rowsToExport.map(r => {
+        const firstSample = r.samples && r.samples[0] ? r.samples[0] : null;
+        const firstTest = firstSample && firstSample.tests && firstSample.tests[0] ? firstSample.tests[0] : null;
+
+        return {
+            "Date": formatDateTime(r.created_at || getDateFromInvoice(r.invoice_no)),
+            "Invoice No": r.invoice_no || "-",
+            "Test ID": firstSample ? firstSample.barcode : "-",
+            "Patient Name": r.patient_name || "-",
+            "Mobile": r.patient_mobile || "-",
+            "Client": r.client_name || "-",
+            "Test Name": firstTest ? firstTest.test_name : "-",
+            "TAT": firstTest ? firstTest.tat : "-",
+            "Status": r.progress_status || "-",
+            "MRP": Number(r.total_mrp || r.total_amount || 0),
+            "B2B": Number(r.total_b2b || 0),
+            "Report Status": r.uploaded_report ? "Uploaded" : "Pending"
+        };
+    });
+
+    const worksheet = XLSX.utils.json_to_sheet(exportData);
+    const workbook = XLSX.utils.book_new();
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Sample Progress");
+
+    XLSX.writeFile(workbook, "client_sample_progress.xlsx");
+}
+
+
+function sendEmailForSelected(){
+
+    const checkedBoxes =
+        document.querySelectorAll(".row-check:checked");
+
+    if(checkedBoxes.length === 0){
+
+        alert(
+            "Please select at least one sample before sending Email."
+        );
+
+        return;
+    }
+
+    const selectedRows = Array.from(checkedBoxes)
+        .map(cb => {
+
+            const index = Number(cb.dataset.index);
+
+            return currentRows[index];
+
+        }).filter(Boolean);
+
+    if(selectedRows.length === 0){
+
+        alert("Selected sample data not found.");
+
+        return;
+    }
+
+    let details = "";
+
+    selectedRows.forEach((r, i) => {
+
+        const firstSample =
+            r.samples && r.samples[0]
+            ? r.samples[0]
+            : null;
+
+        const firstTest =
+            firstSample &&
+            firstSample.tests &&
+            firstSample.tests[0]
+            ? firstSample.tests[0]
+            : null;
+
+        details += `
+Sample ${i + 1}
+
+Date:
+${formatDateTime(
+    r.created_at ||
+    getDateFromInvoice(r.invoice_no)
+)}
+
+Invoice No:
+${r.invoice_no || "-"}
+
+Test ID:
+${firstSample ? firstSample.barcode : "-"}
+
+Patient:
+${r.patient_name || "-"}
+
+Mobile:
+${r.patient_mobile || "-"}
+
+Client:
+${r.client_name || "-"}
+
+Test:
+${firstTest ? firstTest.test_name : "-"}
+
+Status:
+${r.progress_status || "-"}
+
+Report:
+${r.uploaded_report ? "Uploaded" : "Pending"}
+
+-----------------------------------
+`;
+    });
+
+    const subject =
+        "Selected Sample Progress Details";
+
+    const body = `
+Hello Rapid Labs Team,
+
+Please find the selected sample details below:
+
+${details}
+
+Regards,
+${clientName}
+`;
+
+    /* open gmail in browser */
+
+    const gmailUrl =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        "&to=" + encodeURIComponent("rapidlabs.hr@gmail.com") +
+        "&su=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+    window.open(gmailUrl, "_blank");
+}
+
+function selectAllRows(){
+
+    document
+        .querySelectorAll(".row-check")
+        .forEach(cb => {
+            cb.checked = true;
+        });
+}
+
+function deSelectAllRows(){
+
+    document
+        .querySelectorAll(".row-check")
+        .forEach(cb => {
+            cb.checked = false;
+        });
+}
+
+
+function updateTotals(rows){
+
+    let totalMrp = 0;
+    let totalB2b = 0;
+    let paid = 0;
+    let due = 0;
+
+    rows.forEach(r => {
+        const mrp = Number(r.total_mrp || 0);
+        const b2b = Number(r.total_b2b || 0);
+
+        totalMrp += mrp;
+        totalB2b += b2b;
+
+        if(String(r.payment_status || "").toLowerCase() === "admin paid"){
+            paid += b2b;
+        }else{
+            due += b2b;
+        }
+    });
+
+    document.getElementById("summaryMrp").innerText = totalMrp.toFixed(2);
+    document.getElementById("summaryB2b").innerText = totalB2b.toFixed(2);
+    document.getElementById("summaryPaid").innerText = paid.toFixed(2);
+    document.getElementById("summaryDue").innerText = due.toFixed(2);
+}
+
+
+function payNow(){
+
+    const pendingRows = currentRows.filter(r =>
+        String(r.payment_status || "").toLowerCase() !== "admin paid"
+    );
+
+    if(pendingRows.length === 0){
+        alert("No pending B2B payable amount.");
+        return;
+    }
+
+    const amount = pendingRows.reduce((sum,r) => {
+        return sum + Number(r.total_b2b || 0);
+    }, 0);
+
+    document.getElementById("payPendingAmount").innerText =
+        amount.toFixed(2);
+
+    document.getElementById("paymentSuccessMsg").style.display =
+        "none";
+
+    document.getElementById("paymentModal").style.display =
+        "flex";
+}
+
+function closePaymentModal(){
+    document.getElementById("paymentModal").style.display = "none";
+}
+
+async function markPaymentSubmitted(){
+
+    const pendingRows = currentRows.filter(r =>
+        String(r.payment_status || "").toLowerCase() !== "admin paid"
+    );
+
+    if(pendingRows.length === 0){
+        alert("No pending B2B payable amount.");
+        return;
+    }
+
+    const invoiceNos = pendingRows.map(r => r.invoice_no);
+
+    try{
+        const res = await fetch("/api/client/payment-submitted", {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                client_id: clientId,
+                invoices: invoiceNos
+            })
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+            document.getElementById("paymentSuccessMsg").style.display = "block";
+            loadProgress();
+        }else{
+            alert(data.message || "Unable to submit payment acknowledgement.");
+        }
+
+    }catch(err){
+        console.error(err);
+        alert("Server error while submitting payment acknowledgement.");
+    }
+}
+
+
+
+function escapeHtml(value){
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+
+function toggleSettings(event){
+    event.stopPropagation();
+
+    const menu = document.getElementById("settingsMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function setTheme(mode){
+    if(mode === "dark"){
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark");
+    }else{
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("theme", "light");
+    }
+}
+
+
+function customerCare(){
+    document.getElementById("careModal").style.display = "flex";
+}
+
+function closeCare(){
+    document.getElementById("careModal").style.display = "none";
+}
+
+
+
+document.addEventListener("click", function(e){
+
+    /* settings close */
+    const wrap = document.querySelector(".settings-wrap");
+    const menu = document.getElementById("settingsMenu");
+    const profileWrap = document.querySelector(".profile-wrap");
+    const profileMenu = document.getElementById("profileMenu");
+
+    if(profileWrap && profileMenu && !profileWrap.contains(e.target)){
+    profileMenu.classList.remove("show");
+    }
+
+    if(wrap && menu && !wrap.contains(e.target)){
+        menu.style.display = "none";
+    }
+
+    /* notification close */
+    const notifyWrap = document.querySelector(".notify-wrap");
+    const notifyMenu = document.getElementById("notifyMenu");
+
+    if(notifyWrap && notifyMenu && !notifyWrap.contains(e.target)){
+        notifyMenu.classList.remove("show");
+    }
+
+    /* modal close */
+    const modal = document.getElementById("careModal");
+
+    if(modal && e.target === modal){
+        modal.style.display = "none";
+    }
+});
+
+
+
+
+/* show first letter */
+/* profile image system */
+
+const profileImg = document.getElementById("profileImg");
+const uploadInput = document.getElementById("profileUpload");
+const profileMenu = document.getElementById("profileMenu");
+
+/* default avatar */
+function defaultProfileImage(){
+    return "https://ui-avatars.com/api/?name=" + encodeURIComponent(clientName);
+}
+
+/* load saved image */
+profileImg.src =
+    localStorage.getItem("profile_image") ||
+    defaultProfileImage();
+
+/* open menu */
+profileImg.addEventListener("click", function(e){
+
+    e.stopPropagation();
+
+    profileMenu.classList.toggle("show");
+});
+
+/* change image */
+function changeProfileImage(){
+
+    profileMenu.classList.remove("show");
+
+    uploadInput.click();
+}
+
+/* remove image */
+function removeProfileImage(){
+
+    localStorage.removeItem("profile_image");
+
+    profileImg.src = defaultProfileImage();
+
+    profileMenu.classList.remove("show");
+}
+
+/* close menu */
+function closeProfileMenu(){
+
+    profileMenu.classList.remove("show");
+}
+
+/* upload image */
+uploadInput.addEventListener("change", function(){
+
+    const file = this.files[0];
+
+    if(!file){
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+
+        profileImg.src = e.target.result;
+
+        localStorage.setItem(
+            "profile_image",
+            e.target.result
+        );
+    };
+
+    reader.readAsDataURL(file);
+});
+
+
+function formatDateTime(value){
+    if(!value || value === "None" || value === "null"){
+        return "-";
+    }
+
+    const d = new Date(value);
+
+    if(isNaN(d.getTime())){
+        return String(value);
+    }
+
+    return d.toLocaleString("en-GB", {
+        day:"2-digit",
+        month:"short",
+        year:"numeric",
+        hour:"2-digit",
+        minute:"2-digit",
+        hour12:true
+    });
+}
+
+
+
+function logout(){
+    localStorage.removeItem("client_id");
+    localStorage.removeItem("clientId");
+    localStorage.removeItem("client_name");
+    localStorage.removeItem("clientName");
+    localStorage.removeItem("profile_image");
+
+    window.location.href = "/client-login";
+}
+function getDateFromInvoice(invoiceNo){
+    const match = String(invoiceNo || "").match(/INV-(\d{14})/);
+
+    if(!match){
+        return "";
+    }
+
+    const raw = match[1];
+
+    const year = raw.slice(0,4);
+    const month = raw.slice(4,6);
+    const day = raw.slice(6,8);
+    const hour = raw.slice(8,10);
+    const minute = raw.slice(10,12);
+    const second = raw.slice(12,14);
+
+    return `${year}-${month}-${day}T${hour}:${minute}:${second}`;
+}
+
+
+function showTestingStatus(index){
+
+    const r = currentRows[index];
+
+    if(!r){
+        return;
+    }
+
+    let html = `
+        <p>✔ Billing Done</p>
+        <p>✔ Sample Collected</p>
+        <p>✔ Barcode Created</p>
+    `;
+
+    if(r.progress_status === "Testing Done"){
+        html += `
+            <p>✔ Processing Completed</p>
+            <p>⏳ Report Upload Pending</p>
+        `;
+    }
+
+    if(r.progress_status === "Report Ready"){
+        html += `
+            <p>✔ Processing Completed</p>
+            <p>✔ Report Uploaded</p>
+        `;
+    }
+
+    if(String(r.payment_status || "").toLowerCase() === "admin paid"){
+    addNotificationOnce(
+        r.invoice_no + "_payment_approved",
+        "Payment approved by RapidLabs for " + (r.patient_name || "-")
+    );
+}
+
+
+    if(r.progress_status === "Billing Done"){
+        html += `
+            <p>🔬 Processing in Lab</p>
+            <p>⏳ Quality Check Pending</p>
+        `;
+    }
+
+    document.getElementById("testingContent").innerHTML =
+        html;
+
+    document.getElementById("testingModal").style.display =
+        "flex";
+}
+
+function closeTestingModal(){
+
+    document.getElementById("testingModal").style.display =
+        "none";
+}
+
+
+
+function downloadReport(index){
+
+    const r = currentRows[index];
+
+    console.log("DOWNLOAD ROW:", r);
+
+    if(!r){
+        alert("No report data found.");
+        return;
+    }
+
+    const reportFile =
+        r.uploaded_report ||
+        r.uploaded_report_file;
+
+    if(!reportFile){
+
+        alert(
+            "Report not uploaded yet. Please wait until report is ready."
+        );
+
+        return;
+    }
+
+    window.open(
+        "/uploads/" + encodeURIComponent(reportFile),
+        "_blank"
+    );
+}
+
+
+
+
+function sendSingleEmail(index){
+
+    const r = currentRows[index];
+
+    if(!r){
+        return;
+    }
+
+    const firstSample =
+        r.samples && r.samples[0]
+        ? r.samples[0]
+        : null;
+
+    const firstTest =
+        firstSample &&
+        firstSample.tests &&
+        firstSample.tests[0]
+        ? firstSample.tests[0]
+        : null;
+
+    const subject =
+        "Sample Progress Details";
+
+    const body = `
+Hello Rapid Labs Team,
+
+Please find sample details below:
+
+Date:
+${formatDateTime(
+    r.created_at ||
+    getDateFromInvoice(r.invoice_no)
+)}
+
+Invoice No:
+${r.invoice_no || "-"}
+
+Test ID:
+${firstSample ? firstSample.barcode : "-"}
+
+Patient:
+${r.patient_name || "-"}
+
+Mobile:
+${r.patient_mobile || "-"}
+
+Client:
+${r.client_name || "-"}
+
+Test:
+${firstTest ? firstTest.test_name : "-"}
+
+Status:
+${r.progress_status || "-"}
+
+Regards,
+${clientName}
+`;
+
+    const gmailUrl =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        "&to=" + encodeURIComponent("rapidlabs.hr@gmail.com") +
+        "&su=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+    window.open(gmailUrl, "_blank");
+}
+function showReceipt(index){
+
+    const r = currentRows[index];
+
+    if(!r){
+        alert("Receipt not found");
+        return;
+    }
+
+    const tests = r.tests || [];
+
+    const testRows = tests.map(t => `
+        <tr>
+            <td>${escapeHtml(t.name || "-")}</td>
+            <td>${escapeHtml(t.service_code || "-")}</td>
+            <td>${escapeHtml(t.sample_type || "-")}</td>
+            <td>${escapeHtml(t.tat || "-")}</td>
+            <td>₹${Number(t.mrp || 0).toFixed(0)}</td>
+            <td>₹${Number(t.b2b || 0).toFixed(0)}</td>
+        </tr>
+    `).join("");
+
+    const receiptWindow = window.open("", "_blank");
+
+        receiptWindow.document.write(`
+        <html>
+        <head>
+            <title>RapidLabs Receipt - ${escapeHtml(r.invoice_no)}</title>
+            <style>
+                body{
+                    font-family: Arial, sans-serif;
+                    background:#f4f6f8;
+                    margin:0;
+                    padding:30px;
+                    color:#222;
+                }
+
+                .receipt-container{
+                    max-width:900px;
+                    margin:auto;
+                    background:#fff;
+                    padding:30px;
+                    border-radius:10px;
+                    box-shadow:0 4px 18px rgba(0,0,0,0.12);
+                }
+
+                .header{
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    border-bottom:3px solid #0b5ed7;
+                    padding-bottom:18px;
+                    margin-bottom:25px;
+                }
+
+                .brand h1{
+                    margin:0;
+                    color:#0b5ed7;
+                    font-size:32px;
+                    letter-spacing:1px;
+                }
+
+                .brand p{
+                    margin:4px 0 0;
+                    font-size:13px;
+                    color:#666;
+                }
+
+                .receipt-title{
+                    text-align:right;
+                }
+
+                .receipt-title h2{
+                    margin:0;
+                    font-size:24px;
+                    color:#111;
+                }
+
+                .receipt-title span{
+                    font-size:13px;
+                    color:#666;
+                }
+
+                .info-grid{
+                    display:grid;
+                    grid-template-columns:1fr 1fr;
+                    gap:14px 30px;
+                    background:#f8fafc;
+                    border:1px solid #e0e4e8;
+                    padding:18px;
+                    border-radius:8px;
+                    margin-bottom:25px;
+                }
+
+                .info-item{
+                    font-size:14px;
+                }
+
+                .info-item b{
+                    display:inline-block;
+                    min-width:120px;
+                    color:#333;
+                }
+
+                table{
+                    width:100%;
+                    border-collapse:collapse;
+                    margin-top:10px;
+                    font-size:14px;
+                }
+
+                th{
+                    background:#0b5ed7;
+                    color:white;
+                    padding:11px;
+                    text-align:left;
+                    border:1px solid #0b5ed7;
+                }
+
+                td{
+                    padding:10px;
+                    border:1px solid #ddd;
+                }
+
+                tbody tr:nth-child(even){
+                    background:#f9fbfd;
+                }
+
+                .total td{
+                    font-weight:bold;
+                    background:#eef4ff;
+                    font-size:15px;
+                }
+
+                .footer{
+                    margin-top:25px;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    border-top:1px solid #ddd;
+                    padding-top:18px;
+                    font-size:13px;
+                    color:#666;
+                }
+
+                .print-btn{
+                    margin-top:25px;
+                    background:#0b5ed7;
+                    color:white;
+                    border:none;
+                    padding:10px 18px;
+                    border-radius:6px;
+                    font-size:14px;
+                    cursor:pointer;
+                }
+
+                .print-btn:hover{
+                    background:#084298;
+                }
+
+                @media print{
+                    body{
+                        background:white;
+                        padding:0;
+                    }
+
+                    .receipt-container{
+                        box-shadow:none;
+                        border-radius:0;
+                    }
+
+                    .print-btn{
+                        display:none;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="receipt-container">
+                <div class="header">
+                    <div class="brand">
+                        <h1>RapidLabs</h1>
+                        <p>Diagnostic & Laboratory Services</p>
+                    </div>
+
+                    <div class="receipt-title">
+                        <h2>Receipt</h2>
+                        <span>Invoice No: ${escapeHtml(r.invoice_no)}</span>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item"><b>Patient:</b> ${escapeHtml(r.patient_name || "-")}</div>
+                    <div class="info-item"><b>Mobile:</b> ${escapeHtml(r.patient_mobile || "-")}</div>
+                    <div class="info-item"><b>Client:</b> ${escapeHtml(r.client_name || "-")}</div>
+                    <div class="info-item"><b>Payment Status:</b> ${escapeHtml(r.payment_status || "-")}</div>
+                    <div class="info-item"><b>Status:</b> ${escapeHtml(r.progress_status || "-")}</div>
+                    <div class="info-item"><b>Date:</b> ${new Date().toLocaleDateString()}</div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Test</th>
+                            <th>Service Code</th>
+                            <th>Sample</th>
+                            <th>TAT</th>
+                            <th>MRP</th>
+                            <th>B2B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${testRows}
+                        <tr class="total">
+                            <td colspan="4">Total</td>
+                            <td>₹${Number(r.total_mrp || 0).toFixed(0)}</td>
+                            <td>₹${Number(r.total_b2b || 0).toFixed(0)}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="footer">
+                    <div>Thank you for choosing RapidLabs.</div>
+                    <div>Generated Receipt</div>
+                </div>
+
+                <button class="print-btn" onclick="window.print()">Print Receipt</button>
+            </div>
+        </body>
+        </html>
+        `);
+
+    receiptWindow.document.close();
+}
+loadProgress();
+setInterval(loadProgress, 10000);
+</script>
+
+</body>
+</html>

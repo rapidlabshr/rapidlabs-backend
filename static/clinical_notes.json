@@ -1,0 +1,310 @@
+[
+ {
+   "category": "Agglutination",
+   "clinical_note": "Blood group or antigen-antibody reactions detected by agglutination help in identifying infections, blood typing, and immune responses. Results should be interpreted along with clinical findings."
+ },
+ {
+   "category": "Albert Stain",
+   "clinical_note": "Albert staining is used for identification of specific bacteria such as Corynebacterium diphtheriae. Presence of characteristic staining patterns helps in diagnosis of infectious diseases."
+ },
+ {
+   "category": "Anaerobic Culture",
+   "clinical_note": "Anaerobic culture is performed to detect bacteria that grow in oxygen-free environments. It is useful in diagnosing deep tissue and abscess infections caused by anaerobic organisms."
+ },
+ {
+   "category": "Aspiration",
+   "clinical_note": "Aspiration samples are collected from body fluids or lesions to detect infection, inflammation, or malignancy. Results should be correlated with clinical and imaging findings."
+ },
+ {
+   "category": "Autoanalyzer",
+   "clinical_note": "Autoanalyzer-based tests provide precise biochemical measurements for various parameters. Results depend on calibration, reagent quality, and patient condition."
+ },
+ {
+   "category": "Automated Culture",
+   "clinical_note": "Automated culture systems improve detection and identification of microorganisms with higher accuracy and faster turnaround time. Useful in diagnosing bloodstream and systemic infections."
+ },
+ {
+   "category": "Body Fluid",
+   "clinical_note": "Analysis of body fluids helps in diagnosing infections, inflammatory conditions, and malignancies. Results should be interpreted along with clinical findings and other laboratory investigations."
+ },
+ {
+   "category": "Benedict Test",
+   "clinical_note": "Benedict test is used to detect the presence of reducing sugars in urine, which may indicate conditions like diabetes mellitus or renal disorders."
+ },
+ {
+   "category": "Biochemistry",
+   "clinical_note": "Biochemical tests evaluate organ function, metabolic status, and electrolyte balance. Results should be correlated with clinical condition and other investigations."
+ },
+ {
+   "category": "CBC",
+   "clinical_note": "Complete blood count assesses red cells, white cells, and platelets, helping diagnose anemia, infections, inflammation, and hematological disorders."
+ },
+ {
+   "category": "Coagulation",
+   "clinical_note": "Coagulation tests evaluate the blood clotting mechanism and help diagnose bleeding disorders, thrombotic conditions, and monitor anticoagulant therapy."
+ },
+ {
+   "category": "Concentration Technique",
+   "clinical_note": "Concentration techniques are used to increase detection of parasites or microorganisms in samples, improving diagnostic accuracy in infections."
+ },
+ {
+   "category": "Culture & Sensitivity",
+   "clinical_note": "Culture and sensitivity tests identify infectious organisms and determine appropriate antibiotics, guiding effective treatment."
+ },
+ {
+   "category": "Culture",
+   "clinical_note": "Culture tests are performed to detect and identify microorganisms causing infections. Results help in diagnosis and treatment planning."
+ },
+ {
+   "category": "CLIA",
+   "clinical_note": "Chemiluminescence immunoassay (CLIA) is a sensitive method used for detecting hormones, proteins, and other analytes with high accuracy."
+ },
+ {
+   "category": "Clotting Assay",
+   "clinical_note": "Clotting assays assess the functionality of clotting factors and help diagnose coagulation disorders and monitor therapy."
+ },
+ {
+   "category": "Cardiac Marker",
+   "clinical_note": "Cardiac markers are used to evaluate heart muscle injury and aid in diagnosis and management of cardiac conditions such as myocardial infarction."
+ },
+ {
+   "category": "Colorimetry",
+   "clinical_note": "Colorimetric methods measure the concentration of substances based on color intensity and are commonly used in biochemical analysis."
+ },
+ {
+   "category": "Dipstick",
+   "clinical_note": "Dipstick tests provide rapid screening of urine for parameters such as glucose, protein, ketones, and infections. Results are preliminary and should be confirmed with further testing if required."
+ },
+ {
+   "category": "EIA",
+   "clinical_note": "Enzyme Immunoassay (EIA) is used to detect antigens or antibodies in the sample and is commonly applied in infectious disease and hormone testing."
+ },
+ {
+   "category": "ELISA",
+   "clinical_note": "Enzyme-Linked Immunosorbent Assay (ELISA) is a sensitive technique used for detecting antibodies, antigens, and proteins in various diseases including infections and autoimmune disorders."
+ },
+ {
+   "category": "Endocrinology",
+   "clinical_note": "Endocrinology tests evaluate hormone levels and help diagnose disorders related to thyroid, adrenal, pituitary, and other endocrine glands."
+ },
+ {
+   "category": "Electrophoresis",
+   "clinical_note": "Electrophoresis separates proteins or other molecules based on their charge and size, aiding in diagnosis of disorders such as multiple myeloma and hemoglobinopathies."
+ },
+ {
+   "category": "Fungal Culture",
+   "clinical_note": "Fungal culture is performed to detect and identify fungal infections. It is useful in diagnosing superficial and systemic mycoses."
+ },
+ {
+   "category": "Functional Assay",
+   "clinical_note": "Functional assays assess the activity or function of specific biological components, helping evaluate physiological or pathological conditions."
+ },
+ {
+   "category": "Functional Test",
+   "clinical_note": "Functional tests evaluate the performance of organs or systems, assisting in diagnosis and monitoring of various diseases."
+ },
+ {
+   "category": "Fluorometry",
+   "clinical_note": "Fluorometric methods measure substances based on fluorescence intensity and are used in sensitive biochemical and immunological assays."
+ },
+ {
+   "category": "Flow Cytometry",
+   "clinical_note": "Flow cytometry analyzes cells based on size, structure, and markers, and is widely used in hematology, immunology, and cancer diagnosis."
+ },
+ {
+   "category": "Guaiac Test",
+   "clinical_note": "Guaiac test is used to detect occult blood in stool, which may indicate gastrointestinal bleeding or related conditions."
+ },
+ {
+   "category": "Gram Stain",
+   "clinical_note": "Gram staining is a fundamental technique used to classify bacteria into gram-positive and gram-negative groups, aiding in early diagnosis of infections."
+ },
+ {
+   "category": "Histopathology",
+   "clinical_note": "Histopathological examination involves microscopic study of tissues to diagnose diseases such as cancer, infections, and inflammatory conditions."
+ },
+ {
+   "category": "Hemoglobin Studies",
+   "clinical_note": "Hemoglobin studies help identify variants and abnormalities such as thalassemia and sickle cell disease, aiding in diagnosis of hematological disorders."
+ },
+ {
+   "category": "Hematology",
+   "clinical_note": "Hematology tests evaluate blood components including red cells, white cells, and platelets, helping diagnose anemia, infections, and blood disorders."
+ },
+ {
+   "category": "Hemolysis Test",
+   "clinical_note": "Hemolysis tests assess the breakdown of red blood cells and help diagnose hemolytic anemias and related conditions."
+ },
+ {
+   "category": "Hemagglutination",
+   "clinical_note": "Hemagglutination tests detect antigen-antibody reactions involving red blood cells and are used in blood grouping and certain infectious disease testing."
+ },
+ {
+   "category": "HPLC",
+   "clinical_note": "High Performance Liquid Chromatography (HPLC) is used to separate and quantify compounds, commonly applied in hemoglobin analysis and metabolic studies."
+ },
+ {
+   "category": "Hormone",
+   "clinical_note": "Hormone tests measure levels of various hormones to evaluate endocrine function and diagnose hormonal imbalances."
+ },
+ {
+   "category": "Immunohematology",
+   "clinical_note": "Immunohematology involves testing of blood groups, compatibility, and antibody detection, important for transfusion medicine."
+ },
+ {
+   "category": "Immunoassay",
+   "clinical_note": "Immunoassays detect specific antigens or antibodies and are widely used in diagnosis of infections, hormonal disorders, and autoimmune diseases."
+ },
+ {
+   "category": "India Ink Stain",
+   "clinical_note": "India ink staining is used to detect encapsulated organisms such as Cryptococcus species in clinical samples."
+ },
+ {
+   "category": "IFA",
+   "clinical_note": "Indirect Fluorescent Antibody (IFA) test is used to detect antibodies against specific pathogens and is useful in diagnosing infectious and autoimmune diseases."
+ },
+ {
+   "category": "Immunology",
+   "clinical_note": "Immunology tests evaluate the immune system and help diagnose infections, autoimmune disorders, and immunodeficiency conditions."
+ },
+ {
+   "category": "Immunofluorescence",
+   "clinical_note": "Immunofluorescence techniques use fluorescent labels to detect specific antigens or antibodies in tissues or cells."
+ },
+ {
+   "category": "IGRA",
+   "clinical_note": "Interferon Gamma Release Assay (IGRA) is used to detect latent or active tuberculosis infection by measuring immune response to TB antigens."
+ },
+ {
+   "category": "KOH Mount",
+   "clinical_note": "KOH mount is used for rapid detection of fungal elements in clinical samples by dissolving keratin and clearing background material."
+ },
+ {
+   "category": "Lowenstein-Jensen Culture",
+   "clinical_note": "Lowenstein-Jensen culture is used for isolation of Mycobacterium species, particularly in diagnosis of tuberculosis."
+ },
+ {
+   "category": "LBC",
+   "clinical_note": "Liquid Based Cytology (LBC) is used for examination of cells, especially in cervical screening, to detect precancerous and cancerous changes."
+ },
+ {
+   "category": "LC-MS/MS",
+   "clinical_note": "Liquid Chromatography�Tandem Mass Spectrometry (LC-MS/MS) is a highly sensitive technique used for precise quantification of drugs, hormones, and metabolites."
+ },
+ {
+   "category": "Microscopy",
+   "clinical_note": "Microscopic examination helps detect cells, microorganisms, and other elements in samples, aiding in diagnosis of infections and pathological conditions."
+ },
+ {
+   "category": "MGIT Culture",
+   "clinical_note": "Mycobacteria Growth Indicator Tube (MGIT) culture is used for rapid detection of mycobacterial infections including tuberculosis."
+ },
+ {
+   "category": "Molecular (LPA)",
+   "clinical_note": "Line Probe Assay (LPA) is a molecular method used for detection of genetic mutations associated with drug resistance in infections such as tuberculosis."
+ },
+ {
+   "category": "Molecular (PCR)",
+   "clinical_note": "Polymerase Chain Reaction (PCR) is used to detect genetic material of pathogens with high sensitivity and specificity for early diagnosis of infections."
+ },
+ {
+   "category": "Microbiology",
+   "clinical_note": "Microbiological tests identify infectious organisms such as bacteria, viruses, fungi, and parasites, guiding diagnosis and treatment."
+ },
+ {
+   "category": "Physical Exam",
+   "clinical_note": "Physical examination of samples assesses characteristics such as color, clarity, and consistency, providing preliminary diagnostic information."
+ },
+ {
+   "category": "PCR (CBNAAT)",
+   "clinical_note": "CBNAAT is a cartridge-based PCR test used for rapid detection of tuberculosis and rifampicin resistance."
+ },
+ {
+   "category": "Panel",
+   "clinical_note": "Panel tests involve a group of related tests performed together to assess specific conditions or organ systems comprehensively."
+ },
+ {
+   "category": "PCR",
+   "clinical_note": "Polymerase Chain Reaction (PCR) detects genetic material of pathogens and is widely used for diagnosis of infectious diseases."
+ },
+ {
+   "category": "Rapid Immunoassay",
+   "clinical_note": "Rapid immunoassays provide quick detection of antigens or antibodies, useful for screening and early diagnosis of infections."
+ },
+ {
+   "category": "Rapid Test",
+   "clinical_note": "Rapid tests offer quick preliminary results for various conditions, but may require confirmation with standard laboratory methods."
+ },
+ {
+   "category": "Solubility Test",
+   "clinical_note": "Solubility tests are used to differentiate hemoglobin variants, particularly in screening for conditions like sickle cell disease."
+ },
+ {
+   "category": "Semen",
+   "clinical_note": "Semen analysis evaluates male fertility by assessing sperm count, motility, morphology, and other parameters."
+ },
+ {
+   "category": "Stool",
+   "clinical_note": "Stool examination helps detect infections, parasites, digestive disorders, and gastrointestinal bleeding."
+ },
+ {
+   "category": "Staining",
+   "clinical_note": "Staining techniques enhance visualization of cells and microorganisms, aiding in identification and diagnosis of infections and diseases."
+ },
+ {
+   "category": "Sterility Testing",
+   "clinical_note": "Sterility testing is performed to ensure absence of viable microorganisms in samples, especially in pharmaceutical and clinical products."
+ },
+ {
+   "category": "Special Stain",
+   "clinical_note": "Special stains are used to identify specific cellular components or microorganisms not visible with routine staining methods."
+ },
+ {
+   "category": "Serology",
+   "clinical_note": "Serological tests detect antibodies or antigens in blood, helping diagnose infections, autoimmune diseases, and immune status."
+ },
+ {
+   "category": "Spectroscopy",
+   "clinical_note": "Spectroscopy measures the interaction of light with substances to determine concentration and composition in biochemical analysis."
+ },
+ {
+   "category": "Tube Method",
+   "clinical_note": "Tube method is a laboratory technique used in various tests including blood grouping and compatibility testing."
+ },
+ {
+   "category": "Toxicology",
+   "clinical_note": "Toxicology tests detect and measure toxic substances, drugs, or poisons in the body, aiding in diagnosis and management of poisoning."
+ },
+ {
+   "category": "Tumor Marker",
+   "clinical_note": "Tumor markers are substances produced by cancer cells or the body in response to cancer, used for diagnosis, monitoring, and prognosis."
+ },
+ {
+   "category": "Therapeutic Drug",
+   "clinical_note": "Therapeutic drug monitoring measures drug levels in the body to ensure effective dosage and avoid toxicity."
+ },
+ {
+   "category": "Urine",
+   "clinical_note": "Urine analysis helps evaluate kidney function, metabolic disorders, and detect infections or systemic diseases."
+ },
+ {
+   "category": "Visual Exam",
+   "clinical_note": "Visual examination assesses physical characteristics of samples such as color and clarity, providing initial diagnostic clues."
+ },
+ {
+   "category": "Western Blot",
+   "clinical_note": "Western blot is used to detect specific proteins and is commonly used as a confirmatory test in infectious and autoimmune diseases."
+ },
+ {
+   "category": "ZN Stain",
+   "clinical_note": "Ziehl-Neelsen staining is used to detect acid-fast bacilli, particularly Mycobacterium species causing tuberculosis."
+ },
+ {
+   "category": "Ziehl-Neelsen Stain",
+   "clinical_note": "Ziehl-Neelsen staining identifies acid-fast organisms and is essential in diagnosis of tuberculosis and related infections."
+ },
+ {
+   "category": "ZN Modified Stain",
+   "clinical_note": "Modified Ziehl-Neelsen stain is used for detection of partially acid-fast organisms such as certain parasites and bacteria."
+ }
+]

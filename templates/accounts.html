@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rapid Labs Accounts</title>
+
+<link rel="stylesheet" href="/static/style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+:root{
+    --primary:#0f3f7a;
+    --primary-dark:#0b2f5a;
+    --primary-soft:#eaf2ff;
+    --success:#16a34a;
+    --danger:#dc2626;
+    --warning:#f97316;
+    --bg:#f3f6fb;
+    --card:#ffffff;
+    --text:#0f172a;
+    --muted:#64748b;
+    --border:#e2e8f0;
+    --shadow:0 10px 30px rgba(15,23,42,.08);
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:"Inter","Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:240px;
+    height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+    background:linear-gradient(180deg,var(--primary),var(--primary-dark));
+    color:white;
+    z-index:999;
+    box-shadow:8px 0 24px rgba(15,23,42,.12);
+}
+
+.sidebar h2{
+    margin:0;
+    padding:26px 20px;
+    text-align:center;
+    font-size:23px;
+    letter-spacing:.5px;
+    border-bottom:1px solid rgba(255,255,255,.14);
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:18px 12px;
+    margin:0;
+}
+
+.sidebar li{
+    padding:13px 18px;
+    margin-bottom:6px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    color:#eaf2ff;
+    transition:.2s;
+}
+
+.sidebar li:hover{
+    background:rgba(255,255,255,.12);
+    transform:translateX(3px);
+}
+
+/* MAIN */
+.main{
+    margin-left:240px;
+    padding:34px;
+    min-height:100vh;
+}
+
+.main h1{
+    margin:0 0 22px;
+    font-size:30px;
+    color:var(--text);
+    font-weight:800;
+}
+
+/* BUTTONS */
+button{
+    border:0;
+    padding:11px 18px;
+    border-radius:10px;
+    background:var(--primary);
+    color:white;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.18s ease;
+    box-shadow:0 6px 14px rgba(15,63,122,.18);
+}
+
+button:hover{
+    background:var(--primary-dark);
+    transform:translateY(-1px);
+}
+
+button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+/* CARDS */
+.section,
+.section-card,
+.selected-tests-panel,
+.billing-summary-card,
+.payment-card,
+.lab-test-container{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:26px;
+    margin-top:24px;
+    box-shadow:var(--shadow);
+}
+
+.section h3,
+.section-card h3,
+.billing-summary-card h3,
+.payment-card h3,
+.lab-test-container h3,
+.selected-tests-panel h4{
+    margin:0 0 20px;
+    font-size:20px;
+    font-weight:800;
+    color:var(--text);
+}
+
+/* FORM */
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    display:block;
+    margin-bottom:7px;
+    font-size:13px;
+    font-weight:700;
+    color:#475569;
+}
+
+input,
+select{
+    width:100%;
+    height:46px;
+    padding:0 14px;
+    border:1px solid #cbd5e1;
+    border-radius:12px;
+    background:white;
+    font-size:14px;
+    color:var(--text);
+    transition:.18s;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border-color:var(--primary);
+    box-shadow:0 0 0 4px rgba(15,63,122,.1);
+}
+
+input[readonly]{
+    background:#f8fafc;
+    color:#475569;
+}
+
+/* ADD TEST ROW */
+.form-row{
+    display:grid;
+    grid-template-columns:2fr 1fr auto;
+    gap:16px;
+    align-items:end;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.success-msg{
+    margin:14px 0 0;
+    color:var(--success);
+    font-weight:700;
+}
+
+/* TABLES */
+table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    font-size:14px;
+    overflow:hidden;
+    border-radius:14px;
+}
+
+thead{
+    background:var(--primary);
+}
+
+th{
+    padding:14px 16px;
+    color:rgb(0, 0, 0);
+    font-weight:700;
+    text-align:left;
+}
+
+td{
+    padding:14px 16px;
+    border-bottom:1px solid var(--border);
+    background:white;
+    color:#334155;
+}
+
+tbody tr:hover td{
+    background:#f8fbff;
+}
+
+tbody tr:last-child td{
+    border-bottom:0;
+}
+
+/* DELETE */
+.delete-btn{
+    background:#fee2e2;
+    color:var(--danger);
+    box-shadow:none;
+    padding:8px 11px;
+}
+
+.delete-btn:hover{
+    background:var(--danger);
+    color:white;
+}
+
+/* BILLING */
+.bill-row,
+.preview-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 0;
+    border-bottom:1px dashed var(--border);
+    color:#475569;
+}
+
+.bill-row span:last-child,
+.preview-row span:last-child{
+    font-weight:800;
+    color:var(--text);
+}
+
+.discount-row input{
+    width:150px;
+}
+
+.bill-total{
+    margin-top:20px;
+    padding:18px 20px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#eaf2ff,#f8fbff);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:22px;
+    font-weight:900;
+    color:var(--primary);
+    border:1px solid #dbeafe;
+}
+
+/* PAYMENT */
+.payment-method-row{
+    margin-bottom:22px;
+}
+
+.payment-method-row select{
+    max-width:300px;
+}
+
+.bill-preview,
+.upi-box,
+.cash-box{
+    background:#f8fafc;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+    margin-top:16px;
+}
+
+.bill-preview h4,
+.upi-box h4,
+.cash-box h4{
+    margin:0 0 14px;
+    color:var(--text);
+}
+
+.upi-box,
+.cash-box{
+    text-align:center;
+}
+
+.upi-qr{
+    width:190px;
+    border-radius:14px;
+    padding:10px;
+    background:white;
+    border:1px solid var(--border);
+    margin:10px 0;
+}
+
+.pay-btn{
+    background:var(--success);
+}
+
+.cancel-btn{
+    background:var(--danger);
+}
+
+/* PATIENT SEARCH */
+#patientSuggestions{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:14px;
+    max-height:220px;
+    overflow:auto;
+    margin-top:8px;
+    box-shadow:0 14px 35px rgba(15,23,42,.12);
+}
+
+#patientSuggestions div{
+    padding:12px 14px;
+    cursor:pointer;
+    border-bottom:1px solid #f1f5f9;
+}
+
+#patientSuggestions div:hover{
+    background:var(--primary-soft);
+}
+
+#patientStatus{
+    margin-top:8px;
+    font-size:13px;
+    font-weight:800;
+    color:var(--primary);
+}
+.page-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.top-right-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.notification-box{
+    position:relative;
+}
+
+.notification-bell{
+    width:44px;
+    height:44px;
+
+    border:none;
+    border-radius:12px;
+
+    background:white;
+    color:#0f172a;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 2px 10px rgba(15,23,42,.08);
+
+    position:relative;
+}
+
+.notification-bell .material-icons{
+    font-size:22px;
+}
+
+.notification-bell:hover{
+    background:#f8fafc;
+}
+
+.notification-dot{
+    position:absolute;
+    top:-4px;
+    right:-4px;
+
+    min-width:20px;
+    height:20px;
+
+    padding:0 6px;
+
+    border-radius:999px;
+
+    background:#dc2626;
+    color:white;
+
+    font-size:11px;
+    font-weight:800;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    border:2px solid white;
+}
+
+.notification-panel{
+    display:none;
+
+    position:absolute;
+
+    top:56px;
+    right:0;
+
+    width:360px;
+
+    background:white;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 20px 50px rgba(15,23,42,.18);
+
+    border:1px solid #e2e8f0;
+
+    overflow:hidden;
+
+    z-index:99999;
+}
+
+.notification-header{
+    height:56px;
+
+    padding:0 16px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:1px solid #eef2f7;
+
+    font-size:15px;
+    font-weight:800;
+
+    color:#111827;
+}
+
+.notification-header button{
+    height:34px;
+
+    padding:0 12px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#0f3f7a;
+    color:white;
+
+    font-size:12px;
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.notification-list{
+    max-height:400px;
+    overflow-y:auto;
+}
+
+.notification-item{
+    padding:14px 16px;
+
+    border-bottom:1px solid #f1f5f9;
+
+    cursor:pointer;
+
+    transition:.15s ease;
+}
+
+.notification-item:hover{
+    background:#f8fafc;
+}
+
+.notification-item h4{
+    margin:0 0 6px;
+
+    font-size:14px;
+    font-weight:800;
+
+    color:#111827;
+}
+
+.notification-item p{
+    margin:0;
+
+    font-size:13px;
+    line-height:1.5;
+
+    color:#64748b;
+}
+
+.notification-amount{
+    display:inline-block;
+
+    margin-top:8px;
+
+    padding:5px 10px;
+
+    border-radius:999px;
+
+    background:#eef4ff;
+    color:#0f3f7a;
+
+    font-size:12px;
+    font-weight:800;
+}
+
+.notification-empty{
+    padding:30px;
+    text-align:center;
+    color:#64748b;
+    font-size:13px;
+}
+/* PRINT */
+@media print{
+    body *{
+        visibility:hidden;
+    }
+
+    #printReceipt,
+    #printReceipt *{
+        visibility:visible;
+    }
+
+    #printReceipt{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .sidebar{
+        display:none;
+    }
+
+    .main{
+        margin-left:0;
+        padding:20px;
+    }
+
+    .form-grid,
+    .form-row{
+        grid-template-columns:1fr;
+    }
+}
+
+.notification-bell{
+    position:relative;
+    background:#fff;
+    color:#0f172a;
+    border:1px solid #e2e8f0;
+    box-shadow:none;
+}
+
+.notification-dot{
+    display:none;
+    position:absolute;
+    top:-5px;
+    right:-5px;
+    background:#dc2626;
+    color:white;
+    min-width:18px;
+    height:18px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:800;
+    align-items:center;
+    justify-content:center;
+}
+
+.toast-wrap{
+    position:fixed;
+    right:24px;
+    top:24px;
+    z-index:9999;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.toast{
+    width:360px;
+    background:white;
+    border:1px solid #e2e8f0;
+    border-left:5px solid #0f3f7a;
+    border-radius:12px;
+    box-shadow:0 18px 45px rgba(15,23,42,.18);
+    padding:14px 16px;
+    animation:slideIn .25s ease;
+}
+
+.toast h4{
+    margin:0 0 6px;
+    font-size:15px;
+    color:#0f172a;
+}
+
+.toast p{
+    margin:0;
+    font-size:13px;
+    color:#475569;
+    line-height:1.4;
+}
+
+@keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateX(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Rapid Labs</h2>
+
+    <ul>
+        <li onclick="openDashboard()">Dashboard</li>
+        <li onclick="openLeads()">Leads</li>
+        <li onclick="openCollection()">Sample Collection</li>
+        <li onclick="openReports()">Reports</li>
+        <li onclick="openPayments()">Payments</li>
+        <li style="background:#0f3f7a;">Accounts</li>
+        <li onclick="openStaff()">Staff</li>
+    </ul>
+</div>
+
+<div class="main">
+
+<div class="page-head">
+
+    <h1>Accounts</h1>
+
+    <div class="top-right-actions">
+
+        <div class="notification-box">
+
+            <button class="notification-bell" onclick="toggleNotificationPanel(event)">
+                <span class="material-icons">notifications</span>
+                <span id="notificationCount" class="notification-dot">0</span>
+            </button>
+
+            <div id="notificationPanel" class="notification-panel">
+
+                <div class="notification-header">
+                    <span>Notifications</span>
+
+                    <button onclick="requestNotificationPermission()">
+                        Enable
+                    </button>
+                </div>
+
+                <div id="notificationList" class="notification-list">
+                    <div class="notification-empty">
+                        No notifications
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="btn btn-blue" onclick="loadAccounts()">
+            Refresh
+        </button>
+
+    </div>
+
+</div>
+
+<div id="toastWrap" class="toast-wrap"></div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Total B2B Payable</h3>
+            <p id="totalPayable">₹0</p>
+        </div>
+
+        <div class="card">
+            <h3>Paid Amount</h3>
+            <p id="paidAmount">₹0</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending Amount</h3>
+            <p id="pendingAmount">₹0</p>
+        </div>
+
+        <div class="card">
+            <h3>Today Collection</h3>
+            <p id="todayCollection">₹0</p>
+        </div>
+    </div>
+
+    <div class="filter-box">
+        <input id="searchInput" placeholder="Search client, patient, invoice or mobile" oninput="applyFilter()">
+
+        <select id="statusFilter" onchange="applyFilter()">
+            <option value="">All Status</option>
+            <option value="Pending">Pending</option>
+            <option value="Payment Submitted">Payment Submitted</option>
+            <option value="Admin Paid">Admin Paid</option>
+        </select>
+
+        <input type="date" id="fromDate" onchange="applyFilter()">
+        <input type="date" id="toDate" onchange="applyFilter()">
+
+        <button class="btn btn-gray" onclick="clearFilter()">Clear</button>
+    </div>
+
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Invoice</th>
+                    <th>Client</th>
+                    <th>Patient</th>
+                    <th>Mobile</th>
+                    <th>MRP</th>
+                    <th>B2B</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="accountsBody">
+                <tr>
+                    <td colspan="9" class="empty">Loading accounts...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div id="viewModal" class="modal">
+    <div class="modal-box">
+        <h3>Payment Details</h3>
+
+        <div id="modalContent"></div>
+
+        <div class="modal-actions">
+            <button class="btn btn-gray" onclick="closeModal()">Close</button>
+            <button class="btn btn-green" onclick="approveCurrentPayment()">Approve Payment</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+let accountsData = [];
+let filteredData = [];
+let selectedInvoice = null;
+
+function openDashboard(){
+    window.location.href="/dashboard";
+}
+
+function openLeads(){
+    window.location.href="/leads";
+}
+
+function openReports(){
+    window.location.href="/reports";
+}
+
+function openPayments(){
+    window.location.href="/payments";
+}
+
+function openStaff(){
+    window.location.href="/staff";
+}
+
+function openCollection(){
+    window.location.href="/sample-collection?role=admin";
+}
+
+async function loadAccounts(){
+    try{
+        const res = await fetch("/api/accounts");
+        const data = await res.json();
+
+        if(data.success){
+            accountsData = data.data || [];
+        }else{
+            accountsData = [];
+        }
+
+        filteredData = accountsData;
+        renderAccounts(filteredData);
+        updateCards(filteredData);
+        checkNewPaymentNotifications(accountsData);
+
+    }catch(err){
+        console.error(err);
+        document.getElementById("accountsBody").innerHTML =
+            `<tr><td colspan="9" class="empty">Unable to load accounts.</td></tr>`;
+    }
+}
+
+function renderAccounts(rows){
+    const body = document.getElementById("accountsBody");
+
+    if(rows.length === 0){
+        body.innerHTML = `<tr><td colspan="9" class="empty">No account records found.</td></tr>`;
+        return;
+    }
+
+    body.innerHTML = "";
+
+    rows.forEach((r,index) => {
+        body.innerHTML += `
+            <tr id="invoice-${escapeAttr(r.invoice_no)}">
+                <td>${formatDate(r.created_at)}</td>
+                <td>${escapeHtml(r.invoice_no || "-")}</td>
+                <td>${escapeHtml(r.client_name || "-")}</td>
+                <td>${escapeHtml(r.patient_name || "-")}</td>
+                <td>${escapeHtml(r.patient_mobile || "-")}</td>
+                <td>₹${Number(r.total_mrp || 0).toFixed(0)}</td>
+                <td>₹${Number(r.total_b2b || 0).toFixed(0)}</td>
+                <td>
+                    <span class="status ${statusClass(r.payment_status)}">
+                        ${displayStatus(r.payment_status)}
+                    </span>
+                </td>
+                <td>
+                    <span class="material-icons action-icon" title="View" onclick="viewPayment(${index})">visibility</span>
+                    <span class="material-icons action-icon" title="Approve Payment" onclick="approvePayment('${escapeAttr(r.invoice_no)}')">check_circle</span>
+                    <span class="material-icons action-icon" title="Receipt" onclick="downloadReceipt(${index})">receipt_long</span>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+function updateCards(rows){
+    let totalPayable = 0;
+    let paid = 0;
+    let pending = 0;
+    let todayCollection = 0;
+
+    const today = new Date().toISOString().slice(0,10);
+
+    rows.forEach(r => {
+        const b2b = Number(r.total_b2b || 0);
+        const status = String(r.payment_status || "").toLowerCase();
+
+        totalPayable += b2b;
+
+        if(status === "admin paid"){
+            paid += b2b;
+
+            const paidDate = String(r.paid_at || "").slice(0,10);
+            if(paidDate === today){
+                todayCollection += b2b;
+            }
+        }else{
+            pending += b2b;
+        }
+    });
+
+    document.getElementById("totalPayable").innerText = "₹" + totalPayable.toFixed(0);
+    document.getElementById("paidAmount").innerText = "₹" + paid.toFixed(0);
+    document.getElementById("pendingAmount").innerText = "₹" + pending.toFixed(0);
+    document.getElementById("todayCollection").innerText = "₹" + todayCollection.toFixed(0);
+}
+
+function applyFilter(){
+    const search = document.getElementById("searchInput").value.toLowerCase().trim();
+    const status = document.getElementById("statusFilter").value;
+    const fromDate = document.getElementById("fromDate").value;
+    const toDate = document.getElementById("toDate").value;
+
+    filteredData = accountsData.filter(r => {
+        let matchSearch = true;
+        let matchStatus = true;
+        let matchDate = true;
+
+        if(search){
+            const combined = `
+                ${r.invoice_no || ""}
+                ${r.client_name || ""}
+                ${r.patient_name || ""}
+                ${r.patient_mobile || ""}
+                ${r.client_id || ""}
+            `.toLowerCase();
+
+            matchSearch = combined.includes(search);
+        }
+
+        if(status){
+            matchStatus = displayStatus(r.payment_status) === status;
+        }
+
+        if(fromDate || toDate){
+            const created = new Date(r.created_at);
+
+            if(fromDate){
+                const from = new Date(fromDate);
+                from.setHours(0,0,0,0);
+                if(created < from) matchDate = false;
+            }
+
+            if(toDate){
+                const to = new Date(toDate);
+                to.setHours(23,59,59,999);
+                if(created > to) matchDate = false;
+            }
+        }
+
+        return matchSearch && matchStatus && matchDate;
+    });
+
+    renderAccounts(filteredData);
+    updateCards(filteredData);
+}
+
+function clearFilter(){
+    document.getElementById("searchInput").value = "";
+    document.getElementById("statusFilter").value = "";
+    document.getElementById("fromDate").value = "";
+    document.getElementById("toDate").value = "";
+
+    filteredData = accountsData;
+    renderAccounts(filteredData);
+    updateCards(filteredData);
+}
+
+function viewPayment(index){
+    const r = filteredData[index];
+    if(!r) return;
+
+    selectedInvoice = r.invoice_no;
+
+    document.getElementById("modalContent").innerHTML = `
+        <div class="modal-row"><b>Invoice:</b> ${escapeHtml(r.invoice_no || "-")}</div>
+        <div class="modal-row"><b>Client:</b> ${escapeHtml(r.client_name || "-")}</div>
+        <div class="modal-row"><b>Patient:</b> ${escapeHtml(r.patient_name || "-")}</div>
+        <div class="modal-row"><b>Mobile:</b> ${escapeHtml(r.patient_mobile || "-")}</div>
+        <div class="modal-row"><b>Total MRP:</b> ₹${Number(r.total_mrp || 0).toFixed(0)}</div>
+        <div class="modal-row"><b>B2B Payable:</b> ₹${Number(r.total_b2b || 0).toFixed(0)}</div>
+        <div class="modal-row"><b>Status:</b> ${displayStatus(r.payment_status)}</div>
+    `;
+
+    document.getElementById("viewModal").style.display = "flex";
+}
+
+function closeModal(){
+    document.getElementById("viewModal").style.display = "none";
+}
+
+function approveCurrentPayment(){
+    if(selectedInvoice){
+        approvePayment(selectedInvoice);
+    }
+}
+
+async function approvePayment(invoiceNo){
+    if(!invoiceNo){
+        alert("Invoice not found.");
+        return;
+    }
+
+    if(!confirm("Approve payment for invoice " + invoiceNo + "?")){
+        return;
+    }
+
+    try{
+        const res = await fetch("/api/accounts/approve-payment", {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                invoice_no: invoiceNo
+            })
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+            alert("Payment approved successfully.");
+            closeModal();
+            loadAccounts();
+        }else{
+            alert(data.message || "Payment approval failed.");
+        }
+
+    }catch(err){
+        console.error(err);
+        alert("Server error while approving payment.");
+    }
+}
+
+function downloadReceipt(index){
+    const r = filteredData[index];
+
+    if(!r){
+        alert("Receipt data not found.");
+        return;
+    }
+
+    const receipt = window.open("", "_blank");
+
+    receipt.document.write(`
+        <html>
+        <head>
+            <title>Receipt - ${escapeHtml(r.invoice_no)}</title>
+            <style>
+                body{font-family:Arial;padding:30px;background:#f4f6f8}
+                .box{background:white;max-width:800px;margin:auto;padding:30px;border-radius:10px}
+                .head{display:flex;justify-content:space-between;border-bottom:3px solid #0f3f7a;padding-bottom:15px}
+                h1{color:#0f3f7a;margin:0}
+                table{width:100%;border-collapse:collapse;margin-top:20px}
+                td,th{border:1px solid #ddd;padding:10px;text-align:left}
+                th{background:#0f3f7a;color:white}
+                .total{font-weight:bold;background:#eef4ff}
+                .btn{margin-top:20px;padding:10px 16px;background:#0f3f7a;color:white;border:none;border-radius:5px;cursor:pointer}
+                @media print{.btn{display:none}body{background:white}}
+            </style>
+        </head>
+        <body>
+            <div class="box">
+                <div class="head">
+                    <div>
+                        <h1>RapidLabs</h1>
+                        <p>Diagnostic & Laboratory Services</p>
+                    </div>
+                    <div>
+                        <h2>Receipt</h2>
+                        <p>${escapeHtml(r.invoice_no || "-")}</p>
+                    </div>
+                </div>
+
+                <p><b>Client:</b> ${escapeHtml(r.client_name || "-")}</p>
+                <p><b>Patient:</b> ${escapeHtml(r.patient_name || "-")}</p>
+                <p><b>Mobile:</b> ${escapeHtml(r.patient_mobile || "-")}</p>
+                <p><b>Payment Status:</b> ${displayStatus(r.payment_status)}</p>
+
+                <table>
+                    <tr>
+                        <th>Total MRP</th>
+                        <th>B2B Payable</th>
+                    </tr>
+                    <tr class="total">
+                        <td>₹${Number(r.total_mrp || 0).toFixed(0)}</td>
+                        <td>₹${Number(r.total_b2b || 0).toFixed(0)}</td>
+                    </tr>
+                </table>
+
+                <button class="btn" onclick="window.print()">Download / Print Receipt</button>
+            </div>
+        </body>
+        </html>
+    `);
+
+    receipt.document.close();
+}
+
+function displayStatus(status){
+    const s = String(status || "").toLowerCase();
+
+    if(s === "admin paid"){
+        return "Admin Paid";
+    }
+
+    if(s === "payment submitted"){
+        return "Payment Submitted";
+    }
+
+    return "Pending";
+}
+
+function statusClass(status){
+    const s = displayStatus(status);
+
+    if(s === "Admin Paid") return "paid";
+    if(s === "Payment Submitted") return "submitted";
+    return "pending";
+}
+
+function formatDate(value){
+    if(!value) return "-";
+
+    const d = new Date(value);
+
+    if(isNaN(d.getTime())){
+        return String(value);
+    }
+
+    return d.toLocaleDateString("en-GB", {
+        day:"2-digit",
+        month:"short",
+        year:"numeric"
+    });
+}
+
+function escapeHtml(value){
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+function escapeAttr(value){
+    return String(value ?? "")
+        .replace(/\\/g,"\\\\")
+        .replace(/'/g,"\\'")
+        .replace(/"/g,"&quot;")
+        .replace(/\n/g," ");
+}
+
+let knownSubmittedInvoices = new Set();
+let firstNotificationLoad = true;
+
+function requestNotificationPermission(){
+    if(!("Notification" in window)){
+        alert("Browser notifications are not supported.");
+        return;
+    }
+
+    Notification.requestPermission().then(permission => {
+        if(permission === "granted"){
+            showToast(
+                "Notifications Enabled",
+                "You will be notified when a new payment is submitted."
+            );
+        }
+    });
+}
+
+function showToast(title, message){
+    const wrap = document.getElementById("toastWrap");
+
+    if(!wrap) return;
+
+    const toast = document.createElement("div");
+    toast.className = "toast";
+
+    toast.innerHTML = `
+        <h4>${escapeHtml(title)}</h4>
+        <p>${escapeHtml(message)}</p>
+    `;
+
+    wrap.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 6000);
+}
+
+function showSystemNotification(title, message){
+    showToast(title, message);
+
+    if("Notification" in window && Notification.permission === "granted"){
+        new Notification(title, {
+            body: message,
+            icon: "/static/rl_report_logo.webp"
+        });
+    }
+}
+
+function checkNewPaymentNotifications(rows){
+    rows.forEach(r => {
+        const status = displayStatus(r.payment_status);
+        const invoice = r.invoice_no;
+
+        if(status === "Payment Submitted" && invoice){
+            if(!knownSubmittedInvoices.has(invoice)){
+                knownSubmittedInvoices.add(invoice);
+
+                if(!firstNotificationLoad){
+                    showSystemNotification(
+                        "New Payment Submitted",
+                        `Invoice ${invoice} • ${r.client_name || "Client"} • ₹${Number(r.total_b2b || 0).toFixed(0)}`
+                    );
+                }
+            }
+        }
+    });
+
+    updateNotificationBadge();
+    firstNotificationLoad = false;
+}
+
+function updateNotificationBadge(){
+
+    const badge = document.getElementById("notificationCount");
+
+    if(!badge) return;
+
+    const count = accountsData.filter(r =>
+        displayStatus(r.payment_status) === "Payment Submitted"
+    ).length;
+
+    if(count > 0){
+
+        badge.style.display = "flex";
+        badge.innerText = count;
+
+    }else{
+
+        badge.style.display = "none";
+        badge.innerText = "0";
+    }
+
+    renderNotificationList();
+}
+
+function toggleNotificationPanel(event){
+
+    event.stopPropagation();
+
+    const panel = document.getElementById("notificationPanel");
+
+    if(!panel) return;
+
+    if(panel.style.display === "block"){
+        panel.style.display = "none";
+    }else{
+        panel.style.display = "block";
+        renderNotificationList();
+    }
+}
+
+document.addEventListener("click", function(e){
+
+    const panel = document.getElementById("notificationPanel");
+
+    const box = document.querySelector(".notification-box");
+
+    if(panel && box && !box.contains(e.target)){
+        panel.style.display = "none";
+    }
+});
+
+
+function renderNotificationList(){
+    const list = document.getElementById("notificationList");
+
+    if(!list) return;
+
+    const submitted = accountsData.filter(r =>
+        displayStatus(r.payment_status) === "Payment Submitted"
+    );
+
+    if(submitted.length === 0){
+        list.innerHTML = `<div class="notification-empty">No submitted payments</div>`;
+        return;
+    }
+
+    list.innerHTML = "";
+
+    submitted.forEach(r => {
+        list.innerHTML += `
+            <div class="notification-item" onclick="openNotificationInvoice('${escapeAttr(r.invoice_no)}')">
+                <h4>Payment Submitted</h4>
+                <p>
+                    Invoice: ${escapeHtml(r.invoice_no || "-")}<br>
+                    Client: ${escapeHtml(r.client_name || "-")}<br>
+                    Patient: ${escapeHtml(r.patient_name || "-")}
+                </p>
+                <span class="notification-amount">
+                    ₹${Number(r.total_b2b || 0).toFixed(0)}
+                </span>
+            </div>
+        `;
+    });
+}
+
+function openNotificationInvoice(invoiceNo){
+
+    const panel = document.getElementById("notificationPanel");
+    if(panel){
+        panel.style.display = "none";
+    }
+
+    document.getElementById("statusFilter").value = "Payment Submitted";
+    document.getElementById("searchInput").value = invoiceNo;
+
+    applyFilter();
+
+    setTimeout(() => {
+        const row = document.getElementById("invoice-" + invoiceNo);
+
+        if(row){
+            row.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+            row.classList.add("highlight-row");
+
+            setTimeout(() => {
+                row.classList.remove("highlight-row");
+            }, 2500);
+        }
+
+        const index = filteredData.findIndex(r => r.invoice_no === invoiceNo);
+
+        if(index >= 0){
+            viewPayment(index);
+        }
+
+    }, 200);
+}
+
+
+
+loadAccounts();
+
+setInterval(() => {
+    loadAccounts();
+}, 15000);
+</script>
+
+</body>
+</html>

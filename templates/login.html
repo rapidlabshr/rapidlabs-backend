@@ -9,6 +9,105 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+
+
+<style>
+.forgot-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.forgot-box{
+width:430px;
+max-width:92vw;
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.forgot-header{
+height:62px;
+padding:0 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:linear-gradient(135deg,#06376d,#0877d8);
+color:white;
+font-size:18px;
+font-weight:800;
+}
+
+.forgot-header button{
+border:none;
+background:none;
+color:white;
+font-size:22px;
+cursor:pointer;
+}
+
+.forgot-body{
+padding:24px;
+}
+
+.forgot-body h3{
+margin:0 0 10px;
+color:#06376d;
+}
+
+.forgot-body p{
+margin:0 0 18px;
+color:#64748b;
+font-size:13px;
+line-height:1.5;
+}
+
+.forgot-body input{
+width:100%;
+height:46px;
+padding:0 14px;
+border:1px solid #dbe4ee;
+border-radius:12px;
+margin-bottom:14px;
+font-size:14px;
+}
+
+.forgot-btn{
+width:100%;
+height:46px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#06376d,#0877d8);
+color:white;
+font-size:14px;
+font-weight:800;
+cursor:pointer;
+}
+
+.forgot-btn:disabled{
+opacity:.7;
+cursor:not-allowed;
+}
+
+#forgotMsg{
+margin-top:16px;
+text-align:center;
+font-size:13px;
+font-weight:700;
+}
+
+#otpTimer{
+margin-bottom:14px;
+color:#dc2626;
+font-size:13px;
+font-weight:700;
+}
+</style>
 </head>
 
 <body class="login-body">
@@ -39,15 +138,10 @@ Diagnostics Management System
 <!-- FORGOT PASSWORD -->
 <div style="text-align:right;margin-top:5px;margin-bottom:10px;">
 
-<a href="#"
-style="
-color:#ddd;
-font-size:13px;
-text-decoration:none;
-">
+<a href="javascript:void(0)" onclick="openForgotModal()"
+style="color:#ddd;font-size:13px;text-decoration:none;">
 Forgot password?
 </a>
-
 </div>
 
 <button type="submit">Login</button>
@@ -57,6 +151,63 @@ Forgot password?
 <p id="message"></p>
 
 </div>
+
+
+
+
+<div id="forgotModal" class="forgot-overlay">
+
+<div class="forgot-box">
+
+<div class="forgot-header">
+<span>Reset Password</span>
+<button onclick="closeForgotModal()">×</button>
+</div>
+
+<div class="forgot-body">
+
+<div id="stepEmail">
+<h3>Email Verification</h3>
+<p>Enter your registered admin/staff email address.</p>
+
+<input type="email" id="forgotEmail" placeholder="Enter email address">
+
+<button onclick="sendOTP()" id="sendOtpBtn" class="forgot-btn">
+Send OTP
+</button>
+</div>
+
+<div id="stepOTP" style="display:none;">
+<h3>OTP Verification</h3>
+<p>Enter the 6-digit OTP sent to your email.</p>
+
+<input type="text" id="otpInput" maxlength="6" placeholder="Enter OTP">
+
+<div id="otpTimer"></div>
+
+<button onclick="verifyOTP()" class="forgot-btn">
+Verify OTP
+</button>
+</div>
+
+<div id="stepPassword" style="display:none;">
+<h3>Create New Password</h3>
+<p>Create your new secure password.</p>
+
+<input type="password" id="newPassword" placeholder="New Password">
+<input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+<button onclick="resetPassword()" class="forgot-btn">
+Update Password
+</button>
+</div>
+
+<div id="forgotMsg"></div>
+
+</div>
+</div>
+</div>
+
 
 
 <script>
@@ -128,6 +279,185 @@ icon.classList.add("fa-eye");
 }
 
 });
+
+
+
+let verifiedEmail = "";
+let otpCountdown;
+
+function openForgotModal(){
+
+    document.getElementById("forgotModal").style.display = "flex";
+
+    document.getElementById("stepEmail").style.display = "block";
+    document.getElementById("stepOTP").style.display = "none";
+    document.getElementById("stepPassword").style.display = "none";
+
+    document.getElementById("forgotMsg").innerText = "";
+}
+
+function closeForgotModal(){
+    document.getElementById("forgotModal").style.display = "none";
+}
+
+async function sendOTP(){
+
+    const email = document.getElementById("forgotEmail").value.trim();
+    const btn = document.getElementById("sendOtpBtn");
+
+    if(!email){
+        showForgotMsg("Enter email address", true);
+        return;
+    }
+
+    btn.disabled = true;
+    btn.innerText = "Sending OTP...";
+    showForgotMsg("Sending OTP...");
+
+    try{
+
+        const res = await fetch("/send-user-reset-otp", {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                email:email
+            })
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+
+            verifiedEmail = email;
+
+            document.getElementById("stepEmail").style.display = "none";
+            document.getElementById("stepOTP").style.display = "block";
+
+            showForgotMsg("OTP sent successfully");
+
+            startOtpTimer(300);
+
+        }else{
+            showForgotMsg(data.message, true);
+        }
+
+    }catch(error){
+        showForgotMsg("Server error. Please try again.", true);
+    }finally{
+        btn.disabled = false;
+        btn.innerText = "Send OTP";
+    }
+}
+
+async function verifyOTP(){
+
+    const otp = document.getElementById("otpInput").value.trim();
+
+    if(!otp){
+        showForgotMsg("Enter OTP", true);
+        return;
+    }
+
+    const res = await fetch("/verify-user-reset-otp", {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            email:verifiedEmail,
+            otp:otp
+        })
+    });
+
+    const data = await res.json();
+
+    if(data.success){
+
+        document.getElementById("stepOTP").style.display = "none";
+        document.getElementById("stepPassword").style.display = "block";
+
+        showForgotMsg("OTP verified successfully");
+
+    }else{
+        showForgotMsg(data.message, true);
+    }
+}
+
+async function resetPassword(){
+
+    const newPass = document.getElementById("newPassword").value;
+    const confirmPass = document.getElementById("confirmPassword").value;
+
+    if(!newPass || !confirmPass){
+        showForgotMsg("Enter password", true);
+        return;
+    }
+
+    if(newPass !== confirmPass){
+        showForgotMsg("Passwords do not match", true);
+        return;
+    }
+
+    const res = await fetch("/reset-user-password", {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            email:verifiedEmail,
+            password:newPass
+        })
+    });
+
+    const data = await res.json();
+
+    if(data.success){
+
+        showForgotMsg("Password updated successfully");
+
+        setTimeout(() => {
+            closeForgotModal();
+        }, 1500);
+
+    }else{
+        showForgotMsg(data.message, true);
+    }
+}
+
+function showForgotMsg(msg, error=false){
+
+    const box = document.getElementById("forgotMsg");
+
+    box.innerText = msg;
+    box.style.color = error ? "#dc2626" : "#15803d";
+}
+
+function startOtpTimer(seconds){
+
+    clearInterval(otpCountdown);
+
+    const timer = document.getElementById("otpTimer");
+
+    otpCountdown = setInterval(() => {
+
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+
+        timer.innerText =
+        `OTP expires in ${mins}:${secs.toString().padStart(2,"0")}`;
+
+        seconds--;
+
+        if(seconds < 0){
+            clearInterval(otpCountdown);
+            timer.innerText = "OTP expired";
+        }
+
+    }, 1000);
+}
+
 
 </script>
 

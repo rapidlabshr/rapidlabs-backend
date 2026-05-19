@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Report Entry - Rapid Labs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:#eef2f7;
+    color:#222;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#0f3f7a;
+    color:#fff;
+    padding:14px 24px;
+    font-size:18px;
+    font-weight:700;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.topbar span{
+    font-size:13px;
+    font-weight:400;
+    opacity:.9;
+}
+
+/* PAGE LAYOUT */
+.wrapper{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px;
+}
+
+.action-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    flex-wrap:nowrap;
+    margin-bottom:15px;
+}
+
+/* BUTTONS */
+button{
+    border:none;
+    border-radius:6px;
+    padding:9px 15px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.btn-primary{background:#0f3f7a;color:#fff}
+.btn-secondary{background:#e5e7eb;color:#222}
+.btn-success{background:#138a4b;color:#fff}
+.btn-danger{background:#dc2626;color:#fff}
+.btn-warning{background:#f59e0b;color:#fff}
+
+/* NOTICE */
+.notice{
+    display:none;
+    background:#fff8e1;
+    border:1px solid #f4d06f;
+    color:#684f00;
+    padding:10px 12px;
+    border-radius:6px;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+/* REPORT PAPER */
+.report-box{
+    background:#fff;
+    padding:24px;
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+/* HEADER */
+.report-header{
+    background:#fff;
+    padding:8px 8px 6px;
+    border-bottom:2px solid #333;
+    margin-bottom:14px;
+}
+
+.header-main{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cert-area{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.cert-item{
+    text-align:center;
+}
+
+/* Logo */
+/* CERTIFICATES */
+.cert-item img{
+    height:48px;
+    width:auto;
+    object-fit:contain;
+    display:block;
+}
+
+/* LAB ADDRESS */
+.lab-address{
+    text-align:center;
+    font-size:12px;
+    line-height:1.35;
+    color:#444;
+    margin-top:4px;
+}
+
+/* REPORT TITLE */
+.title{
+    text-align:center;
+    color:#0f3f7a;
+    font-size:19px;
+    font-weight:700;
+    margin:14px 0;
+    letter-spacing:.4px;
+}
+
+/* PATIENT INFO GRID */
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border:1.5px solid #111;
+    margin-bottom:16px;
+}
+
+.info-item{
+    padding:7px 9px;
+    border-right:1px solid #111;
+    border-bottom:1px solid #111;
+    font-size:12px;
+}
+
+.info-item:nth-child(3n){
+    border-right:none;
+}
+
+.info-item label{
+    display:block;
+    font-weight:700;
+    margin-bottom:3px;
+}
+
+.info-item input{
+    border:none;
+    outline:none;
+    width:100%;
+    font-size:12px;
+    background:transparent;
+    color:#111;
+}
+
+/* RESULT TABLE */
+.result-table{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+    font-size:12px;
+}
+
+.result-table th{
+    background:#0f3f7a;
+    color:#fff;
+    padding:8px 6px;
+    border:1px solid #111;
+    text-align:center;
+    font-weight:700;
+}
+
+.result-table td{
+    padding:7px 6px;
+    border:1px solid #111;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.result-table td:first-child{
+    text-align:left;
+}
+
+.result-table input,
+.result-table textarea{
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:12px;
+    text-align:center;
+    color:#111;
+}
+
+.result-table textarea{
+    resize:none;
+    text-align:left;
+}
+
+.test-heading{
+    background:#f3f7ff;
+    font-weight:700;
+    color:#0f3f7a;
+}
+
+/* END OF REPORT */
+.end-report{
+    text-align:center;
+    margin:24px 0 8px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* FOOTER BANNER */
+.footer-banner{
+    margin-top:10px;
+    width:100%;
+    overflow:hidden;
+}
+
+.footer-banner img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* EMPTY ROW */
+.empty{
+    text-align:center;
+    padding:22px;
+    color:#777;
+}
+
+
+/* REPORT FOOTER SECTIONS */
+.conditions{
+    margin-top:18px;
+}
+
+/* BLOCK CARD */
+.cond-block{
+    background:#f4f4f4;
+    border:1px solid #d6d6d6;
+    border-radius:10px;
+    padding:14px 16px 10px;
+    margin:16px 0 4px 0;
+    position:relative;
+    page-break-inside:avoid;
+}
+
+/* BLOCK TITLE */
+.cond-title{
+    position:absolute;
+    top:-10px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#dcdcdc;
+    padding:3px 14px;
+    border-radius:16px;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.4px;
+    color:#222;
+}
+
+/* LIST */
+.cond-block ul{
+    margin:8px 0 0;
+    padding-left:16px;
+    font-size:10px;
+    line-height:1.45;
+    color:#333;
+}
+
+.cond-block li{
+    margin-bottom:4px;
+}
+
+/* HEADER LEFT */
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+/* Logo box for clean medical feel */
+/* LOGO */
+.logo-box{
+    background:#fff;
+    padding:5px 8px;
+    border-radius:6px;
+    border:1px solid #e5e7eb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.logo-box img{
+    height:52px;
+    width:auto;
+    object-fit:contain;
+}
+
+/* LAB NAME */
+.lab-name-block{
+    display:flex;
+    flex-direction:column;
+}
+
+.lab-name{
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:.8px;
+    color:#0B3C6D;
+}
+
+.lab-sub{
+    margin-top:4px;
+    font-size:10px;
+    font-weight:700;
+    background:linear-gradient(90deg, #0B3C6D, #16A34A);
+    color:#fff;
+    padding:3px 8px;
+    border-radius:3px;
+    letter-spacing:.4px;
+}
+
+/* ROW ACTION BUTTON */
+.remove-btn{
+    background:transparent;
+    color:#9ca3af;
+    border:none;
+    font-size:15px;
+    cursor:pointer;
+    padding:2px;
+}
+
+.remove-btn:hover{
+    color:#dc2626;
+}
+
+/* METHOD TEXT */
+.method-text{
+    font-size:10px;
+    color:#444;
+    margin-top:2px;
+    text-align:left;
+}
+
+/* ICON BUTTONS */
+.icon-btn{
+    width:38px;
+    height:38px;
+    padding:0;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+}
+
+.icon-btn i{
+    pointer-events:none;
+}
+/* CLINICAL INTERPRETATION */
+.report-comment{
+    margin-top:10px;
+    padding:12px 14px;
+    border:1px solid #d8dee8;
+    border-radius:8px;
+    background:#fff;
+    font-size:11px;
+    line-height:1.6;
+    color:#1f2937;
+    position:relative;
+    page-break-inside:avoid;
+}
+
+/* TITLE TAG */
+.report-comment::before{
+    content:"CLINICAL INTERPRETATION";
+    position:absolute;
+    top:-10px;
+    left:14px;
+    background:#0f3f7a;
+    color:#fff;
+    font-size:9px;
+    font-weight:700;
+    padding:3px 9px;
+    border-radius:4px;
+    letter-spacing:.5px;
+}
+
+/* PARAGRAPHS */
+.report-comment p{
+    margin:0 0 6px;
+    text-align:justify;
+}
+
+.report-comment p strong{
+    color:#0f3f7a;
+}
+
+.report-comment br{
+    line-height:10px;
+}
+
+/* PRINT */
+.print-only{
+    display:none;
+}
+
+/* FINAL FOOTER */
+/* FINAL FOOTER */
+.report-final-footer{
+    width:100%;
+    display:flex !important;
+    flex-direction:row !important;
+    justify-content:space-between !important;
+    align-items:flex-end !important;
+    gap:16px !important;
+    border-top:1px solid #111;
+    padding-top:8px;
+    margin-top:10px;
+    page-break-inside:avoid;
+}
+
+.footer-clinical-note{
+    flex:1;
+    margin:0 !important;
+    min-height:55px;
+}
+
+.footer-right-box{
+    width:210px;
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+    align-items:flex-end;
+    gap:16px;
+}
+
+.footer-doctor{
+    width:90px;
+    text-align:center;
+    font-size:10px;
+    font-weight:700;
+    color:#111;
+}
+
+.footer-doctor img{
+    height:36px;
+    display:block;
+    margin:0 auto 2px;
+}
+
+.footer-qr{
+    width:75px;
+    text-align:center;
+    font-size:8px;
+    font-weight:600;
+    color:#111;
+    line-height:1.25;
+}
+
+.footer-qr #reportQrCode{
+    width:52px;
+    height:52px;
+    margin:0 auto 2px;
+}
+
+.footer-qr #reportQrCode img,
+.footer-qr #reportQrCode canvas{
+    width:52px !important;
+    height:52px !important;
+}
+
+/* PRINT + PDF */
+@media print{
+
+    body{
+        background:#fff;
+        padding:0;
+    }
+
+    .topbar,
+    .action-bar,
+    .notice,
+    .no-print{
+        display:none !important;
+    }
+
+    .print-only{
+        display:block !important;
+    }
+
+    .report-final-footer.print-only{
+        display:flex !important;
+    }
+
+    .wrapper{
+        padding:0;
+        max-width:100%;
+    }
+
+    .report-box{
+        box-shadow:none;
+        border-radius:0;
+        padding:10px 14px;
+    }
+
+    /* HEADER */
+    .report-header{
+        padding:4px 6px 6px;
+        margin-bottom:10px;
+        border-bottom:1px solid #222;
+        page-break-before:auto;
+    }
+
+    .logo-box{
+        padding:4px 6px;
+        border:none;
+        box-shadow:none;
+    }
+
+    .logo-box img{
+        height:48px;
+    }
+
+    .lab-name{
+        font-size:24px;
+    }
+
+    .lab-sub{
+        font-size:9px;
+        padding:3px 8px;
+    }
+
+    .cert-item img{
+        height:40px;
+    }
+
+    .lab-address{
+        font-size:10px;
+        line-height:1.3;
+        margin-top:2px;
+    }
+
+    .title{
+        font-size:16px;
+        margin:10px 0;
+    }
+
+    /* INFO GRID */
+    .info-grid{
+        grid-template-columns:repeat(3,1fr);
+        border:1px solid #111;
+    }
+
+    .info-item{
+        padding:6px 8px;
+        font-size:11px;
+    }
+
+    .info-item input{
+        font-size:11px;
+    }
+
+    input[type="datetime-local"]::-webkit-calendar-picker-indicator{
+        display:none;
+    }
+
+    /* TABLE */
+    .result-table{
+        width:100%;
+        border-collapse:collapse;
+        table-layout:fixed;
+        font-size:11px;
+    }
+
+    .result-table th{
+        background:#fff !important;
+        color:#111 !important;
+        border:none !important;
+        border-bottom:1px solid #111 !important;
+        padding:5px 4px;
+        text-align:left;
+        font-weight:700;
+    }
+
+    .result-table td{
+        border:none !important;
+        padding:3px 4px;
+        vertical-align:top;
+        text-align:left;
+    }
+
+    .result-table input,
+    .result-table textarea{
+        border:none !important;
+        background:transparent !important;
+        outline:none !important;
+        padding:0 !important;
+        font-size:11px !important;
+        color:#111 !important;
+        resize:none !important;
+        overflow:hidden !important;
+    }
+
+    .result-table td:nth-child(1) input{
+        font-weight:700;
+        text-transform:uppercase;
+    }
+
+    .result-table td:nth-child(2) input{
+        text-align:center;
+        font-weight:600;
+    }
+
+    .result-table th.no-print,
+    .result-table td.no-print{
+        display:none !important;
+    }
+
+    .test-heading td{
+        border:none !important;
+        padding:8px 0 4px !important;
+        text-align:center !important;
+        font-weight:700;
+        text-decoration:underline;
+        background:#fff !important;
+        color:#111 !important;
+    }
+
+    .result-table tr,
+    .cond-block,
+    .report-comment,
+    .report-final-footer,
+    .footer-banner{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    /* FOOTER BANNER */
+    .footer-banner{
+        margin-top:8px;
+    }
+
+    .footer-banner img{
+        width:100%;
+        height:auto;
+        object-fit:contain;
+    }
+}
+
+/* PAGE MARGIN */
+@page{
+    margin:6mm;
+}
+
+/* CLIENT COPY PRINT */
+@media print{
+    body.client-copy-mode .report-header,
+    body.client-copy-mode .report-final-footer,
+    body.client-copy-mode .print-footer-block,
+    body.client-copy-mode .end-report{
+        display:none !important;
+    }
+
+    body.client-copy-mode .report-box{
+        padding:0 14px !important;
+    }
+
+    body.client-copy-mode .title{
+        margin-top:0 !important;
+    }
+}
+
+/* MOBILE SCREEN */
+@media screen and (max-width:800px){
+    .header-main{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .lab-address{
+        text-align:left;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-item{
+        border-right:none;
+    }
+}
+
+/* PDF MODE */
+body.pdf-mode{
+    background:#fff !important;
+}
+
+body.pdf-mode .topbar,
+body.pdf-mode .action-bar,
+body.pdf-mode .notice,
+body.pdf-mode .no-print,
+body.pdf-mode #aiNoteBox{
+    display:none !important;
+}
+
+body.pdf-mode .print-only{
+    display:block !important;
+}
+
+body.pdf-mode .wrapper{
+    padding:0 !important;
+    max-width:100% !important;
+}
+
+body.pdf-mode .report-box{
+    box-shadow:none !important;
+    border-radius:0 !important;
+    padding:0 !important;
+}
+
+body.pdf-mode .report-page-one{
+    min-height:277mm !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:column !important;
+}
+
+
+
+/* PDF HEADER */
+body.pdf-mode .report-header{
+    padding:4px 6px 5px !important;
+    margin-bottom:8px !important;
+    border-bottom:1px solid #222 !important;
+}
+
+body.pdf-mode .header-main{
+    align-items:center !important;
+}
+
+body.pdf-mode .logo-box{
+    padding:3px 5px !important;
+    box-shadow:none !important;
+    border:none !important;
+}
+
+body.pdf-mode .logo-box img{
+    height:44px !important;
+}
+
+body.pdf-mode .lab-name{
+    font-size:23px !important;
+}
+
+body.pdf-mode .lab-sub{
+    font-size:8.5px !important;
+    padding:2px 7px !important;
+    margin-top:2px !important;
+}
+
+body.pdf-mode .cert-item img{
+    height:38px !important;
+}
+
+body.pdf-mode .lab-address{
+    font-size:9.5px !important;
+    line-height:1.25 !important;
+    margin-top:2px !important;
+}
+
+body.pdf-mode .title{
+    font-size:16px !important;
+    margin:8px 0 !important;
+}
+
+/* PDF INFO */
+body.pdf-mode .info-grid{
+    margin-bottom:10px !important;
+}
+
+body.pdf-mode .info-item{
+    padding:5px 7px !important;
+    font-size:10.5px !important;
+}
+
+body.pdf-mode .info-item input{
+    font-size:10.5px !important;
+}
+
+/* PDF TABLE */
+body.pdf-mode .result-table{
+    font-size:10.5px !important;
+}
+
+body.pdf-mode .result-table th{
+    background:#fff !important;
+    color:#111 !important;
+    border:none !important;
+    border-bottom:1px solid #111 !important;
+    padding:4px 3px !important;
+    text-align:left !important;
+}
+
+body.pdf-mode .result-table td{
+    border:none !important;
+    padding:2.5px 3px !important;
+    text-align:left !important;
+    vertical-align:top !important;
+}
+
+body.pdf-mode .result-table input,
+body.pdf-mode .result-table textarea{
+    border:none !important;
+    background:transparent !important;
+    outline:none !important;
+    font-size:10.5px !important;
+    padding:0 !important;
+    resize:none !important;
+    overflow:hidden !important;
+}
+
+body.pdf-mode .result-table th.no-print,
+body.pdf-mode .result-table td.no-print{
+    display:none !important;
+}
+
+/* PDF CLINICAL NOTE */
+body.pdf-mode .report-comment{
+    margin-top:8px !important;
+    padding:9px 10px !important;
+    font-size:10.5px !important;
+    line-height:1.4 !important;
+    border:1px solid #ccc !important;
+    border-radius:6px !important;
+    page-break-inside:avoid;
+}
+
+body.pdf-mode .report-comment p{
+    margin:0 0 4px !important;
+}
+
+/* PDF FOOTER */
+body.pdf-mode .report-final-footer{
+    margin-top:8px !important;
+    padding-top:5px !important;
+    gap:20px !important;
+    page-break-inside:avoid;
+}
+
+body.pdf-mode .footer-doctor img{
+    height:34px !important;
+}
+
+.footer-qr #reportQrCode{
+    width:70px !important;
+    height:70px !important;
+    background:#fff !important;
+    padding:6px !important;
+    margin:0 auto 4px !important;
+}
+
+.footer-qr #reportQrCode img,
+.footer-qr #reportQrCode canvas{
+    width:58px !important;
+    height:58px !important;
+}
+/* PDF CONDITIONS */
+body.pdf-mode .print-footer-block{
+    page-break-before:always !important;
+    break-before:page !important;
+    page-break-inside:auto !important;
+    break-inside:auto !important;
+    padding-top:0 !important;
+    margin-top:0 !important;
+}
+
+body.pdf-mode .cond-block,
+body.pdf-mode .footer-banner{
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+body.pdf-mode .cond-block{
+    padding:9px 12px 7px !important;
+    margin:0 0 8px 0 !important;
+    border-radius:7px !important;
+}
+
+body.pdf-mode .cond-title{
+    font-size:9px !important;
+    padding:2px 10px !important;
+    top:-8px !important;
+}
+
+body.pdf-mode .cond-block ul{
+    font-size:9px !important;
+    line-height:1.3 !important;
+    margin-top:5px !important;
+}
+
+body.pdf-mode .cond-block li{
+    margin-bottom:2px !important;
+}
+
+body.pdf-mode .footer-banner{
+    margin-top:6px !important;
+}
+
+body.pdf-mode .footer-banner img{
+    width:100% !important;
+    height:auto !important;
+    max-height:190px !important;
+    object-fit:contain !important;
+}
+
+body.pdf-mode .report-page-content{
+    flex:0 0 auto !important;
+    min-height:0 !important;
+}
+
+body.pdf-mode .report-bottom-area{
+    margin-top:10px !important;
+    page-break-inside:avoid !important;
+}
+
+body.pdf-mode .end-report{
+    margin:0 0 8px !important;
+}
+
+body.pdf-mode .report-final-footer{
+    margin-top:0 !important;
+}
+
+@media print{
+    .report-bottom-area{
+        margin-top:auto !important;
+        page-break-inside:avoid !important;
+    }
+
+    .end-report{
+        margin:0 0 8px !important;
+    }
+
+    .report-final-footer{
+        margin-top:0 !important;
+    }
+}
+
+@media print{
+    .print-footer-block{
+        page-break-before:always !important;
+        break-before:page !important;
+    }
+}
+
+@media print{
+    .report-box{
+        padding:0 !important;
+    }
+
+    .report-page-one{
+        height:255mm !important;
+        padding:8px 12px !important;
+        display:flex !important;
+        flex-direction:column !important;
+    }
+
+    .report-page-content{
+        flex:1 1 auto !important;
+        min-height:0 !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <div>Report Entry - Rapid Labs</div>
+    <span>Smart Diagnostics for Better Health</span>
+</div>
+
+<div class="wrapper">
+
+    <div class="action-bar no-print">
+        <div>
+            <button class="btn-secondary" onclick="goBack()">← Back</button>
+            <button class="btn-primary" onclick="loadReportData()">Refresh</button>
+        </div>
+        <div>
+            <button class="btn-success icon-btn" onclick="saveReport()" title="Save Report">
+                <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+
+            <button class="btn-primary icon-btn" onclick="printReport()" title="Print">
+                <i class="fa-solid fa-print"></i>
+            </button>
+
+            <button class="btn-warning icon-btn" onclick="downloadPDF()" title="Download PDF">
+                <i class="fa-solid fa-file-pdf"></i>
+            </button>
+
+            <button class="btn-secondary icon-btn" onclick="clientCopyPrint()" title="Client Copy">
+                <i class="fa-solid fa-copy"></i>
+            </button>
+
+            <input type="file" id="reportFile" accept=".pdf,.jpg,.jpeg,.png" style="display:none;">
+            <button class="btn-success" onclick="document.getElementById('reportFile').click()">⬆ Upload</button>
+
+            <button 
+                id="sendClientBtn"
+                class="btn-primary"
+                onclick="sendReportToClient()"
+                style="display:none;"
+            >
+                📤 Send to Client
+            </button>
+
+            <button class="btn-secondary" onclick="viewUploadedReport()">👁 View Upload</button>
+            <button class="btn-danger" onclick="deleteUploadedReport()">🗑 Delete</button>
+        </div>
+    </div>
+
+    <div id="noticeBox" class="notice"></div>
+
+    <div class="report-box" id="reportBox">
+
+        <div class="report-page-one">
+            <div class="report-page-content">
+
+        <div class="report-header print-header">
+            <div class="header-main">
+                <div class="logo-area">
+                    
+                    <div class="logo-box">
+                        <img src="../static/rl_report_logo.webp" onerror="this.style.display='none'">
+                    </div>
+
+                    <div class="lab-name-block">
+                        <div class="lab-name">RAPID LABS</div>
+                        <div class="lab-sub">COMPREHENSIVE DIAGNOSTIC LABS</div>
+                    </div>
+
+                </div>
+
+            <div class="cert-area">
+                
+                <div class="cert-item">
+                    <img src="../static/images/icons/nabh.webp">
+                </div>
+
+                <div class="cert-item">
+                    <img src="../static/images/icons/cmc.webp">
+                </div>
+
+            </div>
+            </div>
+
+            <div class="lab-address">
+                Vijayanagar, 1222, 80 Feet Rd, near Ganesha Temple, BDA Layout, Chandra Layout,<br>
+                Bengaluru, Karnataka - 560040, Phone: +91 7975357102, Email: rapidlabs.hr@gmail.com
+            </div>
+
+        </div>
+
+
+
+        <div class="title">Summary of Laboratory Findings</div>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <label>Name</label>
+                <input id="patientName">
+            </div>
+            <div class="info-item">
+                <label>Report No</label>
+                <input id="reportNo" readonly>
+            </div>
+            <div class="info-item">
+                <label>Phone</label>
+                <input id="patientMobile">
+            </div>
+
+            <div class="info-item">
+                <label>Client</label>
+                <input id="clientName">
+            </div>
+            <div class="info-item">
+                <label>Invoice No</label>
+                <input id="invoiceNo" readonly>
+            </div>
+            <div class="info-item">
+                <label>Barcode No</label>
+                <input id="barcodeNo" readonly>
+            </div>
+
+            <div class="info-item">
+                <label>Age / Sex</label>
+                <input id="ageSex" placeholder="Optional">
+            </div>
+            <div class="info-item">
+                <label>Referred Doctor</label>
+                <input id="doctorName" placeholder="Optional">
+            </div>
+            <div class="info-item">
+                <label>Sample Type</label>
+                <input id="sampleType" readonly>
+            </div>
+
+            <div class="info-item">
+                <label>Registration Date</label>
+                <input type="datetime-local" id="regDate">
+            </div>
+            <div class="info-item">
+                <label>Collected Date</label>
+                <input type="datetime-local" id="collectedDate">
+            </div>
+            <div class="info-item">
+                <label>Reported Date</label>
+                <input type="datetime-local" id="reportedDate">
+            </div>
+        </div>
+
+
+        <table class="result-table">
+            <thead>
+                <tr>
+                    <th style="width:34%;">Test / Parameter</th>
+                    <th style="width:18%;">Observed Value</th>
+                    <th style="width:16%;">Unit</th>
+                    <th style="width:24%;">Reference Range</th>
+                    <th class="no-print" style="width:8%;">Action</th>
+                </tr>
+            </thead>
+            <tbody id="resultBody">
+                <tr>
+                    <td colspan="5" class="empty">Loading report data...</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn-primary no-print" style="margin-top:12px;" onclick="addManualRow()">+ Add Test</button>
+
+        </div>
+
+        <div class="report-bottom-area print-only">
+
+            <div class="end-report">----- END OF REPORT -----</div>
+
+            <div class="report-final-footer">
+
+            <div id="reportComment" class="report-comment footer-clinical-note"></div>
+
+            <div class="footer-right-box">
+                <div class="footer-doctor">
+                    <img src="../static/doctor_sign.webp" onerror="this.style.display='none'">
+                    <div>DOCTOR SIGNATURE</div>
+                </div>
+
+                <div class="footer-qr">
+
+                    <div id="reportQrCode"></div>
+
+                    <div style="
+                        margin-top:4px;
+                        font-size:7px;
+                        line-height:1.35;
+                        color:#444;
+                        text-align:center;
+                        font-weight:500;
+                    ">
+                        Scan QR to verify original report<br>
+                        Verification link valid for 30 days
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+                        <div class="report-comment no-print" id="aiNoteBox">
+
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin-bottom:12px;
+            ">
+
+                <div style="
+                    font-weight:700;
+                    color:#0f3f7a;
+                    font-size:14px;
+                ">
+                    🧠 Clinical Note Assistant
+                </div>
+
+                <button 
+                    class="btn-primary"
+                    onclick="generateAINote()"
+                >
+                    Generate AI Note
+                </button>
+
+            </div>
+
+            <div
+                id="aiClinicalNote"
+                contenteditable="true"
+                style="
+                    width:100%;
+                    min-height:140px;
+                    border:none;
+                    outline:none;
+                    font-size:13px;
+                    line-height:1.8;
+                    background:transparent;
+                "
+            >
+            </div>
+
+            <div style="
+                margin-top:10px;
+                display:flex;
+                gap:10px;
+            ">
+
+                <button class="btn-secondary" onclick="copyAINote()">
+                    Copy
+                </button>
+
+                <button class="btn-success" onclick="addAINoteToPrint()">
+                    Add To Report
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="print-footer-block print-only">
+
+            <!-- CONDITIONS -->
+            <div class="cond-block">
+                <div class="cond-title">CONDITIONS OF REPORTING</div>
+                <ul>
+                    <li>The reported results are for information and interpretation of the referring doctor only.</li>
+                    <li>It is presumed that the tests performed on the specimen belong to the patient; named or identified.</li>
+                    <li>Results may vary from laboratory to laboratory and over time for the same patient.</li>
+                    <li>Unexpected abnormal values should be reconfirmed.</li>
+                    <li>Only qualified medical professionals should interpret results.</li>
+                    <li>This report is not valid for medico-legal purpose.</li>
+                    <li>Rapid Labs does not assume liability for any loss or misuse of this report.</li>
+                </ul>
+            </div>
+
+            <!-- EXPLANATIONS -->
+            <div class="cond-block">
+                <div class="cond-title">EXPLANATIONS</div>
+                <ul>
+                    <li><b>Name</b> - As provided by patient during registration.</li>
+                    <li><b>Report No</b> - Unique identification number of report.</li>
+                    <li><b>Referred By</b> - Doctor who recommended the test.</li>
+                    <li><b>Registration Date</b> - Date and time of patient registration.</li>
+                    <li><b>Collected Date</b> - Date and time of sample collection.</li>
+                    <li><b>Reported Date</b> - Date and time of report release.</li>
+                </ul>
+            </div>
+
+            <!-- SUGGESTIONS -->
+            <div class="cond-block">
+                <div class="cond-title">SUGGESTIONS</div>
+                <ul>
+                    <li>Results should be interpreted by a qualified medical professional.</li>
+                    <li>Correlate results with clinical findings.</li>
+                    <li>Abnormal values may require further evaluation.</li>
+                    <li>Follow doctor’s advice for additional tests if needed.</li>
+                    <li>For queries contact: rapidlabs.hr@gmail.com / +91 7892287102</li>
+                </ul>
+
+
+
+
+                        <div class="footer-banner print-only">
+                            <img src="../static/images/icons/report_footer_banner.webp" onerror="this.style.display='none'">
+                        </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<script>
+let invoiceNo = "";
+let barcodeNo = "";
+let billData = null;
+let selectedSample = null;
+let uploadedReport = null;
+
+
+
+
+
+function getParams(){
+    const params = new URLSearchParams(window.location.search);
+    invoiceNo = params.get("invoice_no") || "";
+    barcodeNo = params.get("barcode") || "";
+}
+
+function goBack(){
+    if(invoiceNo && barcodeNo){
+        window.location.href = "/testongo?invoice_no=" + invoiceNo + "&barcode=" + encodeURIComponent(barcodeNo);
+    }else if(invoiceNo){
+        window.location.href = "/barcode?invoice_no=" + invoiceNo;
+    }else{
+        window.location.href = "/clientprocess";
+    }
+}
+
+function showNotice(msg){
+    const box = document.getElementById("noticeBox");
+    box.innerText = msg;
+    box.style.display = "block";
+}
+
+function hideNotice(){
+    const box = document.getElementById("noticeBox");
+    box.innerText = "";
+    box.style.display = "none";
+}
+
+function getNowValue(){
+    const now = new Date();
+    const offset = now.getTimezoneOffset();
+    const local = new Date(now.getTime() - offset * 60000);
+    return local.toISOString().slice(0,16);
+}
+
+function generateReportNo(){
+    return "RL-" + new Date().getFullYear() + "-" + Date.now().toString().slice(-6);
+}
+
+
+
+
+
+async function loadReportData(){
+    hideNotice();
+    getParams();
+
+    if(!invoiceNo){
+        showNotice("Invoice number missing.");
+        return;
+    }
+
+    document.getElementById("invoiceNo").value = invoiceNo;
+    document.getElementById("barcodeNo").value = barcodeNo || "-";
+    document.getElementById("reportNo").value = generateReportNo();
+
+    document.getElementById("regDate").value = getNowValue();
+    document.getElementById("collectedDate").value = getNowValue();
+    document.getElementById("reportedDate").value = getNowValue();
+
+    try{
+        const res = await fetch(`/api/barcode-data/${invoiceNo}`);
+        const data = await res.json();
+
+        if(!data.success){
+            showNotice(data.message || "Unable to load report data.");
+            return;
+        }
+
+        billData = data;
+
+        selectedSample = null;
+
+        if(barcodeNo){
+            selectedSample = (data.samples || []).find(s =>
+                String(s.barcode).toLowerCase() === barcodeNo.toLowerCase()
+            );
+        }
+
+        if(!selectedSample){
+            selectedSample = (data.samples || [])[0];
+        }
+
+        document.getElementById("patientName").value = data.patient_name || "";
+        document.getElementById("patientMobile").value = data.patient_mobile || "";
+        document.getElementById("clientName").value = data.client_name || "";
+        document.getElementById("sampleType").value = selectedSample?.sample_type || "";
+
+        await renderReportRows(selectedSample?.tests || []);
+
+    }catch(err){
+        console.error(err);
+        showNotice("Server error while loading report data.");
+    }
+}
+
+
+
+async function renderReportRows(tests){
+    const body = document.getElementById("resultBody");
+    body.innerHTML = "";
+
+    if(!tests || tests.length === 0){
+        body.innerHTML = `<tr><td colspan="5" class="empty">No tests found</td></tr>`;
+        return;
+    }
+
+    for(const test of tests){
+
+        const params = await fetchParameters(test.service_code);
+
+        if(params.length > 0){
+
+            addTestHeading(test.test_name);
+
+            params.forEach(p => {
+                addResultRow({
+                    name:p.parameter_name || "",
+                    method:p.method || "",
+                    value:"",
+                    unit:p.unit || "",
+                    range:p.normal_range || "",
+                    service_code:test.service_code
+                });
+            });
+
+        }else{
+            addResultRow({
+                name:test.test_name || "",
+                value:"",
+                unit:"",
+                range:"",
+                service_code:test.service_code
+            });
+        }
+    }
+}
+
+
+
+async function fetchParameters(serviceCode){
+    if(!serviceCode || serviceCode === "-"){
+        return [];
+    }
+
+    try{
+        const res = await fetch("/api/parameters/" + encodeURIComponent(serviceCode));
+        if(!res.ok) return [];
+
+        const data = await res.json();
+
+        if(Array.isArray(data)) return data;
+        if(data.success && Array.isArray(data.parameters)) return data.parameters;
+
+        return [];
+    }catch(err){
+        console.warn("Parameter API not ready for", serviceCode);
+        return [];
+    }
+}
+
+function addTestHeading(testName){
+    const body = document.getElementById("resultBody");
+    body.innerHTML += `
+        <tr class="test-heading">
+            <td colspan="5">${escapeHtml(testName)}</td>
+        </tr>
+    `;
+}
+
+
+function addResultRow(row){
+    const body = document.getElementById("resultBody");
+
+    body.innerHTML += `
+        <tr data-service-code="${escapeAttr(row.service_code || "")}">
+            <td>
+                <input value="${escapeAttr(row.name || "")}" placeholder="Parameter name">
+                <div class="method-text" contenteditable="true" oninput="autoSave()">Method : ${escapeHtml(row.method || "")}</div>
+            </td>
+            <td><input value="${escapeAttr(row.value || "")}" placeholder="Observed value"></td>
+            <td><input value="${escapeAttr(row.unit || "")}" placeholder="Unit"></td>
+            <td><textarea rows="2" placeholder="Reference range">${escapeHtml(row.range || "")}</textarea></td>
+            <td class="no-print">
+                <button class="remove-btn" onclick="deleteRow(this)">✖</button>
+            </td>
+        </tr>
+    `;
+}
+
+function addManualRow(){
+    addResultRow({
+        name:"",
+        method:"",
+        value:"",
+        unit:"",
+        range:""
+    });
+}
+
+function deleteRow(btn){
+    btn.closest("tr").remove();
+}
+
+function collectReportData(){
+    const rows = [];
+    const trs = document.querySelectorAll("#resultBody tr");
+
+    trs.forEach(tr => {
+        if(tr.classList.contains("test-heading")){
+            rows.push({
+                type:"heading",
+                name:tr.innerText.trim()
+            });
+            return;
+        }
+
+        const inputs = tr.querySelectorAll("input");
+        const textarea = tr.querySelector("textarea");
+
+        if(inputs.length >= 3){
+            rows.push({
+                type:"result",
+                name:inputs[0].value.trim(),
+                method: tr.querySelector(".method-text")
+                    ?.innerText.replace("Method :", "")
+                    .trim() || "",
+                value:inputs[1].value.trim(),
+                unit:inputs[2].value.trim(),
+                range:textarea ? textarea.value.trim() : ""
+            });
+        }
+    });
+
+    return rows;
+}
+
+async function saveReport(){
+    const payload = {
+        invoice_no: invoiceNo,
+        barcode: barcodeNo,
+        report_no: document.getElementById("reportNo").value,
+        patient_name: document.getElementById("patientName").value,
+        patient_mobile: document.getElementById("patientMobile").value,
+        client_name: document.getElementById("clientName").value,
+        sample_type: document.getElementById("sampleType").value,
+        results: collectReportData()
+    };
+
+    try{
+        const res = await fetch("/api/save-report-entry", {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+            showNotice("Report saved successfully.");
+        }else{
+            showNotice(data.message || "Report save API not ready.");
+        }
+
+    }catch(err){
+        console.warn(err);
+        showNotice("Report save API not ready yet. Print/PDF still works.");
+    }
+}
+
+function generateReportQR(){
+
+    const reportNo = document.getElementById("reportNo").value;
+    const verifyUrl = window.location.origin + "/verify-report/" + encodeURIComponent(reportNo);
+    const qrBox = document.getElementById("reportQrCode");
+
+    if(!qrBox){
+        console.error("QR box not found");
+        return;
+    }
+
+    qrBox.innerHTML = "";
+
+    if(typeof QRCode === "undefined"){
+        console.error("QRCode library not loaded");
+        alert("QR Code library not loaded. Check script link.");
+        return;
+    }
+
+    new QRCode(qrBox, {
+        text: verifyUrl,
+        width: 58,
+        height: 58
+    });
+}
+
+async function printReport(){
+
+    await saveReport();
+
+    generateReportQR();
+
+    setTimeout(() => {
+        window.print();
+    }, 500);
+}
+
+
+
+async function downloadPDF(){
+
+    generateReportQR();
+
+    document.body.classList.add("pdf-mode");
+
+    const element = document.getElementById("reportBox");
+    const reportNo = document.getElementById("reportNo").value;
+
+    const opt = {
+        margin:[4, 6, 4, 6],
+        filename: reportNo + ".pdf",
+        image:{type:"jpeg", quality:1},
+        html2canvas:{scale:2, useCORS:true},
+        jsPDF:{unit:"mm", format:"a4", orientation:"portrait"}
+    };
+
+    try{
+
+        const pdfBlob = await html2pdf()
+            .set(opt)
+            .from(element)
+            .outputPdf("blob");
+
+        const formData = new FormData();
+
+        formData.append("pdf", new File([pdfBlob], reportNo + ".pdf", {
+            type:"application/pdf"
+        }));
+
+        formData.append("report_no", reportNo);
+        formData.append("invoice_no", invoiceNo);
+        formData.append("barcode", barcodeNo);
+
+        const res = await fetch("/api/save-report-pdf", {
+            method:"POST",
+            body:formData
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+            uploadedReport = data.file;
+            showNotice("Report saved with QR verification.");
+        }else{
+            showNotice(data.message || "Report verification save failed.");
+        }
+
+        await html2pdf().set(opt).from(element).save();
+
+    }catch(err){
+
+        console.error("PDF ERROR:", err);
+        alert("PDF generation failed. Check console.");
+
+    }finally{
+
+        document.body.classList.remove("pdf-mode");
+
+    }
+}
+
+
+
+document.getElementById("reportFile").addEventListener("change", async function(){
+    const file = this.files[0];
+
+    if(!file){
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("invoice_no", invoiceNo);
+    formData.append("barcode", barcodeNo);
+    formData.append("report_no", document.getElementById("reportNo").value);
+
+    try{
+        const res = await fetch("/api/upload-report", {
+            method:"POST",
+            body:formData
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+            uploadedReport = data.file;
+            showNotice("Uploaded: " + data.file + ". Now click Send to Client.");
+
+            document.getElementById("sendClientBtn").style.display = "inline-block";
+        }else{
+            showNotice(data.message || "Upload failed.");
+        }
+
+    }catch(err){
+        console.error(err);
+        showNotice("Server error while uploading.");
+    }
+});
+
+function viewUploadedReport(){
+    if(!uploadedReport){
+        alert("No uploaded report found");
+        return;
+    }
+
+    window.open("/uploads/" + uploadedReport, "_blank");
+}
+
+async function deleteUploadedReport(){
+    if(!uploadedReport){
+        alert("No uploaded report to delete");
+        return;
+    }
+
+    if(!confirm("Delete uploaded report?")){
+        return;
+    }
+
+    try{
+        const res = await fetch("/api/delete-report", {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({file:uploadedReport})
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+            uploadedReport = null;
+            document.getElementById("reportFile").value = "";
+            showNotice("Uploaded report deleted.");
+        }else{
+            showNotice(data.message || "Delete failed.");
+        }
+
+    }catch(err){
+        console.error(err);
+        showNotice("Server error while deleting.");
+    }
+}
+
+function escapeHtml(value){
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+function escapeAttr(value){
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;");
+}
+
+
+function clientCopyPrint(){
+
+    document.body.classList.add("client-copy-mode");
+
+    // ADD THIS (important)
+    const style = document.createElement("style");
+    style.id = "client-copy-page-style";
+    style.innerHTML = `
+        @page {
+            margin-top:45mm;
+            margin-bottom:40mm;
+        }
+    `;
+    document.head.appendChild(style);
+
+    window.print();
+
+    setTimeout(() => {
+        document.body.classList.remove("client-copy-mode");
+
+        // REMOVE style after print
+        const s = document.getElementById("client-copy-page-style");
+        if(s) s.remove();
+
+    }, 1000);
+}
+
+
+async function sendReportToClient(){
+
+    if(!uploadedReport){
+        alert("Upload report first.");
+        return;
+    }
+
+    try{
+        const res = await fetch("/api/send-report-to-client", {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                invoice_no: invoiceNo
+            })
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+            showNotice("Report sent to client successfully.");
+            document.getElementById("sendClientBtn").disabled = true;
+            document.getElementById("sendClientBtn").innerText = "Sent";
+        }else{
+            showNotice(data.message || "Unable to send report.");
+        }
+
+    }catch(err){
+        console.error(err);
+        showNotice("Server error while sending report.");
+    }
+}
+
+
+async function generateAINote(){
+
+    const rows = [];
+
+    document.querySelectorAll("#resultBody tr").forEach(tr => {
+
+        if(tr.classList.contains("test-heading")){
+            return;
+        }
+
+        const inputs = tr.querySelectorAll("input");
+        const textarea = tr.querySelector("textarea");
+
+        if(inputs.length >= 3){
+
+            rows.push({
+                test: inputs[0].value,
+                value: inputs[1].value,
+                unit: inputs[2].value,
+                range: textarea ? textarea.value : ""
+            });
+
+        }
+
+    });
+
+    try{
+
+        const res = await fetch("/api/generate-ai-note",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                tests: rows
+            })
+        });
+
+        const data = await res.json();
+
+        if(data.note){
+            document.getElementById("aiClinicalNote").innerHTML = data.note;
+        }else{
+            alert("AI note generation failed");
+        }
+
+    }catch(err){
+
+        console.error(err);
+        alert("Server error");
+
+    }
+
+}
+
+function copyAINote(){
+
+    const text = document.getElementById("aiClinicalNote").innerText;
+
+    navigator.clipboard.writeText(text);
+
+    alert("Copied");
+
+}
+
+function addAINoteToPrint(){
+
+    const note = document.getElementById("aiClinicalNote").innerHTML;
+
+    document.getElementById("reportComment").innerHTML =
+        "<p>" + note.replace(/\n/g,"<br>") + "</p>";
+
+    alert("Added to report");
+
+}
+
+loadReportData();
+</script>
+
+</body>
+</html>

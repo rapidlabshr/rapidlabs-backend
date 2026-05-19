@@ -99,10 +99,11 @@ text-decoration:underline;
 <ul>
 <li onclick="openDashboard()">Dashboard</li>
 <li onclick="openLeads()">Leads</li>
-<li>Sample Collection</li>
+<li onclick="openCollection()">Sample Collection</li>
 <li style="background:#0f3f7a;">Reports</li>
-<li>Payments</li>
-<li>Staff</li>
+<li onclick="openPayments()">Payments</li>
+<li onclick="openAccounts()">Accounts</li>
+<li onclick="openStaff()">Staff</li>
 </ul>
 
 </div>
@@ -153,6 +154,25 @@ function openLeads(){
 window.location.href="/leads"
 }
 
+function openClients(){
+    window.location.href="/clients"
+}
+
+function openCollection(){
+    window.location.href="/sample-collection?role=admin";
+}
+
+function openPayments(){
+    window.location.href="/payments";
+}
+
+function openAccounts(){
+    window.location.href="/accounts";
+}
+
+function openStaff(){
+    window.location.href="/staff";
+}
 
 
 /* LOAD REPORT DATA */

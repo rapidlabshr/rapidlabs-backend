@@ -5,233 +5,310 @@
 
     <title>Create Bill - Rapid Labs</title>
 <style>
-
-/* GLOBAL */
+/* =========================
+   GLOBAL
+========================= */
 
 body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f4f6f9;
-font-size:14px;
+    margin:0;
+    font-family:"Segoe UI", Arial, Helvetica, sans-serif;
+    background:#f1f5f9;
+    font-size:14px;
+    color:#1e293b;
+    -webkit-font-smoothing:antialiased;
 }
 
-/* SIDEBAR */
+/* =========================
+   SIDEBAR
+========================= */
 
 .sidebar{
-width:220px;
-height:100vh;
-background:#0f3f7a;
-position:fixed;
-left:0;
-top:0;
-color:white;
+    width:230px;
+    height:100vh;
+    background:linear-gradient(180deg,#0f3f7a 0%, #0b2f5a 100%);
+    position:fixed;
+    left:0;
+    top:0;
+    color:white;
+    box-shadow:4px 0 18px rgba(0,0,0,0.08);
+    z-index:999;
 }
 
 .sidebar h2{
-text-align:center;
-padding:18px 0;
-border-bottom:1px solid rgba(255,255,255,0.2);
-font-size:20px;
+    text-align:center;
+    padding:22px 0;
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:.5px;
+    border-bottom:1px solid rgba(255,255,255,0.12);
 }
 
 .sidebar ul{
-list-style:none;
-padding:0;
-margin:0;
+    list-style:none;
+    padding:14px 0;
+    margin:0;
 }
 
 .sidebar ul li{
-padding:12px 18px;
-cursor:pointer;
-border-bottom:1px solid rgba(255,255,255,0.08);
-font-size:14px;
+    padding:14px 22px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:500;
+    transition:.22s ease;
+    border-left:4px solid transparent;
 }
 
 .sidebar ul li:hover{
-background:#0c2f5c;
+    background:rgba(255,255,255,0.08);
+    border-left:4px solid #60a5fa;
+    padding-left:26px;
 }
 
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 .main{
-margin-left:220px;
-padding:20px;
-font-size:15px;
+    margin-left:230px;
+    padding:26px;
 }
 
-/* SECTIONS */
+.main h1{
+    margin-top:0;
+    font-size:28px;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:22px;
+}
+
+/* =========================
+   COMMON CARD
+========================= */
+
+.section,
+.section-card,
+.selected-tests-panel,
+.billing-summary-card,
+.payment-card{
+    background:#ffffff;
+    border-radius:16px;
+    border:1px solid #e2e8f0;
+    box-shadow:
+        0 4px 18px rgba(15,23,42,0.04),
+        0 1px 3px rgba(15,23,42,0.06);
+}
+
+/* =========================
+   SECTION
+========================= */
 
 .section{
-background:white;
-padding:16px 18px;      /* slightly more inner space */
-border-radius:8px;
-box-shadow:0 2px 6px rgba(0,0,0,0.08);
-max-width: 1250px;
-margin-top:25px;        /* space above */
-margin-bottom:12px;     /* smaller space below */
+    padding:22px 24px;
+    max-width:1280px;
+    margin-top:24px;
+    margin-bottom:16px;
 }
 
+.section h3{
+    margin-top:0;
+    font-size:20px;
+    color:#0f172a;
+    margin-bottom:18px;
+    font-weight:700;
+}
 
-/* FORM LAYOUT */
+/* =========================
+   FORM LAYOUT
+========================= */
 
 .form-grid{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:10px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    margin-top:12px;
 }
 
 .form-grid div{
-flex:1 1 40%;
+    flex:1 1 40%;
 }
 
 .full{
-flex:1 1 100%;
+    flex:1 1 100%;
 }
 
-/* INPUTS */
+/* =========================
+   INPUTS
+========================= */
 
-input,select{
-width:70%;          /* reduced width */
-padding:5px 7px;
-margin-top:4px;
-margin-bottom:6px;
-border:1px solid #cfcfcf;
-border-radius:5px;
-font-size:15px;     /* bigger font */
-height:26px;        /* smaller box */
-box-sizing:border-box;
+input,
+select{
+    width:100%;
+    padding:11px 14px;
+    margin-top:6px;
+    border:1px solid #d6dee8;
+    border-radius:10px;
+    font-size:14px;
+    height:46px;
+    box-sizing:border-box;
+    background:#fff;
+    transition:.2s ease;
+    color:#1e293b;
 }
 
-/* LABEL */
+input:focus,
+select:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,0.08);
+}
+
+/* =========================
+   LABELS
+========================= */
 
 label{
-font-size:15px;     /* bigger label text */
-font-weight:500;
+    font-size:13px;
+    font-weight:600;
+    color:#475569;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 button{
-background:#0f3f7a;
-color:white;
-border:none;
-padding:7px 14px;
-cursor:pointer;
-border-radius:5px;
-font-size:14px;
+    background:#0f3f7a;
+    color:white;
+    border:none;
+    padding:11px 18px;
+    cursor:pointer;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:600;
+    transition:.2s ease;
 }
 
 button:hover{
-background:#0c2f5c;
+    background:#0c2f5c;
+    transform:translateY(-1px);
 }
 
-/* TABLE */
+/* =========================
+   TABLE
+========================= */
 
 table{
-width:100%;
-border-collapse:collapse;
-margin-top:10px;
-background:white;
-border-radius:6px;
-overflow:hidden;
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    margin-top:14px;
+    overflow:hidden;
+    border-radius:12px;
 }
 
 table thead{
-background:#0f3f7a;
-color:white;
+    background:#0f3f7a;
+    color:white;
 }
 
 table th{
-padding:9px;
-font-size:15px;   /* bigger text */
-text-align:left;
+    padding:14px;
+    font-size:14px;
+    text-align:left;
+    font-weight:600;
 }
 
 table td{
-padding:9px;
-font-size:15px;   /* bigger text */
-border-bottom:1px solid #eee;
+    padding:14px;
+    font-size:14px;
+    border-bottom:1px solid #edf2f7;
+    color:#334155;
+    background:#fff;
 }
 
 table tbody tr:nth-child(even){
-background:#fafafa;
+    background:#fafcff;
 }
 
-table tbody tr:hover{
-background:#f4f7fb;
+table tbody tr:hover td{
+    background:#f8fbff;
 }
 
-/* TOTAL TEXT */
+/* =========================
+   TOTAL
+========================= */
 
 .total{
-font-size:18px;
-font-weight:bold;
-color:#0f3f7a;
-margin-top:6px;
+    font-size:20px;
+    font-weight:700;
+    color:#0f3f7a;
+    margin-top:10px;
 }
 
-/* PATIENT SEARCH DROPDOWN */
+/* =========================
+   PATIENT SEARCH
+========================= */
 
 #patientSuggestions{
-background:white;
-border:1px solid #ddd;
-max-height:180px;
-overflow-y:auto;
-border-radius:5px;
-box-shadow:0 2px 6px rgba(0,0,0,0.08);
+    background:white;
+    border:1px solid #dbe2ea;
+    max-height:220px;
+    overflow-y:auto;
+    border-radius:10px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.08);
+    margin-top:4px;
 }
 
 #patientSuggestions div{
-padding:8px;
-font-size:15px;
-cursor:pointer;
-border-bottom:1px solid #f1f1f1;
+    padding:12px 14px;
+    font-size:14px;
+    cursor:pointer;
+    border-bottom:1px solid #f1f5f9;
+    transition:.18s;
 }
 
 #patientSuggestions div:hover{
-background:#f4f7fb;
+    background:#eff6ff;
 }
 
 #patientStatus{
-font-size:14px;
-color:#777;
-margin-top:3px;
+    font-size:13px;
+    color:#64748b;
+    margin-top:6px;
 }
 
-/* Section Card */
+/* =========================
+   SECTION CARD
+========================= */
 
 .section-card{
-    background:white;
-    border-radius:10px;
-    padding:20px;
-    max-width:1250px;
-    margin-bottom:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    padding:24px;
+    max-width:1280px;
+    margin-bottom:22px;
 }
 
-/* Header */
-
 .section-header{
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .section-header h3{
     margin:0;
-    font-size:18px;
-    color:#333;
+    font-size:20px;
+    color:#0f172a;
+    font-weight:700;
 }
 
-/* Form Layout */
+/* =========================
+   FORM ROW
+========================= */
 
 .form-row{
     display:flex;
-    gap:15px;
+    gap:18px;
     align-items:flex-end;
     flex-wrap:wrap;
 }
-
-/* Input Group */
 
 .input-group{
     display:flex;
@@ -239,461 +316,323 @@ margin-top:3px;
     flex:1;
 }
 
-/* Label */
-
 .input-group label{
     font-size:13px;
-    margin-bottom:5px;
-    color:#555;
+    margin-bottom:6px;
+    color:#475569;
 }
-
-/* Input */
 
 .input-group input{
-    padding:8px 10px;
-    border:1px solid #ddd;
-    border-radius:6px;
+    padding:11px 14px;
+    border:1px solid #d6dee8;
+    border-radius:10px;
     font-size:14px;
-    outline:none;
-    transition:0.2s;
 }
-
-.input-group input:focus{
-    border-color:#007bff;
-    box-shadow:0 0 0 2px rgba(0,123,255,0.1);
-}
-
-/* Button */
 
 .button-group{
     flex:0;
 }
 
 .button-group button{
+    padding:12px 22px;
+    border-radius:10px;
     background:#1f4e79;
-    color:white;
-    border:none;
-    padding:9px 18px;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:14px;
-    transition:0.2s;
 }
 
-.button-group button:hover{
-    background:#163b5c;
-}
-
-/* Success Message */
+/* =========================
+   SUCCESS MSG
+========================= */
 
 .success-msg{
-    margin-top:10px;
+    margin-top:12px;
     font-size:13px;
-    color:#28a745;
+    color:#16a34a;
+    font-weight:600;
 }
 
+/* =========================
+   LAB TEST CONTAINER
+========================= */
+
 .lab-test-container{
-    background:#f5f6f8;
-    padding:25px;
-    border-radius:10px;
-    max-width:650px;
+    background:#ffffff;
+    padding:28px;
+    border-radius:16px;
+    max-width:720px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 4px 14px rgba(0,0,0,0.04);
 }
 
 .lab-test-container h3{
-    margin-bottom:15px;
-    font-size:20px;
-    font-weight:600;
-    color:#2c3e50;
+    margin-bottom:18px;
+    font-size:21px;
+    font-weight:700;
+    color:#0f172a;
 }
 
 .lab-test-container select{
-    width:70%;
-    height:42px;
-    padding:0 12px;
-    font-size:14px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    background:#fff;
-    vertical-align:middle;
-}
-
-.lab-test-container select:focus{
-    outline:none;
-    border-color:#4CAF50;
+    width:72%;
+    height:46px;
+    border-radius:10px;
 }
 
 .lab-test-container button{
-    height:42px;
-    padding:0 18px;
+    height:46px;
+    padding:0 20px;
     margin-left:10px;
-    border:none;
-    border-radius:6px;
-    background:#4CAF50;
-    color:white;
-    font-size:14px;
-    cursor:pointer;
+    border-radius:10px;
+    background:#16a34a;
+    font-weight:600;
 }
 
 .lab-test-container button:hover{
-    background:#43a047;
+    background:#15803d;
 }
 
+/* =========================
+   SELECTED TEST PANEL
+========================= */
+
 .selected-tests-panel{
-    background:#ffffff;
-    padding:22px;
-    border-radius:10px;
-    max-width:1260px;
-    margin-top:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    padding:24px;
+    max-width:1280px;
+    margin-top:22px;
 }
 
 .selected-tests-panel h4{
-    margin-bottom:14px;
-    font-size:18px;
-    font-weight:600;
-    color:#2c3e50;
+    margin-bottom:16px;
+    font-size:20px;
+    font-weight:700;
+    color:#0f172a;
 }
 
-/* TABLE */
-
-.selected-tests-panel table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:12px;
-    border-radius:6px;
-    overflow:hidden;
-}
-
-/* HEADER */
-
-.selected-tests-panel table thead{
-    background:#1f4e79;
-    color:white;
-}
-
-.selected-tests-panel table th{
-    text-align:left;
-    padding:11px;
-    font-weight:600;
-    font-size:14px;
-}
-
-/* ROWS */
-
-.selected-tests-panel table td{
-    padding:11px;
-    border-bottom:1px solid #e5e7eb;
-    font-size:14px;
-    color:#333;
-}
-
-/* ZEBRA ROWS */
-
-.selected-tests-panel table tbody tr:nth-child(even){
-    background:#f8fafc;
-}
-
-/* HOVER */
-
-.selected-tests-panel table tbody tr:hover{
-    background:#eef4ff;
-}
-
-/* DELETE BUTTON */
+/* =========================
+   DELETE BUTTON
+========================= */
 
 .delete-btn{
-    background:#ffeaea;
+    background:#fff1f2;
     border:none;
     font-size:16px;
     cursor:pointer;
-    color:#e74c3c;
-    padding:5px 8px;
-    border-radius:5px;
-    transition:0.2s;
+    color:#dc2626;
+    padding:7px 10px;
+    border-radius:8px;
+    transition:.2s ease;
 }
 
 .delete-btn:hover{
-    background:#e74c3c;
+    background:#dc2626;
     color:white;
 }
 
+/* =========================
+   BILL SUMMARY
+========================= */
 
 .billing-summary-card{
-    background:#ffffff;
-    padding:26px;
-    border-radius:12px;
-    max-width:1250px;
-    margin-top:22px;
-    border:1px solid #e6ebf1;
-    box-shadow:0 4px 14px rgba(0,0,0,0.06);
+    padding:28px;
+    max-width:1280px;
+    margin-top:24px;
 }
-
-/* TITLE */
 
 .billing-summary-card h3{
-    margin-bottom:20px;
-    font-size:19px;
-    font-weight:600;
-    color:#1f3a5f;
-    border-bottom:1px solid #edf1f5;
-    padding-bottom:10px;
+    margin-bottom:22px;
+    font-size:21px;
+    font-weight:700;
+    color:#0f172a;
+    border-bottom:1px solid #edf2f7;
+    padding-bottom:12px;
 }
-
-/* ROW STRUCTURE */
 
 .bill-row{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:10px 0;
+    padding:14px 0;
     font-size:15px;
-    color:#444;
-    border-bottom:1px dashed #e6ebf1;
+    color:#475569;
+    border-bottom:1px dashed #e2e8f0;
 }
-
-/* LAST ROW REMOVE BORDER */
 
 .bill-row:last-of-type{
     border-bottom:none;
 }
 
-/* DISCOUNT INPUT */
-
 .discount-row input{
-    width:130px;
-    padding:7px 10px;
-    border:1px solid #d4dbe3;
-    border-radius:6px;
-    font-size:14px;
-    background:#fafbfc;
-    transition:0.2s;
+    width:150px;
 }
-
-.discount-row input:focus{
-    border-color:#1f4e79;
-    outline:none;
-    background:#ffffff;
-}
-
-/* TOTAL SECTION */
 
 .bill-total{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-top:18px;
-    padding:14px 16px;
-    border-radius:8px;
-    background:#eef4fb;
-    font-size:19px;
+    margin-top:22px;
+    padding:16px 18px;
+    border-radius:12px;
+    background:#eff6ff;
+    font-size:21px;
     font-weight:700;
-    color:#1f4e79;
+    color:#1d4ed8;
 }
 
-/* TOTAL VALUE */
-
-.bill-total span:last-child{
-    font-size:20px;
-}
-
-/* PAYMENT CARD */
+/* =========================
+   PAYMENT CARD
+========================= */
 
 .payment-card{
-background:#ffffff;
-padding:28px;
-margin-top:28px;
-border-radius:12px;
-border:1px solid #e5e9ef;
-box-shadow:0 6px 18px rgba(0,0,0,0.06);
-max-width:1250px;
-transition:0.2s;
+    padding:30px;
+    margin-top:28px;
+    max-width:1280px;
 }
-
-/* HEADER */
 
 .payment-card h3{
-margin-bottom:22px;
-font-size:20px;
-font-weight:600;
-color:#1f3a5f;
-border-bottom:1px solid #eef2f6;
-padding-bottom:10px;
+    margin-bottom:24px;
+    font-size:21px;
+    font-weight:700;
+    color:#0f172a;
+    border-bottom:1px solid #edf2f7;
+    padding-bottom:12px;
 }
 
-/* PAYMENT METHOD */
-
 .payment-method-row{
-display:flex;
-flex-direction:column;
-gap:6px;
-margin-bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:24px;
 }
 
 .payment-method-row label{
-font-size:13px;
-font-weight:600;
-color:#5b6b7c;
+    font-size:13px;
+    font-weight:600;
+    color:#475569;
 }
 
 .payment-method-row select{
-width:100%;
-max-width:240px;
-
-height:42px;              /* proper height */
-
-padding:0 12px;
-
-border:1px solid #d6dde5;
-border-radius:6px;
-
-font-size:14px;
-background:#ffffff;
-
-cursor:pointer;
-
-box-sizing:border-box;    /* prevents merging */
+    width:100%;
+    max-width:260px;
 }
 
-.payment-method-row select:focus{
-border-color:#1f4e79;
-outline:none;
-background:#fff;
-}
-
-/* BILL PREVIEW */
+/* =========================
+   BILL PREVIEW
+========================= */
 
 .bill-preview{
-background:#f8fafc;
-padding:18px;
-border-radius:8px;
-border:1px solid #e8edf3;
-margin-bottom:22px;
+    background:#f8fafc;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid #e2e8f0;
+    margin-bottom:24px;
 }
 
 .bill-preview h4{
-margin-bottom:12px;
-font-size:15px;
-font-weight:600;
-color:#2f3e50;
+    margin-bottom:14px;
+    font-size:16px;
+    font-weight:700;
+    color:#0f172a;
 }
 
-/* PREVIEW ROW */
-
 .preview-row{
-display:flex;
-justify-content:space-between;
-padding:7px 0;
-font-size:14px;
-color:#34495e;
-border-bottom:1px dashed #e6ebf0;
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    font-size:14px;
+    color:#475569;
+    border-bottom:1px dashed #dbe4ee;
 }
 
 .preview-row:last-child{
-border-bottom:none;
-font-weight:600;
+    border-bottom:none;
+    font-weight:700;
 }
 
-/* UPI PAYMENT BOX */
+/* =========================
+   PAYMENT BOXES
+========================= */
 
-.upi-box{
-background:#f9fbfd;
-border:1px solid #e5ecf3;
-padding:18px;
-border-radius:8px;
-text-align:center;
-margin-top:10px;
+.upi-box,
+.cash-box{
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    padding:24px;
+    border-radius:14px;
+    text-align:center;
+    margin-top:12px;
 }
 
-.upi-box h4{
-font-size:15px;
-margin-bottom:12px;
-color:#2c3e50;
+.upi-box h4,
+.cash-box h4{
+    font-size:16px;
+    margin-bottom:14px;
+    color:#0f172a;
 }
 
 .upi-qr{
-width:190px;
-border-radius:6px;
-border:1px solid #e5ecf3;
-padding:8px;
-background:#fff;
-margin-bottom:10px;
+    width:190px;
+    border-radius:10px;
+    border:1px solid #e2e8f0;
+    padding:10px;
+    background:#fff;
+    margin-bottom:12px;
 }
 
 .upi-box p{
-font-size:13px;
-color:#6c7a89;
-margin-bottom:12px;
+    font-size:13px;
+    color:#64748b;
+    margin-bottom:14px;
 }
 
-/* CASH BOX */
-
-.cash-box{
-background:#f9fbfd;
-border:1px solid #e5ecf3;
-padding:18px;
-border-radius:8px;
-margin-top:10px;
-text-align:center;
-}
-
-/* BUTTONS */
+/* =========================
+   PAYMENT BUTTONS
+========================= */
 
 .pay-btn{
-background:#27ae60;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:6px;
-font-size:14px;
-cursor:pointer;
-margin-right:10px;
-transition:0.2s;
+    background:#16a34a;
+    padding:11px 22px;
+    margin-right:10px;
 }
 
 .pay-btn:hover{
-background:#1f9d55;
-transform:translateY(-1px);
+    background:#15803d;
 }
 
 .cancel-btn{
-background:#e74c3c;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:6px;
-font-size:14px;
-cursor:pointer;
-transition:0.2s;
+    background:#dc2626;
+    padding:11px 22px;
 }
 
 .cancel-btn:hover{
-background:#d63031;
-transform:translateY(-1px);
+    background:#b91c1c;
 }
 
-@media print {
+/* =========================
+   PRINT
+========================= */
 
-body *{
-visibility:hidden;
+@media print{
+
+    body *{
+        visibility:hidden;
+    }
+
+    #printReceipt,
+    #printReceipt *{
+        visibility:visible;
+        width:100%;
+    }
+
+    body{
+        margin:20px;
+        background:#fff;
+    }
+
+    #printReceipt{
+        position:absolute;
+        left:0;
+        top:0;
+    }
+
 }
-
-#printReceipt, #printReceipt *{
-visibility:visible;
-width:100%;
-}
-
-body{
-margin:20px;
-}
-
-#printReceipt{
-position:absolute;
-left:0;
-top:0;
-}
-
-}
-
 </style>
 
 
@@ -856,11 +795,9 @@ top:0;
 
 <h3>Select Lab Test</h3>
 
-<select id="testSelect">
+<select id="testSelect" onchange="addTest()">
 <option value="">Select Test</option>
 </select>
-
-<button onclick="addTest()">Add Test</button>
 
 </div>
 
@@ -964,7 +901,7 @@ top:0;
 
 <h4>Scan & Pay</h4>
 
-<img src="/static/upi-qr.png" class="upi-qr">
+<img src="../static/payment-qr.png" class="upi-qr">
 
 <p>Scan QR using any UPI app</p>
 
@@ -1110,7 +1047,7 @@ color:#555;
 
 <div style="display:flex; align-items:center; gap:10px;">
 
-<img src="/static/logo.png" style="width:50px; height:50px; object-fit:contain;">
+<img src="/static/rl_report_logo.webp" style="width:50px; height:50px; object-fit:contain;">
 
 <div>
 <h1 style="margin:0;">RAPID LABS</h1>
@@ -1184,8 +1121,9 @@ Date : <span id="r_date"></span>
 <!-- TOTAL -->
 
 <div class="total-box">
-Total Amount : ₹ <span id="r_total"></span>
-<br>
+Subtotal : ₹ <span id="r_subtotal"></span><br>
+Discount : ₹ <span id="r_discount"></span><br>
+Total Amount : ₹ <span id="r_total"></span><br>
 Payment Method : <span id="r_payment"></span>
 </div>
 
@@ -1198,9 +1136,6 @@ Payment Method : <span id="r_payment"></span>
 Collected By : <b>Rapid Labs Staff</b>
 </div>
 
-<div class="seal">
-<img src="/static/lab-seal.png">
-</div>
 
 </div>
 
@@ -1221,10 +1156,18 @@ Thank You For Choosing Rapid Labs • Accurate Diagnostics You Can Trust
     let paymentMethod = "";
     let selectedTests = [];
 
-    function showAppointmentForm(){
+function showAppointmentForm(){
+
     document.getElementById("appointmentForm").style.display = "block";
+
+    if(document.getElementById("billNumber").value === ""){
+        generateBillNumber();
     }
 
+    if(document.getElementById("invoiceDate").value === ""){
+        setInvoiceDate();
+    }
+}
     
     let subtotal = 0;
 
@@ -1244,12 +1187,6 @@ Thank You For Choosing Rapid Labs • Accurate Diagnostics You Can Trust
 
     }
 
-    window.onload = function(){
-
-    generateBillNumber();
-        setInvoiceDate();
-
-    }
 
     async function searchPatient(){
 
@@ -1344,100 +1281,146 @@ Thank You For Choosing Rapid Labs • Accurate Diagnostics You Can Trust
 
 
     /* ADD TEST */
+function addTest(){
+
+    const select = document.getElementById("testSelect");
+
+    if(select.selectedIndex === 0) return;
+
+    const option = select.options[select.selectedIndex];
+
+    const testName = option.dataset.name;
+    const price = option.dataset.price;
+
+    if(!testName || !price) return;
+
+    let exists = selectedTests.some(
+        t => t.name === testName
+    );
+
+    if(exists){
+
+        alert("Test already added");
+        select.value = "";
+        return;
+    }
+
+    addTestRow(testName, price);
+
+    option.disabled = true;
+
+    select.value = "";
+
+    savePageData();
+}
 
 
-        function addTest(){
+async function saveTest(){
 
-        const select = document.getElementById("testSelect");
+    let testName = document.getElementById("testName").value.trim();
+    let price = document.getElementById("price").value.trim();
 
-        const option = select.options[select.selectedIndex];
+    if(testName === "" || price === ""){
 
-        const testName = option.text.split(" - ")[0];
+        alert("Enter test name and price");
+        return;
+    }
 
-        const price = option.dataset.price;
+    const btn = document.querySelector(".button-group button");
 
-        if(!testName) return;
+    btn.disabled = true;
+    btn.innerText = "Saving...";
 
-        /* call the correct function */
-        addTestRow(testName, price);
+    try{
 
+        const res = await fetch("/save-test",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                test_name:testName,
+                price:price
+            })
+        });
+
+        const data = await res.json();
+
+        document.getElementById("testMessage").innerText =
+            "✅ Test added successfully";
+
+        document.getElementById("testName").value = "";
+        document.getElementById("price").value = "";
+
+        await loadTests();
+
+    }catch(err){
+
+        console.log(err);
+
+        alert("Unable to save test");
+
+    }finally{
+
+        btn.disabled = false;
+        btn.innerText = "Save Test";
+    }
+}
+
+async function loadTests(){
+
+    try{
+
+        let select = document.getElementById("testSelect");
+
+        select.innerHTML = `
+            <option value="">Loading Tests...</option>
+        `;
+
+        const res = await fetch("/get-tests");
+        const data = await res.json();
+
+        select.innerHTML = `
+            <option value="">🔍 Select Lab Test</option>
+        `;
+
+        if(data.length === 0){
+
+            select.innerHTML += `
+                <option value="">No Tests Found</option>
+            `;
+
+            return;
         }
 
+        data.forEach(test=>{
 
-    function saveTest(){
+            let alreadyAdded = selectedTests.some(
+                t => t.name === test.name
+            );
 
-    let testName = document.getElementById("testName").value;
-    let price = document.getElementById("price").value;
+            select.innerHTML += `
+                <option
+                    value="${test.id}"
+                    data-name="${test.name}"
+                    data-price="${test.price}"
+                    ${alreadyAdded ? "disabled" : ""}
+                >
+                    ${test.name} - ₹${test.price}
+                </option>
+            `;
 
-    fetch("/save-test",{
-    method:"POST",
-    headers:{
-    "Content-Type":"application/json"
-    },
-    body:JSON.stringify({
-    test_name:testName,
-    price:price
-    })
-    })
+        });
 
-    .then(res=>res.json())
-    .then(data=>{
+    }catch(err){
 
-    document.getElementById("testMessage").innerText="Test added successfully";
+        console.log(err);
 
-    document.getElementById("testName").value="";
-    document.getElementById("price").value="";
-
-    loadTests();
-
-    })
-
-    .catch(err=>{
-    console.log(err);
-    });
-
+        document.getElementById("testSelect").innerHTML = `
+            <option value="">Unable to load tests</option>
+        `;
     }
-
-
-    function loadTests(){
-
-    fetch("/get-tests")
-
-    .then(res=>res.json())
-
-    .then(data=>{
-
-    let select=document.getElementById("testSelect");
-
-    select.innerHTML='<option value="">Select Test</option>';
-
-    data.forEach(test=>{
-
-    select.innerHTML+=`
-    <option value="${test.id}" data-price="${test.price}">
-    ${test.name} - ₹${test.price}
-    </option>
-    `;
-
-    });
-
-    })
-
-    .catch(err=>{
-    console.log(err);
-    });
-
-    }
-
-    window.onload=function(){
-
-    generateBillNumber();
-    setInvoiceDate();
-    loadTests();
-    loadPageData();
-
-    }
-
+}
     function addTestRow(name, price){
 
     let table = document.getElementById("testTable");
@@ -1468,26 +1451,30 @@ Thank You For Choosing Rapid Labs • Accurate Diagnostics You Can Trust
     savePageData();
 
     }
-
-    function removeTest(btn, price){
+function removeTest(btn, price){
 
     let row = btn.closest("tr");
 
-    let name = row.children[0].innerText;
+    let name = row.children[0].innerText.trim();
 
-    /* remove from array */
-    selectedTests = selectedTests.filter(t => t.name !== name);
+    selectedTests = selectedTests.filter(
+        t => t.name !== name
+    );
 
     row.remove();
 
     subtotal -= Number(price);
 
-    updateSubtotal();
-
-    
-
+    if(subtotal < 0){
+        subtotal = 0;
     }
 
+    updateSubtotal();
+
+    savePageData();
+
+    loadTests();
+}
 
     function updateSubtotal(){
 
@@ -1619,46 +1606,50 @@ Thank You For Choosing Rapid Labs • Accurate Diagnostics You Can Trust
 
     }
 
-
-    /* PRINT BILL */
+/* PRINT BILL */
 async function printBill(){
 
-await generateInvoice();
+    await generateInvoice();
 
-let currentInvoice = document.getElementById("billNumber").value;
+    let currentInvoice = document.getElementById("billNumber").value;
 
-let patientRow = document.querySelector("#patientTable tr");
+    let patientRow = document.querySelector("#patientTable tr");
 
-let patientName = "NIL";
-let patientPhone = "NIL";
-let age = "NIL";
-let gender = "NIL";
-let doctor = "NIL";
-let email = "NIL";
+    let patientName = "NIL";
+    let patientPhone = "NIL";
+    let age = "NIL";
+    let gender = "NIL";
+    let doctor = "NIL";
+    let email = "NIL";
 
-if(patientRow){
+    if(patientRow){
 
-let cols = patientRow.children;
+        let cols = patientRow.children;
 
-patientName = cols[1].innerText || "NIL";
-patientPhone = cols[2].innerText || "NIL";
-age = cols[3].innerText || "NIL";
-gender = cols[4].innerText || "NIL";
-doctor = cols[5].innerText || "NIL";
+        patientName = cols[1].innerText || "NIL";
+        patientPhone = cols[2].innerText || "NIL";
+        age = cols[3].innerText || "NIL";
+        gender = cols[4].innerText || "NIL";
+        doctor = cols[5].innerText || "NIL";
+    }
 
-}
+    email = document.getElementById("doctorEmail").value || "NIL";
 
-email = document.getElementById("doctorEmail").value || "NIL";
+    let totalAmount = document.getElementById("total").innerText;
+    let paymentMethod = document.getElementById("paymentMethod").value || "NIL";
 
-let totalAmount = document.getElementById("total").innerText;
-let paymentMethod = document.getElementById("paymentMethod").value || "NIL";
+    let subtotalAmount = subtotal;
 
+    let discountPercent = Number(document.getElementById("discount").value) || 0;
+    let discountAmount = (subtotalAmount * discountPercent) / 100;
+
+/* FILL PRINT TEMPLATE */
 /* FILL PRINT TEMPLATE */
 
 document.getElementById("r_invoice").innerText = currentInvoice;
 
 document.getElementById("r_date").innerText =
-new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString();
+    new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString();
 
 document.getElementById("r_patient").innerText = patientName;
 document.getElementById("r_phone").innerText = patientPhone;
@@ -1667,6 +1658,11 @@ document.getElementById("r_gender").innerText = gender;
 document.getElementById("r_doctor").innerText = doctor;
 document.getElementById("r_email").innerText = email;
 
+
+/* BILL AMOUNTS */
+
+document.getElementById("r_subtotal").innerText = subtotalAmount.toFixed(2);
+document.getElementById("r_discount").innerText = discountAmount.toFixed(2);
 document.getElementById("r_total").innerText = totalAmount;
 document.getElementById("r_payment").innerText = paymentMethod;
 
@@ -1698,6 +1694,7 @@ win.document.write(`
 <html>
 <head>
 <title>Rapid Labs Invoice</title>
+<base href="${window.location.origin}">
 </head>
 <body>
 ${printContents}
@@ -1741,55 +1738,6 @@ win.close();
     localStorage.removeItem("user");
     window.location.href="/";
     }
-
-
-    /* SEARCH PATIENT */
-function searchPatient(){
-
-let name = document.getElementById("patientName").value;
-
-if(name.length < 2) return;
-
-fetch("/search-patient?name="+name)
-.then(res=>res.json())
-.then(data=>{
-
-let box = document.getElementById("patientSuggestions");
-box.innerHTML="";
-
-if(data.length === 0){
-
-document.getElementById("patientStatus").innerText="New Patient";
-
-return;
-
-}
-
-data.forEach(p=>{
-
-let div = document.createElement("div");
-
-div.innerText = p.name + " - " + p.phone;
-
-div.onclick = function(){
-
-document.getElementById("patientName").value=p.name;
-document.getElementById("phone").value=p.phone;
-document.getElementById("age").value=p.age;
-document.getElementById("gender").value=p.gender;
-
-box.innerHTML="";
-document.getElementById("patientStatus").innerText="Existing Patient";
-
-}
-
-box.appendChild(div);
-
-})
-
-})
-
-}
 
 
 
@@ -1836,7 +1784,6 @@ localStorage.setItem("billingPage", JSON.stringify(pageData));
 function loadPageData(){
 
 let saved = localStorage.getItem("billingPage");
-
 if(!saved) return;
 
 let data = JSON.parse(saved);
@@ -1854,15 +1801,20 @@ document.getElementById("discount").value = data.discount;
 document.getElementById("paymentMethod").value = data.paymentMethod;
 
 selectedTests = data.tests || [];
-subtotal = data.subtotal || 0;
+subtotal = 0;
 
+document.getElementById("testTable").innerHTML = "";
+
+/* IMPORTANT FIX */
 selectedTests.forEach(t=>{
-addTestRow(t.name, t.price);
+
+    addTestRow(t.name, t.price);
+
 });
 
 updateSubtotal();
-
 }
+
 
 function clearPatientForm(){
 
@@ -1875,6 +1827,35 @@ document.getElementById("patientStatus").innerText="";
 document.getElementById("patientSuggestions").innerHTML="";
 
 }
+
+
+function renderTestRow(name, price){
+
+    let table = document.getElementById("testTable");
+
+    let row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${name}</td>
+        <td>${price}</td>
+        <td>
+            <button class="delete-btn" onclick="removeTest(this, ${price})">🗑</button>
+        </td>
+    `;
+
+    table.appendChild(row);
+}
+
+
+window.onload = async function(){
+
+    generateBillNumber();
+    setInvoiceDate();
+
+    loadPageData();
+    await loadTests();
+
+};
 
 
     </script>

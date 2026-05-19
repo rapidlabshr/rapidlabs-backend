@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Test Ongoing - Rapid Labs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+    --primary:#0f3f7a;
+    --primary-dark:#0b2f5a;
+
+    --bg:#f5f7fa;
+    --card:#ffffff;
+
+    --text:#111827;
+    --muted:#6b7280;
+
+    --border:#e5e7eb;
+    --border-dark:#d1d5db;
+
+    --success:#166534;
+    --danger:#b91c1c;
+    --info:#1d4ed8;
+    --warning:#92400e;
+
+    --radius:10px;
+    --shadow:0 2px 8px rgba(15,23,42,.06);
+}
+
+/* RESET */
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    font-size:14px;
+}
+
+/* HEADER */
+.header{
+    height:56px;
+    background:#ffffff;
+    color:var(--primary);
+    border-bottom:1px solid var(--border);
+    padding:0 24px;
+
+    display:flex;
+    align-items:center;
+
+    font-size:18px;
+    font-weight:800;
+}
+
+/* PAGE */
+.wrapper{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:18px;
+}
+
+/* CARD */
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:16px;
+    margin-bottom:14px;
+    box-shadow:var(--shadow);
+}
+
+.card h3{
+    margin:0 0 12px;
+    color:var(--text);
+    font-size:16px;
+    font-weight:800;
+}
+
+/* BUTTONS */
+button{
+    border:none;
+    border-radius:7px;
+    padding:9px 14px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:700;
+    transition:.15s ease;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:var(--primary-dark);
+}
+
+.btn-secondary{
+    background:#e5e7eb;
+    color:#111827;
+}
+
+.btn-success{
+    background:var(--success);
+    color:#fff;
+}
+
+.btn-danger{
+    background:var(--danger);
+    color:#fff;
+}
+
+/* INFO GRID */
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.info-box{
+    background:#fafbfc;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px;
+}
+
+.info-box small{
+    display:block;
+    color:var(--muted);
+    margin-bottom:5px;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.3px;
+}
+
+.info-box b{
+    font-size:14px;
+    color:var(--text);
+    font-weight:800;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+}
+
+th{
+    background:#f3f4f6;
+    color:#000;
+    padding:10px 12px;
+    text-align:left;
+    font-size:12px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.3px;
+    border-bottom:1px solid var(--border-dark);
+}
+
+td{
+    padding:10px 12px;
+    border-bottom:1px solid var(--border);
+    color:#111827;
+    font-weight:600;
+}
+
+tbody tr:hover td{
+    background:#fafafa;
+}
+
+/* STATUS */
+.status{
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.3px;
+    background:#fff7ed;
+    color:var(--warning);
+}
+
+.status.running{
+    background:#eff6ff;
+    color:var(--info);
+}
+
+.status.done{
+    background:#ecfdf5;
+    color:var(--success);
+}
+
+/* NOTICE */
+.notice{
+    background:#fffdf5;
+    border:1px solid #ead8a8;
+    color:#604600;
+    padding:10px 12px;
+    border-radius:8px;
+    margin-bottom:12px;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* EMPTY */
+.empty{
+    text-align:center;
+    color:var(--muted);
+    padding:24px;
+    font-weight:600;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .info-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:520px){
+    .wrapper{
+        padding:12px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .header{
+        padding:0 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">Test Ongoing - Sample Processing</div>
+
+<div class="wrapper">
+
+    <div style="margin-bottom:15px;">
+        <button class="btn-secondary" onclick="goBack()">← Back to Barcode</button>
+        <button class="btn-primary" onclick="loadTestData()">Refresh</button>
+    </div>
+
+    <div id="noticeBox" class="notice" style="display:none;"></div>
+
+    <div class="card">
+        <h3>Sample Details</h3>
+        <div class="info-grid">
+            <div class="info-box"><small>Invoice No</small><b id="invoiceNo">-</b></div>
+            <div class="info-box"><small>Barcode No</small><b id="barcodeNo">-</b></div>
+            <div class="info-box"><small>Patient</small><b id="patientName">-</b></div>
+            <div class="info-box"><small>Client</small><b id="clientName">-</b></div>
+            <div class="info-box"><small>Total Tests</small><b id="totalTests">0</b></div>
+            <div class="info-box"><small>Running Time</small><b id="totalTimer">0 sec</b></div>
+            <div class="info-box"><small>Status</small><b id="overallStatus">Ready</b></div>
+            <div class="info-box"><small>Completed</small><b id="completedCount">0</b></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Tests To Run</h3>
+        <div id="testContainer">
+            <div class="empty">Loading test details...</div>
+        </div>
+    </div>
+
+    
+    <div class="card" id="reportSection" style="display:none;">
+    <h3>Report Management</h3>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="goToReportEntry()">📄 Create Report</button>
+
+        <input type="file" id="reportFile" accept=".pdf,.jpg,.jpeg,.png" style="display:none;">
+        <button class="btn-success" onclick="document.getElementById('reportFile').click()">⬆ Upload Report</button>
+
+        <button class="btn-secondary" onclick="viewReport()">👁 View Report</button>
+        <button class="btn-danger" onclick="deleteReport()">🗑 Delete Report</button>
+        </div>
+
+        <div id="reportStatus" style="margin-top:12px;font-size:13px;color:#555;">
+            No report created/uploaded yet
+        </div>
+    </div>
+        
+
+</div>
+
+<script>
+let invoiceNo = "";
+let barcodeNo = "";
+let testData = null;
+let tests = [];
+let totalSeconds = 0;
+let totalInterval = null;
+let uploadedReport = null;
+
+function getParams(){
+    const params = new URLSearchParams(window.location.search);
+    invoiceNo = params.get("invoice_no") || "";
+    barcodeNo = params.get("barcode") || "";
+}
+
+function goBack(){
+    if(invoiceNo){
+        window.location.href = "/barcode?invoice_no=" + invoiceNo;
+    }else{
+        window.location.href = "/clientprocess";
+    }
+}
+
+function showNotice(msg){
+    const box = document.getElementById("noticeBox");
+    box.innerText = msg;
+    box.style.display = "block";
+}
+
+function hideNotice(){
+    const box = document.getElementById("noticeBox");
+    box.innerText = "";
+    box.style.display = "none";
+}
+
+async function loadTestData(){
+    hideNotice();
+    getParams();
+
+    if(!invoiceNo){
+        showNotice("Invoice number missing.");
+        document.getElementById("testContainer").innerHTML = `<div class="empty">Invoice missing</div>`;
+        return;
+    }
+
+    document.getElementById("invoiceNo").innerText = invoiceNo;
+    document.getElementById("barcodeNo").innerText = barcodeNo || "-";
+
+    try{
+        const res = await fetch(`/api/barcode-data/${invoiceNo}`);
+        const data = await res.json();
+
+        if(!data.success){
+            showNotice(data.message || "Unable to load test data");
+            return;
+        }
+
+        testData = data;
+
+        let selectedSample = null;
+
+        if(barcodeNo){
+            selectedSample = (data.samples || []).find(s => String(s.barcode).toLowerCase() === barcodeNo.toLowerCase());
+        }
+
+        if(!selectedSample){
+            selectedSample = (data.samples || [])[0];
+        }
+
+        tests = (selectedSample.tests || []).map((t, index) => ({
+            id: index + 1,
+            test_name: t.test_name || "-",
+            service_code: t.service_code || "-",
+            tat: t.tat || "-",
+            status: "Ready",
+            seconds: 0,
+            interval: null
+        }));
+
+        document.getElementById("patientName").innerText = data.patient_name || "-";
+        document.getElementById("clientName").innerText = data.client_name || "-";
+        document.getElementById("totalTests").innerText = tests.length;
+        document.getElementById("overallStatus").innerText = "Ready";
+        document.getElementById("completedCount").innerText = "0";
+
+        renderTests();
+        startTotalTimer();
+
+    }catch(err){
+        console.error(err);
+        showNotice("Server error while loading test ongoing data.");
+    }
+}
+
+function renderTests(){
+    const box = document.getElementById("testContainer");
+
+    if(tests.length === 0){
+        box.innerHTML = `<div class="empty">No tests found</div>`;
+        return;
+    }
+
+    box.innerHTML = `
+        <table>
+            <thead>
+                <tr>
+                    <th>Test Name</th>
+                    <th>Service Code</th>
+                    <th>TAT</th>
+                    <th>Running Time</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${tests.map((t, index) => `
+                    <tr>
+                        <td>${escapeHtml(t.test_name)}</td>
+                        <td>${escapeHtml(t.service_code)}</td>
+                        <td>${escapeHtml(t.tat)}</td>
+                        <td id="timer_${index}">${formatTime(t.seconds)}</td>
+                        <td><span id="status_${index}" class="status">${t.status}</span></td>
+                        <td>
+                            <button class="btn-primary" onclick="startTest(${index})">Start</button>
+                            <button class="btn-secondary" onclick="stopTest(${index})">Stop</button>
+                            <button class="btn-success" onclick="completeTest(${index})">Complete</button>
+                        </td>
+                    </tr>
+                `).join("")}
+            </tbody>
+        </table>
+    `;
+}
+
+
+function getTatSeconds(tat){
+    tat = String(tat || "").toUpperCase().trim();
+
+    const num = parseFloat(tat);
+    if(!num) return 0;
+
+    if(tat.includes("MIN")) return num * 60;
+    if(tat.includes("HR") || tat.includes("HRS") || tat.includes("HOUR")) return num * 60 * 60;
+    if(tat.includes("SEC")) return num;
+
+    return 0;
+}
+
+function formatTime(sec){
+    sec = Number(sec || 0);
+
+    const h = Math.floor(sec / 3600);
+    const m = Math.floor((sec % 3600) / 60);
+    const s = sec % 60;
+
+    if(h > 0) return `${h}h ${m}m ${s}s`;
+    if(m > 0) return `${m}m ${s}s`;
+    return `${s} sec`;
+}
+
+
+function startTest(index){
+    const test = tests[index];
+
+    if(test.status === "Completed"){
+        alert("This test already completed");
+        return;
+    }
+
+    if(test.status === "Time Done"){
+        alert("TAT time already done. Please check sample and click Complete manually.");
+        return;
+    }
+
+    if(test.interval){
+        return;
+    }
+
+    const tatSeconds = getTatSeconds(test.tat);
+
+    test.status = "Running";
+    document.getElementById("overallStatus").innerText = "Testing Running";
+
+    fetch("/api/update-testing-status", {
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+        barcode: barcodeNo,
+        status: "Testing On Process"
+    })
+    });
+
+
+    const statusEl = document.getElementById("status_" + index);
+    statusEl.innerText = "Running";
+    statusEl.className = "status running";
+
+    test.interval = setInterval(() => {
+        test.seconds++;
+        document.getElementById("timer_" + index).innerText = formatTime(test.seconds);
+
+        if(tatSeconds > 0 && test.seconds >= tatSeconds){
+            clearInterval(test.interval);
+            test.interval = null;
+
+            test.status = "Time Done";
+
+            statusEl.innerText = "Time Done - Check Sample";
+            statusEl.className = "status done";
+
+            document.getElementById("overallStatus").innerText = "TAT Time Done - Check Sample";
+
+            alert(test.test_name + " TAT time done. Check sample, then click Complete.");
+        }
+
+    }, 1000);
+}
+
+function completeTest(index){
+    const test = tests[index];
+
+    if(test.interval){
+        clearInterval(test.interval);
+        test.interval = null;
+    }
+
+    test.status = "Completed";
+
+    const statusEl = document.getElementById("status_" + index);
+    statusEl.innerText = "Completed";
+    statusEl.className = "status done";
+
+    updateCompletedCount();
+
+    if(tests.every(t => t.status === "Completed")){
+
+        document.getElementById("overallStatus").innerText = "All Tests Completed";
+
+        // 🔥 UPDATE BACKEND STATUS
+        fetch("/api/update-testing-status", {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                barcode: barcodeNo,
+                status: "Testing Done"
+            })
+        });
+
+        stopTotalTimer();
+
+        document.getElementById("reportSection").style.display = "block";
+
+        document.getElementById("reportStatus").innerText =
+            "Tests completed. Create or upload report.";
+
+        alert("All tests completed. Now create/upload report.");
+    }
+}
+
+function updateCompletedCount(){
+    const count = tests.filter(t => t.status === "Completed").length;
+    document.getElementById("completedCount").innerText = count;
+}
+
+function startTotalTimer(){
+    stopTotalTimer();
+    totalSeconds = 0;
+    document.getElementById("totalTimer").innerText = "0 sec";
+
+    totalInterval = setInterval(() => {
+        totalSeconds++;
+        document.getElementById("totalTimer").innerText = totalSeconds + " sec";
+    }, 1000);
+}
+
+function stopTotalTimer(){
+    if(totalInterval){
+        clearInterval(totalInterval);
+        totalInterval = null;
+    }
+}
+
+function escapeHtml(value){
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+
+function createReport(){
+    const patient = document.getElementById("patientName").innerText;
+    const client = document.getElementById("clientName").innerText;
+
+    const content = `
+RAPID LABS REPORT
+
+Invoice No: ${invoiceNo}
+Barcode No: ${barcodeNo}
+Patient: ${patient}
+Client: ${client}
+Total Running Time: ${totalSeconds} sec
+
+Tests:
+${tests.map(t => `- ${t.test_name} | ${t.status} | ${t.seconds} sec`).join("\n")}
+
+Report Status: Created
+`;
+
+    const blob = new Blob([content], {type:"text/plain"});
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = invoiceNo + "_report.txt";
+    a.click();
+
+    document.getElementById("reportStatus").innerText = "Report created and downloaded.";
+}
+
+document.getElementById("reportFile").addEventListener("change", async function(){
+    const file = this.files[0];
+
+    if(!file){
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("invoice_no", invoiceNo);
+    formData.append("barcode", barcodeNo);
+
+    try{
+        const res = await fetch("/api/upload-report", {
+            method:"POST",
+            body:formData
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+
+            uploadedReport = data.file;
+
+            document.getElementById("reportStatus").innerText =
+                "Uploaded: " + data.file;
+
+            document.getElementById("overallStatus").innerText =
+                "Report Uploaded";
+
+            // 🔥 UPDATE BACKEND STATUS
+            fetch("/api/update-testing-status", {
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    barcode: barcodeNo,
+                    status: "Report Ready"
+                })
+            });
+
+        }else{
+            alert(data.message || "Upload failed");
+        }
+
+    }catch(err){
+        console.error(err);
+        alert("Server error while uploading report");
+    }
+});
+
+function viewReport(){
+    if(!uploadedReport){
+        alert("No uploaded report found");
+        return;
+    }
+
+    window.open("/uploads/" + uploadedReport, "_blank");
+}
+
+async function deleteReport(){
+    if(!uploadedReport){
+        alert("No uploaded report to delete");
+        return;
+    }
+
+    if(!confirm("Delete this report?")){
+        return;
+    }
+
+    try{
+        const res = await fetch("/api/delete-report", {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({file: uploadedReport})
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+            uploadedReport = null;
+            document.getElementById("reportFile").value = "";
+            document.getElementById("reportStatus").innerText = "Report deleted.";
+            document.getElementById("overallStatus").innerText = "All Tests Completed";
+        }else{
+            alert(data.message || "Delete failed");
+        }
+
+    }catch(err){
+        console.error(err);
+        alert("Server error while deleting report");
+    }
+}
+
+
+function stopTest(index){
+    const test = tests[index];
+
+    if(!test.interval){
+        alert("Test is not running");
+        return;
+    }
+
+    clearInterval(test.interval);
+    test.interval = null;
+
+    test.status = "Stopped";
+
+    const statusEl = document.getElementById("status_" + index);
+    statusEl.innerText = "Stopped";
+    statusEl.className = "status";
+
+    document.getElementById("overallStatus").innerText = "Test Paused";
+
+    fetch("/api/update-testing-status", {
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+        barcode: barcodeNo,
+        status: "Testing Paused"
+    })
+});
+
+    alert("Test stopped. You can resume or complete.");
+}
+
+function goToReportEntry(){
+
+    // 🔥 UPDATE STATUS
+    fetch("/api/update-testing-status", {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            barcode: barcodeNo,
+            status: "Report Ongoing"
+        })
+    })
+    .then(() => {
+
+        window.location.href =
+            "/reportentry?invoice_no=" +
+            invoiceNo +
+            "&barcode=" +
+            encodeURIComponent(barcodeNo);
+
+    });
+
+}
+
+loadTestData();
+</script>
+
+</body>
+</html>

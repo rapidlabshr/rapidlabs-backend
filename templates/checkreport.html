@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Investigation Report</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+    }
+
+    /* Top Header */
+    .topbar {
+        background: #ffffff;
+        border-bottom: 2px solid #1aa39c;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .logo img {
+        height: 58px;   /* bigger size */
+        width: auto;
+        object-fit: contain;
+    }
+
+
+    .menu {
+        display: flex;
+        gap: 20px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* Page Title */
+    .title-bar {
+        padding: 10px 20px;
+        font-weight: bold;
+        font-size: 16px;
+        background: #ffffff;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Form Container */
+    .container {
+        padding: 20px;
+        background: #ffffff;
+        margin: 20px;
+        border: 1px solid #ddd;
+    }
+
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        min-width: 160px;
+    }
+
+    label {
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    input, select {
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 13px;
+    }
+
+    .buttons {
+        margin-top: 10px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        border: none;
+        cursor: pointer;
+        font-size: 13px;
+        border-radius: 3px;
+        margin-right: 5px;
+    }
+
+    .btn-search {
+        background: #1aa39c;
+        color: #fff;
+    }
+
+    .btn-clear {
+        background: #ccc;
+    }
+
+    .more-options {
+        color: #1aa39c;
+        font-size: 13px;
+        cursor: pointer;
+        margin-bottom: 30px;
+        display: inline-block;
+    }
+
+    .user-info{
+    font-size:14px;
+    font-weight:600;
+    color:#333;
+}
+
+.filter-card{
+    display:none;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    padding:15px;
+    margin-top:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    max-width:400px;
+}
+
+.filter-row{
+    display:flex;
+    gap:15px;
+    align-items:end;
+}
+
+.filter-card input{
+    padding:8px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.btn-search{
+    background:#1aa39c;
+    padding:8px 16px;
+    border-radius:6px;
+}
+
+.btn-clear{
+    background:#e5e7eb;
+    padding:8px 16px;
+    border-radius:6px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Top Navigation -->
+<div class="topbar">
+    <div class="logo">
+        <img src="/static/images/icons/logorapidrep.jpg" alt="Rapid Labs Logo">
+
+    </div>
+        <!-- RIGHT SIDE USER -->
+    <div class="user-info" id="userInfo"></div>
+</div>
+
+<!-- Title -->
+<div class="title-bar">
+    Investigation Report
+</div>
+
+<!-- Form -->
+<div class="container">
+
+   
+
+    <div class="form-row">
+
+        <div class="form-group">
+            <label>Patient Name</label>
+            <input type="text" id="search_patient" placeholder="Patient Name">
+        </div>
+
+        <div class="form-group">
+            <label>Test Name</label>
+            <input type="text" id="search_test" placeholder="Test Name">
+        </div>
+
+       <div class="form-group">
+            <label>Mobile number</label>
+            <input type="text" id="search_mobile" placeholder="Mobile Number">
+        </div>
+
+    </div>
+
+     <div class="more-options" id="toggleOptions">+ More Search Options</div>
+
+    <div id="extraFilters" class="filter-card">
+
+        <div class="filter-row">
+            <div class="form-group">
+                <label>Select Date</label>
+                <input type="date" id="search_date">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="buttons">
+        <button class="btn btn-search">Search</button>
+        <button class="btn btn-clear">Clear</button>
+    </div>
+
+    
+        <div id="reportList"></div>
+</div>
+
+
+<script>
+const clientId = localStorage.getItem("client_id");
+
+if (!clientId) {
+  alert("Please login first");
+  window.location.href = "/client-login";
+}
+
+// fetch reports
+let allReports = [];
+
+fetch(`/get-reports/${clientId}`)
+.then(res => res.json())
+
+.then(data => {
+
+     allReports = data;
+
+  let container = document.getElementById("reportList");
+
+  if (!container) {
+    console.error("reportList not found");
+    return;
+  }
+    renderReports(allReports);
+
+ 
+
+
+
+})
+.catch(err => {
+  console.error(err);
+  alert("Error fetching reports");
+});
+
+// show logged-in user name
+const clientName = localStorage.getItem("client_name");
+
+if(clientName){
+    document.getElementById("userInfo").innerText = "👤 " + clientName;
+}
+
+window.addEventListener("storage", function(e){
+    if(e.key === "refresh_reports"){
+
+        showNotification();
+
+        // refresh data WITHOUT full page reload
+        fetch(`/get-reports/${clientId}`)
+        .then(res => res.json())
+        .then(data => {
+            allReports = data;
+            renderReports(allReports);
+        });
+
+    }
+});
+
+
+function renderReports(data){
+
+    let container = document.getElementById("reportList");
+
+    container.innerHTML = "";
+
+    if (data.length === 0) {
+        container.innerHTML = "<p>No reports found</p>";
+        return;
+    }
+
+    data.forEach(report => {
+        container.innerHTML += `
+            <div style="margin-top:15px; padding:15px; border:1px solid #ccc; border-radius:6px; background:#fafafa;">
+
+                <p><b>Patient Name:</b> ${report.patient_name}</p>
+
+                <p><b>Test Name:</b> ${report.test}</p>
+
+                <p><b>Mobile Number:</b> ${report.mobile || "-"}</p>
+
+                <p><b>Date/Time:</b> ${report.date}</p>
+
+                <p>
+                    Please click the link to download report:
+                    <a href="${report.file}" target="_blank">Download Report</a>
+                </p>
+
+            </div>
+        `;
+    });
+}
+
+
+
+function filterReports(){
+
+    const p = document.getElementById("search_patient").value.toLowerCase();
+    const t = document.getElementById("search_test").value.toLowerCase();
+    const m = document.getElementById("search_mobile").value.toLowerCase();
+    const d = document.getElementById("search_date")?.value;   // NEW
+
+    let filtered = allReports.filter(r => 
+        (!p || r.patient_name.toLowerCase().includes(p)) &&
+        (!t || r.test.toLowerCase().includes(t)) &&
+        (!m || (r.mobile || "").toLowerCase().includes(m)) &&
+        (!d || r.date.startsWith(d))   // NEW DATE FILTER
+    );
+
+    renderReports(filtered);
+}
+
+["search_patient", "search_test", "search_mobile"].forEach(id => {
+    document.getElementById(id).addEventListener("input", function(){
+
+        if(this.value.length >= 3 || this.value.length === 0){
+            filterReports();
+        }
+
+    });
+});
+
+document.querySelector(".btn-clear").addEventListener("click", () => {
+
+    document.getElementById("search_patient").value = "";
+    document.getElementById("search_test").value = "";
+    document.getElementById("search_mobile").value = "";
+    document.getElementById("search_date").value = "";
+
+    renderReports(allReports);
+});
+
+document.querySelector(".btn-search").addEventListener("click", () => {
+    filterReports();   // run search immediately
+});
+
+
+document.getElementById("toggleOptions").addEventListener("click", () => {
+    const box = document.getElementById("extraFilters");
+
+    box.style.display = (box.style.display === "block") ? "none" : "block";
+});
+
+document.addEventListener("change", function(e){
+    if(e.target.id === "search_date"){
+        filterReports();
+    }
+});
+
+function showNotification(){
+    const box = document.getElementById("notifyBox");
+
+    box.style.display = "block";
+
+    setTimeout(() => {
+        box.style.display = "none";
+    }, 3000); // hide after 3 sec
+}
+
+
+
+</script>
+
+<div id="notifyBox" style="
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#1aa39c;
+    color:white;
+    padding:12px 18px;
+    border-radius:6px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    display:none;
+    z-index:999;
+    font-size:14px;
+">
+    New report is ready ✅
+</div>
+
+</body>
+</html>

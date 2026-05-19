@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Lab Dashboard</title>
+    <style>
+        body { font-family: Arial; background:#f4f6f8; padding:30px; }
+        .card { background:white; padding:20px; margin:15px 0; border-radius:10px; box-shadow:0 2px 8px #ddd; }
+        .status { padding:6px 12px; border-radius:20px; font-weight:bold; }
+        .Collected { background:#fff3cd; }
+        .Running { background:#cfe2ff; }
+        .ReportReady { background:#d1e7dd; }
+    </style>
+</head>
+<body>
+
+<h2>Client Lab Dashboard</h2>
+
+<input id="client_id" placeholder="Enter Client ID" value="1">
+<button onclick="loadSamples()">Load Samples</button>
+
+<div id="samples"></div>
+
+<script>
+function loadSamples() {
+    const clientId = document.getElementById("client_id").value;
+
+    fetch("/client-samples/" + clientId)
+    .then(res => res.json())
+    .then(data => {
+        let html = "";
+
+        if (data.length === 0) {
+            html = "<p>No samples found.</p>";
+        }
+
+        data.forEach(item => {
+            let statusClass = item.status.replaceAll(" ", "");
+
+            html += `
+                <div class="card">
+                    <h3>${item.patient_name}</h3>
+                    <p><b>Barcode:</b> ${item.barcode}</p>
+                    <p>
+                        <span class="status ${statusClass}">
+                            ${item.status}
+                        </span>
+                    </p>
+                </div>
+            `;
+        });
+
+        document.getElementById("samples").innerHTML = html;
+    });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<h2>Create Sample</h2>
+
+<input id="name" placeholder="Patient Name"><br><br>
+<input id="mobile" placeholder="Mobile Number"><br><br>
+
+<select id="gender">
+  <option value="">Select Gender</option>
+  <option>Male</option>
+  <option>Female</option>
+  <option>Other</option>
+</select><br><br>
+
+<input id="client_id" placeholder="Client ID" value="1"><br><br>
+
+<input id="test_ids" placeholder="Test IDs example: 1,2"><br><br>
+
+<button onclick="createSample()">Create Sample</button>
+
+<h3 id="result"></h3>
+
+<script>
+function createSample() {
+  const data = {
+    name: document.getElementById("name").value,
+    mobile: document.getElementById("mobile").value,
+    gender: document.getElementById("gender").value,
+    client_id: Number(document.getElementById("client_id").value),
+    test_ids: document.getElementById("test_ids").value
+      .split(",")
+      .map(x => Number(x.trim()))
+      .filter(Boolean)
+  };
+
+  fetch("/create-sample", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("result").innerHTML =
+      "Sample Created ✅<br>Barcode: <b>" + data.barcode + "</b>";
+  });
+}
+</script>

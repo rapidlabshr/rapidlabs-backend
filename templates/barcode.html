@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Barcode - Sample Processing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+<style>
+:root{
+    --primary:#0f3f7a;
+    --primary-dark:#0b2f5a;
+
+    --bg:#f5f7fa;
+    --card:#ffffff;
+
+    --text:#111827;
+    --muted:#6b7280;
+
+    --border:#dfe5ec;
+    --border-light:#edf1f5;
+
+    --success:#166534;
+    --warning:#92400e;
+    --info:#075985;
+
+    --radius:10px;
+    --shadow:0 2px 8px rgba(15,23,42,.06);
+}
+
+/* RESET */
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    min-height:100%;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    font-size:13px;
+}
+
+/* HEADER */
+.header{
+    height:54px;
+    background:#ffffff;
+    color:var(--text);
+    border-bottom:1px solid var(--border);
+    padding:0 22px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header h1{
+    margin:0;
+    font-size:18px;
+    font-weight:800;
+    color:var(--primary);
+}
+
+.header span{
+    font-size:12px;
+    color:var(--muted);
+    font-weight:600;
+}
+
+/* PAGE */
+.wrapper{
+    width:100%;
+    max-width:100%;
+    padding:14px 18px;
+}
+
+/* TOP ACTIONS */
+.top-actions{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+/* BUTTONS */
+button{
+    border:none;
+    border-radius:7px;
+    padding:8px 13px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:700;
+    transition:.15s ease;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:#fff;
+}
+
+.btn-secondary{
+    background:#e5e7eb;
+    color:#111827;
+}
+
+.btn-success{
+    background:#166534;
+    color:#fff;
+}
+
+/* CARD */
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:14px;
+    margin-bottom:12px;
+    box-shadow:var(--shadow);
+}
+
+.card h3{
+    margin:0 0 10px;
+    font-size:15px;
+    font-weight:800;
+    color:#111827;
+}
+
+/* INFO GRID */
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.info-box{
+    background:#fafbfc;
+    border:1px solid var(--border-light);
+    border-radius:8px;
+    padding:10px 12px;
+}
+
+.info-box small{
+    display:block;
+    color:var(--muted);
+    margin-bottom:4px;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.25px;
+}
+
+.info-box b{
+    font-size:13px;
+    color:#111827;
+    font-weight:800;
+}
+
+/* NOTICE */
+.notice{
+    background:#fffdf5;
+    border:1px solid #ead8a8;
+    color:#604600;
+    padding:9px 12px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+/* SAMPLE GRID */
+.sample-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+/* SAMPLE CARD */
+.sample-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px;
+    box-shadow:var(--shadow);
+    page-break-inside:avoid;
+}
+
+/* SAMPLE HEADER */
+.sample-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:8px;
+    margin-bottom:8px;
+}
+
+.sample-head h4{
+    margin:0;
+    font-size:14px;
+    font-weight:800;
+    color:#111827;
+}
+
+/* STATUS */
+.status{
+    padding:4px 9px;
+    border-radius:999px;
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.35px;
+    white-space:nowrap;
+}
+
+.pending{
+    background:#fff7ed;
+    color:var(--warning);
+}
+
+.completed{
+    background:#ecfdf5;
+    color:var(--success);
+}
+
+.processing{
+    background:#eff6ff;
+    color:var(--info);
+}
+
+/* BARCODE */
+.barcode-box{
+    text-align:center;
+    border:1px dashed #b8c2cc;
+    border-radius:8px;
+    padding:8px;
+    background:#fafbfc;
+    margin:8px 0;
+}
+
+.barcode-box svg,
+.barcode-box canvas,
+.barcode-box img{
+    max-width:100%;
+    height:auto;
+}
+
+.barcode-value{
+    margin-top:4px;
+    font-size:12px;
+    font-weight:800;
+    color:#111827;
+    letter-spacing:.35px;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:12px;
+    margin-top:8px;
+}
+
+th{
+    background:#f3f4f6;
+    color:#000;
+    padding:8px 9px;
+    text-align:left;
+    font-size:11px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.3px;
+    border-bottom:1px solid #cfd6df;
+}
+
+td{
+    padding:7px 9px;
+    border-bottom:1px solid var(--border-light);
+    color:#111827;
+    font-weight:600;
+}
+
+tbody tr:hover td{
+    background:#fafafa;
+}
+
+tbody tr:last-child td{
+    border-bottom:none;
+}
+
+/* EMPTY */
+.empty{
+    text-align:center;
+    color:#6b7280;
+    padding:20px;
+    font-weight:600;
+}
+
+/* FULL DISPLAY / LESS SCROLL */
+@media(min-width:1200px){
+    .wrapper{
+        padding:12px 16px;
+    }
+
+    .card{
+        padding:12px;
+        margin-bottom:10px;
+    }
+
+    .sample-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .info-box{
+        padding:9px 10px;
+    }
+
+    .barcode-box{
+        padding:7px;
+        margin:7px 0;
+    }
+
+    th{
+        padding:7px 8px;
+    }
+
+    td{
+        padding:6px 8px;
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .info-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .sample-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+    .wrapper{
+        padding:12px;
+    }
+
+    .header{
+        height:auto;
+        padding:12px 16px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:4px;
+    }
+
+    .top-actions{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <div>Barcode - Sample Processing</div>
+    <span>Rapid Labs Internal</span>
+</div>
+
+<div class="wrapper">
+    <div class="top-actions">
+        <div>
+            <button class="btn-secondary" onclick="goBack()">← Back to Billing</button>
+            <button class="btn-primary" onclick="loadBarcodeData()">Refresh</button>
+        </div>
+
+        <div style="display:flex;gap:8px;">
+            <input id="barcodeSearchInput" 
+                placeholder="Enter / paste barcode no"
+                style="padding:9px;border:1px solid #ccc;border-radius:5px;width:260px;">
+            <button class="btn-primary" onclick="searchBarcode()">Search</button>
+            <button class="btn-secondary" onclick="clearSearch()">Clear</button>
+        </div>
+    </div>
+
+    <div id="noticeBox" class="notice" style="display:none;"></div>
+
+    <div class="card">
+        <h3>Bill Details</h3>
+        <div class="info-grid">
+            <div class="info-box"><small>Invoice No</small><b id="invoiceNo">-</b></div>
+            <div class="info-box"><small>Patient Name</small><b id="patientName">-</b></div>
+            <div class="info-box"><small>Patient Mobile</small><b id="patientMobile">-</b></div>
+            <div class="info-box"><small>Client</small><b id="clientName">-</b></div>
+            <div class="info-box"><small>Total Tests</small><b id="totalTests">0</b></div>
+            <div class="info-box"><small>Total Samples</small><b id="totalSamples">0</b></div>
+            <div class="info-box"><small>Bill Status</small><b id="billStatus">Billing Done</b></div>
+            <div class="info-box"><small>Sample Status</small><b id="sampleStatus">Barcode Pending</b></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Sample Barcodes</h3>
+        <div id="sampleContainer" class="sample-grid">
+            <div class="empty">Loading barcode data...</div>
+        </div>
+    </div>
+</div>
+
+<script>
+let invoiceNo = "";
+let billData = null;
+
+function getInvoiceFromUrl(){
+    const params = new URLSearchParams(window.location.search);
+    return params.get("invoice_no") || params.get("invoice") || "";
+}
+
+function goBack(){
+    window.location.href = "/clientprocess";
+}
+
+function showNotice(message){
+    const box = document.getElementById("noticeBox");
+    box.innerText = message;
+    box.style.display = "block";
+}
+
+function hideNotice(){
+    const box = document.getElementById("noticeBox");
+    box.innerText = "";
+    box.style.display = "none";
+}
+
+async function loadBarcodeData(){
+    hideNotice();
+    invoiceNo = getInvoiceFromUrl();
+
+    if(!invoiceNo){
+        showNotice("No invoice number found in URL. Open this page like: /barcode?invoice_no=INV-20260501153201");
+        document.getElementById("sampleContainer").innerHTML = `<div class="empty">Invoice number missing</div>`;
+        return;
+    }
+
+    document.getElementById("invoiceNo").innerText = invoiceNo;
+
+    try{
+        const res = await fetch(`/api/barcode-data/${invoiceNo}`);
+        const data = await res.json();
+
+        if(!data.success){
+            showNotice(data.message || "Unable to load barcode data");
+            document.getElementById("sampleContainer").innerHTML = `<div class="empty">No data found</div>`;
+            return;
+        }
+
+        billData = data;
+        renderBill(data);
+        renderSamples(data.samples || []);
+
+    }catch(err){
+        console.error(err);
+        showNotice("Server error while loading barcode data. Backend API /api/barcode-data/<invoice_no> is required.");
+        document.getElementById("sampleContainer").innerHTML = `<div class="empty">Unable to load barcode data</div>`;
+    }
+}
+
+function renderBill(data){
+    document.getElementById("invoiceNo").innerText = data.invoice_no || invoiceNo;
+    document.getElementById("patientName").innerText = data.patient_name || "-";
+    document.getElementById("patientMobile").innerText = data.patient_mobile || "-";
+    document.getElementById("clientName").innerText = data.client_name || "-";
+    document.getElementById("totalTests").innerText = data.total_tests || 0;
+    document.getElementById("totalSamples").innerText = (data.samples || []).length;
+    document.getElementById("billStatus").innerText = data.bill_status || "Billing Done";
+    document.getElementById("sampleStatus").innerText = data.sample_status || "Barcode Created";
+}
+
+function renderSamples(samples){
+    const container = document.getElementById("sampleContainer");
+    container.innerHTML = "";
+
+    if(!samples || samples.length === 0){
+        container.innerHTML = `<div class="empty">No samples found</div>`;
+        return;
+    }
+
+    samples.forEach((sample, index) => {
+        const barcode = sample.barcode || `${invoiceNo}-S${index + 1}`;
+
+        container.innerHTML += `
+            <div class="sample-card">
+                <div class="sample-head">
+                    <h4>${escapeHtml(sample.sample_type || "Sample")}</h4>
+                    <span class="status">${escapeHtml(sample.status || "Barcode Created")}</span>
+                </div>
+                <div class="barcode-box">
+                    <svg id="barcode_${index}"></svg>
+                    <div class="barcode-value" onclick="copyBarcode('${escapeAttr(barcode)}')" style="cursor:pointer;">
+                        ${escapeHtml(barcode)}
+                    </div>
+                    <button class="btn-secondary" style="margin-top:8px;" onclick="copyBarcode('${escapeAttr(barcode)}')">
+                        Copy Barcode
+                    </button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Test Name</th>
+                            <th>Service Code</th>
+                            <th>TAT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${(sample.tests || []).map(t => `
+                            <tr>
+                                <td>${escapeHtml(t.test_name || "-")}</td>
+                                <td>${escapeHtml(t.service_code || "-")}</td>
+                                <td>${escapeHtml(t.tat || "-")}</td>
+                            </tr>
+                        `).join("")}
+                    </tbody>
+                </table>
+                <div style="margin-top:12px;">
+                    <button class="btn-primary" onclick="markReadyAndGo('${escapeAttr(barcode)}')">
+                        Mark Ready for Testing
+                    </button>
+                </div>
+            </div>
+        `;
+
+        setTimeout(() => {
+            JsBarcode(`#barcode_${index}`, barcode, {
+                format:"CODE128",
+                width:1.6,
+                height:48,
+                displayValue:false
+            });
+        }, 0);
+    });
+}
+
+async function markReady(barcode){
+    try{
+        const res = await fetch("/api/mark-sample-ready", {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({barcode:barcode})
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+            alert("Sample marked ready for testing");
+            loadBarcodeData();
+        }else{
+            alert(data.message || "Unable to update sample");
+        }
+
+    }catch(err){
+        console.error(err);
+        alert("Server error while updating sample");
+    }
+}
+
+function escapeHtml(value){
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+function escapeAttr(value){
+    return String(value ?? "")
+        .replace(/\\/g,"\\\\")
+        .replace(/'/g,"\\'")
+        .replace(/"/g,"&quot;")
+        .replace(/\n/g," ");
+}
+
+
+function copyBarcode(barcode){
+    if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(barcode).then(() => {
+            alert("Barcode copied: " + barcode);
+        }).catch(() => {
+            fallbackCopy(barcode);
+        });
+    }else{
+        fallbackCopy(barcode);
+    }
+}
+
+
+function fallbackCopy(text){
+    const input = document.createElement("input");
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    input.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    document.body.removeChild(input);
+    alert("Barcode copied: " + text);
+}
+
+
+function searchBarcode(){
+    const value = document.getElementById("barcodeSearchInput").value.trim();
+
+    if(!value){
+        alert("Enter barcode number");
+        return;
+    }
+
+    if(!billData || !billData.samples){
+        alert("Barcode data not loaded");
+        return;
+    }
+
+    const matchedSamples = billData.samples.filter((sample, index) => {
+        const barcode = sample.barcode || `${invoiceNo}-S${index + 1}`;
+        return barcode.toLowerCase() === value.toLowerCase();
+    });
+
+    if(matchedSamples.length === 0){
+        document.getElementById("sampleContainer").innerHTML =
+            `<div class="empty">No barcode found for: ${escapeHtml(value)}</div>`;
+        return;
+    }
+
+    renderSamples(matchedSamples);
+}
+
+function clearSearch(){
+    document.getElementById("barcodeSearchInput").value = "";
+    if(billData && billData.samples){
+        renderSamples(billData.samples);
+    }
+}
+
+
+function goToTesting(barcode){
+    window.location.href = "/testongo?invoice_no=" + invoiceNo + "&barcode=" + encodeURIComponent(barcode);
+}
+
+async function markReadyAndGo(barcode){
+
+    try{
+
+        await fetch("/api/mark-sample-ready", {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                barcode: barcode
+            })
+        });
+
+    }catch(err){
+        console.error(err);
+    }
+
+    goToTesting(barcode);
+}
+
+loadBarcodeData();
+</script>
+</body>
+</html>

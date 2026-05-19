@@ -146,6 +146,7 @@ background:#218838;
 <li onclick="openLeads()">My Leads</li>
 <li onclick="openSample()">Sample Collection</li>
 <li style="background:#0f3f7a;">Reports</li>
+<li onclick="openUpload()">Upload Reports</li>
 <li onclick="logout()">Logout</li>
 
 </ul>
@@ -156,6 +157,12 @@ background:#218838;
 <div class="main">
 
 <h1>Reports Management</h1>
+
+<div style="display:flex;justify-content:flex-end;margin-bottom:15px;">
+  <button onclick="openNewReport()" class="generate-btn">
+    + New Report
+  </button>
+</div>
 
 <div class="table-container">
 
@@ -199,6 +206,15 @@ window.location.href="/staff-leads"
 
 function openSample(){
 window.location.href="/sample-collection"
+}
+
+
+function openUpload(){
+    window.location.href="/upload-reports"
+}
+
+function openNewReport(){
+    window.location.href="/report/new"
 }
 
 function logout(){
@@ -258,7 +274,7 @@ onchange="uploadReport(${r.id},this)"
 
 <span style="margin-left:10px;font-size:13px;color:#444;">
 ${r.report_file 
-? "📄 " + r.report_file.split(/[\\/]/).pop() 
+? "📄 " + r.report_file.split("/").pop().split("?")[0] 
 : "<span style='color:#aaa'>No report</span>"}
 </span>
 
@@ -267,7 +283,9 @@ ${r.report_file
 <td>
 
 ${r.report_file && r.report_file !== "" 
-? `<a class="download-btn" href="/${r.report_file}" download>📥 Download</a>` 
+? `<a class="download-btn" href="${r.report_file}?fl_attachment=true" target="_blank">
+📥 Download
+</a>` 
 : `<span style="color:#999;">No File</span>`}
 
 </td>
@@ -372,7 +390,7 @@ alert("Report not uploaded yet")
 return
 }
 
-let link = window.location.origin + "/" + report
+let link = report + "?fl_attachment=true";
 
 let message = encodeURIComponent(
 "Hello, your Rapid Labs report is ready.\nDownload here:\n" + link

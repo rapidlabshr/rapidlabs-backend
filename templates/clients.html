@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clients Management</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6f8;
+    color:#222;
+}
+
+.header{
+    background:#0f3f7a;
+    color:#fff;
+    padding:14px 24px;
+    font-size:18px;
+    font-weight:700;
+}
+
+.page{
+    max-width:1100px;
+    margin:0 auto;
+    padding:22px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:360px 1fr;
+    gap:20px;
+    align-items:start;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e1e5ea;
+    border-radius:8px;
+    padding:18px;
+}
+
+.card-title{
+    margin:0 0 16px;
+    font-size:16px;
+    color:#0f3f7a;
+    font-weight:700;
+}
+
+.form-group{
+    margin-bottom:12px;
+}
+
+label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:5px;
+    color:#333;
+}
+
+input{
+    width:100%;
+    padding:9px 10px;
+    border:1px solid #c9ced6;
+    border-radius:5px;
+    font-size:14px;
+    background:#fff;
+}
+
+input:focus{
+    outline:none;
+    border-color:#0f3f7a;
+}
+
+.btn{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    background:#0f3f7a;
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#0b2f5d;
+}
+
+.btn:disabled{
+    background:#9aa8bb;
+    cursor:not-allowed;
+}
+
+#msg{
+    min-height:18px;
+    margin:12px 0 0;
+    font-size:13px;
+    font-weight:600;
+}
+
+.table-head{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    align-items:center;
+    margin-bottom:14px;
+}
+
+.search-wrap{
+    width:320px;
+}
+
+.table-wrap{
+    width:100%;
+    overflow-x:auto;
+    border:1px solid #e5e7eb;
+    border-radius:6px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    min-width:650px;
+}
+
+th{
+    background:#0f3f7a;
+    color:#fff;
+    padding:10px;
+    text-align:left;
+    white-space:nowrap;
+}
+
+td{
+    padding:10px;
+    border-bottom:1px solid #edf0f3;
+    white-space:nowrap;
+}
+
+tr:hover{
+    background:#f8fbff;
+}
+
+.empty{
+    text-align:center;
+    color:#777;
+    padding:18px;
+}
+
+.badge{
+    display:inline-block;
+    background:#eef4ff;
+    color:#0f3f7a;
+    border:1px solid #d8e6ff;
+    border-radius:20px;
+    padding:4px 9px;
+    font-size:12px;
+    font-weight:600;
+}
+
+@media(max-width:850px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .table-head{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .search-wrap{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    Clients Management
+</div>
+
+<div class="page">
+
+    <div class="grid">
+
+        <!-- CREATE CLIENT -->
+        <div class="card">
+            <h2 class="card-title">Create Client</h2>
+
+            <div class="form-group">
+                <label>Client Name</label>
+                <input type="text" id="name" placeholder="Enter client name" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="text" id="mobile" placeholder="Enter mobile number" maxlength="10" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Enter email address" autocomplete="off">
+            </div>
+
+
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Enter username" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+
+            <button class="btn" id="createBtn" onclick="createClient()">Create Client</button>
+
+            <p id="msg"></p>
+        </div>
+
+        <!-- CLIENT LIST -->
+        <div class="card">
+            <div class="table-head">
+                <h2 class="card-title" style="margin:0;">Client List</h2>
+
+                <div class="search-wrap">
+                    <input type="text" id="searchInput" onkeyup="filterClients()" placeholder="Search by name, mobile, username...">
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client ID</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Username</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="clientTable">
+                        <tr>
+                            <td colspan="5" class="empty">Loading clients...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+let allClients = [];
+
+// LOAD CLIENTS
+async function loadClients(){
+    try{
+        const res = await fetch("/api/clients");
+        const data = await res.json();
+
+        allClients = Array.isArray(data) ? data : [];
+        renderTable(allClients);
+
+    }catch(err){
+        console.error("Load error:", err);
+        document.getElementById("clientTable").innerHTML = `
+            <tr>
+                <td colspan="4" class="empty">Unable to load clients</td>
+            </tr>
+        `;
+    }
+}
+
+// RENDER TABLE
+function renderTable(data){
+    const table = document.getElementById("clientTable");
+    table.innerHTML = "";
+
+    if(!data || data.length === 0){
+        table.innerHTML = `
+            <tr>
+                <td colspan="4" class="empty">No clients found</td>
+            </tr>
+        `;
+        return;
+    }
+
+    data.forEach(c => {
+        table.innerHTML += `
+            <tr>
+                <td><span class="badge">${c.id || "-"}</span></td>
+                <td>${c.name || "-"}</td>
+                <td>${c.mobile || "-"}</td>
+                <td>${c.email || "-"}</td>
+                <td>${c.username || "-"}</td>
+            </tr>
+        `;
+    });
+}
+
+// SEARCH CLIENTS
+function filterClients(){
+    const value = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    if(value === ""){
+        renderTable(allClients);
+        return;
+    }
+
+    if(value.length < 2){
+        return;
+    }
+
+    const filtered = allClients.filter(c => {
+        return (
+            String(c.id || "").toLowerCase().includes(value) ||
+            String(c.name || "").toLowerCase().includes(value) ||
+            String(c.mobile || "").toLowerCase().includes(value) ||
+            String(c.username || "").toLowerCase().includes(value)
+        );
+    });
+
+    renderTable(filtered);
+}
+
+// CREATE CLIENT
+async function createClient(){
+    const name = document.getElementById("name").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    const msg = document.getElementById("msg");
+    const btn = document.getElementById("createBtn");
+
+    msg.innerText = "";
+    msg.style.color = "";
+
+    if(!name || !mobile || !email || !username || !password){
+        msg.innerText = "All fields are required";
+        msg.style.color = "#b42318";
+        return;
+    }
+
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    msg.innerText = "Enter valid email address";
+    msg.style.color = "#b42318";
+    return;
+    }
+
+    if(!/^[0-9]{10}$/.test(mobile)){
+        msg.innerText = "Enter valid 10 digit mobile number";
+        msg.style.color = "#b42318";
+        return;
+    }
+
+    try{
+        btn.disabled = true;
+        btn.innerText = "Creating...";
+
+        const res = await fetch("/api/create-client", {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                name:name,
+                mobile:mobile,
+                email:email,
+                username:username,
+                password:password
+            })
+        });
+
+        const data = await res.json();
+
+        if(data.success){
+            msg.innerText = data.message || "Client created successfully";
+            msg.style.color = "green";
+
+            document.getElementById("name").value = "";
+            document.getElementById("mobile").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+
+            await loadClients();
+
+        }else{
+            msg.innerText = data.message || "Unable to create client";
+            msg.style.color = "#b42318";
+        }
+
+    }catch(err){
+        console.error("Create error:", err);
+        msg.innerText = "Server error";
+        msg.style.color = "#b42318";
+
+    }finally{
+        btn.disabled = false;
+        btn.innerText = "Create Client";
+    }
+}
+
+// PAGE LOAD
+loadClients();
+</script>
+
+</body>
+</html>
