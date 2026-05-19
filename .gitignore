@@ -23,3 +23,8 @@ static/reports/
 .vscode/
 .idea/
 .DS_Store
+
+
+google_drive_key.json
+.env
+__pycache__/
