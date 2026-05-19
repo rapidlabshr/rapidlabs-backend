@@ -7,4 +7,8 @@ razorpay
 firebase-admin
 gunicorn
 requests
-psycopg2-binary
+pandas
+openpyxl
+python-dotenv
+cloudinary
+werkzeug
