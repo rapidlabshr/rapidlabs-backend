@@ -140,7 +140,7 @@ async function upload(){
     form.append("mobile", mobile) 
     form.append("file", file)
 
-    const res = await fetch("http://127.0.0.1:5000/upload-report-new",{
+    const res = await fetch(`${BASE_URL}/upload-report-new`,{
         method:"POST",
         body:form
     })
