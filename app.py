@@ -1619,6 +1619,9 @@ def generate_report(invoice):
 
     return render_template("report.html", bill=bill, items=items)
 
+
+
+
 @app.route("/api/report-patient")
 def report_patient():
 
@@ -3209,6 +3212,8 @@ import_tests_from_excel()
 
 
 
+
+
 def import_parameters_from_excel():
     import os
 
@@ -3368,6 +3373,29 @@ def get_tests_api():
     conn.close()
 
     return jsonify(tests)
+
+@app.route("/api/parameters/<service_code>")
+def get_parameters(service_code):
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT
+            parameter_name,
+            method,
+            unit,
+            normal_range
+        FROM parameter_master
+        WHERE service_code = ?
+    """, (service_code,))
+
+    rows = [dict(row) for row in cursor.fetchall()]
+
+    conn.close()
+
+    return jsonify(rows)
+
 
 
 def create_billing_tables():
@@ -3548,6 +3576,8 @@ def create_bill_api():
     finally:
         conn.close()
 # import_tests_from_excel()
+import_tests_from_excel()
+
 
 @app.route("/api/bills", methods=["GET"])
 def get_bills_api():
@@ -3816,6 +3846,76 @@ def update_testing_status():
 
     finally:
         conn.close()
+
+
+
+# new report test parameters 
+def import_parameter_master():
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    # DROP OLD TABLE
+    cursor.execute("DROP TABLE IF EXISTS parameter_master")
+
+    # CREATE NEW TABLE
+    cursor.execute("""
+        CREATE TABLE parameter_master (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            service_code TEXT,
+            parameter_name TEXT,
+            unit TEXT,
+            normal_range TEXT,
+            method TEXT
+        )
+    """)
+
+    # READ EXCEL
+    df = pd.read_excel("test_parameters.xlsx", sheet_name="Parameters")
+
+    # CLEAN COLUMN NAMES
+    df.columns = (
+        df.columns
+        .astype(str)
+        .str.strip()
+        .str.lower()
+        .str.replace(" ", "_")
+    )
+
+    print("LOADED FILE: test_parameters.xlsx")
+    print("PARAMETER FILE COLUMNS:", df.columns.tolist())
+    print(df.head())
+
+    inserted = 0
+
+    # INSERT DATA
+    for _, row in df.iterrows():
+
+        cursor.execute("""
+            INSERT INTO parameter_master (
+                service_code,
+                parameter_name,
+                unit,
+                normal_range,
+                method
+            )
+            VALUES (?, ?, ?, ?, ?)
+        """, (
+
+            str(row.get("service_code", "")).strip(),
+            str(row.get("parameter_name", "")).strip(),
+            str(row.get("unit", "")).strip(),
+            str(row.get("normal_range", "")).strip(),
+            str(row.get("method", "")).strip()
+
+        ))
+
+        inserted += 1
+
+    conn.commit()
+    conn.close()
+
+    print(f"✅ Parameters table recreated and {inserted} parameters imported")
 
 
 @app.route("/testongo")
@@ -4835,11 +4935,16 @@ def client_lab_dashboard():
 
 
 
-
+import_tests_from_excel()
+import_parameter_master()
 
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(
+    host="0.0.0.0",
+    port=5000,
+    debug=True
+)
 
   

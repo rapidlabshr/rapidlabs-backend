@@ -204,6 +204,31 @@ button{
     text-align:left;
 }
 
+
+.test-name-cell{
+    text-align:left !important;
+    vertical-align:middle;
+    padding:8px 10px !important;
+}
+
+.test-name-main{
+    font-size:13px;
+    font-weight:700;
+    color:#111827;
+    line-height:1.3;
+    margin-bottom:2px;
+    text-align:left;
+}
+
+.test-method-line{
+    font-size:10px;
+    color:#6b7280;
+    font-weight:500;
+    line-height:1.2;
+    text-align:left;
+}
+
+
 .result-table input,
 .result-table textarea{
     width:100%;
@@ -220,19 +245,38 @@ button{
     text-align:left;
 }
 
-.test-heading{
-    background:#f3f7ff;
+.department-heading td{
+    background:#eef3f8 !important;
+    color:#475569;
+    font-size:10px;
     font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.7px;
+    padding:7px 10px !important;
+    border-top:1px solid #d6dee8 !important;
+    border-bottom:1px solid #d6dee8 !important;
+    text-align:left !important;
+}
+
+.panel-heading td{
+    background:#fff !important;
     color:#0f3f7a;
+    font-size:14px;
+    font-weight:800;
+    padding:10px 10px 6px !important;
+    border-bottom:1px solid #e2e8f0 !important;
+    text-align:left !important;
 }
 
 /* END OF REPORT */
 .end-report{
+    padding-top:8px;
+    border-top:1px solid #111;
     text-align:center;
-    margin:24px 0 8px;
     font-size:11px;
     font-weight:700;
     letter-spacing:1px;
+    color:#111;
 }
 
 /* FOOTER BANNER */
@@ -364,13 +408,13 @@ button{
 }
 
 /* METHOD TEXT */
-.method-text{
-    font-size:10px;
-    color:#444;
-    margin-top:2px;
-    text-align:left;
-}
 
+
+
+#testSearchInput:focus{
+    border-color:#0f3f7a;
+    box-shadow:0 0 0 4px rgba(15,63,122,.12);
+}
 /* ICON BUTTONS */
 .icon-btn{
     width:38px;
@@ -387,7 +431,7 @@ button{
 }
 /* CLINICAL INTERPRETATION */
 .report-comment{
-    margin-top:10px;
+    margin-top:16px;
     padding:12px 14px;
     border:1px solid #d8dee8;
     border-radius:8px;
@@ -401,6 +445,7 @@ button{
 
 /* TITLE TAG */
 .report-comment::before{
+
     content:"CLINICAL INTERPRETATION";
     position:absolute;
     top:-10px;
@@ -433,37 +478,25 @@ button{
     display:none;
 }
 
-/* FINAL FOOTER */
+
 /* FINAL FOOTER */
 .report-final-footer{
-    width:100%;
-    display:flex !important;
-    flex-direction:row !important;
-    justify-content:space-between !important;
-    align-items:flex-end !important;
-    gap:16px !important;
-    border-top:1px solid #111;
-    padding-top:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
     margin-top:10px;
-    page-break-inside:avoid;
+    width:100%;
 }
 
-.footer-clinical-note{
-    flex:1;
-    margin:0 !important;
-    min-height:55px;
-}
 
 .footer-right-box{
-    width:210px;
     display:flex;
-    flex-direction:row;
-    justify-content:flex-end;
-    align-items:flex-end;
-    gap:16px;
+    align-items:flex-start;
+    gap:18px;
 }
 
 .footer-doctor{
+    text-align:center;
     width:90px;
     text-align:center;
     font-size:10px;
@@ -504,6 +537,7 @@ button{
     body{
         background:#fff;
         padding:0;
+        margin:0;
     }
 
     .topbar,
@@ -517,19 +551,16 @@ button{
         display:block !important;
     }
 
-    .report-final-footer.print-only{
-        display:flex !important;
-    }
-
     .wrapper{
         padding:0;
         max-width:100%;
     }
 
     .report-box{
-        box-shadow:none;
-        border-radius:0;
-        padding:10px 14px;
+        box-shadow:none !important;
+        border-radius:0 !important;
+        padding:10px 14px !important;
+        border:none !important;
     }
 
     /* HEADER */
@@ -537,7 +568,6 @@ button{
         padding:4px 6px 6px;
         margin-bottom:10px;
         border-bottom:1px solid #222;
-        page-break-before:auto;
     }
 
     .logo-box{
@@ -593,7 +623,7 @@ button{
         display:none;
     }
 
-    /* TABLE */
+    /* RESULT TABLE */
     .result-table{
         width:100%;
         border-collapse:collapse;
@@ -616,6 +646,11 @@ button{
         padding:3px 4px;
         vertical-align:top;
         text-align:left;
+    }
+
+    .result-table tr{
+        page-break-inside:avoid !important;
+        break-inside:avoid !important;
     }
 
     .result-table input,
@@ -645,6 +680,7 @@ button{
         display:none !important;
     }
 
+    /* TEST HEADINGS */
     .test-heading td{
         border:none !important;
         padding:8px 0 4px !important;
@@ -655,18 +691,36 @@ button{
         color:#111 !important;
     }
 
-    .result-table tr,
-    .cond-block,
-    .report-comment,
-    .report-final-footer,
-    .footer-banner{
-        page-break-inside:avoid;
-        break-inside:avoid;
+    /* FOOTER */
+    .report-bottom-area{
+        margin-top:10px !important;
+        page-break-inside:avoid !important;
+        break-inside:avoid !important;
     }
 
-    /* FOOTER BANNER */
+    .end-report{
+        margin:4px 0 8px !important;
+        text-align:center;
+        font-weight:700;
+        font-size:11px;
+    }
+
+    .report-final-footer{
+        margin-top:0 !important;
+        page-break-inside:avoid !important;
+        break-inside:avoid !important;
+    }
+
+    .report-comment{
+        min-height:34px;
+        page-break-inside:avoid !important;
+        break-inside:avoid !important;
+    }
+
     .footer-banner{
         margin-top:8px;
+        page-break-inside:avoid !important;
+        break-inside:avoid !important;
     }
 
     .footer-banner img{
@@ -674,6 +728,40 @@ button{
         height:auto;
         object-fit:contain;
     }
+
+    /* CONDITIONS PAGE */
+    .force-new-page{
+        page-break-before:always !important;
+        break-before:page !important;
+    }
+
+    .result-input{
+    transition:.15s ease;
+}
+
+
+.footer-verified-text{
+    font-size:10px;
+    line-height:1.7;
+    color:#222;
+    font-weight:700;
+
+    text-align:right;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-end;
+
+    margin-right:18px;
+    margin-top:18px;
+
+    min-width:220px;
+}
+
+
+
+
 }
 
 /* PAGE MARGIN */
@@ -749,10 +837,9 @@ body.pdf-mode .report-box{
 }
 
 body.pdf-mode .report-page-one{
-    min-height:277mm !important;
+    min-height:auto !important;
     padding:8px 12px !important;
-    display:flex !important;
-    flex-direction:column !important;
+    display:block !important;
 }
 
 
@@ -889,20 +976,18 @@ body.pdf-mode .footer-doctor img{
     margin:0 auto 4px !important;
 }
 
+body.pdf-mode .force-new-page{
+    page-break-before:always !important;
+    break-before:page !important;
+}
+
 .footer-qr #reportQrCode img,
 .footer-qr #reportQrCode canvas{
     width:58px !important;
     height:58px !important;
 }
 /* PDF CONDITIONS */
-body.pdf-mode .print-footer-block{
-    page-break-before:always !important;
-    break-before:page !important;
-    page-break-inside:auto !important;
-    break-inside:auto !important;
-    padding-top:0 !important;
-    margin-top:0 !important;
-}
+
 
 body.pdf-mode .cond-block,
 body.pdf-mode .footer-banner{
@@ -943,10 +1028,6 @@ body.pdf-mode .footer-banner img{
     object-fit:contain !important;
 }
 
-body.pdf-mode .report-page-content{
-    flex:0 0 auto !important;
-    min-height:0 !important;
-}
 
 body.pdf-mode .report-bottom-area{
     margin-top:10px !important;
@@ -960,47 +1041,49 @@ body.pdf-mode .end-report{
 body.pdf-mode .report-final-footer{
     margin-top:0 !important;
 }
-
 @media print{
-    .report-bottom-area{
-        margin-top:auto !important;
-        page-break-inside:avoid !important;
-    }
 
-    .end-report{
-        margin:0 0 8px !important;
-    }
-
-    .report-final-footer{
-        margin-top:0 !important;
-    }
-}
-
-@media print{
-    .print-footer-block{
-        page-break-before:always !important;
-        break-before:page !important;
-    }
-}
-
-@media print{
     .report-box{
         padding:0 !important;
     }
 
     .report-page-one{
-        height:255mm !important;
-        padding:8px 12px !important;
-        display:flex !important;
-        flex-direction:column !important;
+        display:block !important;
     }
 
-    .report-page-content{
-        flex:1 1 auto !important;
-        min-height:0 !important;
+    .report-table{
+        width:100%;
+        border-collapse:collapse;
     }
+
+    .report-table tr{
+        page-break-inside:avoid !important;
+        break-inside:avoid !important;
+    }
+
+    .report-bottom-area{
+        margin-top:12px !important;
+        page-break-inside:avoid !important;
+        break-inside:avoid !important;
+    }
+
+    .end-report{
+        margin:0 0 8px !important;
+        text-align:center;
+        font-weight:700;
+    }
+
+    .report-final-footer{
+        margin-top:0 !important;
+        page-break-inside:avoid !important;
+        break-inside:avoid !important;
+    }
+
+    .report-comment{
+        min-height:34px;
+    }
+
 }
-
 </style>
 </head>
 
@@ -1140,15 +1223,15 @@ body.pdf-mode .report-final-footer{
 
             <div class="info-item">
                 <label>Registration Date</label>
-                <input type="datetime-local" id="regDate">
+                <input type="text" id="regDate">
             </div>
             <div class="info-item">
                 <label>Collected Date</label>
-                <input type="datetime-local" id="collectedDate">
+                <input type="text" id="collectedDate">
             </div>
             <div class="info-item">
                 <label>Reported Date</label>
-                <input type="datetime-local" id="reportedDate">
+                <input type="text" id="reportedDate">
             </div>
         </div>
 
@@ -1170,41 +1253,95 @@ body.pdf-mode .report-final-footer{
             </tbody>
         </table>
 
-        <button class="btn-primary no-print" style="margin-top:12px;" onclick="addManualRow()">+ Add Test</button>
+        <div style="margin-top:12px; position:relative;" class="no-print">
 
+    <input
+        type="text"
+        id="testSearchInput"
+        placeholder="Search test like CBC, Sugar, Thyroid..."
+        autocomplete="off"
+        style="
+            width:380px;
+            padding:12px 14px;
+            border:1px solid #d1d5db;
+            border-radius:12px;
+            font-size:14px;
+            background:#fff;
+            box-shadow:0 2px 8px rgba(0,0,0,.05);
+            transition:.2s;
+        "
+        oninput="searchTests(this.value)"
+    >
+
+    <div
+        id="testSuggestions"
+        style="
+            position:absolute;
+            top:52px;
+            left:0;
+            width:460px;
+            background:#fff;
+            border:1px solid #e5e7eb;
+            border-radius:14px;
+            max-height:320px;
+            overflow-y:auto;
+            z-index:9999;
+            box-shadow:0 14px 35px rgba(0,0,0,.12);
+            display:none;
+        "
+    ></div>
+    </div>
+
+        <div id="reportComment"
+             class="report-comment footer-clinical-note">
         </div>
 
-        <div class="report-bottom-area print-only">
+    
+<div class="report-bottom-area print-only">
 
-            <div class="end-report">----- END OF REPORT -----</div>
+    <div class="end-report">
+        ----- END OF REPORT -----
+    </div>
 
-            <div class="report-final-footer">
+    <div class="report-final-footer">
 
-            <div id="reportComment" class="report-comment footer-clinical-note"></div>
 
-            <div class="footer-right-box">
-                <div class="footer-doctor">
-                    <img src="../static/doctor_sign.webp" onerror="this.style.display='none'">
-                    <div>DOCTOR SIGNATURE</div>
+        <div class="footer-verified-text">
+            No Signature Required if Digitally Verified<br>
+            Powered by Rapid Labs LIS
+        </div>
+
+
+
+
+
+        <div class="footer-right-box">
+
+            <div class="footer-doctor">
+
+                <img src="../static/doctor_sign.webp"
+                     onerror="this.style.display='none'">
+
+                <div>DOCTOR SIGNATURE</div>
+
+            </div>
+
+            <div class="footer-qr">
+
+                <div id="reportQrCode"></div>
+
+                <div style="
+                    margin-top:4px;
+                    font-size:7px;
+                    line-height:1.4;
+                    color:#444;
+                    text-align:center;
+                    font-weight:500;
+                ">
+                    Scan to verify original report<br>
+                    Valid for 30 days
                 </div>
 
-                <div class="footer-qr">
-
-                    <div id="reportQrCode"></div>
-
-                    <div style="
-                        margin-top:4px;
-                        font-size:7px;
-                        line-height:1.35;
-                        color:#444;
-                        text-align:center;
-                        font-weight:500;
-                    ">
-                        Scan QR to verify original report<br>
-                        Verification link valid for 30 days
-                    </div>
-
-                </div>
             </div>
 
         </div>
@@ -1212,70 +1349,84 @@ body.pdf-mode .report-final-footer{
     </div>
 
 </div>
+   <div id="aiNoteBox" class="no-print" style="
+    margin-top:18px;
+    border:1px solid #dbe3ee;
+    border-radius:12px;
+    background:#fff;
+    padding:16px;
+">
 
+    <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:12px;
+    ">
 
-                        <div class="report-comment no-print" id="aiNoteBox">
-
-            <div style="
-                display:flex;
-                justify-content:space-between;
-                align-items:center;
-                margin-bottom:12px;
-            ">
-
-                <div style="
-                    font-weight:700;
-                    color:#0f3f7a;
-                    font-size:14px;
-                ">
-                    🧠 Clinical Note Assistant
-                </div>
-
-                <button 
-                    class="btn-primary"
-                    onclick="generateAINote()"
-                >
-                    Generate AI Note
-                </button>
-
-            </div>
-
-            <div
-                id="aiClinicalNote"
-                contenteditable="true"
-                style="
-                    width:100%;
-                    min-height:140px;
-                    border:none;
-                    outline:none;
-                    font-size:13px;
-                    line-height:1.8;
-                    background:transparent;
-                "
-            >
-            </div>
-
-            <div style="
-                margin-top:10px;
-                display:flex;
-                gap:10px;
-            ">
-
-                <button class="btn-secondary" onclick="copyAINote()">
-                    Copy
-                </button>
-
-                <button class="btn-success" onclick="addAINoteToPrint()">
-                    Add To Report
-                </button>
-
-            </div>
-
+        <div style="
+            font-size:14px;
+            font-weight:700;
+            color:#0f3f7a;
+        ">
+            AI Clinical Note
         </div>
 
+        <button
+            class="btn-primary"
+            onclick="generateAINote()"
+            style="
+                padding:8px 14px;
+                font-size:13px;
+            "
+        >
+            Generate
+        </button>
+
+    </div>
+
+    <div
+        id="aiClinicalNote"
+        contenteditable="true"
+        style="
+            min-height:90px;
+            border:1px solid #e5e7eb;
+            border-radius:8px;
+            padding:12px;
+            background:#f9fafb;
+            font-size:13px;
+            line-height:1.7;
+            outline:none;
+        "
+    ></div>
+
+    <div style="
+        margin-top:12px;
+        display:flex;
+        gap:10px;
+    ">
+
+        <button
+            class="btn-danger"
+            onclick="clearAINote()"
+        >
+            Clear
+        </button>
+
+        <button
+            class="btn-success"
+            onclick="addAINoteToPrint()"
+        >
+            Add To Report
+        </button>
+
+    </div>
+
+</div>
 
 
-        <div class="print-footer-block print-only">
+
+        <div class="print-footer-block print-only force-new-page">
 
             <!-- CONDITIONS -->
             <div class="cond-block">
@@ -1337,9 +1488,24 @@ let barcodeNo = "";
 let billData = null;
 let selectedSample = null;
 let uploadedReport = null;
+let allTests = [];
 
+function loadTestMaster(){
 
+    fetch("/static/Testing_master_data.json")
+        .then(res => res.json())
+        .then(data => {
 
+            allTests = data || [];
+
+            console.log("TEST MASTER LOADED:", allTests.length);
+
+        })
+        .catch(err => {
+            console.error("JSON LOAD ERROR", err);
+        });
+
+}
 
 
 function getParams(){
@@ -1370,11 +1536,23 @@ function hideNotice(){
     box.style.display = "none";
 }
 
-function getNowValue(){
-    const now = new Date();
-    const offset = now.getTimezoneOffset();
-    const local = new Date(now.getTime() - offset * 60000);
-    return local.toISOString().slice(0,16);
+function formatDateTime(date){
+
+    const dd = String(date.getDate()).padStart(2,'0');
+    const mm = String(date.getMonth() + 1).padStart(2,'0');
+    const yyyy = date.getFullYear();
+
+    let hh = date.getHours();
+    const min = String(date.getMinutes()).padStart(2,'0');
+
+    const ampm = hh >= 12 ? 'PM' : 'AM';
+
+    hh = hh % 12;
+    hh = hh ? hh : 12;
+
+    hh = String(hh).padStart(2,'0');
+
+    return `${dd}/${mm}/${yyyy} ${hh}:${min} ${ampm}`;
 }
 
 function generateReportNo(){
@@ -1398,9 +1576,36 @@ async function loadReportData(){
     document.getElementById("barcodeNo").value = barcodeNo || "-";
     document.getElementById("reportNo").value = generateReportNo();
 
-    document.getElementById("regDate").value = getNowValue();
-    document.getElementById("collectedDate").value = getNowValue();
-    document.getElementById("reportedDate").value = getNowValue();
+        const reportedDate = new Date();
+
+        // COLLECTION TIME
+        const collectionGap =
+            Math.floor(Math.random() * 120) + 45;
+
+        const collectedDate =
+            new Date(
+                reportedDate.getTime() -
+                collectionGap * 60000
+            );
+
+        // REGISTRATION TIME
+        const registrationGap =
+            Math.floor(Math.random() * 45) + 15;
+
+        const registrationDate =
+            new Date(
+                collectedDate.getTime() -
+                registrationGap * 60000
+            );
+
+        document.getElementById("reportedDate").value =
+            formatDateTime(reportedDate);
+
+        document.getElementById("collectedDate").value =
+            formatDateTime(collectedDate);
+
+        document.getElementById("regDate").value =
+            formatDateTime(registrationDate);
 
     try{
         const res = await fetch(`/api/barcode-data/${invoiceNo}`);
@@ -1455,7 +1660,7 @@ async function renderReportRows(tests){
 
         if(params.length > 0){
 
-            addTestHeading(test.test_name);
+            addPanelHeading(test.test_name);
 
             params.forEach(p => {
                 addResultRow({
@@ -1503,11 +1708,28 @@ async function fetchParameters(serviceCode){
     }
 }
 
-function addTestHeading(testName){
+function addDepartmentHeading(name){
+
     const body = document.getElementById("resultBody");
+
     body.innerHTML += `
-        <tr class="test-heading">
-            <td colspan="5">${escapeHtml(testName)}</td>
+        <tr class="department-heading">
+            <td colspan="5">
+                Department of ${escapeHtml(name)}
+            </td>
+        </tr>
+    `;
+}
+
+function addPanelHeading(name){
+
+    const body = document.getElementById("resultBody");
+
+    body.innerHTML += `
+        <tr class="panel-heading">
+            <td colspan="5">
+                ${escapeHtml(name)}
+            </td>
         </tr>
     `;
 }
@@ -1518,13 +1740,33 @@ function addResultRow(row){
 
     body.innerHTML += `
         <tr data-service-code="${escapeAttr(row.service_code || "")}">
-            <td>
-                <input value="${escapeAttr(row.name || "")}" placeholder="Parameter name">
-                <div class="method-text" contenteditable="true" oninput="autoSave()">Method : ${escapeHtml(row.method || "")}</div>
+                <td class="test-name-cell">
+
+                    <div class="test-name-main">
+                        ${escapeHtml(row.name || "")}
+                    </div>
+
+                    <div class="test-method-line">
+                        Method : ${escapeHtml(row.method || "")}
+                    </div>
+
+                </td>
+                <td>
+                <input
+                    value="${escapeAttr(row.value || "")}"
+                    placeholder="Observed value"
+                    class="observed-value"
+                    oninput="checkAbnormal(this)"
+                >
             </td>
-            <td><input value="${escapeAttr(row.value || "")}" placeholder="Observed value"></td>
             <td><input value="${escapeAttr(row.unit || "")}" placeholder="Unit"></td>
-            <td><textarea rows="2" placeholder="Reference range">${escapeHtml(row.range || "")}</textarea></td>
+            <td>
+                <textarea
+                    rows="2"
+                    class="reference-range"
+                    placeholder="Reference range"
+                >${escapeHtml(row.range || "")}</textarea>
+            </td>
             <td class="no-print">
                 <button class="remove-btn" onclick="deleteRow(this)">✖</button>
             </td>
@@ -1541,6 +1783,168 @@ function addManualRow(){
         range:""
     });
 }
+
+function searchTests(keyword){
+
+    const box = document.getElementById("testSuggestions");
+
+    keyword = keyword.trim().toLowerCase();
+
+    if(keyword.length < 2){
+        box.style.display = "none";
+        return;
+    }
+
+    // REMOVE DUPLICATES
+    const uniquePanels = {};
+
+    allTests.forEach(t => {
+
+        const panelName = (
+            t.panel_display ||
+            t.test_name ||
+            ""
+        ).trim();
+
+        const searchText = panelName.toLowerCase();
+
+        if(
+            searchText.includes(keyword) &&
+            !uniquePanels[panelName]
+        ){
+            uniquePanels[panelName] = t;
+        }
+
+    });
+
+    const matches = Object.values(uniquePanels).slice(0,20);
+
+    if(matches.length === 0){
+        box.style.display = "none";
+        return;
+    }
+
+    box.innerHTML = matches.map(t => `
+        <div
+            onclick='selectTest(${JSON.stringify(t)})'
+            style="
+                padding:12px 14px;
+                border-bottom:1px solid #eee;
+                cursor:pointer;
+                transition:.15s;
+            "
+            onmouseover="
+                this.style.background='#f4f7ff';
+                this.style.transform='translateX(2px)';
+            "
+            onmouseout="
+                this.style.background='#fff';
+                this.style.transform='translateX(0px)';
+            "
+        >
+
+            <div style="
+                font-size:15px;
+                font-weight:700;
+                color:#0f3f7a;
+            ">
+                ${escapeHtml(t.panel_display || t.test_name)}
+            </div>
+
+            <div style="
+                font-size:11px;
+                color:#666;
+                margin-top:4px;
+            ">
+                ${escapeHtml(t.department || "")}
+            </div>
+
+            <div style="
+                font-size:10px;
+                color:#16a34a;
+                margin-top:2px;
+                font-weight:600;
+            ">
+                ${escapeHtml(t.method || "")}
+            </div>
+
+        </div>
+    `).join("");
+
+    box.style.display = "block";
+    selectedSuggestion = -1;
+}
+
+async function selectTest(test){
+
+    document.getElementById("testSearchInput").value =
+        test.panel_display || test.test_name || "";
+
+    document.getElementById("testSuggestions").style.display = "none";
+
+    // CLEAR SEARCH BOX
+    document.getElementById("testSearchInput").blur();
+
+    // DEPARTMENT HEADING
+    addDepartmentHeading(
+        test.department || ""
+    );
+
+    addPanelHeading(
+        test.panel_display || test.test_name || ""
+    );
+
+    // GET PANEL NAME
+    const panelName = (test.panel || "").trim().toLowerCase();
+
+    // FILTER ALL PARAMETERS FROM JSON
+    const panelParameters = allTests.filter(t => {
+
+        return (
+            (t.panel || "").trim().toLowerCase() === panelName
+        );
+
+    });
+
+    // REMOVE DUPLICATES
+    const added = {};
+
+    panelParameters.forEach(p => {
+
+        const paramName = (p.test_name || "").trim();
+
+        if(!paramName || added[paramName]) return;
+
+        added[paramName] = true;
+
+        addResultRow({
+
+            name: p.test_name || "",
+            method: p.method || "",
+            value: "",
+            unit: p.unit || "",
+            range: p.reference_range || "",
+            service_code: p.service_code || ""
+
+        });
+
+    });
+
+    const input = document.getElementById("testSearchInput");
+const box = document.getElementById("testSuggestions");
+
+input.value = "";
+box.innerHTML = "";
+box.style.display = "none";
+
+setTimeout(() => {
+    input.focus();
+}, 100);
+
+
+}
+
+
 
 function deleteRow(btn){
     btn.closest("tr").remove();
@@ -1597,13 +2001,18 @@ async function saveReport(){
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(payload)
         });
-
         const data = await res.json();
 
         if(data.success){
+
             showNotice("Report saved successfully.");
+
+            await downloadPDF();
+
         }else{
+
             showNotice(data.message || "Report save API not ready.");
+
         }
 
     }catch(err){
@@ -1634,7 +2043,10 @@ function generateReportQR(){
     new QRCode(qrBox, {
         text: verifyUrl,
         width: 58,
-        height: 58
+        height: 58,
+        colorDark : "#c24141",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
     });
 }
 
@@ -1660,13 +2072,22 @@ async function downloadPDF(){
     const element = document.getElementById("reportBox");
     const reportNo = document.getElementById("reportNo").value;
 
-    const opt = {
-        margin:[4, 6, 4, 6],
-        filename: reportNo + ".pdf",
-        image:{type:"jpeg", quality:1},
-        html2canvas:{scale:2, useCORS:true},
-        jsPDF:{unit:"mm", format:"a4", orientation:"portrait"}
-    };
+        const patientName = document
+            .getElementById("patientName")
+            .value
+            .trim()
+            .replace(/[^a-z0-9]/gi, "_");
+
+        const fileName =
+            reportNo + " - " + patientName + ".pdf";
+
+        const opt = {
+            margin:[4, 6, 4, 6],
+            filename: fileName,
+            image:{type:"jpeg", quality:1},
+            html2canvas:{scale:2, useCORS:true},
+            jsPDF:{unit:"mm", format:"a4", orientation:"portrait"}
+        };
 
     try{
 
@@ -1874,59 +2295,62 @@ async function sendReportToClient(){
     }
 }
 
-
 async function generateAINote(){
 
-    const rows = [];
+    const rows = document.querySelectorAll("#resultBody tr");
 
-    document.querySelectorAll("#resultBody tr").forEach(tr => {
+    let abnormal = [];
 
-        if(tr.classList.contains("test-heading")){
-            return;
+    rows.forEach(row => {
+
+        const testName =
+            row.querySelector(".test-name-main");
+
+        const valueInput =
+            row.querySelector(".observed-value");
+
+        if(!testName || !valueInput) return;
+
+        const test = testName.innerText.trim();
+
+        const value = valueInput.value || "";
+
+        if(value.includes("↑")){
+
+            abnormal.push(test + " is elevated");
+
         }
 
-        const inputs = tr.querySelectorAll("input");
-        const textarea = tr.querySelector("textarea");
+        else if(value.includes("↓")){
 
-        if(inputs.length >= 3){
-
-            rows.push({
-                test: inputs[0].value,
-                value: inputs[1].value,
-                unit: inputs[2].value,
-                range: textarea ? textarea.value : ""
-            });
+            abnormal.push(test + " is reduced");
 
         }
 
     });
 
-    try{
+    let note = "";
 
-        const res = await fetch("/api/generate-ai-note",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-                tests: rows
-            })
-        });
+    // NORMAL
+    if(abnormal.length === 0){
 
-        const data = await res.json();
-
-        if(data.note){
-            document.getElementById("aiClinicalNote").innerHTML = data.note;
-        }else{
-            alert("AI note generation failed");
-        }
-
-    }catch(err){
-
-        console.error(err);
-        alert("Server error");
+        note = `
+        All tested parameters are within normal reference limits.
+        Clinical correlation is advised.
+        `;
 
     }
+
+    // ABNORMAL
+    else{
+
+        note =
+            abnormal.join(". ") +
+            ". Clinical correlation is advised.";
+
+    }
+
+    document.getElementById("aiClinicalNote").innerHTML = note;
 
 }
 
@@ -1937,6 +2361,12 @@ function copyAINote(){
     navigator.clipboard.writeText(text);
 
     alert("Copied");
+
+}
+
+function clearAINote(){
+
+    document.getElementById("aiClinicalNote").innerHTML = "";
 
 }
 
@@ -1951,6 +2381,160 @@ function addAINoteToPrint(){
 
 }
 
+document.addEventListener("click", function(e){
+
+    const input = document.getElementById("testSearchInput");
+    const box = document.getElementById("testSuggestions");
+
+    if(
+        !input.contains(e.target) &&
+        !box.contains(e.target)
+    ){
+        box.style.display = "none";
+    }
+
+});
+
+let selectedSuggestion = -1;
+
+document.getElementById("testSearchInput")
+.addEventListener("keydown", function(e){
+
+    const items = document.querySelectorAll("#testSuggestions > div");
+
+    if(items.length === 0) return;
+
+    // DOWN
+    if(e.key === "ArrowDown"){
+
+        e.preventDefault();
+
+        selectedSuggestion++;
+
+        if(selectedSuggestion >= items.length){
+            selectedSuggestion = 0;
+        }
+
+        highlightSuggestion(items);
+    }
+
+    // UP
+    else if(e.key === "ArrowUp"){
+
+        e.preventDefault();
+
+        selectedSuggestion--;
+
+        if(selectedSuggestion < 0){
+            selectedSuggestion = items.length - 1;
+        }
+
+        highlightSuggestion(items);
+    }
+
+    // ENTER
+    else if(e.key === "Enter"){
+
+        e.preventDefault();
+
+        if(selectedSuggestion >= 0){
+            items[selectedSuggestion].click();
+        }
+
+    }
+
+});
+
+function highlightSuggestion(items){
+
+    items.forEach((item,index)=>{
+
+        if(index === selectedSuggestion){
+
+            item.style.background = "#eaf2ff";
+
+        }else{
+
+            item.style.background = "#fff";
+
+        }
+
+    });
+
+}
+
+function checkAbnormal(input){
+
+    const row = input.closest("tr");
+
+    if(!row) return;
+
+    const rangeBox = row.querySelector(".reference-range");
+
+    if(!rangeBox) return;
+
+   let rawValue = input.value.trim();
+
+    const value = parseFloat(rawValue);
+
+    if(isNaN(value)){
+        input.style.color = "#111";
+        input.style.fontWeight = "600";
+        return;
+    }
+
+    let rangeText = "";
+
+    if(rangeBox.value){
+        rangeText = rangeBox.value;
+    }
+    else{
+        rangeText = rangeBox.innerText || "";
+    }
+
+    rangeText = rangeText.replace(/,/g,'');
+
+    const numbers = rangeText.match(/\d+(\.\d+)?/g);
+
+    if(!numbers || numbers.length < 2){
+
+        input.style.color = "#111";
+        input.style.fontWeight = "600";
+        input.value = rawValue;
+        return;
+    }
+
+    const low = parseFloat(numbers[0]);
+    const high = parseFloat(numbers[1]);
+
+    input.value = rawValue;
+
+    // NORMAL
+    if(value >= low && value <= high){
+
+        input.style.color = "#111";
+        input.style.fontWeight = "600";
+        return;
+    }
+
+    // LOW
+    if(value < low){
+
+        input.style.color = "#ea580c";
+        input.style.fontWeight = "700";
+        return;
+    }
+
+    // HIGH
+    if(value > high){
+
+        input.style.color = "#dc2626";
+        input.style.fontWeight = "700";
+        return;
+    }
+}
+
+loadTestMaster();
 loadReportData();
 </script>
 
