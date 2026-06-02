@@ -151,10 +151,10 @@ button{
 }
 
 .info-item{
-    padding:7px 9px;
+    padding:10px 12px;
     border-right:1px solid #111;
     border-bottom:1px solid #111;
-    font-size:12px;
+    font-size:14px;
 }
 
 .info-item:nth-child(3n){
@@ -163,17 +163,23 @@ button{
 
 .info-item label{
     display:block;
-    font-weight:700;
-    margin-bottom:3px;
+    font-weight:800;
+    font-size:13px;
+    color:#0f3f7a;
+    margin-bottom:5px;
+    text-transform:uppercase;
+    letter-spacing:.3px;
 }
 
-.info-item input{
+.info-item input,
+.info-item select{
     border:none;
     outline:none;
     width:100%;
-    font-size:12px;
+    font-size:15px;
+    font-weight:600;
     background:transparent;
-    color:#111;
+    color:#111827;
 }
 
 /* RESULT TABLE */
@@ -305,24 +311,25 @@ button{
 .department-heading td{
     background:#eef3f8 !important;
     color:#475569;
-    font-size:10px;
-    font-weight:700;
+    font-size:11px;
+    font-weight:800;
     text-transform:uppercase;
-    letter-spacing:.7px;
-    padding:7px 10px !important;
+    letter-spacing:.8px;
+    padding:8px 10px !important;
+    text-align:center !important;
+    text-decoration:underline;
     border-top:1px solid #d6dee8 !important;
     border-bottom:1px solid #d6dee8 !important;
-    text-align:left !important;
 }
 
 .panel-heading td{
     background:#fff !important;
     color:#0f3f7a;
-    font-size:14px;
+    font-size:16px;
     font-weight:800;
-    padding:10px 10px 6px !important;
+    padding:12px 10px 8px !important;
     border-bottom:1px solid #e2e8f0 !important;
-    text-align:left !important;
+    text-align:center !important;
 }
 
 /* END OF REPORT */
@@ -482,32 +489,53 @@ button{
 }
 /* CLINICAL INTERPRETATION */
 .report-comment{
-    margin-top:16px;
-    padding:12px 14px;
-    border:1px solid #d8dee8;
-    border-radius:8px;
-    background:#fff;
+    margin-top:22px;
+    margin-bottom:22px;
+
+    padding:16px 18px;
+
+    border:1px solid #cfd8e3;
+    border-radius:10px;
+
+    background:#fafcff;
+
     font-size:11px;
-    line-height:1.6;
-    color:#1f2937;
-    position:relative;
+    line-height:1.8;
+
+    color:#374151;
+
+    text-align:justify;
+
     page-break-inside:avoid;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.8);
 }
 
 /* TITLE TAG */
 .report-comment::before{
 
     content:"CLINICAL INTERPRETATION";
+
     position:absolute;
-    top:-10px;
-    left:14px;
+
+    top:-11px;
+
+    left:16px;
+
     background:#0f3f7a;
+
     color:#fff;
+
     font-size:9px;
+
     font-weight:700;
-    padding:3px 9px;
-    border-radius:4px;
-    letter-spacing:.5px;
+
+    padding:4px 12px;
+
+    border-radius:5px;
+
+    letter-spacing:.8px;
 }
 
 /* PARAGRAPHS */
@@ -590,6 +618,8 @@ button{
 .structured-btn{
 
     margin-top:10px;
+    margin-left:auto;
+
     border:none;
     background:#0f3f7a;
     color:#fff;
@@ -597,6 +627,8 @@ button{
     border-radius:20px;
     cursor:pointer;
     font-size:12px;
+
+    float:right;
 }
 
 .structured-modal{
@@ -955,12 +987,14 @@ body.modal-open{
     }
 
     .info-item{
-        padding:6px 8px;
-        font-size:11px;
+        padding:8px 10px;
+        font-size:12px;
     }
 
-    .info-item input{
-        font-size:11px;
+    .info-item input,
+    .info-item select{
+        font-size:12px;
+        font-weight:600;
     }
 
     input[type="datetime-local"]::-webkit-calendar-picker-indicator{
@@ -971,7 +1005,7 @@ body.modal-open{
     .result-table{
         width:100%;
         border-collapse:collapse;
-        table-layout:fixed;
+        table-layout:auto;
         font-size:11px;
     }
 
@@ -980,16 +1014,29 @@ body.modal-open{
         color:#111 !important;
         border:none !important;
         border-bottom:1px solid #111 !important;
-        padding:5px 4px;
-        text-align:left;
+        padding:6px 6px;
         font-weight:700;
+        text-align:center;
+    }
+
+    .result-table th:first-child{
+        text-align:left;
     }
 
     .result-table td{
         border:none !important;
-        padding:3px 4px;
+        padding:4px 6px;
         vertical-align:top;
-        text-align:left;
+    }
+
+    .result-table tr:not(.department-heading):not(.panel-heading) td:nth-child(1){
+        text-align:left !important;
+    }
+
+    .result-table tr:not(.department-heading):not(.panel-heading) td:nth-child(2),
+    .result-table tr:not(.department-heading):not(.panel-heading) td:nth-child(3),
+    .result-table tr:not(.department-heading):not(.panel-heading) td:nth-child(4){
+        text-align:center !important;
     }
 
     .result-table tr{
@@ -1192,9 +1239,22 @@ body.pdf-mode .report-box{
 }
 
 body.pdf-mode .report-page-one{
-    min-height:auto !important;
+    min-height:270mm !important;
     padding:8px 12px !important;
-    display:block !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+}
+
+body.pdf-mode .report-page-content{
+    flex:1 !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+}
+
+body.pdf-mode .report-bottom-area{
+    margin-top:auto !important;
 }
 
 
@@ -1251,15 +1311,33 @@ body.pdf-mode .info-grid{
 }
 
 body.pdf-mode .info-item{
-    padding:5px 7px !important;
-    font-size:10.5px !important;
+    padding:8px 10px !important;
+    font-size:12px !important;
 }
 
-body.pdf-mode .info-item input{
-    font-size:10.5px !important;
+body.pdf-mode .info-item input,
+body.pdf-mode .info-item select{
+    font-size:12px !important;
+    font-weight:600 !important;
 }
 
 /* PDF TABLE */
+
+body.pdf-mode .department-heading td{
+    text-align:center !important;
+    text-decoration:underline !important;
+    font-size:13px !important;
+    font-weight:800 !important;
+    text-transform:uppercase !important;
+}
+
+body.pdf-mode .panel-heading td{
+    text-align:center !important;
+    font-size:16px !important;
+    font-weight:800 !important;
+}
+
+
 body.pdf-mode .result-table{
     font-size:10.5px !important;
 }
@@ -1275,9 +1353,18 @@ body.pdf-mode .result-table th{
 
 body.pdf-mode .result-table td{
     border:none !important;
-    padding:2.5px 3px !important;
-    text-align:left !important;
+    padding:4px 6px !important;
     vertical-align:top !important;
+}
+
+body.pdf-mode .result-table td:nth-child(1){
+    text-align:left !important;
+}
+
+body.pdf-mode .result-table td:nth-child(2),
+body.pdf-mode .result-table td:nth-child(3),
+body.pdf-mode .result-table td:nth-child(4){
+    text-align:center !important;
 }
 
 body.pdf-mode .result-table input,
@@ -1298,13 +1385,25 @@ body.pdf-mode .result-table td.no-print{
 
 /* PDF CLINICAL NOTE */
 body.pdf-mode .report-comment{
-    margin-top:8px !important;
-    padding:9px 10px !important;
+
+    margin-top:14px !important;
+    margin-bottom:14px !important;
+
+    padding:12px 14px !important;
+
+    border:1px solid #cfd8e3 !important;
+
+    border-radius:8px !important;
+
+    background:#fff !important;
+
     font-size:10.5px !important;
-    line-height:1.4 !important;
-    border:1px solid #ccc !important;
-    border-radius:6px !important;
-    page-break-inside:avoid;
+
+    line-height:1.7 !important;
+
+    text-align:justify !important;
+
+    page-break-inside:avoid !important;
 }
 
 body.pdf-mode .report-comment p{
@@ -1398,29 +1497,14 @@ body.pdf-mode .report-final-footer{
 }
 @media print{
 
-    .report-box{
-        padding:0 !important;
-    }
 
-    .report-page-one{
-        display:block !important;
-    }
-
-    .report-table{
-        width:100%;
-        border-collapse:collapse;
-    }
 
     .report-table tr{
         page-break-inside:avoid !important;
         break-inside:avoid !important;
     }
 
-    .report-bottom-area{
-        margin-top:12px !important;
-        page-break-inside:avoid !important;
-        break-inside:avoid !important;
-    }
+
 
     .end-report{
         margin:0 0 8px !important;
@@ -1446,8 +1530,63 @@ body.pdf-mode .report-final-footer{
     padding:0 !important;
 }
 
-
+.department-heading td{
+    background:#fff !important;
+    color:#111 !important;
+    text-align:center !important;
+    text-decoration:underline !important;
+    font-size:11px !important;
+    font-weight:700 !important;
+    text-transform:uppercase !important;
+    letter-spacing:.3px !important;
+    padding:4px 0 !important;
 }
+
+.panel-heading td{
+    background:#fff !important;
+    color:#111 !important;
+    text-align:center !important;
+    font-size:14px !important;
+    font-weight:700 !important;
+    padding:4px 0 8px 0 !important;
+}
+
+
+.result-table td:nth-child(4),
+.result-table th:nth-child(4){
+    padding-left:30px !important;
+}
+
+
+    .report-box{
+        padding:0 !important;
+    }
+
+    .report-page-one{
+        min-height:270mm !important;
+        display:flex !important;
+        flex-direction:column !important;
+    }
+
+    .report-page-content{
+        flex:1 !important;
+        display:flex !important;
+        flex-direction:column !important;
+    }
+
+    .report-bottom-area{
+        margin-top:auto !important;
+        page-break-inside:avoid !important;
+        break-inside:avoid !important;
+    }
+
+    .report-table{
+        width:100%;
+        border-collapse:collapse;
+    }
+}
+
+
 </style>
 </head>
 
@@ -1483,18 +1622,14 @@ body.pdf-mode .report-final-footer{
             </button>
 
             <input type="file" id="reportFile" accept=".pdf,.jpg,.jpeg,.png" style="display:none;">
-            <button class="btn-success" onclick="document.getElementById('reportFile').click()">⬆ Upload</button>
 
-            <button 
-                id="sendClientBtn"
-                class="btn-primary"
-                onclick="sendReportToClient()"
-                style="display:none;"
-            >
-                📤 Send to Client
-            </button>
+            <button
+    class="btn-success"
+    onclick="openWhatsAppChat()"
+>
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+</button>
 
-            <button class="btn-secondary" onclick="viewUploadedReport()">👁 View Upload</button>
             <button class="btn-danger" onclick="deleteUploadedReport()">🗑 Delete</button>
         </div>
     </div>
@@ -1614,9 +1749,9 @@ body.pdf-mode .report-final-footer{
             <thead>
                 <tr>
                     <th style="width:34%;">Test / Parameter</th>
-                    <th style="width:18%;">Observed Value</th>
-                    <th style="width:16%;">Unit</th>
-                    <th style="width:24%;">Reference Range</th>
+                    <th style="width:16%;">Observed Value</th>
+                    <th style="width:14%;">Unit</th>
+                    <th style="width:28%;">Reference Range</th>
                     <th class="no-print" style="width:8%;">Action</th>
                 </tr>
             </thead>
@@ -1678,6 +1813,8 @@ body.pdf-mode .report-final-footer{
         </div>
 
     
+<div id="footerPushSpacer" class="footer-push-spacer"></div>
+
 <div class="report-bottom-area print-only">
 
     <div class="end-report">
@@ -2145,35 +2282,39 @@ async function fetchParameters(serviceCode){
 
 function addDepartmentHeading(name){
 
+    name = String(name || "")
+        .replace(/^Department of\s*/i,"")
+        .trim();
+
     const body = document.getElementById("resultBody");
 
-    body.innerHTML += `
-        <tr class="department-row">
+    body.insertAdjacentHTML("beforeend", `
+        <tr class="department-heading">
             <td colspan="5">
-                Department of ${escapeHtml(name)}
+                DEPARTMENT OF ${escapeHtml(name)}
             </td>
         </tr>
-    `;
+    `);
 }
 
 function addPanelHeading(name){
 
     const body = document.getElementById("resultBody");
 
-    body.innerHTML += `
+    body.insertAdjacentHTML("beforeend", `
         <tr class="panel-heading">
             <td colspan="5">
                 ${escapeHtml(name)}
             </td>
         </tr>
-    `;
+    `);
 }
 
 
 function addResultRow(row){
     const body = document.getElementById("resultBody");
 
-    body.innerHTML += `
+    body.insertAdjacentHTML("beforeend", `
         <tr data-service-code="${escapeAttr(row.service_code || "")}">
                 <td class="test-name-cell">
 
@@ -2213,7 +2354,7 @@ function addResultRow(row){
                 <button class="remove-btn" onclick="deleteRow(this)">✖</button>
             </td>
         </tr>
-    `;
+    `);
 }
 
 
@@ -2926,45 +3067,46 @@ function clientCopyPrint(){
 }
 
 
-async function sendReportToClient(){
+function openWhatsAppChat(){
 
-    if(!uploadedReport){
-        alert("Upload report first.");
+    let mobile =
+        document.getElementById("patientMobile")
+        .value
+        .trim();
+
+    if(!mobile){
+        alert("Patient mobile number missing");
         return;
     }
 
-    try{
-        const res = await fetch("/api/send-report-to-client", {
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-                invoice_no: invoiceNo
-            })
-        });
+    mobile = mobile.replace(/\D/g,'');
 
-        const data = await res.json();
-
-        if(data.success){
-            showNotice("Report sent to client successfully.");
-            document.getElementById("sendClientBtn").disabled = true;
-            document.getElementById("sendClientBtn").innerText = "Sent";
-        }else{
-            showNotice(data.message || "Unable to send report.");
-        }
-
-    }catch(err){
-        console.error(err);
-        showNotice("Server error while sending report.");
+    if(mobile.length === 10){
+        mobile = "91" + mobile;
     }
+
+    const patientName =
+        document.getElementById("patientName")
+        .value
+        .trim();
+
+    const message =
+        `Hello ${patientName}, your report is ready.`;
+
+    window.open(
+        `https://wa.me/${mobile}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
 }
 
-async function generateAINote(){
 
-    const rows = document.querySelectorAll("#resultBody tr");
+function generateAINote(){
 
-    let abnormal = [];
+    const rows =
+        document.querySelectorAll("#resultBody tr");
+
+    let findings = [];
+    let abnormalCount = 0;
 
     rows.forEach(row => {
 
@@ -2974,21 +3116,68 @@ async function generateAINote(){
         const valueInput =
             row.querySelector(".observed-value");
 
-        if(!testName || !valueInput) return;
+        const rangeBox =
+            row.querySelector(".reference-range");
 
-        const test = testName.innerText.trim();
+        if(
+            !testName ||
+            !valueInput ||
+            !rangeBox
+        ){
+            return;
+        }
 
-        const value = valueInput.value || "";
+        const test =
+            testName.innerText.trim();
 
-        if(value.includes("↑")){
+        const value =
+            parseFloat(valueInput.value);
 
-            abnormal.push(test + " is elevated");
+        const rangeText =
+            rangeBox.value.trim();
+
+        if(
+            isNaN(value) ||
+            !rangeText
+        ){
+            return;
+        }
+
+        const numbers =
+            rangeText.match(/\d+(\.\d+)?/g);
+
+        if(
+            !numbers ||
+            numbers.length < 2
+        ){
+            return;
+        }
+
+        const low =
+            parseFloat(numbers[0]);
+
+        const high =
+            parseFloat(numbers[1]);
+
+        // LOW
+        if(value < low){
+
+            abnormalCount++;
+
+            findings.push(
+            `The ${test} is reduced at ${value} compared to the reference range of ${low}-${high}. This finding may be clinically significant and should be interpreted in conjunction with the patient's overall clinical condition.`
+            );
 
         }
 
-        else if(value.includes("↓")){
+        // HIGH
+        else if(value > high){
 
-            abnormal.push(test + " is reduced");
+            abnormalCount++;
+
+                    findings.push(
+                    `The ${test} is elevated at ${value} (reference range: ${low}-${high}), which may be clinically significant.`
+                    );
 
         }
 
@@ -2996,28 +3185,23 @@ async function generateAINote(){
 
     let note = "";
 
-    // NORMAL
-    if(abnormal.length === 0){
-
-        note = `
-        All tested parameters are within normal reference limits.
-        Clinical correlation is advised.
-        `;
-
-    }
-
-    // ABNORMAL
-    else{
+    if(abnormalCount === 0){
 
         note =
-            abnormal.join(". ") +
-            ". Clinical correlation is advised.";
+        `All tested parameters are within the reference range. No significant abnormality was detected in the current laboratory findings. Clinical correlation is advised.`;
 
-    }
+    }else{
 
-    document.getElementById("aiClinicalNote").innerHTML = note;
+        note =
+        `${findings.join(" ")} Clinical correlation is recommended.`;
 
+            }
+
+    document.getElementById(
+        "aiClinicalNote"
+    ).innerHTML = note;
 }
+
 
 function copyAINote(){
 
