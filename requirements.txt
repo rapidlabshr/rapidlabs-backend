@@ -131,7 +131,6 @@ pyphen==0.17.2
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 pytz==2025.2
-pywin32==306
 pyzmq==25.1.1
 qrcode==8.2
 razorpay==2.0.0
